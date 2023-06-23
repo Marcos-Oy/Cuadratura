@@ -2,10 +2,10 @@
 
 namespace App\Controllers;
 
-class HomeController {
+class UsersController {
     public function index() {
         // Obtén la ruta completa de la vista
-        $viewPath = __DIR__ . '/../../resources/views/Home/home.php';
+        $viewPath = __DIR__ . '/../../resources/views/Users/show.php';
 
         // Definir el valor de $raiz
         global $raiz;
