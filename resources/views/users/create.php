@@ -14,9 +14,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="<?php echo $raiz; ?>/public/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="<?php echo $raiz; ?>/public/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/dist/css/adminlte.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -35,7 +35,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="card-header">
                                     <h2>
                                         Crear usuario
-                                        <a href="<?php echo $raiz; ?>/users/show" class="justify-content-md-end">
+                                        <a href="<?php echo $this->raiz; ?>/users/show" class="justify-content-md-end">
                                             <button type="button" class="btn btn-secondary">
                                                 Volver
                                             </button>
@@ -44,7 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <form method="POST" action="<?php echo $raiz; ?>/create/user">
+                                    <form method="POST" action="<?php echo $this->raiz; ?>/create/user">
                                         <div class="row">
 
                                             <!-- COLUMNA 1 -->
@@ -107,11 +107,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
     <!-- REQUIRED SCRIPTS -->
     <!-- jQuery -->
-    <script src="../public/plugins/jquery/jquery.min.js"></script>
+    <script src="<?php echo $this->raiz; ?>/public/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
-    <script src="../public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo $this->raiz; ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="../public/dist/js/adminlte.min.js"></script>
+    <script src="<?php echo $this->raiz; ?>/public/dist/js/adminlte.min.js"></script>
 </body>
 
 </html>

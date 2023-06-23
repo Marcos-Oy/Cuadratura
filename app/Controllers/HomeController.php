@@ -3,12 +3,15 @@
 namespace App\Controllers;
 
 class HomeController {
+
+    public function __construct() {
+        global $raiz;
+        $this->raiz = $raiz;
+    }
+
     public function index() {
         // Obtén la ruta completa de la vista
         $viewPath = __DIR__ . '/../../resources/views/Home/dashboard.php';
-
-        // Definir el valor de $raiz
-        global $raiz;
 
         // Verifica si el archivo de vista existe
         if (file_exists($viewPath)) {

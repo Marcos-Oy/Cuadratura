@@ -11,7 +11,7 @@
     <ul class="navbar-nav ml-auto">
         <div class="user-panel mt-0 pb-0 mb-0 d-flex">
             <div class="image">
-                <img src="<?php echo $raiz; ?>/public/dist/img/user2-160x160.jpg" class="img-circle elevation-1" alt="User Image">
+                <img src="<?php echo $this->raiz; ?>/public/dist/img/user2-160x160.jpg" class="img-circle elevation-1" alt="User Image">
             </div>
             <li class="nav-item">
                 <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
