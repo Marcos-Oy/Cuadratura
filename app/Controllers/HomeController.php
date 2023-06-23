@@ -5,7 +5,7 @@ namespace App\Controllers;
 class HomeController {
     public function index() {
         // Obtén la ruta completa de la vista
-        $viewPath = __DIR__ . '/../../resources/views/Home/home.php';
+        $viewPath = __DIR__ . '/../../resources/views/Home/dashboard.php';
 
         // Definir el valor de $raiz
         global $raiz;
@@ -16,7 +16,7 @@ class HomeController {
             include_once $viewPath;
         } else {
             // Si la vista no existe, muestra un mensaje de error
-            echo "Error: View not found";
+            echo "Error: la vista no existe";
         }
     }
 }
