@@ -7,9 +7,9 @@ $(function () {
       responsive: true,
       searching: true,
       lengthChange: true,
-      autoWidth: false,
+      autoWidth: true,
       ordering: true,
-      info: false,
+      info: true,
       paging: true,
       buttons: [
         {

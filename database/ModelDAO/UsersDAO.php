@@ -1,5 +1,9 @@
 <?php
-class UserDAO {
+namespace Database\ModelDAO;
+use PDO;
+use PDOException;
+
+class UsersDAO {
     private $conn;
     
     public function __construct($conn) {

@@ -11,7 +11,7 @@ $router->get($raiz.'/users/show.php', [UsersController::class, 'index']);
 
 
 // Rutas POST
-$router->post($raiz.'/users', [HomeController::class, 'createUser']);
+$router->post($raiz.'/users', [UsersController::class, 'createUser']);
 
 
 // Rutas PUT

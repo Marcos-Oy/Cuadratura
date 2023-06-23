@@ -1,4 +1,7 @@
 <?php
+namespace Config\Connection;
+use PDO;
+use PDOException;
 // En un archivo llamado "Database.php"
 class Database {
     private $host = "localhost";

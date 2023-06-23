@@ -10,9 +10,9 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="<?php echo $raiz; ?>/public/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../public/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="<?php echo $raiz; ?>/public/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../public/dist/css/adminlte.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -31,7 +31,7 @@
                             <div class="card card-dark">
                                 <div class="card-header">
                                     <h2>Usuarios
-                                        <a href="?control=Users&action=create" class="justify-content-md-end">
+                                        <a href="#" class="justify-content-md-end">
                                             <button type="button" class="btn btn-success">
                                                 Nuevo
                                             </button>
@@ -43,12 +43,9 @@
                                     <table id="UsersTable" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Usuario</th>
-                                                <th>Nombre completo</th>
-                                                <th>Rut</th>
-                                                <th>Teléfono</th>
+                                                <th>id</th>
+                                                <th>Name</th>
                                                 <th>E-Mail</th>
-                                                <th>Rol</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
@@ -56,19 +53,15 @@
                                             <?php if($rows): ?>
                                             <?php foreach($rows as $row): ?>
                                             <tr>
-                                                <td><?= $row['username'] ?></td>
-                                                <td><?= $row['name']." ".$row['lastname_p']." ".$row['lastname_m'] ?>
-                                                </td>
-                                                <td><?= $row['rut'] ?></td>
-                                                <td><?= $row['phone'] ?></td>
-                                                <td><?= $row['mail'] ?></td>
-                                                <td><?= $row['role'] ?></td>
+                                                <td><?= $row['id'] ?></td>
+                                                <td><?= $row['name'] ?></td>
+                                                <td><?= $row['email'] ?></td>
                                                 <td>
                                                     <div class="row">
                                                         <div class="form-group">
-                                                            <form method='POST' action='?control=Users&action=edit'>
+                                                            <form method='POST' action='#'>
                                                                 <button class="btn btn-warning" type='submit'
-                                                                    name='username' value=<?=$row['username'];?>>
+                                                                    name='name' value=<?=$row['name'];?>>
                                                                     <i class="fas fa-pen" aria-hidden="true"></i>
                                                                 </button>
                                                             </form>
@@ -76,10 +69,9 @@
 
                                                         &nbsp;&nbsp;
                                                         <div class="form-group">
-                                                            <form method='POST'
-                                                                action='?control=Users&action=erase_users'>
-                                                                <button class="btn btn-danger" type='submit'
-                                                                    name='username' value=<?= $row['username'];?>>
+                                                            <form method='POST' action='#'>
+                                                                <button class="btn btn-danger" type='submit' name='name'
+                                                                    value=<?= $row['name'];?>>
                                                                     <i class="fas fa-trash" aria-hidden="true"></i>
                                                                 </button>
                                                             </form>
@@ -88,13 +80,12 @@
                                                         <?php if($row['state'] == 1): ?>
                                                         &nbsp;&nbsp;
                                                         <div class="form-group">
-                                                            <form method='POST'
-                                                                action='?control=Users&action=modify_user_status'>
+                                                            <form method='POST' action='#'>
 
                                                                 <!-- Button trigger modal -->
                                                                 <button type="button" class="btn btn-primary"
                                                                     data-toggle="modal"
-                                                                    data-target="#modal-sm-des-<?=$row['id']?>">
+                                                                    data-target="#modal-sm-des-<?=$row['name']?>">
                                                                     <i class="fa fa-power-off" aria-hidden="true"></i>
                                                                 </button>
 
@@ -102,7 +93,7 @@
                                                                     value="<?php echo $row['state'];?>" name="state">
 
                                                                 <div class="modal fade"
-                                                                    id="modal-sm-des-<?=$row['id'];?>">
+                                                                    id="modal-sm-des-<?=$row['name'];?>">
                                                                     <div class="modal-dialog modal-sm">
                                                                         <div class="modal-content">
                                                                             <div class="modal-header">
@@ -118,8 +109,7 @@
                                                                             </div>
                                                                             <div class="modal-body">
                                                                                 <p>¿Desea desactivar el usuario de
-                                                                                    <?= $row['name']." ".$row['lastname_p']." ".$row['lastname_m'] ?>?
-                                                                                    (<?= $row['username']?>)
+                                                                                    <?= $row['name']?>?
                                                                                 </p>
                                                                             </div>
                                                                             <div
@@ -128,8 +118,8 @@
                                                                                     class="btn btn-default"
                                                                                     data-dismiss="modal">Cancelar</button>
                                                                                 <button class="btn btn-danger"
-                                                                                    type='submit' name='id'
-                                                                                    value=<?=$row['id']?>>
+                                                                                    type='submit' name='name'
+                                                                                    value=<?=$row['name']?>>
                                                                                     Aceptar
                                                                                 </button>
                                                                             </div>
@@ -145,12 +135,11 @@
                                                         <?php if($row['state'] == 0): ?>
                                                         &nbsp;&nbsp;
                                                         <div class="form-group">
-                                                            <form method='POST'
-                                                                action='?control=Users&action=modify_user_status'>
+                                                            <form method='POST' action='#'>
                                                                 <!-- Button trigger modal -->
                                                                 <button type="button" class="btn btn-secondary"
                                                                     data-toggle="modal"
-                                                                    data-target="#modal-sm-act-<?=$row['id'];?>">
+                                                                    data-target="#modal-sm-act-<?=$row['name'];?>">
                                                                     <i class="fa fa-power-off" aria-hidden="true"></i>
                                                                 </button>
 
@@ -158,7 +147,7 @@
                                                                     value="<?php echo $row['state'];?>" name="state">
 
                                                                 <div class="modal fade"
-                                                                    id="modal-sm-act-<?=$row['id']?>">
+                                                                    id="modal-sm-act-<?=$row['name']?>">
                                                                     <div class="modal-dialog modal-sm">
                                                                         <div class="modal-content">
                                                                             <div class="modal-header">
@@ -173,8 +162,7 @@
                                                                             </div>
                                                                             <div class="modal-body">
                                                                                 <p>¿Desea activar el usuario de
-                                                                                    <?= $row['name']." ".$row['lastname_p']." ".$row['lastname_m'] ?>?
-                                                                                    (<?= $row['username']?>)
+                                                                                    <?= $row['name']?>?
                                                                                 </p>
                                                                             </div>
                                                                             <div
@@ -183,8 +171,8 @@
                                                                                     class="btn btn-default"
                                                                                     data-dismiss="modal">Cancelar</button>
                                                                                 <button class="btn btn-success"
-                                                                                    type='submit' name='id'
-                                                                                    value=<?=$row['id']?>>
+                                                                                    type='submit' name='name'
+                                                                                    value=<?=$row['name']?>>
                                                                                     Aceptar
                                                                                 </button>
                                                                             </div>
@@ -208,12 +196,9 @@
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th>Usuario</th>
-                                                <th>Nombre completo</th>
-                                                <th>Rut</th>
-                                                <th>Teléfono</th>
+                                                <th>id</th>
+                                                <th>Name</th>
                                                 <th>E-Mail</th>
-                                                <th>Rol</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </tfoot>
@@ -238,15 +223,37 @@
 
     </div>
     <!-- REQUIRED SCRIPTS -->
+    
     <!-- jQuery -->
-    <script src="<?php echo $raiz; ?>/public/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="<?php echo $raiz; ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="<?php echo $raiz; ?>/public/dist/js/adminlte.min.js"></script>
+    <script src="../public/plugins/jquery/jquery.min.js"></script>
 
     <!-- DataTables -->
-    <?php include ('routes/DataTables.php');?>
+    <link rel="stylesheet" href="../public/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../public/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="../public/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+    <!-- DataTables  & Plugins -->
+    <script src="../public/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../public/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../public/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../public/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="../public/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="../public/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="../public/plugins/jszip/jszip.min.js"></script>
+    <script src="../public/plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="../public/plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="../public/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="../public/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="../public/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <!-- JS de tables -->
+    <script src="../resources/assets/js/tables.js"></script>
+
+    <!-- Bootstrap 4 -->
+    <script src="../public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../public/dist/js/adminlte.min.js"></script>
+
+
 </body>
 
 </html>
