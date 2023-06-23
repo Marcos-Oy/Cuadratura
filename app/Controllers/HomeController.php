@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 class HomeController {
 
+    private $raiz;
+    
     public function __construct() {
         global $raiz;
         $this->raiz = $raiz;
