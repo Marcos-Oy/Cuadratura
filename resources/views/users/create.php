@@ -27,7 +27,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -36,7 +35,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="card-header">
                                     <h2>
                                         Crear usuario
-                                        <a href="?control=Users&action=show" class="justify-content-md-end">
+                                        <a href="<?php echo $raiz; ?>/users/show" class="justify-content-md-end">
                                             <button type="button" class="btn btn-secondary">
                                                 Volver
                                             </button>
@@ -45,7 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <form method="POST" action="?control=Users&action=create_users">
+                                    <form method="POST" action="<?php echo $raiz; ?>/create/user">
                                         <div class="row">
 
                                             <!-- COLUMNA 1 -->
@@ -54,41 +53,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <!-- text input -->
                                                 <div class="form-group">
                                                     <label>Nombre</label>
-                                                    <input id="nombre" type="text" name="nombre" class="form-control"
+                                                    <input id="name" type="text" name="name" class="form-control"
                                                         placeholder="Ingrese nombre aquí...">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Apellido Paterno</label>
-                                                    <input id="paterno" name="paterno" type="text" class="form-control"
-                                                        placeholder="Ingrese apellido paterno aquí...">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Apellido Materno</label>
-                                                    <input id="materno" name="materno" type="text" class="form-control"
-                                                        placeholder="Ingrese apellido materno aquí...">
-                                                </div>
-
-                                            </div>
-
-                                            <!-- COLUMNA 2 -->
-
-                                            <div class="col-sm-3">
-
-                                                <div class="form-group">
-                                                    <label>RUT</label>
-                                                    <input id="rut" name="rut" type="text" class="form-control"
-                                                        placeholder="Ingrese rut aquí...">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label>Teléfono</label>
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text"><i class="fas">+56</i></span>
-                                                        </div>
-                                                        <input id="tel" name="tel" type="number" class="form-control"
-                                                            placeholder="Ingrese número aquí...">
-                                                    </div>
+                                                    <label>Contraseña</label>
+                                                    <input id="password" name="password" type="password" class="form-control"
+                                                        placeholder="Ingrese contraseña...">
                                                 </div>
 
                                                 <div class="form-group">
@@ -102,27 +73,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             placeholder="Ingrese email aquí...">
                                                     </div>
                                                 </div>
-                                            </div>
-
-                                            <!-- COLUMNA 3 -->
-
-                                            <div class="col-sm-3">
-                                                <div class="form-group">
-                                                    <label>Nombre de usuario</label>
-                                                    <input id="username" type="text" name="username"
-                                                        class="form-control"
-                                                        placeholder="Ingrese nombre de usuario aquí...">
-                                                </div>
 
                                                 <div class="form-group">
-                                                    <label>Seleccionar Rol</label>
-                                                    <select id="role" name="role" class="form-control">
+                                                    <label>Seleccionar Estado</label>
+                                                    <select id="state" name="state" class="form-control">
 
-                                                        <option selected>Seleccionar rol de usuario</option>
-                                                        <option value="admin">admin</option>
+                                                        <option selected value="1">Activado</option>
+                                                        <option value="0">Desactivado</option>
 
                                                     </select>
                                                 </div>
+
                                             </div>
                                         </div>
                                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -146,11 +107,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
     <!-- REQUIRED SCRIPTS -->
     <!-- jQuery -->
-    <script src="<?php echo $raiz; ?>/public/plugins/jquery/jquery.min.js"></script>
+    <script src="../public/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
-    <script src="<?php echo $raiz; ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="<?php echo $raiz; ?>/public/dist/js/adminlte.min.js"></script>
+    <script src="../public/dist/js/adminlte.min.js"></script>
 </body>
 
 </html>

@@ -30,7 +30,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                <li class="nav-item">
-                    <a id="Dash" href="<?php echo $raiz; ?>/Home/dashboard.php" class="nav-link">
+                    <a id="Dash" href="<?php echo $raiz; ?>/Home/dashboard" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -100,7 +100,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a id="ShowUsers" href="<?php echo $raiz; ?>/users/show.php" class="nav-link">
+                    <a id="ShowUsers" href="<?php echo $raiz; ?>/users/show" class="nav-link">
                         <i class="nav-icon fas fa-user"></i>
                         <p>
                             Users

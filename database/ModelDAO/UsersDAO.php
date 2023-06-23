@@ -23,11 +23,12 @@ class UsersDAO {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     
-    public function createUser($name, $email, $password) {
-        $stmt = $this->conn->prepare("INSERT INTO users (name, email, password) VALUES (:name, :email, :password)");
+    public function insertUser($name, $email, $password, $state) {
+        $stmt = $this->conn->prepare("INSERT INTO users (name, email, password, state) VALUES (:name, :email, :password, :state)");
         $stmt->bindParam(":name", $name);
         $stmt->bindParam(":email", $email);
         $stmt->bindParam(":password", $password);
+        $stmt->bindParam(":state", $state);
         return $stmt->execute();
     }
     

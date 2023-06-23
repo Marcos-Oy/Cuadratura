@@ -3,16 +3,20 @@
 namespace App\Controllers;
 use Config\Connection\Database;
 use Database\ModelDAO\UsersDAO;
+use Database\Model\UsersModel;
 
 class UsersController {
 
     private $usersDAO;
+    private $usersModel;
     
     public function __construct() {
         require_once (__DIR__ . '/../../Config/database.php');
         require_once (__DIR__ . '/../../database/ModelDAO/UsersDAO.php');
+        require_once (__DIR__ . '/../../database/Model/UsersModel.php');
         $dbConnection = new Database();
         $this->usersDAO = new UsersDAO($dbConnection->getConnection());
+        $this->usersModel = new UsersModel();
     }
 
     /*************************LLAMADA A LAS VISTAS**********************/
@@ -42,7 +46,7 @@ class UsersController {
         $rows = $this->usersDAO->getAllUsers();   
 
         // Obtén la ruta completa de la vista
-        $viewPath = __DIR__ . '/../../resources/views/Users/show.php';
+        $viewPath = __DIR__ . '/../../resources/views/users/show.php';
 
         // Verifica si el archivo de vista existe
         if (file_exists($viewPath)) {
@@ -61,7 +65,7 @@ class UsersController {
         $rows = $this->usersDAO->getAllUsers();   
 
         // Obtén la ruta completa de la vista
-        $viewPath = __DIR__ . '/../../resources/views/Users/create.php';
+        $viewPath = __DIR__ . '/../../resources/views/users/create.php';
 
         // Verifica si el archivo de vista existe
         if (file_exists($viewPath)) {
@@ -72,5 +76,22 @@ class UsersController {
             echo "Error: la vista no existe";
         }
     }
+
+        /*************************CRUD USUARIO**********************/
+
+        public function createUser()
+        {   
+            // Definir el valor de $raiz
+            global $raiz;
+
+            $this->usersModel->setName($_POST['name']);
+            $this->usersModel->setEmail($_POST['email']);
+            $this->usersModel->setPassword($_POST['password']);
+            $this->usersModel->setState($_POST['state']);
+    
+            $id = $this->usersDAO->insertUser($this->usersModel->getName(),$this->usersModel->getEmail(),$this->usersModel->getPassword(),$this->usersModel->getState());
+    
+            return ($id!=false) ? header("Location:$raiz/users/show") : header("Location:$raiz/users/create");
+        }
 }
 

@@ -10,9 +10,9 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="../public/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?php echo $raiz; ?>/public/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../public/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="<?php echo $raiz; ?>/public/dist/css/adminlte.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -31,7 +31,7 @@
                             <div class="card card-dark">
                                 <div class="card-header">
                                     <h2>Usuarios
-                                        <a href="#" class="justify-content-md-end">
+                                        <a href="<?php echo $raiz; ?>/users/create" class="justify-content-md-end">
                                             <button type="button" class="btn btn-success">
                                                 Nuevo
                                             </button>
@@ -223,35 +223,35 @@
 
     </div>
     <!-- REQUIRED SCRIPTS -->
-    
+
     <!-- jQuery -->
-    <script src="../public/plugins/jquery/jquery.min.js"></script>
+    <script src="<?php echo $raiz; ?>/public/plugins/jquery/jquery.min.js"></script>
 
     <!-- DataTables -->
-    <link rel="stylesheet" href="../public/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="../public/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="../public/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?php echo $raiz; ?>/public/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?php echo $raiz; ?>/public/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?php echo $raiz; ?>/public/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
     <!-- DataTables  & Plugins -->
-    <script src="../public/plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="../public/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="../public/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="../public/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-    <script src="../public/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="../public/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-    <script src="../public/plugins/jszip/jszip.min.js"></script>
-    <script src="../public/plugins/pdfmake/pdfmake.min.js"></script>
-    <script src="../public/plugins/pdfmake/vfs_fonts.js"></script>
-    <script src="../public/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-    <script src="../public/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-    <script src="../public/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <script src="<?php echo $raiz; ?>/public/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?php echo $raiz; ?>/public/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="<?php echo $raiz; ?>/public/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="<?php echo $raiz; ?>/public/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="<?php echo $raiz; ?>/public/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="<?php echo $raiz; ?>/public/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="<?php echo $raiz; ?>/public/plugins/jszip/jszip.min.js"></script>
+    <script src="<?php echo $raiz; ?>/public/plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="<?php echo $raiz; ?>/public/plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="<?php echo $raiz; ?>/public/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="<?php echo $raiz; ?>/public/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="<?php echo $raiz; ?>/public/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
     <!-- JS de tables -->
-    <script src="../resources/assets/js/tables.js"></script>
+    <script src="<?php echo $raiz; ?>/resources/assets/js/tables.js"></script>
 
     <!-- Bootstrap 4 -->
-    <script src="../public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo $raiz; ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="../public/dist/js/adminlte.min.js"></script>
+    <script src="<?php echo $raiz; ?>/public/dist/js/adminlte.min.js"></script>
 
 
 </body>

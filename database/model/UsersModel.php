@@ -1,19 +1,14 @@
 <?php
     // GETTER & SETTER
+namespace Database\Model;
+
 class UsersModel{
     
     protected $id;
-    protected $username;
-    protected $username_2;
     protected $name;
-    protected $lastname_p;
-    protected $lastname_m;
-    protected $phone;
-    protected $mail;
-    protected $role;
+    protected $email;
     protected $state;
     protected $password;
-    protected $rut;
 
         
     public function getId()
@@ -23,26 +18,6 @@ class UsersModel{
     public function setId($id): self 
     { 
         $this->id = $id; 
-        return $this; 
-    }
-
-    public function getUsername()
-    { 
-        return $this->username; 
-    }
-    public function setUsername($username): self 
-    { 
-        $this->username = $username; 
-        return $this; 
-    }
-
-    public function getUsername2()
-    { 
-        return $this->username_2; 
-    }
-    public function setUsername2($username_2): self 
-    { 
-        $this->username_2 = $username_2; 
         return $this; 
     }
 
@@ -56,53 +31,13 @@ class UsersModel{
         return $this; 
     }
 
-    public function getLastnameP()
+    public function getEmail()
     { 
-        return $this->lastname_p; 
+        return $this->email; 
     }
-    public function setLastnameP($lastname_p): self 
+    public function setEmail($email): self 
     { 
-        $this->lastname_p = ucwords(strtolower($lastname_p)); 
-        return $this; 
-    }
-
-    public function getLastnameM()
-    { 
-        return $this->lastname_m; 
-    }
-    public function setLastnameM($lastname_m): self 
-    { 
-        $this->lastname_m = ucwords(strtolower($lastname_m)); 
-        return $this; 
-    }
-
-    public function getPhone()
-    { 
-        return $this->phone; 
-    }
-    public function setPhone($phone): self 
-    { 
-        $this->phone = $phone; 
-        return $this; 
-    }
-
-    public function getMail()
-    { 
-        return $this->mail; 
-    }
-    public function setMail($mail): self 
-    { 
-        $this->mail = $mail; 
-        return $this; 
-    }
-
-    public function getRole()
-    { 
-        return $this->role; 
-    }
-    public function setRole($role): self 
-    { 
-        $this->role = $role; 
+        $this->email = $email; 
         return $this; 
     }
 
@@ -132,16 +67,6 @@ class UsersModel{
     public function setPassword($password): self 
     { 
         $this->password = $password; 
-        return $this; 
-    }
-    
-    public function getRut()
-    { 
-        return $this->rut; 
-    }
-    public function setRut($rut): self 
-    { 
-        $this->rut = $rut; 
         return $this; 
     }
 }

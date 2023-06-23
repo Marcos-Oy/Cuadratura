@@ -6,12 +6,14 @@ global $raiz;
 
 // Rutas GET
 $router->get($raiz.'/', [UsersController::class, 'login']);
-$router->get($raiz.'/Home/dashboard.php', [HomeController::class, 'index']);
-$router->get($raiz.'/users/show.php', [UsersController::class, 'index']);
-
+$router->get($raiz.'/Home/dashboard', [HomeController::class, 'index']);
+$router->get($raiz.'/users/show', [UsersController::class, 'index']);
+$router->get($raiz.'/users/create', [UsersController::class, 'create']);
+$router->get($raiz.'/users/edit', [UsersController::class, 'edit']);
+$router->get($raiz.'/users/SetUp', [UsersController::class, 'SetUp']);
 
 // Rutas POST
-$router->post($raiz.'/users', [UsersController::class, 'createUser']);
+$router->post($raiz.'/create/user', [UsersController::class, 'createUser']);
 
 
 // Rutas PUT
