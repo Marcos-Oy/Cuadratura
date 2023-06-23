@@ -6,7 +6,7 @@ global $raiz;
 
 // Rutas GET
 $router->get($raiz.'/', [HomeController::class, 'index']);
-$router->get($raiz.'/home', [HomeController::class, 'index']);
+$router->get($raiz.'/Home/home.php', [HomeController::class, 'index']);
 $router->get($raiz.'/users/show.php', [UsersController::class, 'index']);
 
 // // Rutas POST

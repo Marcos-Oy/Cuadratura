@@ -10,9 +10,9 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="public/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?php echo $raiz; ?>/public/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="public/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="<?php echo $raiz; ?>/public/dist/css/adminlte.min.css">
 
 </head>
 
@@ -134,10 +134,10 @@
     <?php include ('resources/views/layout/footer.php'); ?>
     <!-- REQUIRED SCRIPTS -->
     <!-- jQuery -->
-    <script src="public/plugins/jquery/jquery.min.js"></script>
+    <script src="<?php echo $raiz; ?>/public/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
-    <script src="public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo $raiz; ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="public/dist/js/adminlte.min.js"></script>
-    <script src="resources/assets/js/MisDatos.js"></script>
+    <script src="<?php echo $raiz; ?>/public/dist/js/adminlte.min.js"></script>
+    <script src="<?php echo $raiz; ?>/resources/assets/js/MisDatos.js"></script>
 </body>
