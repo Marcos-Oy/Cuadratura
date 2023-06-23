@@ -14,9 +14,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="<?php echo $raiz; ?>/public/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="<?php echo $raiz; ?>/public/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/dist/css/adminlte.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -36,7 +38,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="card-header">
                                     <h2>
                                         Editar usuario
-                                        <a href="?control=Users&action=show" class="justify-content-md-end">
+                                        <a href="<?php echo $this->raiz; ?>/users/show" class="justify-content-md-end">
                                             <button type="button" class="btn btn-secondary">
                                                 Volver
                                             </button>
@@ -45,49 +47,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <form method="POST" action="?control=Users&action=modify_users">
-                                        <?php foreach($result as $row): ?>
-
+                                    <form method="POST" action="<?php echo $this->raiz; ?>/edit/user">
+                                        <?php if (!empty($result)): ?>
+                                        <input type="hidden" name="id" value="<?php echo $result['id'];?>">
                                         <div class="row">
                                             <!-- COLUMNA 1 -->
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-12">
                                                 <!-- text input -->
                                                 <div class="form-group">
-                                                    <label>Rut</label>
-                                                    <input type="text" class="form-control"
-                                                        value="<?php echo $row['rut'];?>" name="rut">
-                                                </div>
-                                                <div class="form-group">
                                                     <label>Nombre</label>
-                                                    <input type="text" class="form-control"
-                                                        value="<?php echo $row['name'];?>" name="nombre">
+                                                    <input id="name" type="text" name="name" class="form-control"
+                                                        value="<?php echo $result['name'];?>">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Apellido Paterno</label>
-                                                    <input type="text" class="form-control"
-                                                        value="<?php echo $row['lastname_p'];?>" name="paterno">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Apellido Materno</label>
-                                                    <input type="text" class="form-control"
-                                                        value="<?php echo $row['lastname_m'];?>" name="materno">
-                                                </div>
-
-                                            </div>
-
-                                            <!-- COLUMNA 2 -->
-
-                                            <div class="col-sm-4">
-
-                                                <div class="form-group">
-                                                    <label>Teléfono</label>
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text"><i class="fas">+56</i></span>
-                                                        </div>
-                                                        <input type="number" class="form-control"
-                                                            value="<?php echo $row['phone'];?>" name="tel">
-                                                    </div>
+                                                    <label>Contraseña</label>
+                                                    <input id="password" name="password" type="password"
+                                                        class="form-control" value="<?php echo $result['password'];?>">
                                                 </div>
 
                                                 <div class="form-group">
@@ -97,35 +72,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <span class="input-group-text"><i
                                                                     class="fas fa-envelope"></i></span>
                                                         </div>
-                                                        <input type="email" class="form-control"
-                                                            value="<?php echo $row['mail'];?>" name="email">
+                                                        <input id="email" name="email" type="email" class="form-control"
+                                                            value="<?php echo $result['email'];?>">
                                                     </div>
                                                 </div>
-                                            </div>
 
-                                            <!-- COLUMNA 3 -->
-
-                                            <div class="col-sm-4">
                                                 <div class="form-group">
-                                                    <label>Seleccionar Rol</label>
-                                                    <select class="form-control" name="role">
-                                                        <option value="Admin">Admin</option>
+                                                    <label>Seleccionar Estado</label>
+                                                    <select id="state" name="state" class="form-control">
+                                                        <option value="1"
+                                                            <?php if ($result['state'] == 1) echo 'selected'; ?>>
+                                                            Activado</option>
+                                                        <option value="0"
+                                                            <?php if ($result['state'] == 0) echo 'selected'; ?>>
+                                                            Desactivado</option>
                                                     </select>
-                                                </div>
-
-                                                <input type="hidden" value="<?php echo $row['username'];?>"
-                                                    name="username2">
-
-                                                <div class="form-group">
-                                                    <label>Nombre de usuario</label>
-                                                    <input type="text" class="form-control"
-                                                        value="<?php echo $row['username'];?>" name="username">
                                                 </div>
                                             </div>
                                         </div>
-                                        <?php endforeach; ?>
                                         <button type="submit" class="btn btn-success">Guardar</button>
+                                        <?php else: ?>
+                                        <p>No se encontraron datos.</p>
+                                        <?php endif; ?>
                                     </form>
+
+
                                 </div>
                             </div>
                             <!-- /.card-body -->
@@ -137,8 +108,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <form method="POST" action="?control=Users&action=password_reset">
-                                        <input type="hidden" value="<?php echo $row['username'];?>" name="username">
+                                    <form method="POST" action="<?php echo $this->raiz; ?>/reset/password">
+                                        <input type="hidden" value="<?php echo $result['id']; ?>" name="id">
                                         <button type="submit" class="btn btn-warning col-sm-12">⚠ Restablecer ⚠</button>
                                     </form>
                                 </div>
@@ -157,11 +128,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
     <!-- REQUIRED SCRIPTS -->
     <!-- jQuery -->
-    <script src="<?php echo $raiz; ?>/public/plugins/jquery/jquery.min.js"></script>
+    <script src="<?php echo $this->raiz; ?>/public/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
-    <script src="<?php echo $raiz; ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo $this->raiz; ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="<?php echo $raiz; ?>/public/dist/js/adminlte.min.js"></script>
+    <script src="<?php echo $this->raiz; ?>/public/dist/js/adminlte.min.js"></script>
 </body>
 
 </html>

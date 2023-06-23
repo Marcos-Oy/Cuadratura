@@ -32,14 +32,23 @@ class UsersDAO {
         return $stmt->execute();
     }
     
-    public function updateUser($id, $name, $email, $password) {
-        $stmt = $this->conn->prepare("UPDATE users SET name = :name, email = :email, password = :password WHERE id = :id");
+    public function updateUser($id, $name, $email, $password, $state) {
+        $stmt = $this->conn->prepare("UPDATE users SET name = :name, email = :email, password = :password, state = :state WHERE id = :id");
         $stmt->bindParam(":id", $id);
         $stmt->bindParam(":name", $name);
         $stmt->bindParam(":email", $email);
         $stmt->bindParam(":password", $password);
+        $stmt->bindParam(":state", $state);
         return $stmt->execute();
     }
+
+    public function passwordReset($id) {
+        $stmt = $this->conn->prepare("UPDATE users SET password = :password WHERE id = :id");
+        $stmt->bindParam(":id", $id);
+        $stmt->bindValue(":password", 'Mesa2020');
+        return $stmt->execute();
+    }
+    
     
     public function deleteUser($id) {
         $stmt = $this->conn->prepare("DELETE FROM users WHERE id = :id");

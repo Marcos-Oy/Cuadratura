@@ -42,8 +42,6 @@ class UsersController {
     }
     
     public function index() {
-        // Definir el valor de $raiz
-        //global $raiz;
 
         $rows = $this->usersDAO->getAllUsers();   
 
@@ -61,11 +59,6 @@ class UsersController {
     }
 
     public function create() {
-        // Definir el valor de $raiz
-        global $raiz;
-
-        $rows = $this->usersDAO->getAllUsers();   
-
         // Obtén la ruta completa de la vista
         $viewPath = __DIR__ . '/../../resources/views/users/create.php';
 
@@ -80,16 +73,13 @@ class UsersController {
     }
 
     public function edit() {
-        // Definir el valor de $raiz
-        global $raiz;
-
-        $rows = $this->usersDAO->getAllUsers();   
-
         // Obtén la ruta completa de la vista
-        $viewPath = __DIR__ . '/../../resources/views/users/create.php';
+        $viewPath = __DIR__ . '/../../resources/views/users/edit.php';
 
         // Verifica si el archivo de vista existe
         if (file_exists($viewPath)) {
+            $this->usersModel->setId($_POST['id']);
+            $result = $this->usersDAO->getUserById($this->usersModel->getId());
             // Incluye la vista
             include_once $viewPath;
         } else {
@@ -102,32 +92,37 @@ class UsersController {
 
     public function createUser()
     {   
-        // Definir el valor de $raiz
-        global $raiz;
-
         $this->usersModel->setName($_POST['name']);
         $this->usersModel->setEmail($_POST['email']);
         $this->usersModel->setPassword($_POST['password']);
         $this->usersModel->setState($_POST['state']);
     
-        $id = $this->usersDAO->insertUser($this->usersModel->getName(),$this->usersModel->getEmail(),$this->usersModel->getPassword(),$this->usersModel->getState());
+        $id = $this->usersDAO->insertUser($this->usersModel->getName(),$this->usersModel->getEmail(),
+        $this->usersModel->getPassword(),$this->usersModel->getState());
     
-        return ($id!=false) ? header("Location:$raiz/users/show") : header("Location:$raiz/users/create");
+        return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/create");
     }
 
     public function editUser()
     {   
-        // Definir el valor de $raiz
-        global $raiz;
-
+        $this->usersModel->setId($_POST['id']);
         $this->usersModel->setName($_POST['name']);
         $this->usersModel->setEmail($_POST['email']);
         $this->usersModel->setPassword($_POST['password']);
         $this->usersModel->setState($_POST['state']);
 
-        $id = $this->usersDAO->updateUser($this->usersModel->getName(),$this->usersModel->getEmail(),$this->usersModel->getPassword(),$this->usersModel->getState());
+        $id = $this->usersDAO->updateUser($this->usersModel->getId(),$this->usersModel->getName(),
+        $this->usersModel->getEmail(),$this->usersModel->getPassword(),$this->usersModel->getState());
 
-        return ($id!=false) ? header("Location:$raiz/users/show") : header("Location:$raiz/users/edit");
+        return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/edit");
+    }
+
+    public function resetPassword()
+    {   
+        $this->usersModel->setId($_POST['id']);
+        $id = $this->usersDAO->passwordReset($this->usersModel->getId());
+
+        return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/edit");
     }
 }
 

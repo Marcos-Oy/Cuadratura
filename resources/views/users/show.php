@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/dist/css/adminlte.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -59,9 +60,9 @@
                                                 <td>
                                                     <div class="row">
                                                         <div class="form-group">
-                                                            <form method='POST' action='#'>
+                                                            <form method='POST' action='<?php echo $this->raiz; ?>/users/edit'>
                                                                 <button class="btn btn-warning" type='submit'
-                                                                    name='name' value=<?=$row['name'];?>>
+                                                                    name='id' value=<?=$row['id'];?>>
                                                                     <i class="fas fa-pen" aria-hidden="true"></i>
                                                                 </button>
                                                             </form>
@@ -69,9 +70,9 @@
 
                                                         &nbsp;&nbsp;
                                                         <div class="form-group">
-                                                            <form method='POST' action='#'>
-                                                                <button class="btn btn-danger" type='submit' name='name'
-                                                                    value=<?= $row['name'];?>>
+                                                            <form method='POST' action='<?php echo $this->raiz; ?>/users/create'>
+                                                                <button class="btn btn-danger" type='submit' name='id'
+                                                                    value=<?= $row['id'];?>>
                                                                     <i class="fas fa-trash" aria-hidden="true"></i>
                                                                 </button>
                                                             </form>
