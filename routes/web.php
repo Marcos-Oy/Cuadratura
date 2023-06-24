@@ -15,6 +15,8 @@ $router->post($raiz.'/create/user', [UsersController::class, 'createUser']);
 $router->post($raiz.'/users/edit', [UsersController::class, 'edit']);
 $router->post($raiz.'/edit/user', [UsersController::class, 'editUser']);
 $router->post($raiz.'/reset/password', [UsersController::class, 'resetPassword']);
+$router->post($raiz.'/edit/user', [UsersController::class, 'editUser']);
+$router->post($raiz.'/edit/state', [UsersController::class, 'editState']);
 //activar usuario
 //desactivar usuario
 $router->post($raiz.'/users/SetUp', [UsersController::class, 'SetUp']);

@@ -46,8 +46,14 @@ class UsersModel{
         return $this->state; 
     }
     public function setState($state): self 
-    {    
-        $this->state = $state; 
+    {   
+        if($state == 0){
+            $state = 1;
+            $this->state = $state;
+        }elseif($state == 1){
+            $state = 0;
+            $this->state = $state; 
+        }
         return $this;
     }
 

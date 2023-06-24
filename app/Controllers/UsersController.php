@@ -124,5 +124,15 @@ class UsersController {
 
         return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/edit");
     }
+
+    public function editState()
+    {   
+        $this->usersModel->setId($_POST['id']);
+        $this->usersModel->setState($_POST['state']);
+
+        $id = $this->usersDAO->updateState($this->usersModel->getId(),$this->usersModel->getState());
+
+        return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/show");
+    }
 }
 

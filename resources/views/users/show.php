@@ -70,7 +70,7 @@
 
                                                         &nbsp;&nbsp;
                                                         <div class="form-group">
-                                                            <form method='POST' action='<?php echo $this->raiz; ?>/users/create'>
+                                                            <form method='POST' action=''>
                                                                 <button class="btn btn-danger" type='submit' name='id'
                                                                     value=<?= $row['id'];?>>
                                                                     <i class="fas fa-trash" aria-hidden="true"></i>
@@ -81,7 +81,7 @@
                                                         <?php if($row['state'] == 1): ?>
                                                         &nbsp;&nbsp;
                                                         <div class="form-group">
-                                                            <form method='POST' action='#'>
+                                                            <form method='POST' action='<?php echo $this->raiz; ?>/edit/state'>
 
                                                                 <!-- Button trigger modal -->
                                                                 <button type="button" class="btn btn-primary"
@@ -91,7 +91,7 @@
                                                                 </button>
 
                                                                 <input type="hidden" class="form-control"
-                                                                    value="<?php echo $row['state'];?>" name="state">
+                                                                    value="<?php echo $row['id'];?>" name="id">
 
                                                                 <div class="modal fade"
                                                                     id="modal-sm-des-<?=$row['name'];?>">
@@ -119,8 +119,8 @@
                                                                                     class="btn btn-default"
                                                                                     data-dismiss="modal">Cancelar</button>
                                                                                 <button class="btn btn-danger"
-                                                                                    type='submit' name='name'
-                                                                                    value=<?=$row['name']?>>
+                                                                                    type='submit' name='state'
+                                                                                    value=<?=$row['state']?>>
                                                                                     Aceptar
                                                                                 </button>
                                                                             </div>
@@ -136,7 +136,7 @@
                                                         <?php if($row['state'] == 0): ?>
                                                         &nbsp;&nbsp;
                                                         <div class="form-group">
-                                                            <form method='POST' action='#'>
+                                                            <form method='POST' action='<?php echo $this->raiz; ?>/edit/state'>
                                                                 <!-- Button trigger modal -->
                                                                 <button type="button" class="btn btn-secondary"
                                                                     data-toggle="modal"
@@ -145,7 +145,7 @@
                                                                 </button>
 
                                                                 <input type="hidden" class="form-control"
-                                                                    value="<?php echo $row['state'];?>" name="state">
+                                                                    value="<?php echo $row['id'];?>" name="id">
 
                                                                 <div class="modal fade"
                                                                     id="modal-sm-act-<?=$row['name']?>">
@@ -172,8 +172,8 @@
                                                                                     class="btn btn-default"
                                                                                     data-dismiss="modal">Cancelar</button>
                                                                                 <button class="btn btn-success"
-                                                                                    type='submit' name='name'
-                                                                                    value=<?=$row['name']?>>
+                                                                                    type='submit' name='state'
+                                                                                    value=<?=$row['state']?>>
                                                                                     Aceptar
                                                                                 </button>
                                                                             </div>

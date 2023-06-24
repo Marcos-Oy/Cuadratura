@@ -49,7 +49,13 @@ class UsersDAO {
         return $stmt->execute();
     }
     
-    
+    public function updateState($id,$state) {
+        $stmt = $this->conn->prepare("UPDATE users SET state = :state WHERE id = :id");
+        $stmt->bindParam(":id", $id);
+        $stmt->bindParam(":state", $state);
+        return $stmt->execute();
+    }
+
     public function deleteUser($id) {
         $stmt = $this->conn->prepare("DELETE FROM users WHERE id = :id");
         $stmt->bindParam(":id", $id);

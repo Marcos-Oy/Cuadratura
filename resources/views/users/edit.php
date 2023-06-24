@@ -80,10 +80,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <div class="form-group">
                                                     <label>Seleccionar Estado</label>
                                                     <select id="state" name="state" class="form-control">
-                                                        <option value="1"
+                                                    <!-- Los values están inversos porque el setState de UsersModel los invierte -->
+                                                        <option value="0" 
                                                             <?php if ($result['state'] == 1) echo 'selected'; ?>>
                                                             Activado</option>
-                                                        <option value="0"
+                                                        <option value="1"
                                                             <?php if ($result['state'] == 0) echo 'selected'; ?>>
                                                             Desactivado</option>
                                                     </select>
