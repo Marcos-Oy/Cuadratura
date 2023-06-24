@@ -56,8 +56,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <!-- text input -->
                                                 <div class="form-group">
                                                     <label>Nombre</label>
-                                                    <input id="name" type="text" name="name" class="form-control"
-                                                        value="<?php echo $result['name'];?>">
+                                                    <input id="username" type="text" name="username" class="form-control"
+                                                        value="<?php echo $result['username'];?>">
                                                 </div>
 
                                                 <!-- <div class="form-group">

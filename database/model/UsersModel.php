@@ -5,7 +5,7 @@ namespace Database\Model;
 class UsersModel{
     
     protected $id;
-    protected $name;
+    protected $username;
     protected $email;
     protected $state;
     protected $password;
@@ -21,13 +21,13 @@ class UsersModel{
         return $this; 
     }
 
-    public function getName()
+    public function getUsername()
     { 
-        return $this->name; 
+        return $this->username; 
     }
-    public function setName($name): self 
+    public function setUsername($username): self 
     { 
-        $this->name = strtoupper(str_replace(' ', '', $name)); 
+        $this->username = strtoupper(preg_replace('/[^a-zA-Z0-9]/', '', $username)); 
         return $this; 
     }
 

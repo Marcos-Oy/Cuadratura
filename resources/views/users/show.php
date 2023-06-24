@@ -45,7 +45,7 @@
                                         <thead>
                                             <tr>
                                                 <th>id</th>
-                                                <th>Name</th>
+                                                <th>UserName</th>
                                                 <th>E-Mail</th>
                                                 <th>Acciones</th>
                                             </tr>
@@ -55,7 +55,7 @@
                                             <?php foreach($rows as $row): ?>
                                             <tr>
                                                 <td><?= $row['id'] ?></td>
-                                                <td><?= $row['name'] ?></td>
+                                                <td><?= $row['username'] ?></td>
                                                 <td><?= $row['email'] ?></td>
                                                 <td>
                                                     <div class="row">
@@ -75,12 +75,12 @@
                                                                 <!-- Button trigger modal -->
                                                                 <button type="button" class="btn btn-danger"
                                                                     data-toggle="modal"
-                                                                    data-target="#modal-sm-trash-<?=$row['name']?>">
+                                                                    data-target="#modal-sm-trash-<?=$row['username']?>">
                                                                     <i class="fas fa-trash" aria-hidden="true"></i>
                                                                 </button>
 
                                                                 <div class="modal fade"
-                                                                    id="modal-sm-trash-<?=$row['name'];?>">
+                                                                    id="modal-sm-trash-<?=$row['username'];?>">
                                                                     <div class="modal-dialog modal-sm">
                                                                         <div class="modal-content">
                                                                             <div class="modal-header">
@@ -96,7 +96,7 @@
                                                                             </div>
                                                                             <div class="modal-body">
                                                                                 <p>¿Desea eliminar permanentemente el usuario 
-                                                                                    <?= $row['name']?>?
+                                                                                    <?= $row['username']?>?
                                                                                 </p>
                                                                             </div>
                                                                             <div
@@ -126,7 +126,7 @@
                                                                 <!-- Button trigger modal -->
                                                                 <button type="button" class="btn btn-primary"
                                                                     data-toggle="modal"
-                                                                    data-target="#modal-sm-des-<?=$row['name']?>">
+                                                                    data-target="#modal-sm-des-<?=$row['username']?>">
                                                                     <i class="fa fa-power-off" aria-hidden="true"></i>
                                                                 </button>
 
@@ -134,7 +134,7 @@
                                                                     value="<?php echo $row['id'];?>" name="id">
 
                                                                 <div class="modal fade"
-                                                                    id="modal-sm-des-<?=$row['name'];?>">
+                                                                    id="modal-sm-des-<?=$row['username'];?>">
                                                                     <div class="modal-dialog modal-sm">
                                                                         <div class="modal-content">
                                                                             <div class="modal-header">
@@ -150,7 +150,7 @@
                                                                             </div>
                                                                             <div class="modal-body">
                                                                                 <p>¿Desea desactivar el usuario de
-                                                                                    <?= $row['name']?>?
+                                                                                    <?= $row['username']?>?
                                                                                 </p>
                                                                             </div>
                                                                             <div
@@ -180,7 +180,7 @@
                                                                 <!-- Button trigger modal -->
                                                                 <button type="button" class="btn btn-secondary"
                                                                     data-toggle="modal"
-                                                                    data-target="#modal-sm-act-<?=$row['name'];?>">
+                                                                    data-target="#modal-sm-act-<?=$row['username'];?>">
                                                                     <i class="fa fa-power-off" aria-hidden="true"></i>
                                                                 </button>
 
@@ -188,7 +188,7 @@
                                                                     value="<?php echo $row['id'];?>" name="id">
 
                                                                 <div class="modal fade"
-                                                                    id="modal-sm-act-<?=$row['name']?>">
+                                                                    id="modal-sm-act-<?=$row['username']?>">
                                                                     <div class="modal-dialog modal-sm">
                                                                         <div class="modal-content">
                                                                             <div class="modal-header">
@@ -203,7 +203,7 @@
                                                                             </div>
                                                                             <div class="modal-body">
                                                                                 <p>¿Desea activar el usuario de
-                                                                                    <?= $row['name']?>?
+                                                                                    <?= $row['username']?>?
                                                                                 </p>
                                                                             </div>
                                                                             <div

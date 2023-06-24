@@ -52,9 +52,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <div class="col-sm-3">
                                                 <!-- text input -->
                                                 <div class="form-group">
-                                                    <label>Nombre</label>
-                                                    <input id="name" type="text" name="name" class="form-control"
-                                                        placeholder="Ingrese nombre aquí...">
+                                                    <label>Nombre de usuario</label>
+                                                    <input id="username" type="text" name="username" class="form-control"
+                                                        placeholder="Ingrese nombre de usuario aquí...">
                                                 </div>
 
                                                 <!-- <div class="form-group">

@@ -23,19 +23,19 @@ class UsersDAO {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     
-    public function insertUser($name, $email, $state) {
-        $stmt = $this->conn->prepare("INSERT INTO users (name, email, password, state) VALUES (:name, :email, MD5(:password), :state)");
-        $stmt->bindParam(":name", $name);
+    public function insertUser($username, $email, $state) {
+        $stmt = $this->conn->prepare("INSERT INTO users (username, email, password, state) VALUES (:username, :email, MD5(:password), :state)");
+        $stmt->bindParam(":username", $username);
         $stmt->bindParam(":email", $email);
         $stmt->bindValue(":password", 'Mesa2020');
         $stmt->bindParam(":state", $state);
         return $stmt->execute();
     }
     
-    public function updateUser($id, $name, $email, $state) {
-        $stmt = $this->conn->prepare("UPDATE users SET name = :name, email = :email, state = :state WHERE id = :id");
+    public function updateUser($id, $username, $email, $state) {
+        $stmt = $this->conn->prepare("UPDATE users SET username = :username, email = :email, state = :state WHERE id = :id");
         $stmt->bindParam(":id", $id);
-        $stmt->bindParam(":name", $name);
+        $stmt->bindParam(":username", $username);
         $stmt->bindParam(":email", $email);
         $stmt->bindParam(":state", $state);
         return $stmt->execute();
