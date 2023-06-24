@@ -13,7 +13,7 @@
         <h6>Tipo de usuario:</h6>
         <p>Administrador</p>
 
-        <a href="?control=Users&action=set_up" class="justify-content-md-end">
+        <a href="<?php echo $this->raiz; ?>/users/setup" class="justify-content-md-end">
             <button type="button" class="btn btn-warning">
                 ⚙ Configurar
             </button>
