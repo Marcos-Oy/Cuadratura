@@ -56,11 +56,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     <input id="name" type="text" name="name" class="form-control"
                                                         placeholder="Ingrese nombre aquí...">
                                                 </div>
-                                                <div class="form-group">
+
+                                                <!-- <div class="form-group">
                                                     <label>Contraseña</label>
                                                     <input id="password" name="password" type="password" class="form-control"
                                                         placeholder="Ingrese contraseña...">
-                                                </div>
+                                                </div> -->
 
                                                 <div class="form-group">
                                                     <label>Correo</label>
@@ -77,9 +78,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <div class="form-group">
                                                     <label>Seleccionar Estado</label>
                                                     <select id="state" name="state" class="form-control">
-
-                                                        <option selected value="1">Activado</option>
-                                                        <option value="0">Desactivado</option>
+                                                        <!-- Los values están inversos porque el setState de UsersModel los invierte -->
+                                                        <option selected value="0">Activado</option>
+                                                        <option value="1">Desactivado</option>
 
                                                     </select>
                                                 </div>

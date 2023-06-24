@@ -23,21 +23,20 @@ class UsersDAO {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     
-    public function insertUser($name, $email, $password, $state) {
+    public function insertUser($name, $email, $state) {
         $stmt = $this->conn->prepare("INSERT INTO users (name, email, password, state) VALUES (:name, :email, MD5(:password), :state)");
         $stmt->bindParam(":name", $name);
         $stmt->bindParam(":email", $email);
-        $stmt->bindParam(":password", $password);
+        $stmt->bindValue(":password", 'Mesa2020');
         $stmt->bindParam(":state", $state);
         return $stmt->execute();
     }
     
-    public function updateUser($id, $name, $email, $password, $state) {
-        $stmt = $this->conn->prepare("UPDATE users SET name = :name, email = :email, password = MD5(:password), state = :state WHERE id = :id");
+    public function updateUser($id, $name, $email, $state) {
+        $stmt = $this->conn->prepare("UPDATE users SET name = :name, email = :email, state = :state WHERE id = :id");
         $stmt->bindParam(":id", $id);
         $stmt->bindParam(":name", $name);
         $stmt->bindParam(":email", $email);
-        $stmt->bindParam(":password", $password);
         $stmt->bindParam(":state", $state);
         return $stmt->execute();
     }
@@ -49,7 +48,7 @@ class UsersDAO {
         return $stmt->execute();
     }
     
-    public function updateState($id,$state) {
+    public function updateState($id, $state) {
         $stmt = $this->conn->prepare("UPDATE users SET state = :state WHERE id = :id");
         $stmt->bindParam(":id", $id);
         $stmt->bindParam(":state", $state);

@@ -59,11 +59,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     <input id="name" type="text" name="name" class="form-control"
                                                         value="<?php echo $result['name'];?>">
                                                 </div>
-                                                <div class="form-group">
+
+                                                <!-- <div class="form-group">
                                                     <label>Contraseña</label>
                                                     <input id="password" name="password" type="password"
-                                                        class="form-control" value="<?php echo $result['password'];?>">
-                                                </div>
+                                                        class="form-control" value="<?php// echo $result['password'];?>">
+                                                </div> -->
 
                                                 <div class="form-group">
                                                     <label>Correo</label>

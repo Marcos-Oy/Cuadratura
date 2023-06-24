@@ -94,11 +94,10 @@ class UsersController {
     {   
         $this->usersModel->setName($_POST['name']);
         $this->usersModel->setEmail($_POST['email']);
-        $this->usersModel->setPassword($_POST['password']);
         $this->usersModel->setState($_POST['state']);
     
-        $id = $this->usersDAO->insertUser($this->usersModel->getName(),$this->usersModel->getEmail(),
-        $this->usersModel->getPassword(),$this->usersModel->getState());
+        $id = $this->usersDAO->insertUser($this->usersModel->getName(),$this->usersModel->getEmail()
+        ,$this->usersModel->getState());
     
         return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/create");
     }
@@ -108,11 +107,10 @@ class UsersController {
         $this->usersModel->setId($_POST['id']);
         $this->usersModel->setName($_POST['name']);
         $this->usersModel->setEmail($_POST['email']);
-        $this->usersModel->setPassword($_POST['password']);
         $this->usersModel->setState($_POST['state']);
 
         $id = $this->usersDAO->updateUser($this->usersModel->getId(),$this->usersModel->getName(),
-        $this->usersModel->getEmail(),$this->usersModel->getPassword(),$this->usersModel->getState());
+        $this->usersModel->getEmail(),$this->usersModel->getState());
 
         return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/edit");
     }

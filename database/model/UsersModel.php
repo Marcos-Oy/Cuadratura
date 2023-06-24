@@ -27,7 +27,7 @@ class UsersModel{
     }
     public function setName($name): self 
     { 
-        $this->name = ucwords(strtolower($name)); 
+        $this->name = strtoupper(str_replace(' ', '', $name)); 
         return $this; 
     }
 
