@@ -40,8 +40,8 @@
                                     </h2>
                                 </div>
                                 <!-- /.card-header -->
-                                <div class="card-body">
-                                    <table id="UsersTable" class="table table-bordered table-striped">
+                                <div class="card-body table-responsive">
+                                    <table id="UsersTable" class="table table-striped table-bordered table-condensed table-hover">
                                         <thead>
                                             <tr>
                                                 <th>id</th>
@@ -268,6 +268,11 @@
     <!-- jQuery -->
     <script src="<?php echo $this->raiz; ?>/public/plugins/jquery/jquery.min.js"></script>
 
+    <!-- Bootstrap 4 -->
+    <script src="<?php echo $this->raiz; ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="<?php echo $this->raiz; ?>/public/dist/js/adminlte.min.js"></script>
+
     <!-- DataTables -->
     <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
@@ -277,7 +282,6 @@
     <script src="<?php echo $this->raiz; ?>/public/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="<?php echo $this->raiz; ?>/public/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
     <script src="<?php echo $this->raiz; ?>/public/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="<?php echo $this->raiz; ?>/public/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
     <script src="<?php echo $this->raiz; ?>/public/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
     <script src="<?php echo $this->raiz; ?>/public/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
     <script src="<?php echo $this->raiz; ?>/public/plugins/jszip/jszip.min.js"></script>
@@ -286,14 +290,11 @@
     <script src="<?php echo $this->raiz; ?>/public/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
     <script src="<?php echo $this->raiz; ?>/public/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="<?php echo $this->raiz; ?>/public/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    
+
+    
     <!-- JS de tables -->
     <script src="<?php echo $this->raiz; ?>/resources/assets/js/tables.js"></script>
-
-    <!-- Bootstrap 4 -->
-    <script src="<?php echo $this->raiz; ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="<?php echo $this->raiz; ?>/public/dist/js/adminlte.min.js"></script>
-
 
 </body>
 
