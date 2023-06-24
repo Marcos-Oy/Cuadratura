@@ -134,5 +134,14 @@ class UsersController {
 
         return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/show");
     }
+
+    public function dropUser()
+    {   
+        $this->usersModel->setId($_POST['id']);
+
+        $id = $this->usersDAO->deleteUser($this->usersModel->getId());
+
+        return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/show");
+    }
 }
 

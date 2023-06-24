@@ -24,7 +24,7 @@ class UsersDAO {
     }
     
     public function insertUser($name, $email, $password, $state) {
-        $stmt = $this->conn->prepare("INSERT INTO users (name, email, password, state) VALUES (:name, :email, :password, :state)");
+        $stmt = $this->conn->prepare("INSERT INTO users (name, email, password, state) VALUES (:name, :email, MD5(:password), :state)");
         $stmt->bindParam(":name", $name);
         $stmt->bindParam(":email", $email);
         $stmt->bindParam(":password", $password);
@@ -33,7 +33,7 @@ class UsersDAO {
     }
     
     public function updateUser($id, $name, $email, $password, $state) {
-        $stmt = $this->conn->prepare("UPDATE users SET name = :name, email = :email, password = :password, state = :state WHERE id = :id");
+        $stmt = $this->conn->prepare("UPDATE users SET name = :name, email = :email, password = MD5(:password), state = :state WHERE id = :id");
         $stmt->bindParam(":id", $id);
         $stmt->bindParam(":name", $name);
         $stmt->bindParam(":email", $email);
@@ -43,7 +43,7 @@ class UsersDAO {
     }
 
     public function passwordReset($id) {
-        $stmt = $this->conn->prepare("UPDATE users SET password = :password WHERE id = :id");
+        $stmt = $this->conn->prepare("UPDATE users SET password = MD5(:password) WHERE id = :id");
         $stmt->bindParam(":id", $id);
         $stmt->bindValue(":password", 'Mesa2020');
         return $stmt->execute();

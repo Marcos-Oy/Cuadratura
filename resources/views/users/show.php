@@ -70,11 +70,51 @@
 
                                                         &nbsp;&nbsp;
                                                         <div class="form-group">
-                                                            <form method='POST' action=''>
-                                                                <button class="btn btn-danger" type='submit' name='id'
-                                                                    value=<?= $row['id'];?>>
+                                                            <form method='POST' action='<?php echo $this->raiz; ?>/drop/user'>
+
+                                                                <!-- Button trigger modal -->
+                                                                <button type="button" class="btn btn-danger"
+                                                                    data-toggle="modal"
+                                                                    data-target="#modal-sm-trash-<?=$row['name']?>">
                                                                     <i class="fas fa-trash" aria-hidden="true"></i>
                                                                 </button>
+
+                                                                <div class="modal fade"
+                                                                    id="modal-sm-trash-<?=$row['name'];?>">
+                                                                    <div class="modal-dialog modal-sm">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h4 class="modal-title">Eliminar
+                                                                                    usuario
+                                                                                </h4>
+                                                                                <button type="button" class="close"
+                                                                                    data-dismiss="modal"
+                                                                                    aria-label="Close">
+                                                                                    <span
+                                                                                        aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <p>¿Desea eliminar permanentemente el usuario 
+                                                                                    <?= $row['name']?>?
+                                                                                </p>
+                                                                            </div>
+                                                                            <div
+                                                                                class="modal-footer justify-content-between">
+                                                                                <button type="button"
+                                                                                    class="btn btn-default"
+                                                                                    data-dismiss="modal">Cancelar</button>
+                                                                                <button class="btn btn-danger"
+                                                                                    type='submit' name='id'
+                                                                                    value=<?=$row['id']?>>
+                                                                                    Aceptar
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- /.modal-content -->
+                                                                    </div>
+                                                                    <!-- /.modal-dialog -->
+                                                                </div>
                                                             </form>
                                                         </div>
 
