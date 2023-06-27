@@ -2,9 +2,6 @@
 
 namespace Database\ModelDAO;
 
-use PDO;
-use PDOException;
-
 class UsersDAO {
     private $conn;
 
@@ -13,70 +10,73 @@ class UsersDAO {
     }
 
     public function getAllUsers() {
-        $stmt = $this->conn->prepare("SELECT * FROM users");
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt = oci_parse($this->conn, "SELECT * FROM users");
+        oci_execute($stmt);
+        $result = [];
+        while ($row = oci_fetch_assoc($stmt)) {
+            $result[] = $row;
+        }
+        return $result;
     }
 
     public function getUserByUsername($username, $password) {
-        $stmt = $this->conn->prepare("SELECT * FROM users WHERE username = :username AND password = :password");
-        $stmt->bindParam(":username", $username);
-        $stmt->bindParam(":password", $password);
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt = oci_parse($this->conn, "SELECT * FROM users WHERE username = :username AND password = :password");
+        oci_bind_by_name($stmt, ":username", $username);
+        oci_bind_by_name($stmt, ":password", $password);
+        oci_execute($stmt);
+        return oci_fetch_assoc($stmt);
     }    
 
     public function getUserById($id) {
-        $stmt = $this->conn->prepare("SELECT * FROM users WHERE id = :id");
-        $stmt->bindParam(":id", $id);
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt = oci_parse($this->conn, "SELECT * FROM users WHERE id = :id");
+        oci_bind_by_name($stmt, ":id", $id);
+        oci_execute($stmt);
+        return oci_fetch_assoc($stmt);
     }
 
     public function insertUser($username, $email, $password, $state) {
-        $stmt = $this->conn->prepare("INSERT INTO users (username, email, password, state) VALUES (:username, :email, :password, :state)");
-        $stmt->bindParam(":username", $username);
-        $stmt->bindParam(":email", $email);
-        $stmt->bindParam(":password", $password);
-        $stmt->bindParam(":state", $state);
-        return $stmt->execute();
+        $stmt = oci_parse($this->conn, "INSERT INTO users (username, email, password, state) VALUES (:username, :email, :password, :state)");
+        oci_bind_by_name($stmt, ":username", $username);
+        oci_bind_by_name($stmt, ":email", $email);
+        oci_bind_by_name($stmt, ":password", $password);
+        oci_bind_by_name($stmt, ":state", $state);
+        return oci_execute($stmt);
     }
 
     public function updateUser($id, $username, $email, $state) {
-        $stmt = $this->conn->prepare("UPDATE users SET username = :username, email = :email, state = :state WHERE id = :id");
-        $stmt->bindParam(":id", $id);
-        $stmt->bindParam(":username", $username);
-        $stmt->bindParam(":email", $email);
-        $stmt->bindParam(":state", $state);
-        return $stmt->execute();
+        $stmt = oci_parse($this->conn, "UPDATE users SET username = :username, email = :email, state = :state WHERE id = :id");
+        oci_bind_by_name($stmt, ":id", $id);
+        oci_bind_by_name($stmt, ":username", $username);
+        oci_bind_by_name($stmt, ":email", $email);
+        oci_bind_by_name($stmt, ":state", $state);
+        return oci_execute($stmt);
     }
 
     public function passwordReset($id) {
-        $stmt = $this->conn->prepare("UPDATE users SET password = :password WHERE id = :id");
-        $stmt->bindParam(":id", $id);
-        $stmt->bindValue(":password", 'Mesa2020');
-        return $stmt->execute();
+        $stmt = oci_parse($this->conn, "UPDATE users SET password = :password WHERE id = :id");
+        oci_bind_by_name($stmt, ":id", $id);
+        oci_bind_by_name($stmt, ":password", 'Mesa2020');
+        return oci_execute($stmt);
     }
 
     public function updateState($id, $state) {
-        $stmt = $this->conn->prepare("UPDATE users SET state = :state WHERE id = :id");
-        $stmt->bindParam(":id", $id);
-        $stmt->bindParam(":state", $state);
-        return $stmt->execute();
+        $stmt = oci_parse($this->conn, "UPDATE users SET state = :state WHERE id = :id");
+        oci_bind_by_name($stmt, ":id", $id);
+        oci_bind_by_name($stmt, ":state", $state);
+        return oci_execute($stmt);
     }
 
     public function deleteUser($id) {
-        $stmt = $this->conn->prepare("DELETE FROM users WHERE id = :id");
-        $stmt->bindParam(":id", $id);
-        return $stmt->execute();
+        $stmt = oci_parse($this->conn, "DELETE FROM users WHERE id = :id");
+        oci_bind_by_name($stmt, ":id", $id);
+        return oci_execute($stmt);
     }
 
     public function updateAuthToken($userId, $token)
     {
-        $stmt = $this->conn->prepare("UPDATE users SET token = :token WHERE id = :id");
-        $stmt->bindParam(":id", $userId);
-        $stmt->bindParam(":token", $token);
-        return $stmt->execute();
+        $stmt = oci_parse($this->conn, "UPDATE users SET token = :token WHERE id = :id");
+        oci_bind_by_name($stmt, ":id", $userId);
+        oci_bind_by_name($stmt, ":token", $token);
+        return oci_execute($stmt);
     }
-
 }

@@ -1,33 +1,36 @@
 <?php
 namespace Config\Connection;
-use PDO;
-use PDOException;
 
 class Database {
-    private $host = "blanco.vtr.cl";
-    private $db_name = "cuadratura";
-    private $username = "cuadratu";
-    private $password = "Mesa2021";
+    private $host = "172.17.136.29";
+    private $db_name = "CUADRATU";
+    private $username = "cuadra";
+    private $password = "Mesa2020";
     public $conn;
     
     public function getConnection() {
         $this->conn = null;
         
         try {
-            $tns = "(DESCRIPTION=(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = " . $this->host . ")(PORT = 1521)))(CONNECT_DATA=(SID=your_sid)))";
-            $this->conn = new PDO("oci:dbname=" . $this->db_name, $this->username, $this->password);
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch(PDOException $exception) {
+            $tns = "(DESCRIPTION=(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = " . $this->host . ")(PORT = 1521)))(CONNECT_DATA=(SID=cuadratura)))";
+            $this->conn = oci_connect($this->username, $this->password, $tns);
+            if (!$this->conn) {
+                $e = oci_error();
+                echo "Error de conexión: " . $e['message'];
+                phpinfo();
+                exit;
+            }
+        } catch(Exception $exception) {
             echo "Error de conexión: " . $exception->getMessage();
-phpinfo();
-
+            phpinfo();
+            exit;
         }
         
         return $this->conn;
     }
     
     public function closeConnection() {
-        $this->conn = null;
+        oci_close($this->conn);
     }
 }
 ?>
