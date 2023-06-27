@@ -57,16 +57,16 @@
                                                 <?php if($rows): ?>
                                                 <?php foreach($rows as $row): ?>
                                                 <tr>
-                                                    <td><?= $row['id'] ?></td>
-                                                    <td><?= $row['username'] ?></td>
-                                                    <td><?= $row['email'] ?></td>
+                                                    <td><?= $row['ID'] ?></td>
+                                                    <td><?= $row['USERNAME'] ?></td>
+                                                    <td><?= $row['EMAIL'] ?></td>
                                                     <td>
                                                         <div class="row">
                                                             <div class="form-group">
                                                                 <form method='POST'
                                                                     action='<?php echo $this->raiz; ?>/users/edit'>
                                                                     <button class="btn btn-warning" type='submit'
-                                                                        name='id' value=<?=$row['id'];?>>
+                                                                        name='ID' value=<?=$row['ID'];?>>
                                                                         <i class="fas fa-pen" aria-hidden="true"></i>
                                                                     </button>
                                                                 </form>
@@ -80,12 +80,12 @@
                                                                     <!-- Button trigger modal -->
                                                                     <button type="button" class="btn btn-danger"
                                                                         data-toggle="modal"
-                                                                        data-target="#modal-sm-trash-<?=$row['username']?>">
+                                                                        data-target="#modal-sm-trash-<?=$row['USERNAME']?>">
                                                                         <i class="fas fa-trash" aria-hidden="true"></i>
                                                                     </button>
 
                                                                     <div class="modal fade"
-                                                                        id="modal-sm-trash-<?=$row['username'];?>">
+                                                                        id="modal-sm-trash-<?=$row['USERNAME'];?>">
                                                                         <div class="modal-dialog modal-sm">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
@@ -102,7 +102,7 @@
                                                                                 <div class="modal-body">
                                                                                     <p>¿Desea eliminar permanentemente
                                                                                         el usuario
-                                                                                        <?= $row['username']?>?
+                                                                                        <?= $row['USERNAME']?>?
                                                                                     </p>
                                                                                 </div>
                                                                                 <div
@@ -111,8 +111,8 @@
                                                                                         class="btn btn-default"
                                                                                         data-dismiss="modal">Cancelar</button>
                                                                                     <button class="btn btn-danger"
-                                                                                        type='submit' name='id'
-                                                                                        value=<?=$row['id']?>>
+                                                                                        type='submit' name='ID'
+                                                                                        value=<?=$row['ID']?>>
                                                                                         Aceptar
                                                                                     </button>
                                                                                 </div>
@@ -124,7 +124,7 @@
                                                                 </form>
                                                             </div>
 
-                                                            <?php if($row['state'] == 1): ?>
+                                                            <?php if($row['USER_STATE'] == 1): ?>
                                                             &nbsp;&nbsp;
                                                             <div class="form-group">
                                                                 <form method='POST'
@@ -133,16 +133,16 @@
                                                                     <!-- Button trigger modal -->
                                                                     <button type="button" class="btn btn-primary"
                                                                         data-toggle="modal"
-                                                                        data-target="#modal-sm-des-<?=$row['username']?>">
+                                                                        data-target="#modal-sm-des-<?=$row['USERNAME']?>">
                                                                         <i class="fa fa-power-off"
                                                                             aria-hidden="true"></i>
                                                                     </button>
 
                                                                     <input type="hidden" class="form-control"
-                                                                        value="<?php echo $row['id'];?>" name="id">
+                                                                        value="<?php echo $row['ID'];?>" name="ID">
 
                                                                     <div class="modal fade"
-                                                                        id="modal-sm-des-<?=$row['username'];?>">
+                                                                        id="modal-sm-des-<?=$row['USERNAME'];?>">
                                                                         <div class="modal-dialog modal-sm">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
@@ -158,7 +158,7 @@
                                                                                 </div>
                                                                                 <div class="modal-body">
                                                                                     <p>¿Desea desactivar el usuario de
-                                                                                        <?= $row['username']?>?
+                                                                                        <?= $row['USERNAME']?>?
                                                                                     </p>
                                                                                 </div>
                                                                                 <div
@@ -167,8 +167,8 @@
                                                                                         class="btn btn-default"
                                                                                         data-dismiss="modal">Cancelar</button>
                                                                                     <button class="btn btn-danger"
-                                                                                        type='submit' name='state'
-                                                                                        value=<?=$row['state']?>>
+                                                                                        type='submit' name='USER_STATE'
+                                                                                        value=<?=$row['USER_STATE']?>>
                                                                                         Aceptar
                                                                                     </button>
                                                                                 </div>
@@ -181,7 +181,7 @@
                                                             </div>
                                                             <?php endif; ?>
 
-                                                            <?php if($row['state'] == 0): ?>
+                                                            <?php if($row['USER_STATE'] == 0): ?>
                                                             &nbsp;&nbsp;
                                                             <div class="form-group">
                                                                 <form method='POST'
@@ -189,16 +189,16 @@
                                                                     <!-- Button trigger modal -->
                                                                     <button type="button" class="btn btn-secondary"
                                                                         data-toggle="modal"
-                                                                        data-target="#modal-sm-act-<?=$row['username'];?>">
+                                                                        data-target="#modal-sm-act-<?=$row['USERNAME'];?>">
                                                                         <i class="fa fa-power-off"
                                                                             aria-hidden="true"></i>
                                                                     </button>
 
                                                                     <input type="hidden" class="form-control"
-                                                                        value="<?php echo $row['id'];?>" name="id">
+                                                                        value="<?php echo $row['ID'];?>" name="ID">
 
                                                                     <div class="modal fade"
-                                                                        id="modal-sm-act-<?=$row['username']?>">
+                                                                        id="modal-sm-act-<?=$row['USERNAME']?>">
                                                                         <div class="modal-dialog modal-sm">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
@@ -214,7 +214,7 @@
                                                                                 </div>
                                                                                 <div class="modal-body">
                                                                                     <p>¿Desea activar el usuario de
-                                                                                        <?= $row['username']?>?
+                                                                                        <?= $row['USERNAME']?>?
                                                                                     </p>
                                                                                 </div>
                                                                                 <div
@@ -223,8 +223,8 @@
                                                                                         class="btn btn-default"
                                                                                         data-dismiss="modal">Cancelar</button>
                                                                                     <button class="btn btn-success"
-                                                                                        type='submit' name='state'
-                                                                                        value=<?=$row['state']?>>
+                                                                                        type='submit' name='USER_STATE'
+                                                                                        value=<?=$row['USER_STATE']?>>
                                                                                         Aceptar
                                                                                     </button>
                                                                                 </div>

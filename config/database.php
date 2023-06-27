@@ -3,7 +3,7 @@ namespace Config\Connection;
 
 class Database {
     private $host = "172.17.136.29";
-    private $db_name = "CUADRATU";
+    private $db_name = "CUADRA";
     private $username = "cuadra";
     private $password = "Mesa2020";
     public $conn;

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Cuadra - Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?php echo $this->raiz; ?>/public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
@@ -36,20 +36,20 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                        <div class="col-lg-6 d-none d-lg-block bg-login-image" style="background-image: url('resources/assets/img/claro_vtr.jpg'); background-size: 450px 300px;"></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">¡Bienvenido de nuevo!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">¡Bienvenido!</h1>
                                     </div>
                                     <form class="user" action="<?php echo $this->raiz; ?>/login" method="POST">
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" name="username"
+                                            <input type="text" class="form-control form-control-user" name="USERNAME"
                                                 placeholder="Nombre de usuario">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                name="password" placeholder="Contraseña">
+                                                name="PASSWORD" placeholder="Contraseña">
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">Iniciar sesión</button>
                                     </form>

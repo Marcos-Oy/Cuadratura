@@ -27,8 +27,8 @@ class AuthController
     public function login()
     {
         // Obtén los datos enviados por el formulario de login
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+        $username = $_POST['USERNAME'];
+        $password = $_POST['PASSWORD'];
     
         // Encripta la contraseña ingresada
         $encryptedPassword = md5($password);
@@ -41,7 +41,7 @@ class AuthController
             $token = bin2hex(random_bytes(16));
     
             // Guarda el token en la base de datos
-            $this->usersDAO->updateAuthToken($user['id'], $token);
+            $this->usersDAO->updateAuthToken($user['ID'], $token);
     
             // Retorna el token como respuesta en formato JSON
             //echo json_encode(['token' => $token]);

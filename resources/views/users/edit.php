@@ -49,15 +49,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="card-body">
                                     <form method="POST" action="<?php echo $this->raiz; ?>/edit/user">
                                         <?php if (!empty($result)): ?>
-                                        <input type="hidden" name="id" value="<?php echo $result['id'];?>">
+                                        <input type="hidden" name="ID" value="<?php echo $result['ID'];?>">
                                         <div class="row">
                                             <!-- COLUMNA 1 -->
                                             <div class="col-sm-12">
                                                 <!-- text input -->
                                                 <div class="form-group">
                                                     <label>Nombre</label>
-                                                    <input id="username" type="text" name="username" class="form-control"
-                                                        value="<?php echo $result['username'];?>">
+                                                    <input id="USERNAME" type="text" name="USERNAME" class="form-control"
+                                                        value="<?php echo $result['USERNAME'];?>">
                                                 </div>
 
                                                 <!-- <div class="form-group">
@@ -73,20 +73,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <span class="input-group-text"><i
                                                                     class="fas fa-envelope"></i></span>
                                                         </div>
-                                                        <input id="email" name="email" type="email" class="form-control"
-                                                            value="<?php echo $result['email'];?>">
+                                                        <input id="EMAIL" name="EMAIL" type="EMAIL" class="form-control"
+                                                            value="<?php echo $result['EMAIL'];?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label>Seleccionar Estado</label>
-                                                    <select id="state" name="state" class="form-control">
-                                                    <!-- Los values están inversos porque el setState de UsersModel los invierte -->
+                                                    <select id="USER_STATE" name="USER_STATE" class="form-control">
+                                                    <!-- Los values están inversos porque el setUSER_STATE de UsersModel los invierte -->
                                                         <option value="0" 
-                                                            <?php if ($result['state'] == 1) echo 'selected'; ?>>
+                                                            <?php if ($result['USER_STATE'] == 1) echo 'selected'; ?>>
                                                             Activado</option>
                                                         <option value="1"
-                                                            <?php if ($result['state'] == 0) echo 'selected'; ?>>
+                                                            <?php if ($result['USER_STATE'] == 0) echo 'selected'; ?>>
                                                             Desactivado</option>
                                                     </select>
                                                 </div>
@@ -111,7 +111,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <form method="POST" action="<?php echo $this->raiz; ?>/reset/password">
-                                        <input type="hidden" value="<?php echo $result['id']; ?>" name="id">
+                                        <input type="hidden" value="<?php echo $result['ID']; ?>" name="ID">
                                         <button type="submit" class="btn btn-warning col-sm-12">⚠ Restablecer ⚠</button>
                                     </form>
                                 </div>

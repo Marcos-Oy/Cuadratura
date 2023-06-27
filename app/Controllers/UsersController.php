@@ -78,7 +78,7 @@ class UsersController {
 
         // Verifica si el archivo de vista existe
         if (file_exists($viewPath)) {
-            $this->usersModel->setId($_POST['id']);
+            $this->usersModel->setId($_POST['ID']);
             $result = $this->usersDAO->getUserById($this->usersModel->getId());
             // Incluye la vista
             include_once $viewPath;
@@ -106,9 +106,9 @@ class UsersController {
 
     public function createUser()
     {   
-        $this->usersModel->setUsername($_POST['username']);
-        $this->usersModel->setEmail($_POST['email']);
-        $this->usersModel->setState($_POST['state']);
+        $this->usersModel->setUsername($_POST['USERNAME']);
+        $this->usersModel->setEmail($_POST['EMAIL']);
+        $this->usersModel->setState($_POST['USER_STATE']);
     
         $id = $this->usersDAO->insertUser($this->usersModel->getUsername(),$this->usersModel->getEmail()
         ,$this->usersModel->getState());
@@ -118,10 +118,10 @@ class UsersController {
 
     public function editUser()
     {   
-        $this->usersModel->setId($_POST['id']);
-        $this->usersModel->setUsername($_POST['username']);
-        $this->usersModel->setEmail($_POST['email']);
-        $this->usersModel->setState($_POST['state']);
+        $this->usersModel->setId($_POST['ID']);
+        $this->usersModel->setUsername($_POST['USERNAME']);
+        $this->usersModel->setEmail($_POST['EMAIL']);
+        $this->usersModel->setState($_POST['USER_STATE']);
 
         $id = $this->usersDAO->updateUser($this->usersModel->getId(),$this->usersModel->getUsername(),
         $this->usersModel->getEmail(),$this->usersModel->getState());
@@ -131,7 +131,7 @@ class UsersController {
 
     public function resetPassword()
     {   
-        $this->usersModel->setId($_POST['id']);
+        $this->usersModel->setId($_POST['ID']);
         $id = $this->usersDAO->passwordReset($this->usersModel->getId());
 
         return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/edit");
@@ -139,8 +139,8 @@ class UsersController {
 
     public function editState()
     {   
-        $this->usersModel->setId($_POST['id']);
-        $this->usersModel->setState($_POST['state']);
+        $this->usersModel->setId($_POST['ID']);
+        $this->usersModel->setState($_POST['USER_STATE']);
 
         $id = $this->usersDAO->updateState($this->usersModel->getId(),$this->usersModel->getState());
 
@@ -149,7 +149,7 @@ class UsersController {
 
     public function dropUser()
     {   
-        $this->usersModel->setId($_POST['id']);
+        $this->usersModel->setId($_POST['ID']);
 
         $id = $this->usersDAO->deleteUser($this->usersModel->getId());
 

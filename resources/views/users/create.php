@@ -53,7 +53,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <!-- text input -->
                                                 <div class="form-group">
                                                     <label>Nombre de usuario</label>
-                                                    <input id="username" type="text" name="username" class="form-control"
+                                                    <input id="USERNAME" type="text" name="USERNAME" class="form-control"
                                                         placeholder="Ingrese nombre de usuario aquí...">
                                                 </div>
 
@@ -70,14 +70,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <span class="input-group-text"><i
                                                                     class="fas fa-envelope"></i></span>
                                                         </div>
-                                                        <input id="email" name="email" type="email" class="form-control"
+                                                        <input id="EMAIL" name="EMAIL" type="EMAIL" class="form-control"
                                                             placeholder="Ingrese email aquí...">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label>Seleccionar Estado</label>
-                                                    <select id="state" name="state" class="form-control">
+                                                    <select id="USER_STATE" name="USER_STATE" class="form-control">
                                                         <!-- Los values están inversos porque el setState de UsersModel los invierte -->
                                                         <option selected value="0">Activado</option>
                                                         <option value="1">Desactivado</option>
