@@ -2,6 +2,7 @@
 
 use App\Controllers\HomeController;
 use App\Controllers\UsersController;
+use App\Controllers\AuthController;
 global $raiz;
 
 // Rutas GET
@@ -21,6 +22,11 @@ $router->post($raiz.'/edit/user', [UsersController::class, 'editUser']);
 $router->post($raiz.'/edit/state', [UsersController::class, 'editState']);
 $router->post($raiz.'/drop/user', [UsersController::class, 'dropUser']);
 
+// Rutas del login
+$router->post($raiz.'/login', [AuthController::class, 'login']);
+$router->get($raiz.'/logout', [AuthController::class, 'logout']);
+
+?>
 
 
 
@@ -28,8 +34,7 @@ $router->post($raiz.'/drop/user', [UsersController::class, 'dropUser']);
 
 
 
-// // Rutas PUT
-// $router->put($raiz.'/ruta/{id}', [XController::class, 'metodo']);
-// // Rutas DELETE
-// $router->delete($raiz.'/ruta/{id}', [XController::class, 'metodo']);
+
+
+
 

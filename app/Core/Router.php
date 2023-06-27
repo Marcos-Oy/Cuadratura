@@ -2,6 +2,7 @@
 
 class Router {
     private $routes = [];
+    private $beforeMiddleware = null;
 
     public function get($route, $handler) {
         $this->routes['GET'][$route] = $handler;
@@ -25,4 +26,16 @@ class Router {
         }
         return null;
     }
+
+    public function before($callback) {
+        $this->beforeMiddleware = $callback;
+    }
+
+    public function runBeforeMiddleware($method, $route) {
+        if ($this->beforeMiddleware !== null) {
+            $callback = $this->beforeMiddleware;
+            $callback($method, $route);
+        }
+    }
 }
+
