@@ -2,25 +2,22 @@
 namespace Config\Connection;
 use PDO;
 use PDOException;
-
+// En un archivo llamado "Database.php"
 class Database {
-    private $host = "blanco.vtr.cl";
-    private $db_name = "cuadratura";
-    private $username = "cuadratu";
-    private $password = "Mesa2021";
+    private $host = "localhost";
+    private $db_name = "app";
+    private $username = "root";
+    private $password = "admin";
     public $conn;
     
     public function getConnection() {
         $this->conn = null;
         
         try {
-            $tns = "(DESCRIPTION=(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = " . $this->host . ")(PORT = 1521)))(CONNECT_DATA=(SID=your_sid)))";
-            $this->conn = new PDO("oci:dbname=" . $this->db_name, $this->username, $this->password);
+            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch(PDOException $exception) {
             echo "Error de conexión: " . $exception->getMessage();
-phpinfo();
-
         }
         
         return $this->conn;
@@ -30,4 +27,6 @@ phpinfo();
         $this->conn = null;
     }
 }
+
+
 ?>
