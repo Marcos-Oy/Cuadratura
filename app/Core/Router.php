@@ -28,17 +28,6 @@ class Router {
         return null;
     }
 
-    public function before($callback) {
-        $this->beforeMiddleware = $callback;
-    }
-
-    public function runBeforeMiddleware($method, $route) {
-        if ($this->beforeMiddleware !== null) {
-            $callback = $this->beforeMiddleware;
-            $callback($method, $route);
-        }
-    }
-
     public function handleRequest($currentRoute, $method) {
         // Encontrar y llamar al controlador correspondiente según la ruta y el método de solicitud
         $routeHandler = $this->findRoute($currentRoute, $method);

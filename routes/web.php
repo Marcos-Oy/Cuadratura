@@ -1,13 +1,7 @@
 <?php
-use App\Core\Router;
 use App\Controllers\HomeController;
 use App\Controllers\UsersController;
 use App\Controllers\AuthController;
-
-
-// Configuración inicial del enrutador (Router)
-$router = new Router();
-
 
 // El usuario no ha iniciado sesión, redirigir a la ruta
 if(!isset($_SESSION['TOKEN'])){
