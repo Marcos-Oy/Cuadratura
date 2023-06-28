@@ -1,30 +1,35 @@
 <?php
-
+use App\Core\Router;
 use App\Controllers\HomeController;
 use App\Controllers\UsersController;
 use App\Controllers\AuthController;
-global $raiz;
+
+
+// Configuración inicial del enrutador (Router)
+$router = new Router();
+
 
 // El usuario no ha iniciado sesión, redirigir a la ruta
 if(!isset($_SESSION['TOKEN'])){
-    // Rutas del login
+    // Rutas del login GET
     $router->get($raiz.'/', [AuthController::class, 'show']);
+    // Rutas del login POST
     $router->post($raiz.'/login', [AuthController::class, 'login']);
 }
 
 // El usuario ha iniciado sesión, redirigir a la ruta
 if (isset($_SESSION['TOKEN'])) { 
-    // Rutas del login
+    // Rutas del login POST
     $router->post($raiz.'/logout', [AuthController::class, 'logout']);
     
-    //rotas dashboard
+    //Rutas dashboard GET
     $router->get($raiz.'/Home/dashboard', [HomeController::class, 'index']);
 
-    // Rutas usuarios
+    // Rutas usuarios GET
     $router->get($raiz.'/users/show', [UsersController::class, 'index']);
     $router->get($raiz.'/users/create', [UsersController::class, 'create']);
     $router->get($raiz.'/users/setup', [UsersController::class, 'setup']);
-
+    // Rutas usuarios POST
     $router->post($raiz.'/create/user', [UsersController::class, 'createUser']);
     $router->post($raiz.'/users/edit', [UsersController::class, 'edit']);
     $router->post($raiz.'/edit/user', [UsersController::class, 'editUser']);

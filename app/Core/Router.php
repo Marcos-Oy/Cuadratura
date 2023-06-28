@@ -1,4 +1,5 @@
 <?php
+namespace App\Core;
 
 class Router {
     private $routes = [];
@@ -37,5 +38,19 @@ class Router {
             $callback($method, $route);
         }
     }
+
+    public function handleRequest($currentRoute, $method) {
+        // Encontrar y llamar al controlador correspondiente según la ruta y el método de solicitud
+        $routeHandler = $this->findRoute($currentRoute, $method);
+        if ($routeHandler !== null) {
+            $controller = new $routeHandler[0]();
+            $action = $routeHandler[1];
+            $controller->$action();
+        } else {
+            // Si no se encuentra ninguna ruta válida, mostrar una página de error o redirigir a una página predeterminada.
+            echo "404 Not Found";
+        }
+    }
 }
 
+?>

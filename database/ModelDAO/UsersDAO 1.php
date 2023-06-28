@@ -2,8 +2,8 @@
 
 namespace Database\ModelDAO;
 
-// use PDO;
-// use PDOException;
+use PDO;
+use PDOException;
 
 class UsersDAO {
     private $conn;
