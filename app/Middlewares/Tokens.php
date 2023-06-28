@@ -40,8 +40,8 @@ class Tokens
     {
         session_start();
     
-        // Tiempo de inactividad permitido en segundos (30 segundos en este caso)
-        $inactivityTimeout = 30;
+        // Tiempo de inactividad permitido en segundos (15 minutos en este caso)
+        $inactivityTimeout = 900;
     
         // Verificar si existe una marca de tiempo de última actividad en la sesión
         if (isset($_SESSION['last_activity'])) {
