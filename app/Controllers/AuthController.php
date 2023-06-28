@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Middleware\Tokens;
 use Config\Connection\Database;
 use Database\ModelDAO\UsersDAO;
 use Database\Model\UsersModel;
@@ -47,28 +48,29 @@ class AuthController
         // Obtén los datos enviados por el formulario de login
         $username = $_POST['USERNAME'];
         $password = $_POST['PASSWORD'];
-    
+
         // Encripta la contraseña ingresada
         $encryptedPassword = md5($password);
-    
+
         // Valida las credenciales del usuario
         $user = $this->usersDAO->getUserByUsername($username, $encryptedPassword);
-    
+
         if ($user) {
             // Genera un token de autenticación
             $token = bin2hex(random_bytes(16));
-    
             // Guarda el token en la base de datos
             $this->usersDAO->updateAuthToken($user['ID'], $token);
-    
-            // Retorna el token como respuesta en formato JSON
-            //echo json_encode(['token' => $token]);
-            
             // Asignar el valor de TOKEN a la sesión
             $_SESSION['TOKEN'] = $token;
-
-            // Obtén la ruta completa de la vista
-            header("Location: " . $this->raiz . "/Home/dashboard");
+            // Valida si el token se asignó correctamente
+            if ($_SESSION['TOKEN'] === $token) {
+                // El token es válido, puedes continuar con la lógica del controlador
+                // Obtén la ruta completa de la vista
+                header("Location: " . $this->raiz . "/Home/dashboard");
+            } else {
+                // El token es inválido, puedes redirigir al usuario o mostrar un mensaje de error
+                echo 'EL token no se asignó correctamente AuthController -> Login() -> $_SESSION[TOKEN] = $token; -> if ($_SESSION[TOKEN] === $token)';
+            }
         } else {
             // Error de autenticación
             echo json_encode(['error' => 'Credenciales incorrectas']);
@@ -78,6 +80,7 @@ class AuthController
             session_destroy();
         }
     }
+
 
     public function logout()
     {

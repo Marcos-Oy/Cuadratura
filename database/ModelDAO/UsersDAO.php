@@ -34,6 +34,13 @@ class UsersDAO {
         return oci_fetch_assoc($stmt);
     }
 
+    public function getUserByToken($token) {
+        $stmt = oci_parse($this->conn, "SELECT * FROM cut_web_users WHERE token = :token");
+        oci_bind_by_name($stmt, ":token", $token);
+        oci_execute($stmt);
+        return oci_fetch_assoc($stmt);
+    }
+
     public function insertUser($username, $email, $password, $state) {
         $stmt = oci_parse($this->conn, "INSERT INTO cut_web_users (username, email, password, user_state) VALUES (:username, :email, :password, :state)");
         oci_bind_by_name($stmt, ":username", $username);
@@ -84,11 +91,19 @@ class UsersDAO {
 
     public function updateAuthToken($userId, $token)
     {
-        $stmt = oci_parse($this->conn, "UPDATE cut_web_users SET token = :token WHERE id = :id");
+        // Calcula la fecha y hora de expiración sumando 15 minutos a la fecha actual
+        $expirationDateTime = "SYSTIMESTAMP + INTERVAL '15' MINUTE";
+        
+        // Actualiza el token y la fecha de expiración en la tabla de usuarios
+        $stmt = oci_parse($this->conn, "UPDATE cut_web_users SET token = :token, token_expiration = $expirationDateTime WHERE id = :id");
         oci_bind_by_name($stmt, ":id", $userId);
         oci_bind_by_name($stmt, ":token", $token);
         $result = oci_execute($stmt);
         oci_commit($this->conn); // Agregamos el commit después de la ejecución exitosa
         return $result;
     }
+    
+    
+    
+    
 }
