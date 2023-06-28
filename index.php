@@ -6,7 +6,16 @@ require_once __DIR__ . '/app/Controllers/UsersController.php';
 require_once __DIR__ . '/app/Controllers/AuthController.php';
 require_once __DIR__ . '/database/ModelDAO/UsersDAO.php'; // Asegúrate de incluir el archivo del ModelDAO correspondiente
 
-$raiz = '/Cuadratura';
+$raiz = '/Cuadratura'; //la raíz es el nombre del proyecto, esta se usa en todo el proyecto.
+
+session_start();
+
+if (isset($_SESSION['TOKEN']) && $_SERVER['REQUEST_URI'] === $raiz . "/") {
+    // Destruye todas las variables de sesión
+    session_unset();
+    // Destruye la sesión
+    session_destroy();
+}
 
 // Configuración inicial del enrutador (router)
 $router = new Router();
@@ -87,20 +96,3 @@ function tokenHasExpired($expirationDate) {
     return false;
 }
 
-// Función para obtener la conexión PDO (debes ajustarla según tu configuración)
-function getConnection() {
-    $host = 'localhost';
-    $dbname = 'nombre_de_la_base_de_datos';
-    $username = 'nombre_de_usuario';
-    $password = 'contraseña';
-
-    try {
-        $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        return $conn;
-    } catch (PDOException $e) {
-        // Manejo del error de conexión
-        echo "Error de conexión a la base de datos: " . $e->getMessage();
-        exit;
-    }
-}

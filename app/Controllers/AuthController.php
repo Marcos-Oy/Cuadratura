@@ -24,6 +24,24 @@ class AuthController
         $this->raiz = $raiz;
     }
 
+    public function show()
+    {
+        // Definir el valor de $raiz
+        global $raiz;
+
+        // Obtén la ruta completa de la vista
+        $viewPath = __DIR__ . '/../../resources/views/login/login.php';
+
+        // Verifica si el archivo de vista existe
+        if (file_exists($viewPath)) {
+            // Incluye la vista
+            include_once $viewPath;
+        } else {
+            // Si la vista no existe, muestra un mensaje de error
+            echo "Error: la vista no existe";
+        }   
+    }
+
     public function login()
     {
         // Obtén los datos enviados por el formulario de login
@@ -45,12 +63,19 @@ class AuthController
     
             // Retorna el token como respuesta en formato JSON
             //echo json_encode(['token' => $token]);
+            
+            // Asignar el valor de TOKEN a la sesión
+            $_SESSION['TOKEN'] = $token;
 
             // Obtén la ruta completa de la vista
-            header("Location:$this->raiz/Home/dashboard");
+            header("Location: " . $this->raiz . "/Home/dashboard");
         } else {
             // Error de autenticación
             echo json_encode(['error' => 'Credenciales incorrectas']);
+            // Destruye todas las variables de sesión
+            session_unset();
+            // Destruye la sesión
+            session_destroy();
         }
     }
 
@@ -58,11 +83,17 @@ class AuthController
     {
         // Obtén el token de autenticación enviado en la solicitud
         $token = $_SERVER['HTTP_AUTH_TOKEN'];
-
+    
         // Invalida el token de autenticación en la base de datos
         $this->usersDAO->updateAuthToken($token, '');
 
-        // Retorna un mensaje de éxito
-        echo json_encode(['message' => 'Logout exitoso']);
+        // Destruye todas las variables de sesión
+        session_unset();
+
+        // Destruye la sesión
+        session_destroy();
+    
+        // Redirige al usuario a la página de inicio de sesión
+        header("Location: $this->raiz/");
     }
 }

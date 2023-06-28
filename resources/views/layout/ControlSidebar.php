@@ -1,8 +1,7 @@
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
-    <div class="p-3">
-
+    <div class="p-3 d-flex flex-column">
         <u>
             <h5>Información de usuario</h5>
         </u>
@@ -18,6 +17,14 @@
                 ⚙ Configurar
             </button>
         </a>
+        
+        &nbsp;&nbsp;
+
+        <form action="<?php echo $this->raiz; ?>/logout" method="POST">
+            <button type="submit" class="btn btn-danger">
+                🚪 Salir
+            </button>
+        </form>
     </div>
 </aside>
 <!-- /.control-sidebar -->
