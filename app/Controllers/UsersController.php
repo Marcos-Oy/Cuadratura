@@ -88,13 +88,15 @@ class UsersController {
 
     public function createUser()
     {   
+        $this->usersModel->setId($_POST['ID']);
         $this->usersModel->setUsername($_POST['USERNAME']);
         $this->usersModel->setEmail($_POST['EMAIL']);
+        $this->usersModel->setPassword('Mesa2020');
         $this->usersModel->setState($_POST['USER_STATE']);
     
-        $id = $this->usersDAO->insertUser($this->usersModel->getUsername(),$this->usersModel->getEmail()
-        ,$this->usersModel->getState());
-    
+        $id = $this->usersDAO->insertUser($this->usersModel->getId(),$this->usersModel->getUsername(),$this->usersModel->getEmail()
+        ,$this->usersModel->getPassword(), $this->usersModel->getState());
+        // var_dump ($id);
         return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/create");
     }
 
@@ -114,7 +116,8 @@ class UsersController {
     public function resetPassword()
     {   
         $this->usersModel->setId($_POST['ID']);
-        $id = $this->usersDAO->passwordReset($this->usersModel->getId());
+        $this->usersModel->setPassword('Mesa2020');
+        $id = $this->usersDAO->passwordReset($this->usersModel->getId(),$this->usersModel->getPassword());
 
         return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/edit");
     }

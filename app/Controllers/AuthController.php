@@ -54,26 +54,41 @@ class AuthController
 
         // Valida las credenciales del usuario
         $user = $this->usersDAO->getUserByUsername($username, $encryptedPassword);
+        // Genera un token de autenticación
+        $token = bin2hex(random_bytes(16));
+        // Guarda el token en la base de datos
+        $this->usersDAO->updateAuthToken($user['ID'], $token);
+        // Asignar el valor de TOKEN a la sesión
+        $_SESSION['TOKEN'] = $token;
 
-        if ($user) {
-            // Genera un token de autenticación
-            $token = bin2hex(random_bytes(16));
-            // Guarda el token en la base de datos
-            $this->usersDAO->updateAuthToken($user['ID'], $token);
-            // Asignar el valor de TOKEN a la sesión
-            $_SESSION['TOKEN'] = $token;
-            // Valida si el token se asignó correctamente
-            if ($_SESSION['TOKEN'] === $token) {
-                // El token es válido, puedes continuar con la lógica del controlador
-                // Obtén la ruta completa de la vista
-                header("Location: " . $this->raiz . "/Home/dashboard");
-            } else {
-                // El token es inválido, puedes redirigir al usuario o mostrar un mensaje de error
-                echo 'EL token no se asignó correctamente AuthController -> Login() -> $_SESSION[TOKEN] = $token; -> if ($_SESSION[TOKEN] === $token)';
-            }
-        } else {
+        /**
+         * @author Marcos Oyarzo
+         * si quiero que me aparezcan los mensajes debo programar una nueva vista con botón volver
+         * o realizar algún tipo de modal, cosa que ese botón me envíe a un método o función donde
+         * se aplicará:
+         * 
+            // Destruye todas las variables de sesión
+            session_unset();
+            // Destruye la sesión
+            session_destroy();
+         *
+         */
+
+        if ($user['USER_STATE'] == 1) {
+            // Obtén la ruta completa de la vista
+            header("Location: " . $this->raiz . "/Home/dashboard");
+
+        } elseif($user['USER_STATE'] == 0) {
             // Error de autenticación
-            echo json_encode(['error' => 'Credenciales incorrectas']);
+            echo json_encode(['error' => 'Usuario inactivo']);
+            // Destruye todas las variables de sesión
+            session_unset();
+            // Destruye la sesión
+            session_destroy();
+
+        }else{
+            // Error de autenticación
+            echo json_encode(['error' => 'Usuario o contraseña incorrecta']);
             // Destruye todas las variables de sesión
             session_unset();
             // Destruye la sesión

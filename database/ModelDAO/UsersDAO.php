@@ -41,18 +41,23 @@ class UsersDAO {
         return oci_fetch_assoc($stmt);
     }
 
-    public function insertUser($username, $email, $password, $state) {
-        $stmt = oci_parse($this->conn, "INSERT INTO cut_web_users (username, email, password, user_state) VALUES (:username, :email, :password, :state)");
+    public function insertUser($id, $username, $email, $password, $state) {
+
+        $stmt = oci_parse($this->conn, "INSERT INTO cut_web_users (id, username, email, password, user_state) 
+                                        VALUES (:id, :username, :email, :password, :state)");
+        oci_bind_by_name($stmt, ":id", $id);
         oci_bind_by_name($stmt, ":username", $username);
         oci_bind_by_name($stmt, ":email", $email);
         oci_bind_by_name($stmt, ":password", $password);
         oci_bind_by_name($stmt, ":state", $state);
         $result = oci_execute($stmt);
-        oci_commit($this->conn); // Agregamos el commit después de la ejecución exitosa
+        oci_commit($this->conn);
         return $result;
     }
+    
 
     public function updateUser($id, $username, $email, $state) {
+        
         $stmt = oci_parse($this->conn, "UPDATE cut_web_users SET username = :username, email = :email, user_state = :state WHERE id = :id");
         oci_bind_by_name($stmt, ":id", $id);
         oci_bind_by_name($stmt, ":username", $username);
@@ -63,10 +68,11 @@ class UsersDAO {
         return $result;
     }
 
-    public function passwordReset($id) {
+    public function passwordReset($id, $password) {
+
         $stmt = oci_parse($this->conn, "UPDATE cut_web_users SET password = :password WHERE id = :id");
         oci_bind_by_name($stmt, ":id", $id);
-        oci_bind_by_name($stmt, ":password", 'Mesa2020');
+        oci_bind_by_name($stmt, ":password", $password);
         $result = oci_execute($stmt);
         oci_commit($this->conn); // Agregamos el commit después de la ejecución exitosa
         return $result;

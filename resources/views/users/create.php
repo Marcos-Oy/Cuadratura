@@ -52,6 +52,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <div class="col-sm-3">
                                                 <!-- text input -->
                                                 <div class="form-group">
+                                                    <label>Identificador</label>
+                                                    <input id="ID" type="number" name="ID" class="form-control"
+                                                        placeholder="Ingrese id de usuario aquí...">
+                                                </div>
+
+                                                <div class="form-group">
                                                     <label>Nombre de usuario</label>
                                                     <input id="USERNAME" type="text" name="USERNAME" class="form-control"
                                                         placeholder="Ingrese nombre de usuario aquí...">
