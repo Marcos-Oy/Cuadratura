@@ -74,6 +74,9 @@ class UsersController {
         // Obtén la ruta completa de la vista
         $viewPath = __DIR__ . '/../../resources/views/users/SetUp.php';
 
+        // Llama al método getUser() en la instancia de UsersModel
+        $result = $_SESSION['USER'];
+
         // Verifica si el archivo de vista existe
         if (file_exists($viewPath)) {
             // Incluye la vista
@@ -111,6 +114,33 @@ class UsersController {
         $this->usersModel->getEmail(),$this->usersModel->getState());
 
         return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/edit");
+    }
+
+    public function setupUser()
+    {   
+        if (isset($_POST['btn1'])) {
+            $this->usersModel->setId($_POST['ID']);
+            $this->usersModel->setUsername($_POST['USERNAME']);
+            $this->usersModel->setEmail($_POST['EMAIL']);
+            $this->usersModel->setState('0');
+
+            $id = $this->usersDAO->updateUser($this->usersModel->getId(),$this->usersModel->getUsername(),
+            $this->usersModel->getEmail(),$this->usersModel->getState());
+
+            return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/setup");
+        }
+
+        if (isset($_POST['btn2'])) {
+            $this->usersModel->setId($_POST['ID']);
+            $this->usersModel->setUsername($_POST['USERNAME']);
+            $this->usersModel->setEmail($_POST['EMAIL']);
+            $this->usersModel->setState('0');
+
+            $id = $this->usersDAO->updateUser($this->usersModel->getId(),$this->usersModel->getUsername(),
+            $this->usersModel->getEmail(),$this->usersModel->getState());
+
+            return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/setup");
+        }
     }
 
     public function resetPassword()

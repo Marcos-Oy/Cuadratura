@@ -31,6 +31,7 @@ if (isset($_SESSION['TOKEN'])) {
     $router->post($raiz.'/edit/user', [UsersController::class, 'editUser']);
     $router->post($raiz.'/edit/state', [UsersController::class, 'editState']);
     $router->post($raiz.'/drop/user', [UsersController::class, 'dropUser']);
+    $router->post($raiz.'/setup/user', [UsersController::class, 'setupUser']);
 }
 
 

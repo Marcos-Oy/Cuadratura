@@ -1,0 +1,1 @@
+Es una página de error 404 más bonita, si la página o ruta no se encuentra llamará a esta página y no lanzará el mensaje sólo como texto

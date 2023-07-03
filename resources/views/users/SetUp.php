@@ -30,49 +30,20 @@
                             <div class="card card-dark">
                                 <div class="card-header">
                                     <h2 class="card-title">Mis Datos</h2>
-                                    <div
-                                        class="custom-control custom-switch d-grid gap-2 d-md-flex justify-content-md-end">
-                                        <h2 class="card-title">Habilitar edición</h2>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <input type="checkbox" class="custom-control-input" id="Hedit"
-                                            onclick="SwitchCheckBox()">
-                                        <label class="custom-control-label" for="Hedit"></label>
-                                    </div>
                                 </div>
                                 <div class="card-body">
-                                    <form method="POST" action="?control=MisDatos&action=EditarMisDatos">
+                                    <form method="POST" action="<?php echo $this->raiz; ?>/setup/user">
                                         <div class="row">
+                                            <?php if (!empty($result)): ?>
+                                            <input type="hidden" name="ID" value="<?php echo $result['ID'];?>">
                                             <!-- COLUMNA 1 -->
-                                            <input type="hidden" value="" name="username">
-
-                                            <input type="hidden" value="" name="activo">
-
                                             <div class="col-sm-12">
                                                 <div class="form-group">
-                                                    <label>Nombre</label>
-                                                    <input name="nombre" id="nombre" type="text" class="form-control"
-                                                        value="">
+                                                    <label>Nombre de usuario</label>
+                                                    <input name="USERNAME" id="USERNAME" type="text"
+                                                        class="form-control" value="<?php echo $result['USERNAME'];?>">
                                                 </div>
-                                                <div class="form-group">
-                                                    <label>Apellido paterno</label>
-                                                    <input name="paterno" id="paterno" type="text" class="form-control"
-                                                        value="">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Apellido materno</label>
-                                                    <input name="materno" id="materno" type="text" class="form-control"
-                                                        value="">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Teléfono</label>
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text"><i class="fas">+56</i></span>
-                                                        </div>
-                                                        <input name="tel" id="tel" type="number" class="form-control"
-                                                            value="">
-                                                    </div>
-                                                </div>
+
                                                 <div class="form-group">
                                                     <label>E-Mail</label>
                                                     <div class="input-group">
@@ -80,14 +51,15 @@
                                                             <span class="input-group-text"><i
                                                                     class="fas fa-envelope"></i></span>
                                                         </div>
-                                                        <input name="mail" id="mail" type="email" class="form-control"
-                                                            value="">
+                                                        <input name="EMAIL" id="EMAIL" type="email" class="form-control"
+                                                            value="<?php echo $result['EMAIL'];?>">
                                                     </div>
                                                 </div>
 
                                                 <button name="btn1" id="btn1" type="submit"
                                                     class="btn btn-warning">Guardar</button>
                                             </div>
+                                            <?php endif; ?>
                                         </div>
                                     </form>
                                 </div>
@@ -99,23 +71,23 @@
                                     <h2 class="card-title">Cambiar contraseña</h2>
                                 </div>
                                 <div class="card-body">
-                                    <form method="POST" action="?control=MisDatos&action=EditarPass">
+                                    <form method="POST" action="<?php echo $this->raiz; ?>/setup/user">
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <!-- text input -->
                                                 <div class="form-group">
                                                     <label>Contraseña Actual</label>
-                                                    <input name="actual" id="actual" type="password"
+                                                    <input name="ACTUAL" id="ACTUAL" type="password"
                                                         class="form-control" placeholder="Ingrese contraseña...">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Nueva contraseña</label>
-                                                    <input name="nueva" id="nueva" type="password" class="form-control"
+                                                    <input name="NUEVA" id="NUEVA" type="password" class="form-control"
                                                         placeholder="Ingrese contraseña...">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Confirmar Contraseña</label>
-                                                    <input name="confirmar" id="confirmar" type="password"
+                                                    <input name="CONFIRMAR" id="CONFIRMAR" type="password"
                                                         class="form-control" placeholder="Ingrese contraseña...">
                                                 </div>
                                                 <button name="btn2" id="btn2" type="submit"
@@ -134,11 +106,13 @@
     <?php include ('resources/views/layout/ControlSidebar.php'); ?>
     <?php include ('resources/views/layout/footer.php'); ?>
     <!-- REQUIRED SCRIPTS -->
-    <!-- jQuery -->
-    <script src="<?php echo $this->raiz; ?>/public/plugins/jquery/jquery.min.js"></script>
+    
+     <!-- jQuery -->
+     <script src="<?php echo $this->raiz; ?>/public/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="<?php echo $this->raiz; ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="<?php echo $this->raiz; ?>/public/dist/js/adminlte.min.js"></script>
-    <script src="<?php echo $this->raiz; ?>/resources/assets/js/MisDatos.js"></script>
 </body>
+
+</html>

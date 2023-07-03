@@ -15,7 +15,7 @@
             </div>
             <li class="nav-item">
                 <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                    CUADRA
+                <?php $user = $_SESSION['USER']; echo $user['USERNAME'];?>
                 </a>
             </li>
         </div>

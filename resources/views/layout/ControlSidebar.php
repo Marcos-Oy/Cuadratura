@@ -7,7 +7,7 @@
         </u>
 
         <h6>Usuario:</h6>
-        <p>CUADRA</p>
+        <p><?php $user = $_SESSION['USER']; echo $user['USERNAME'];?></p>
 
         <h6>Tipo de usuario:</h6>
         <p>Administrador</p>

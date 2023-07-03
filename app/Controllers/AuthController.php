@@ -27,9 +27,6 @@ class AuthController
 
     public function show()
     {
-        // Definir el valor de $raiz
-        global $raiz;
-
         // Obtén la ruta completa de la vista
         $viewPath = __DIR__ . '/../../resources/views/login/login.php';
 
@@ -46,14 +43,11 @@ class AuthController
     public function login()
     {
         // Obtén los datos enviados por el formulario de login
-        $username = $_POST['USERNAME'];
-        $password = $_POST['PASSWORD'];
-
-        // Encripta la contraseña ingresada
-        $encryptedPassword = md5($password);
+        $this->usersModel->setUsername($_POST['USERNAME']);
+        $this->usersModel->setPassword($_POST['PASSWORD']);
 
         // Valida las credenciales del usuario
-        $user = $this->usersDAO->getUserByUsername($username, $encryptedPassword);
+        $user = $this->usersDAO->getUserByUsername($this->usersModel->getUsername(), $this->usersModel->getPassword());
         // Genera un token de autenticación
         $token = bin2hex(random_bytes(16));
         // Guarda el token en la base de datos
@@ -76,6 +70,7 @@ class AuthController
 
         if ($user['USER_STATE'] == 1) {
             // Obtén la ruta completa de la vista
+            $_SESSION['USER'] = $user;
             header("Location: " . $this->raiz . "/Home/dashboard");
 
         } elseif($user['USER_STATE'] == 0) {

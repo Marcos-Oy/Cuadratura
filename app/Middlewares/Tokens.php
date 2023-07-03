@@ -39,46 +39,56 @@ class Tokens
     public function handle()
     {
         session_start();
-    
-        // Tiempo de inactividad permitido en segundos (15 minutos en este caso)
-        $inactivityTimeout = 900;
-    
-        // Verificar si existe una marca de tiempo de última actividad en la sesión
-        if (isset($_SESSION['last_activity'])) {
-            // Calcular la diferencia de tiempo entre la última actividad y el tiempo actual
-            $lastActivityTimestamp = $_SESSION['last_activity'];
-            $currentTimestamp = time();
-            $timeDifference = $currentTimestamp - $lastActivityTimestamp;
-    
-            // Verificar si ha pasado el tiempo de inactividad permitido
-            if ($timeDifference >= $inactivityTimeout) {
+        
+        /**
+         * @author Marcos Oyarzo        
+         * Esta condición dice que si la sesión ya cuenta con un token y la ruta es distinta a la del login
+         * Comenzará a medir el tiempo de inactividad en el sitio para cerrar sesión una vez que se haya cumplido la condición
+         * El fin de esta condición es que no mida el tiempo de inactividad en el mismo login, es para evitar
+         * el inicio de sesión falso, ósea que inicies sesión pero te vuelva a cargar el login.
+         */
 
-                // Instancia del middleware de Tokens
-                $tokensMiddleware = new Tokens();
-                // Obtén el token de la sesión
-                $valid = $tokensMiddleware->validateToken($_SESSION['TOKEN']);
+        if (isset($_SESSION['TOKEN']) && $_SERVER['REQUEST_URI'] != $this->raiz . "/") {
     
-                // Valida el token
-                if ($valid) {
-                    // El token es válido, puedes continuar con la lógica del controlador
-                    // Obtén la ruta completa de la vista
-                     // El token ha expirado debido a la inactividad, realizar las acciones necesarias (por ejemplo, cerrar sesión, redireccionar, etc.)
-                    session_unset();
-                    session_destroy();
-                    // Evitar que el navegador almacene en caché la página
-                    header('Cache-Control: no-cache, must-revalidate');
-                    // Redirigir al usuario al formulario de inicio de sesión u otra página apropiada
-                    header('Location:'. $this->raiz . '/');  
-                } else {
-                    // El token es inválido, puedes redirigir al usuario o mostrar un mensaje de error
-                    // ...
-                    header("Location: " . $this->raiz . "/");
+            // Tiempo de inactividad permitido en segundos (15 minutos en este caso)
+            $inactivityTimeout = 900;
+        
+            // Verificar si existe una marca de tiempo de última actividad en la sesión
+            if (isset($_SESSION['last_activity'])) {
+                // Calcular la diferencia de tiempo entre la última actividad y el tiempo actual
+                $lastActivityTimestamp = $_SESSION['last_activity'];
+                $currentTimestamp = time();
+                $timeDifference = $currentTimestamp - $lastActivityTimestamp;
+        
+                // Verificar si ha pasado el tiempo de inactividad permitido
+                if ($timeDifference >= $inactivityTimeout) {
+
+                    // Instancia del middleware de Tokens
+                    $tokensMiddleware = new Tokens();
+                    // Obtén el token de la sesión
+                    $valid = $tokensMiddleware->validateToken($_SESSION['TOKEN']);
+        
+                    // Valida el token
+                    if ($valid) {
+                        // El token es válido, puedes continuar con la lógica del controlador
+                        // Obtén la ruta completa de la vista
+                        // El token ha expirado debido a la inactividad, realizar las acciones necesarias (por ejemplo, cerrar sesión, redireccionar, etc.)
+                        session_unset();
+                        session_destroy();
+                        // Evitar que el navegador almacene en caché la página
+                        header('Cache-Control: no-cache, must-revalidate');
+                        // Redirigir al usuario al formulario de inicio de sesión u otra página apropiada
+                        header('Location:'. $this->raiz . '/');  
+                    } else {
+                        // El token es inválido, puedes redirigir al usuario o mostrar un mensaje de error
+                        // ...
+                        header("Location: " . $this->raiz . "/");
+                    }
                 }
             }
+            // Actualizar la marca de tiempo de última actividad en la sesión
+            $_SESSION['last_activity'] = time();
         }
-    
-        // Actualizar la marca de tiempo de última actividad en la sesión
-        $_SESSION['last_activity'] = time();
     
         if (isset($_SESSION['TOKEN']) && $_SERVER['REQUEST_URI'] === $this->raiz . "/") {
             header('Location:' . $this->raiz . '/Home/dashboard');

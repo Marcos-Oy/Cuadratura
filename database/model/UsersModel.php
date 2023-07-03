@@ -10,7 +10,6 @@ class UsersModel{
     protected $state;
     protected $password;
 
-        
     public function getId()
     { 
         return $this->id; 
