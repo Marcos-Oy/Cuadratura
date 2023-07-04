@@ -1,4 +1,16 @@
-// Variable para almacenar el tiempo de inactividad permitido en milisegundos (14 minutos y 59 segundos en este caso)
+/**
+* @author Marcos Oyarzo
+* El ajuste de tiempo de inactividad deben ser igual para tres entidades
+* 
+* TOKEN_EXPIRATION = public function updateAuthToken($userId, $token)
+* inactivity.js = var inactivityTimeout
+* Tokens.php = $inactivityTimeout
+* 
+* recordar que en php se configura en segundos mientras que en javascript
+* se configura en milisegundos
+*/
+
+// Variable para almacenar el tiempo de inactividad permitido en milisegundos (15 minutos en este caso)
 var inactivityTimeout = 900000;
 
 // Variable para almacenar el ID del temporizador

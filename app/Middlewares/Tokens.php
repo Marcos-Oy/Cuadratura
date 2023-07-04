@@ -50,6 +50,18 @@ class Tokens
 
         if (isset($_SESSION['TOKEN']) && $_SERVER['REQUEST_URI'] != $this->raiz . "/") {
     
+            /**
+             * @author Marcos Oyarzo
+             * El ajuste de tiempo de inactividad deben ser igual para tres entidades
+             * 
+             * TOKEN_EXPIRATION = public function updateAuthToken($userId, $token)
+             * inactivity.js = var inactivityTimeout
+             * Tokens.php = $inactivityTimeout
+             * 
+             * recordar que en php se configura en segundos mientras que en javascript
+             * se configura en milisegundos
+             */
+            
             // Tiempo de inactividad permitido en segundos (15 minutos en este caso)
             $inactivityTimeout = 900;
             // Verificar si existe una marca de tiempo de última actividad en la sesión
