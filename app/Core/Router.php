@@ -37,7 +37,8 @@ class Router {
             $controller->$action();
         } else {
             // Si no se encuentra ninguna ruta válida, mostrar una página de error o redirigir a una página predeterminada.
-            echo "404 Not Found";
+            // echo "404 Not Found";
+            include __DIR__ . '/../../resources/views/sessions/Error404.php';
         }
     }
 }
