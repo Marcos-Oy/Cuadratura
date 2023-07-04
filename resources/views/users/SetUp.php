@@ -59,7 +59,7 @@
                                                 <button name="btn1" id="btn1" type="submit"
                                                     class="btn btn-warning">Guardar</button>
                                             </div>
-                                            <?php endif; ?>
+                                            
                                         </div>
                                     </form>
                                 </div>
@@ -75,6 +75,7 @@
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <!-- text input -->
+                                                <input type="hidden" name="ID" value="<?php echo $result['ID'];?>">
                                                 <div class="form-group">
                                                     <label>Contraseña Actual</label>
                                                     <input name="ACTUAL" id="ACTUAL" type="password"
@@ -93,6 +94,7 @@
                                                 <button name="btn2" id="btn2" type="submit"
                                                     class="btn btn-warning">Guardar</button>
                                             </div>
+                                            <?php endif; ?>
                                         </div>
                                     </form>
                                 </div>

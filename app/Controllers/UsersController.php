@@ -131,15 +131,33 @@ class UsersController {
         }
 
         if (isset($_POST['btn2'])) {
-            $this->usersModel->setId($_POST['ID']);
-            $this->usersModel->setUsername($_POST['USERNAME']);
-            $this->usersModel->setEmail($_POST['EMAIL']);
-            $this->usersModel->setState('0');
 
-            $id = $this->usersDAO->updateUser($this->usersModel->getId(),$this->usersModel->getUsername(),
-            $this->usersModel->getEmail(),$this->usersModel->getState());
+            // Pasamos los datos de sesión que vienen en array a la variable user y hacemos usos de sus valores
+            $user = $_SESSION['USER'];
+            $this->usersModel->setId($user['ID']);
 
-            return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/setup");
+            $this->usersModel->setPassword($_POST['ACTUAL']);
+            $actual = $this->usersModel->getPassword();
+
+            if($actual === $user['PASSWORD']){
+
+                $this->usersModel->setPassword($_POST['NUEVA']);
+                $nueva = $this->usersModel->getPassword();
+                
+                $this->usersModel->setPassword($_POST['CONFIRMAR']);
+                $confirmar = $this->usersModel->getPassword();
+
+                if($nueva === $confirmar){
+
+                    $id = $this->usersDAO->updatePassword($this->usersModel->getId(),$this->usersModel->getPassword());
+                    return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/setup");
+
+                }else{
+                    echo 'las nuevas contraseñas no concuerdan';
+                }
+            }else{
+                echo 'Esa no es tu contraseña actual';
+            }
         }
     }
 

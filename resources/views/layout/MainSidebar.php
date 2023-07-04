@@ -1,3 +1,4 @@
+<script src="<?php echo $this->raiz; ?>/resources/assets/js/inactivity.js"></script>
 <script src="<?php echo $this->raiz; ?>/resources/assets/js/MainSidebar.js"></script>
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-warning elevation-1">

@@ -52,7 +52,6 @@ class Tokens
     
             // Tiempo de inactividad permitido en segundos (15 minutos en este caso)
             $inactivityTimeout = 900;
-        
             // Verificar si existe una marca de tiempo de última actividad en la sesión
             if (isset($_SESSION['last_activity'])) {
                 // Calcular la diferencia de tiempo entre la última actividad y el tiempo actual
@@ -67,23 +66,16 @@ class Tokens
                     $tokensMiddleware = new Tokens();
                     // Obtén el token de la sesión
                     $valid = $tokensMiddleware->validateToken($_SESSION['TOKEN']);
-        
+
                     // Valida el token
-                    if ($valid) {
-                        // El token es válido, puedes continuar con la lógica del controlador
-                        // Obtén la ruta completa de la vista
+                    if (!$valid) {
                         // El token ha expirado debido a la inactividad, realizar las acciones necesarias (por ejemplo, cerrar sesión, redireccionar, etc.)
                         session_unset();
                         session_destroy();
-                        // Evitar que el navegador almacene en caché la página
-                        header('Cache-Control: no-cache, must-revalidate');
-                        // Redirigir al usuario al formulario de inicio de sesión u otra página apropiada
-                        header('Location:'. $this->raiz . '/');  
-                    } else {
-                        // El token es inválido, puedes redirigir al usuario o mostrar un mensaje de error
-                        // ...
-                        header("Location: " . $this->raiz . "/");
-                    }
+                    }else{
+                        // Actualizar la marca de tiempo de última actividad en la sesión
+                         $_SESSION['last_activity'] = time();   
+                    } 
                 }
             }
             // Actualizar la marca de tiempo de última actividad en la sesión
@@ -99,14 +91,14 @@ class Tokens
         }
     }
     
-
     public function validateToken($token)
     {
         // Obtén el usuario basado en el token
         $user = $this->usersDAO->getUserByToken($token);
-
+        $expiration = $this->tokenHasExpired($user['TOKEN_EXPIRATION']);
+        
         // Verifica si se encontró un usuario y si el token no ha expirado
-        if ($user && !$this->tokenHasExpired($user['TOKEN_EXPIRATION'])) {
+        if ($user && !$expiration) {
             // El token es válido
             return true;
         }
@@ -116,8 +108,9 @@ class Tokens
 
     private function tokenHasExpired($expirationDate)
     {
-        // Supongamos que $expirationDate es una cadena en formato de fecha y hora (ejemplo: '2023-06-22 12:00:00')
+        date_default_timezone_set('America/Santiago');
         $currentDate = date('Y-m-d H:i:s');
+        
         if ($currentDate > $expirationDate) {
             // El token ha expirado
             return true;
@@ -125,8 +118,7 @@ class Tokens
         // El token no ha expirado
         return false;
     }
+    
 }
-
-
 
 ?>

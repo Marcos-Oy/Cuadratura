@@ -35,11 +35,11 @@ class UsersDAO {
     }
 
     public function getUserByToken($token) {
-        $stmt = oci_parse($this->conn, "SELECT * FROM cut_web_users WHERE token = :token");
+        $stmt = oci_parse($this->conn, "SELECT TO_CHAR(TOKEN_EXPIRATION, 'YYYY-MM-DD HH24:MI:SS') AS TOKEN_EXPIRATION FROM cut_web_users WHERE token = :token");
         oci_bind_by_name($stmt, ":token", $token);
         oci_execute($stmt);
         return oci_fetch_assoc($stmt);
-    }
+    }    
 
     public function insertUser($id, $username, $email, $password, $state) {
 
@@ -55,7 +55,6 @@ class UsersDAO {
         return $result;
     }
     
-
     public function updateUser($id, $username, $email, $state) {
         
         $stmt = oci_parse($this->conn, "UPDATE cut_web_users SET username = :username, email = :email, user_state = :state WHERE id = :id");
@@ -82,6 +81,15 @@ class UsersDAO {
         $stmt = oci_parse($this->conn, "UPDATE cut_web_users SET user_state = :state WHERE id = :id");
         oci_bind_by_name($stmt, ":id", $id);
         oci_bind_by_name($stmt, ":state", $state);
+        $result = oci_execute($stmt);
+        oci_commit($this->conn); // Agregamos el commit después de la ejecución exitosa
+        return $result;
+    }
+
+    public function updatePassword($id, $password) {
+        $stmt = oci_parse($this->conn, "UPDATE cut_web_users SET password = :password WHERE id = :id");
+        oci_bind_by_name($stmt, ":id", $id);
+        oci_bind_by_name($stmt, ":password", $password);
         $result = oci_execute($stmt);
         oci_commit($this->conn); // Agregamos el commit después de la ejecución exitosa
         return $result;

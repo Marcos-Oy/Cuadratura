@@ -1,1 +1,0 @@
-Aparecerá una vista o modal que diga que su sesión a expirado y que debe volver a iniciar sesión
