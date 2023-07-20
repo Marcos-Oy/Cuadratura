@@ -1,0 +1,52 @@
+
+SQL*Loader: Release 11.2.0.4.0 - Production on Thu Jul 20 08:36:06 2023
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   Carga_PSVA.ctl
+Data File:      DB_PSVA.csv
+  Bad File:     DB_PSVA.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 0
+Errors allowed: 1000
+Bind array:     64 rows, maximum of 256000 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table CUADRA.SUT_PSVA, loaded from every logical record.
+Insert option in effect for this table: TRUNCATE
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+FONO                                FIRST     *   ;  O(") CHARACTER            
+RUT_PERSONA                          NEXT     *   ;  O(") CHARACTER            
+DESC_CONCEPTO                        NEXT     *   ;  O(") CHARACTER            
+
+Record 535452: Discarded - all columns null.
+Record 535454: Discarded - all columns null.
+
+Table CUADRA.SUT_PSVA:
+  535452 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  2 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                  49536 bytes(64 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          0
+Total logical records read:        535454
+Total logical records rejected:         0
+Total logical records discarded:        2
+
+Run began on Thu Jul 20 08:36:06 2023
+Run ended on Thu Jul 20 08:37:47 2023
+
+Elapsed time was:     00:01:41.67
+CPU time was:         00:00:04.81

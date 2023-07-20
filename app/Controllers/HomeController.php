@@ -19,6 +19,7 @@ class HomeController {
         if (file_exists($viewPath)) {
             // Incluye la vista
             include_once $viewPath;
+            // phpinfo();
         } else {
             // Si la vista no existe, muestra un mensaje de error
             echo "Error: la vista no existe";

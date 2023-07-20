@@ -1,0 +1,325 @@
+
+SQL*Loader: Release 11.2.0.4.0 - Production on Thu Jul 20 07:10:27 2023
+
+Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   Carga_HSS.ctl
+Data File:      data.txt
+  Bad File:     data.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 0
+Errors allowed: 10
+Bind array:     64 rows, maximum of 256000 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table CUADRA.CUT_LICENCIA_HSS, loaded from every logical record.
+Insert option in effect for this table: TRUNCATE
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+HLR_INDEX                           FIRST     *   ,  O(") CHARACTER            
+IMSI                                 NEXT     *   ,  O(") CHARACTER            
+MSISDN                               NEXT     *   ,  O(") CHARACTER            
+GPRS_SUBSCRIBED                      NEXT     *   ,  O(") CHARACTER            
+APN                                  NEXT     *   ,  O(") CHARACTER            
+PDP_ADD                              NEXT     *   ,  O(") CHARACTER            
+NAM                                  NEXT     *   ,  O(") CHARACTER            
+ODBIC                                NEXT     *   ,  O(") CHARACTER            
+ODBOC                                NEXT     *   ,  O(") CHARACTER            
+ODBPLMN1                             NEXT     *   ,  O(") CHARACTER            
+ODBPLMN2                             NEXT     *   ,  O(") CHARACTER            
+ODBPLMN3                             NEXT     *   ,  O(") CHARACTER            
+ODBPLMN4                             NEXT     *   ,  O(") CHARACTER            
+ODBROAM                              NEXT     *   ,  O(") CHARACTER            
+ODBDECT                              NEXT     *   ,  O(") CHARACTER            
+ODBMECT                              NEXT     *   ,  O(") CHARACTER            
+ODBINFO                              NEXT     *   ,  O(") CHARACTER            
+ODBECT                               NEXT     *   ,  O(") CHARACTER            
+ODBPOS                               NEXT     *   ,  O(") CHARACTER            
+ODBPOSTYPE                           NEXT     *   ,  O(") CHARACTER            
+ODBRCF                               NEXT     *   ,  O(") CHARACTER            
+ODBENTER                             NEXT     *   ,  O(") CHARACTER            
+ODBSS                                NEXT     *   ,  O(") CHARACTER            
+LOCK_SABLCKIN                        NEXT     *   ,  O(") CHARACTER            
+LOCK_SABLCKOUT                       NEXT     *   ,  O(") CHARACTER            
+LOCK_MSCLCKIN                        NEXT     *   ,  O(") CHARACTER            
+LOCK_MSCLCKOUT                       NEXT     *   ,  O(") CHARACTER            
+LOCK_SGSNLCK                         NEXT     *   ,  O(") CHARACTER            
+UTRANNOTALLOWED                      NEXT     *   ,  O(") CHARACTER            
+GERANNOTALLOWED                      NEXT     *   ,  O(") CHARACTER            
+CARD_TYPE                            NEXT     *   ,  O(") CHARACTER            
+CATEGORY                             NEXT     *   ,  O(") CHARACTER            
+TS10                                 NEXT     *   ,  O(") CHARACTER            
+TS11                                 NEXT     *   ,  O(") CHARACTER            
+TS12                                 NEXT     *   ,  O(") CHARACTER            
+TS20                                 NEXT     *   ,  O(") CHARACTER            
+TS21                                 NEXT     *   ,  O(") CHARACTER            
+TS22                                 NEXT     *   ,  O(") CHARACTER            
+TS60                                 NEXT     *   ,  O(") CHARACTER            
+TS61                                 NEXT     *   ,  O(") CHARACTER            
+TS62                                 NEXT     *   ,  O(") CHARACTER            
+BS20                                 NEXT     *   ,  O(") CHARACTER            
+BS21                                 NEXT     *   ,  O(") CHARACTER            
+BS22                                 NEXT     *   ,  O(") CHARACTER            
+BS23                                 NEXT     *   ,  O(") CHARACTER            
+BS24                                 NEXT     *   ,  O(") CHARACTER            
+BS25                                 NEXT     *   ,  O(") CHARACTER            
+BS26                                 NEXT     *   ,  O(") CHARACTER            
+BS2G                                 NEXT     *   ,  O(") CHARACTER            
+BS30                                 NEXT     *   ,  O(") CHARACTER            
+BS31                                 NEXT     *   ,  O(") CHARACTER            
+BS32                                 NEXT     *   ,  O(") CHARACTER            
+BS33                                 NEXT     *   ,  O(") CHARACTER            
+BS34                                 NEXT     *   ,  O(") CHARACTER            
+BS3G                                 NEXT     *   ,  O(") CHARACTER            
+BS40                                 NEXT     *   ,  O(") CHARACTER            
+BS41                                 NEXT     *   ,  O(") CHARACTER            
+BS42                                 NEXT     *   ,  O(") CHARACTER            
+BS43                                 NEXT     *   ,  O(") CHARACTER            
+BS44                                 NEXT     *   ,  O(") CHARACTER            
+BS45                                 NEXT     *   ,  O(") CHARACTER            
+BS46                                 NEXT     *   ,  O(") CHARACTER            
+BS4G                                 NEXT     *   ,  O(") CHARACTER            
+BS50                                 NEXT     *   ,  O(") CHARACTER            
+BS51                                 NEXT     *   ,  O(") CHARACTER            
+BS52                                 NEXT     *   ,  O(") CHARACTER            
+BS53                                 NEXT     *   ,  O(") CHARACTER            
+BS5G                                 NEXT     *   ,  O(") CHARACTER            
+BS61                                 NEXT     *   ,  O(") CHARACTER            
+BS62                                 NEXT     *   ,  O(") CHARACTER            
+BS81                                 NEXT     *   ,  O(") CHARACTER            
+BS82                                 NEXT     *   ,  O(") CHARACTER            
+CF_CFU                               NEXT     *   ,  O(") CHARACTER            
+CFU_FTN                              NEXT     *   ,  O(") CHARACTER            
+CF_CFB                               NEXT     *   ,  O(") CHARACTER            
+CFB_FTN                              NEXT     *   ,  O(") CHARACTER            
+CF_CFNRY                             NEXT     *   ,  O(") CHARACTER            
+CFNRY_FTN                            NEXT     *   ,  O(") CHARACTER            
+CF_CFNRC                             NEXT     *   ,  O(") CHARACTER            
+CFNRC_FTN                            NEXT     *   ,  O(") CHARACTER            
+CF_CFD                               NEXT     *   ,  O(") CHARACTER            
+CFD_FTN                              NEXT     *   ,  O(") CHARACTER            
+CB_BAOC                              NEXT     *   ,  O(") CHARACTER            
+CB_BOIC                              NEXT     *   ,  O(") CHARACTER            
+CB_BAIC                              NEXT     *   ,  O(") CHARACTER            
+CLIP                                 NEXT     *   ,  O(") CHARACTER            
+CLIP_OVERRIDE                        NEXT     *   ,  O(") CHARACTER            
+CLIR                                 NEXT     *   ,  O(") CHARACTER            
+CLIROPTION                           NEXT     *   ,  O(") CHARACTER            
+COLP                                 NEXT     *   ,  O(") CHARACTER            
+COLR                                 NEXT     *   ,  O(") CHARACTER            
+CW                                   NEXT     *   ,  O(") CHARACTER            
+ECT                                  NEXT     *   ,  O(") CHARACTER            
+HOLD                                 NEXT     *   ,  O(") CHARACTER            
+MPTY                                 NEXT     *   ,  O(") CHARACTER            
+OCSITPL                              NEXT     *   ,  O(") CHARACTER            
+TCSITPL                              NEXT     *   ,  O(") CHARACTER            
+UCSITPL                              NEXT     *   ,  O(") CHARACTER            
+SMSCSITPL                            NEXT     *   ,  O(") CHARACTER            
+MTSMSCSITPL                          NEXT     *   ,  O(") CHARACTER            
+GPRSCSITPL                           NEXT     *   ,  O(") CHARACTER            
+SSCSITPL                             NEXT     *   ,  O(") CHARACTER            
+VBS                                  NEXT     *   ,  O(") CHARACTER            
+VGCS                                 NEXT     *   ,  O(") CHARACTER            
+VLR_NUMBER                           NEXT     *   ,  O(") CHARACTER            
+MSC_NUMBER                           NEXT     *   ,  O(") CHARACTER            
+SGSN_NUMBER                          NEXT     *   ,  O(") CHARACTER            
+SGSN_ADDRESS                         NEXT     *   ,  O(") CHARACTER            
+MSCRESTRICTFLAG                      NEXT     *   ,  O(") CHARACTER            
+SGSNRESTRICTFLAG                     NEXT     *   ,  O(") CHARACTER            
+VLRTPL                               NEXT     *   ,  O(") CHARACTER            
+SGSNTPL                              NEXT     *   ,  O(") CHARACTER            
+RRRTPL                               NEXT     *   ,  O(") CHARACTER            
+CUG                                  NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICTS_1                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICTS_2                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICTS_3                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICTS_4                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICTS_5                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICTS_6                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICTS_7                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICTS_8                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICTS_9                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICTS_A                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICTS_B                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICTS_C                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICTS_D                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICTS_E                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICTS_F                     NEXT     *   ,  O(") CHARACTER            
+ALLPLMN_SPECIFICSS                   NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICSS_1                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICSS_2                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICSS_3                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICSS_4                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICSS_5                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICSS_6                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICSS_7                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICSS_8                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICSS_9                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICSS_A                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICSS_B                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICSS_C                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICSS_D                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICSS_E                     NEXT     *   ,  O(") CHARACTER            
+PLMNSPECIFICSS_F                     NEXT     *   ,  O(") CHARACTER            
+VLRINHPLMN                           NEXT     *   ,  O(") CHARACTER            
+VLRINTERNATIONAL                     NEXT     *   ,  O(") CHARACTER            
+SGSNINHPLMN                          NEXT     *   ,  O(") CHARACTER            
+SGSNINTERNATIONAL                    NEXT     *   ,  O(") CHARACTER            
+SUBRES                               NEXT     *   ,  O(") CHARACTER            
+ACR_STATUS                           NEXT     *   ,  O(") CHARACTER            
+SMSROUTETPL_ID                       NEXT     *   ,  O(") CHARACTER            
+UPLCSLCK                             NEXT     *   ,  O(") CHARACTER            
+UPLPSLCK                             NEXT     *   ,  O(") CHARACTER            
+UPL_TIME                             NEXT     *   ,  O(") CHARACTER            
+PURGE_TIME_ATMSC                     NEXT     *   ,  O(") CHARACTER            
+GPRSUPL_TIME                         NEXT     *   ,  O(") CHARACTER            
+PURGE_TIME_ATSGSN                    NEXT     *   ,  O(") CHARACTER            
+SMDP                                 NEXT     *   ,  O(") CHARACTER            
+LCS                                  NEXT     *   ,  O(") CHARACTER            
+ARD                                  NEXT     *   ,  O(") CHARACTER            
+VTCSI                                NEXT     *   ,  O(") CHARACTER            
+DCSI                                 NEXT     *   ,  O(") CHARACTER            
+TIFCSI                               NEXT     *   ,  O(") CHARACTER            
+MCSI                                 NEXT     *   ,  O(") CHARACTER            
+CHARGE_GLOBA                         NEXT     *   ,  O(") CHARACTER            
+OPT_GPRSTPL_ID                       NEXT     *   ,  O(") CHARACTER            
+OKSC                                 NEXT     *   ,  O(") CHARACTER            
+GANNOTALLOWED                        NEXT     *   ,  O(") CHARACTER            
+IHSPAENOTALLOWED                     NEXT     *   ,  O(") CHARACTER            
+EUTRANNOTALLOWED                     NEXT     *   ,  O(") CHARACTER            
+N3GPPNOTALLOWED                      NEXT     *   ,  O(") CHARACTER            
+EPSLOCK                              NEXT     *   ,  O(") CHARACTER            
+NON3GPPLOCK                          NEXT     *   ,  O(") CHARACTER            
+STANDBY_IMSI                         NEXT     *   ,  O(") CHARACTER            
+EXPIRY_DATE                          NEXT     *   ,  O(") CHARACTER            
+STD_CHARGE_GLOBAL                    NEXT     *   ,  O(") CHARACTER            
+USERCATEGORY                         NEXT     *   ,  O(") CHARACTER            
+SMSCF                                NEXT     *   ,  O(") CHARACTER            
+SMS_OFATPL_ID                        NEXT     *   ,  O(") CHARACTER            
+SMS_FTN                              NEXT     *   ,  O(") CHARACTER            
+SMSCF_SSSTAUS                        NEXT     *   ,  O(") CHARACTER            
+SMSCF_FTNINHPLMNC                    NEXT     *   ,  O(") CHARACTER            
+SMSCF_FTNINVPLMNC                    NEXT     *   ,  O(") CHARACTER            
+SMSCF_FTNENTER                       NEXT     *   ,  O(") CHARACTER            
+SMSCF_FTNINFO                        NEXT     *   ,  O(") CHARACTER            
+SMSCF_FTNVMS                         NEXT     *   ,  O(") CHARACTER            
+MCI                                  NEXT     *   ,  O(") CHARACTER            
+CNAP                                 NEXT     *   ,  O(") CHARACTER            
+CCBS_B                               NEXT     *   ,  O(") CHARACTER            
+CCBS_A                               NEXT     *   ,  O(") CHARACTER            
+MAH                                  NEXT     *   ,  O(") CHARACTER            
+AOCC                                 NEXT     *   ,  O(") CHARACTER            
+AOCI                                 NEXT     *   ,  O(") CHARACTER            
+UUS_1                                NEXT     *   ,  O(") CHARACTER            
+UUS_2                                NEXT     *   ,  O(") CHARACTER            
+UUS_3                                NEXT     *   ,  O(") CHARACTER            
+MC_NBR_SB                            NEXT     *   ,  O(") CHARACTER            
+MC_NBR_USER                          NEXT     *   ,  O(") CHARACTER            
+MAX_PRIORITY                         NEXT     *   ,  O(") CHARACTER            
+DEF_PRIORITY                         NEXT     *   ,  O(") CHARACTER            
+NLR                                  NEXT     *   ,  O(") CHARACTER            
+VVDN                                 NEXT     *   ,  O(") CHARACTER            
+COLPOC                               NEXT     *   ,  O(") CHARACTER            
+CONTROL                              NEXT     *   ,  O(") CHARACTER            
+WPA                                  NEXT     *   ,  O(") CHARACTER            
+PW                                   NEXT     *   ,  O(") CHARACTER            
+CARP                                 NEXT     *   ,  O(") CHARACTER            
+VGCSR                                NEXT     *   ,  O(") CHARACTER            
+VBSR                                 NEXT     *   ,  O(") CHARACTER            
+ACR                                  NEXT     *   ,  O(") CHARACTER            
+IST_ALERT_TIMER                      NEXT     *   ,  O(") CHARACTER            
+IST_ALERT_RESPONSE                   NEXT     *   ,  O(") CHARACTER            
+NAEA                                 NEXT     *   ,  O(") CHARACTER            
+MIMSI_TYPE                           NEXT     *   ,  O(") CHARACTER            
+MIMSI_SMS                            NEXT     *   ,  O(") CHARACTER            
+MIMSI_VOBB                           NEXT     *   ,  O(") CHARACTER            
+CURRENT_PSI_INDEX                    NEXT     *   ,  O(") CHARACTER            
+EOCSI_SK                             NEXT     *   ,  O(") CHARACTER            
+ETCSI_SK                             NEXT     *   ,  O(") CHARACTER            
+ACC_LENGTH                           NEXT     *   ,  O(") CHARACTER            
+STYPE                                NEXT     *   ,  O(") CHARACTER            
+RBTINDEX                             NEXT     *   ,  O(") CHARACTER            
+PRE_VOICENUMBER                      NEXT     *   ,  O(") CHARACTER            
+SEC_VOICENUMBER                      NEXT     *   ,  O(") CHARACTER            
+EXEXROUTECATEGORY                    NEXT     *   ,  O(") CHARACTER            
+NIR_INDEX                            NEXT     *   ,  O(") CHARACTER            
+MMEHOST                              NEXT     *   ,  O(") CHARACTER            
+SGSNHOST                             NEXT     *   ,  O(") CHARACTER            
+MMETIMESTAMP                         NEXT     *   ,  O(") CHARACTER            
+STNSR                                NEXT     *   ,  O(") CHARACTER            
+APNOI                                NEXT     *   ,  O(") CHARACTER            
+TGPPAMBRMAXUL                        NEXT     *   ,  O(") CHARACTER            
+TGPPAMBRMAXDL                        NEXT     *   ,  O(") CHARACTER            
+RATFREQSELPRI                        NEXT     *   ,  O(") CHARACTER            
+PLMNTPLID                            NEXT     *   ,  O(") CHARACTER            
+DIAMNODETPL_ID                       NEXT     *   ,  O(") CHARACTER            
+FMINIT                               NEXT     *   ,  O(") CHARACTER            
+FMSUPERVISOR                         NEXT     *   ,  O(") CHARACTER            
+FMREMOTE                             NEXT     *   ,  O(") CHARACTER            
+EPS_QOSTPL_ID                        NEXT     *   ,  O(") CHARACTER            
+PROFILE_ID                           NEXT     *   ,  O(") CHARACTER            
+MCSISTATE                            NEXT     *   ,  O(") CHARACTER            
+OCSISTATE                            NEXT     *   ,  O(") CHARACTER            
+TCSISTATE                            NEXT     *   ,  O(") CHARACTER            
+TS63                                 NEXT     *   ,  O(") CHARACTER            
+ROUTECATEGORY                        NEXT     *   ,  O(") CHARACTER            
+GPRS_OPTION_GPRS_ACCESS              NEXT     *   ,  O(") CHARACTER            
+CAMEL_ACTIVE_O_COLL_INFO_DP          NEXT     *   ,  O(") CHARACTER            
+STATUS_SUBS_DEACT                    NEXT     *   ,  O(") CHARACTER            
+CORE_INAP                            NEXT     *   ,  O(") CHARACTER            
+SCP                                  NEXT     *   ,  O(") CHARACTER            
+SMS_SERV_KEY                         NEXT     *   ,  O(") CHARACTER            
+BOIC                                 NEXT     *   ,  O(") CHARACTER            
+BIRO                                 NEXT     *   ,  O(") CHARACTER            
+BORO                                 NEXT     *   ,  O(") CHARACTER            
+BAOC                                 NEXT     *   ,  O(") CHARACTER            
+BAIC                                 NEXT     *   ,  O(") CHARACTER            
+OPTGPRS_CONTEXTID                    NEXT     *   ,  O(") CHARACTER            
+APNTPLID                             NEXT     *   ,  O(") CHARACTER            
+QOSTPLID                             NEXT     *   ,  O(") CHARACTER            
+VPLMN                                NEXT     *   ,  O(") CHARACTER            
+PS_CONTEXT_ID                        NEXT     *   ,  O(") CHARACTER            
+PS_APNQOSTPLID                       NEXT     *   ,  O(") CHARACTER            
+PS_PDP_ADD                           NEXT     *   ,  O(") CHARACTER            
+PS_ADD_INDICATOR                     NEXT     *   ,  O(") CHARACTER            
+PS_PDP_ADDIPV4                       NEXT     *   ,  O(") CHARACTER            
+EPS_CONTEXT_ID                       NEXT     *   ,  O(") CHARACTER            
+EPS_APNQOSTPLID                      NEXT     *   ,  O(") CHARACTER            
+EPS_PDP_ADD                          NEXT     *   ,  O(") CHARACTER            
+EPS_ADD_INDICATOR                    NEXT     *   ,  O(") CHARACTER            
+EPS_PDP_ADDIPV4                      NEXT     *   ,  O(") CHARACTER            
+EPS_DEFAULT_FLAG                     NEXT     *   ,  O(") CHARACTER            
+MSPURGEDATMSC                        NEXT     *   ,  O(") CHARACTER            
+MSPURGEDATSGSN                       NEXT     *   ,  O(") CHARACTER            
+PURGEDONMME                          NEXT     *   ,  O(") CHARACTER            
+
+value used for ROWS parameter changed from 64 to 3
+Record 556455: Discarded - all columns null.
+
+Table CUADRA.CUT_LICENCIA_HSS:
+  556454 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  1 Row not loaded because all fields were null.
+
+
+Space allocated for bind array:                 213624 bytes(3 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          0
+Total logical records read:        556455
+Total logical records rejected:         0
+Total logical records discarded:        1
+
+Run began on Thu Jul 20 07:10:27 2023
+Run ended on Thu Jul 20 07:44:28 2023
+
+Elapsed time was:     00:34:01.29
+CPU time was:         00:02:48.04

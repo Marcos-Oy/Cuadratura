@@ -40,13 +40,12 @@
                     </a>
                 </li>
 
-                <li class="nav-item menu-closed">
+                <!-- <li class="nav-item menu-closed">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Informes
                             <span class="right badge badge-secondary">soon<i class="right fas fa-angle-left"></i></span>
-                            <!-- <i class="right fas fa-angle-left"></i> -->
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -63,25 +62,24 @@
                             </a>
                         </li>
                     </ul>          
-                </li>
+                </li> -->
 
                 <li class="nav-item">
-                    <a id="Dash" href="#" class="nav-link">
+                    <a id="Dash" href="<?php echo $this->raiz; ?>/logs" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Logs cargas FTP
-                            <span class="right badge badge-secondary">soon</span>
+                            Logs cargas
+                            <span class="right badge badge-warning">Develop</span>
                         </p>
                     </a>
                 </li>
 
-                <li class="nav-item menu-closed">
+                <!-- <li class="nav-item menu-closed">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Logs procedures
                             <span class="right badge badge-secondary">soon<i class="right fas fa-angle-left"></i></span>
-                            <!-- <i class="right fas fa-angle-left"></i> -->
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -98,14 +96,14 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
 
                 <li class="nav-item">
                     <a id="ShowUsers" href="<?php echo $this->raiz; ?>/users/show" class="nav-link">
                         <i class="nav-icon fas fa-user"></i>
                         <p>
                             Users
-                            <span class="right badge badge-warning">develop</span>
+                            <span class="right badge badge-danger">new</span>
                         </p>
                     </a>
                 </li>

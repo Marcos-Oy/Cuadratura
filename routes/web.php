@@ -1,5 +1,6 @@
 <?php
 use App\Controllers\HomeController;
+use App\Controllers\LogsController;
 use App\Controllers\UsersController;
 use App\Controllers\AuthController;
 
@@ -20,6 +21,9 @@ if (isset($_SESSION['TOKEN'])) {
     $router->get($raiz.'/Home/dashboard', [HomeController::class, 'index']);
 
     // Rutas usuarios GET
+    $router->get($raiz.'/logs', [LogsController::class, 'ViewsLogs']);
+
+    // Rutas usuarios GET
     $router->get($raiz.'/users/show', [UsersController::class, 'index']);
     $router->get($raiz.'/users/create', [UsersController::class, 'create']);
     $router->get($raiz.'/users/setup', [UsersController::class, 'setup']);
@@ -33,11 +37,6 @@ if (isset($_SESSION['TOKEN'])) {
     $router->post($raiz.'/drop/user', [UsersController::class, 'dropUser']);
     $router->post($raiz.'/setup/user', [UsersController::class, 'setupUser']);
 }
-
-
-
-
-
 
 ?>
 

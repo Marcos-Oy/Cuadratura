@@ -3,9 +3,10 @@
 $raiz = '/Cuadratura';
 
 // Se deben agregar los directorios de los controladores para que las rutas funcionen
-require_once __DIR__ . '/app/Controllers/HomeController.php';
-require_once __DIR__ . '/app/Controllers/UsersController.php';
 require_once __DIR__ . '/app/Controllers/AuthController.php';
+require_once __DIR__ . '/app/Controllers/HomeController.php';
+require_once __DIR__ . '/app/Controllers/LogsController.php';
+require_once __DIR__ . '/app/Controllers/UsersController.php';
 
 // Incluir el archivo de middleware
 require_once __DIR__ . '/app/Middlewares/Tokens.php';
