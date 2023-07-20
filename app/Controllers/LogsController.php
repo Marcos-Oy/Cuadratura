@@ -27,6 +27,8 @@ public function ViewsLogs()
             $filesToDownload = [
                 "/Cuadratura/Plataforma/PSVA/Carga_PSVA.log",
                 "/Cuadratura/Tablas/HSS/OUT/Carga_HSS.log",
+                "/Cuadratura/Plataforma/ValidLines/carga_Validline.log",
+                "/Cuadratura/Plataforma/IbnLines/carga_ibnlines.log"
                 // Agrega aquí más rutas de archivos que deseas descargar...
             ];
 

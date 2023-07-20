@@ -55,12 +55,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             <div class="card card-primary card-outline">
                                 <div class="card-header">
-                                    <h5 class="m-0">Carga PSVA</h5>
+                                    <h5 class="m-0">PSVA</h5>
                                 </div>
                                 <div class="card-body">
                                     <?php if (isset($fileContents)): ?>
                                     <iframe class="col-lg-12" height="400"
                                         src="<?php echo $this->raiz; ?>/resources/assets/logs/Carga_PSVA.log"></iframe>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+
+                            <div class="card card-primary card-outline">
+                                <div class="card-header">
+                                    <h5 class="m-0">ValidLines</h5>
+                                </div>
+                                <div class="card-body">
+                                    <?php if (isset($fileContents)): ?>
+                                    <iframe class="col-lg-12" height="400"
+                                        src="<?php echo $this->raiz; ?>/resources/assets/logs/carga_Validline.log"></iframe>
                                     <?php endif; ?>
                                 </div>
                             </div>
@@ -77,6 +89,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="card-body">
                                     <iframe class="col-lg-12" height="400"
                                         src="<?php echo $this->raiz; ?>/resources/assets/logs/Carga_HSS.log"></iframe>
+                                </div>
+                            </div>
+
+                            <div class="card card-primary card-outline">
+                                <div class="card-header">
+                                    <h5 class="m-0">IbnLines</h5>
+                                </div>
+                                <div class="card-body">
+                                    <?php if (isset($fileContents)): ?>
+                                    <iframe class="col-lg-12" height="400"
+                                        src="<?php echo $this->raiz; ?>/resources/assets/logs/carga_ibnlines.log"></iframe>
+                                    <?php endif; ?>
                                 </div>
                             </div>
 
