@@ -37,7 +37,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="<?php echo $this->raiz; ?>/logs">Logs</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo $this->raiz; ?>/ArchLogs">Logs</a></li>
                                 <li class="breadcrumb-item"><a href="#">Modelo de datos 2.0</a></li>
                             </ol>
                         </div><!-- /.col -->
@@ -45,21 +45,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div><!-- /.container-fluid -->
             </div><!-- /.content-header -->
 
-            <!-- mitad 1 -->
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
+                    
                         <div class="col-12 col-sm-6">
-                        <?php 
-                        $totalFiles = count($namesOnly);
-                        $halfCount = ceil($totalFiles / 2); // Round up to ensure the first half has enough elements
-
-                        for ($i = 0; $i < $halfCount; $i++) {
-                            $fileName = $namesOnly[$i];
-                        ?>
+                        <?php foreach ($namesOnly as $fileName) {?>
                             <div class="card card-dark card-tabs">
                                 <div class="card-header p-0 pt-1">
-                                    <h3 class="card-title"><?php echo $fileName; ?></h3>
+                                    <h3 class="card-title"><?php echo ' AM '. $fileName; ?></h3>
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                             <i class="fas fa-minus"></i>
@@ -75,25 +69,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="tab-pane fade show active" id="HSS" role="tabpanel"
                                             aria-labelledby="HSS-tab">
                                             <iframe class="col-lg-12" height="425"
-                                                src="<?php echo $this->raiz; ?>/resources/assets/logs/<?php echo $fileName; ?>">
-                                            </iframe>
+                                                src="<?php echo $this->raiz; ?>/resources/assets/logs/<?php echo $fileName; ?>"></iframe>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        <?php 
-                        } // end of first half foreach loop
-                        ?>
+                            <?php } ?>  
                         </div><!-- /.col -->
 
                         <div class="col-12 col-sm-6">
-                            <?php 
-                for ($i = $halfCount; $i < $totalFiles; $i++) {
-                    $fileName = $namesOnly[$i];
-            ?>
+                        <?php foreach ($namesOnly1 as $fileName1) {?>
                             <div class="card card-dark card-tabs">
                                 <div class="card-header p-0 pt-1">
-                                    <h3 class="card-title"><?php echo $fileName; ?></h3>
+                                    <h3 class="card-title"><?php echo ' PM '. $fileName1; ?></h3>
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                             <i class="fas fa-minus"></i>
@@ -109,21 +97,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="tab-pane fade show active" id="HSS" role="tabpanel"
                                             aria-labelledby="HSS-tab">
                                             <iframe class="col-lg-12" height="425"
-                                                src="<?php echo $this->raiz; ?>/resources/assets/logs/<?php echo $fileName; ?>">
-                                            </iframe>
+                                                src="<?php echo $this->raiz; ?>/resources/assets/logs/<?php echo $fileName1; ?>"></iframe>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <?php 
-                } // end of second half foreach loop
-            ?>
+                            <?php } ?>  
                         </div><!-- /.col -->
+                      
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div><!-- /.content -->
-
-
+            
 
         </div><!-- /.content-wrapper -->
 

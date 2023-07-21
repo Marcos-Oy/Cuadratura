@@ -84,29 +84,6 @@ public function ViewsArchLogs()
     if (file_exists($viewPath)) {
         if ($this->sftpManager->connect() && $this->sftpManager->login()) {
             $filesToDownload = [
-                "/Cuadratura/Tablas/Arch_Log/Respaldo_Correcciones_UIM.log",
-                "/Cuadratura/Tablas/Arch_Log/Respaldo_Validaciones_Automatizadas.log",
-                "/Cuadratura/Tablas/Arch_Log/Respaldo_Correcciones_Siebel.log",
-                "/Cuadratura/Tablas/Arch_Log/limpia_tablas_desc_uim.log",
-                "/Cuadratura/Tablas/Arch_Log/Proceso_Siebel.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_businessinteraction.log",
-                "/Cuadratura/Tablas/Arch_Log/Proceso_UIM.log",
-                "/Cuadratura/Tablas/Arch_Log/Procesos_2140_2151.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_order.log",
-                "/Cuadratura/Tablas/Arch_Log/ejecuta_tango_procinet.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tablas_cut.log",
-                "/Cuadratura/Tablas/Arch_Log/proceso_ftth.log",
-                "/Cuadratura/Tablas/Arch_Log/proceso_cup_validamaterialinet.log",
-                "/Cuadratura/Tablas/Arch_Log/proceso_cup_cicloini.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_clientes.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_productop.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_productop_baja.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_xvtr_siebel_info_series_t.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_equipos_mta.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_gis_direccion.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_migradb.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_config_paquete.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_infodbox_uim_1.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_addr_per.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_tnconsumer.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_telephonenumber.log",
@@ -115,17 +92,20 @@ public function ViewsArchLogs()
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_ret_cablemodem.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_pat_prcontxprod.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_velocidadesnetuim.log",
+                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_productop.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_order_item.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_activtemp.log",
+                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_productop_baja.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_asset.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_ss_derivadas.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_stbseries.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_redt_vivienda.log",
+                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_clientes.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_concgtar_new.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_pat_prproducto.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_uim_cfs.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_redt_calles.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_pat_localidad.log",
+                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_uim_cfs.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_asset_xa.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_uim_rfs.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_asset_x.log",
@@ -135,6 +115,7 @@ public function ViewsArchLogs()
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_servicio.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_material.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_tarifaUIM.log",
+                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_order.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_equipos.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_siebel_act.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_org_ext.log",
@@ -147,11 +128,34 @@ public function ViewsArchLogs()
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_user.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_osm_ordenesactivas.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_prod_int.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_order_type.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_giap_traductor.log",
+                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_order_type.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_giap_voiceplan_movil.log",
+                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_config_paquete.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_grupotar.log",
                 "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_clasemater.log"
+                // Agrega aquí más rutas de archivos que deseas descargar...
+            ];
+
+            $filesToDownload1 = [
+                "/Cuadratura/Tablas/Arch_Log/Respaldo_Correcciones_UIM.log",
+                "/Cuadratura/Tablas/Arch_Log/Respaldo_Validaciones_Automatizadas.log",
+                "/Cuadratura/Tablas/Arch_Log/Respaldo_Correcciones_Siebel.log",
+                "/Cuadratura/Tablas/Arch_Log/limpia_tablas_desc_uim.log",
+                "/Cuadratura/Tablas/Arch_Log/Proceso_Siebel.log",
+                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_businessinteraction.log",
+                "/Cuadratura/Tablas/Arch_Log/Proceso_UIM.log",
+                "/Cuadratura/Tablas/Arch_Log/Procesos_2140_2151.log",
+                "/Cuadratura/Tablas/Arch_Log/ejecuta_tango_procinet.log",
+                "/Cuadratura/Tablas/Arch_Log/refresco_tablas_cut.log",
+                "/Cuadratura/Tablas/Arch_Log/proceso_ftth.log",
+                "/Cuadratura/Tablas/Arch_Log/proceso_cup_validamaterialinet.log",
+                "/Cuadratura/Tablas/Arch_Log/proceso_cup_cicloini.log",
+                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_xvtr_siebel_info_series_t.log",
+                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_equipos_mta.log",
+                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_gis_direccion.log",
+                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_migradb.log",
+                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_infodbox_uim_1.log"                
                 // Agrega aquí más rutas de archivos que deseas descargar...
             ];
 
@@ -182,10 +186,43 @@ public function ViewsArchLogs()
                 }
             }
 
+            foreach ($filesToDownload1 as $fileIndex1 => $filePath1) {
+                $fileContents1 = $this->sftpManager->getFileContentsByPath($filePath1);
+
+                if ($fileContents1 !== false) {
+                    // Ruta donde se guardará el archivo descargado
+                    $downloadPath1 = __DIR__ . '/../../resources/assets/logs/' . basename($filePath1);
+
+                    // Verificamos si el archivo ya existe
+                    if (file_exists($downloadPath1)) {
+                        unlink($downloadPath1);
+                    } else {
+                        // Si el archivo no existe, lo creamos
+                        if (!file_exists(dirname($downloadPath1))) {
+                            mkdir(dirname($downloadPath1), 0755, true);
+                        }
+                    }
+
+                    // Guardamos el contenido del archivo en la nueva ubicación
+                    file_put_contents($downloadPath1, $fileContents1);
+
+                    // Actualizamos el array para tener la ruta descargada
+                    $filesToDownload1[$fileIndex1] = str_replace($_SERVER['DOCUMENT_ROOT'], '', $downloadPath1);
+                } else {
+                    echo '<p>Error: No se pudo obtener el archivo desde el servidor SFTP: ' . $filePath1 . '</p>';
+                }
+            }
+
             $namesOnly = array();
             foreach ($filesToDownload as $filePath) {
                 $fileName = basename($filePath);
                 $namesOnly[] = $fileName;
+            }
+
+            $namesOnly1 = array();
+            foreach ($filesToDownload1 as $filePath1) {
+                $fileName1 = basename($filePath1);
+                $namesOnly1[] = $fileName1;
             }
             // Incluimos la vista y pasamos la lista de URLs de archivos descargados al <iframe>
             include_once $viewPath;
