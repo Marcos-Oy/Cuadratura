@@ -20,8 +20,9 @@ if (isset($_SESSION['TOKEN'])) {
     //Rutas dashboard GET
     $router->get($raiz.'/Home/dashboard', [HomeController::class, 'index']);
 
-    // Rutas usuarios GET
+    // Rutas LOGS GET
     $router->get($raiz.'/logs', [LogsController::class, 'ViewsLogs']);
+    $router->get($raiz.'/ArchLogs', [LogsController::class, 'ViewsArchLogs']);
 
     // Rutas usuarios GET
     $router->get($raiz.'/users/show', [UsersController::class, 'index']);
