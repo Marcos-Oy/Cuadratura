@@ -37,8 +37,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="<?php echo $this->raiz; ?>/ArchLogs">Arch Logs</a></li>
-                                <li class="breadcrumb-item"><a href="#">Modelo de datos 2.0</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo $this->raiz; ?>/ArchLogs">Arch Logs</a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="<?php echo $this->raiz; ?>/ModelDatos">Modelo de
+                                        datos 2</a></li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -85,6 +87,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <a class="nav-link" id="TIVO-tab" data-toggle="pill" href="#TIVO" role="tab"
                                                 aria-controls="TIVO" aria-selected="false">TIVO</a>
                                         </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="FTTH-ONT-GW-tab" data-toggle="pill"
+                                                href="#FTTH-ONT-GW" role="tab" aria-controls="FTTH-ONT-GW"
+                                                aria-selected="false">FtthONTGW</a>
+                                        </li>
                                     </ul>
                                 </div>
 
@@ -93,27 +100,187 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="tab-pane fade show active" id="HSS" role="tabpanel"
                                             aria-labelledby="HSS-tab">
 
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ℹ</th>
+                                                        <th>Nombre</th>
+                                                        <th>Modificación</th>
+                                                        <th>Tamaño</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Publicación</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Recepción</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
                                             <iframe class="col-lg-12" height="425"
                                                 src="<?php echo $this->raiz; ?>/resources/assets/logs/Carga_HSS.log"></iframe>
 
                                         </div>
                                         <div class="tab-pane fade" id="ValidLines" role="tabpanel"
                                             aria-labelledby="ValidLines-tab">
+
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ℹ</th>
+                                                        <th>Nombre</th>
+                                                        <th>Modificación</th>
+                                                        <th>Tamaño</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Publicación</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Recepción</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
                                             <iframe class="col-lg-12" height="425"
                                                 src="<?php echo $this->raiz; ?>/resources/assets/logs/carga_Validline.log"></iframe>
                                         </div>
                                         <div class="tab-pane fade" id="IbnLines" role="tabpanel"
                                             aria-labelledby="IbnLines-tab">
+
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ℹ</th>
+                                                        <th>Nombre</th>
+                                                        <th>Modificación</th>
+                                                        <th>Tamaño</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Publicación</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Recepción</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
                                             <iframe class="col-lg-12" height="425"
                                                 src="<?php echo $this->raiz; ?>/resources/assets/logs/carga_ibnlines.log"></iframe>
                                         </div>
                                         <div class="tab-pane fade" id="PSVA" role="tabpanel" aria-labelledby="PSVA-tab">
+
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ℹ</th>
+                                                        <th>Nombre</th>
+                                                        <th>Modificación</th>
+                                                        <th>Tamaño</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Publicación</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Recepción</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
                                             <iframe class="col-lg-12" height="425"
                                                 src="<?php echo $this->raiz; ?>/resources/assets/logs/Carga_PSVA.log"></iframe>
                                         </div>
                                         <div class="tab-pane fade" id="TIVO" role="tabpanel" aria-labelledby="TIVO-tab">
+
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ℹ</th>
+                                                        <th>Nombre</th>
+                                                        <th>Modificación</th>
+                                                        <th>Tamaño</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Publicación</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Recepción</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
                                             <iframe class="col-lg-12" height="425"
                                                 src="<?php echo $this->raiz; ?>/resources/assets/logs/Carga_Tivo.log"></iframe>
+                                        </div>
+                                        <div class="tab-pane fade" id="FTTH-ONT-GW" role="tabpanel"
+                                            aria-labelledby="FTTH-ONT-GW-tab">
+
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ℹ</th>
+                                                        <th>Nombre</th>
+                                                        <th>Modificación</th>
+                                                        <th>Tamaño</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Publicación</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Recepción</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <iframe class="col-lg-12" height="425"
+                                                src="<?php echo $this->raiz; ?>/resources/assets/logs/Carga_FTTH_ONT_GW.log"></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -162,24 +329,154 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <div class="tab-content" id="custom-tabs-one-tabContent">
                                         <div class="tab-pane fade show active" id="Internet" role="tabpanel"
                                             aria-labelledby="Internet-tab">
+
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ℹ</th>
+                                                        <th>Nombre</th>
+                                                        <th>Modificación</th>
+                                                        <th>Tamaño</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Publicación</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Recepción</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
                                             <iframe class="col-lg-12" height="425"
                                                 src="<?php echo $this->raiz; ?>/resources/assets/logs/carga_inet.log"></iframe>
                                         </div>
                                         <div class="tab-pane fade" id="Adrenalin" role="tabpanel"
                                             aria-labelledby="Adrenalin-tab">
+
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ℹ</th>
+                                                        <th>Nombre</th>
+                                                        <th>Modificación</th>
+                                                        <th>Tamaño</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Publicación</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Recepción</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
                                             <iframe class="col-lg-12" height="425"
                                                 src="<?php echo $this->raiz; ?>/resources/assets/logs/Carga_Adrenalin2.log"></iframe>
                                         </div>
                                         <div class="tab-pane fade" id="Inventario" role="tabpanel"
                                             aria-labelledby="Inventario-tab">
+
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ℹ</th>
+                                                        <th>Nombre</th>
+                                                        <th>Modificación</th>
+                                                        <th>Tamaño</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Publicación</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Recepción</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
                                             <iframe class="col-lg-12" height="425"
                                                 src="<?php echo $this->raiz; ?>/resources/assets/logs/carga_Inventario.log"></iframe>
                                         </div>
                                         <div class="tab-pane fade" id="AMS" role="tabpanel" aria-labelledby="AMS-tab">
+
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ℹ</th>
+                                                        <th>Nombre</th>
+                                                        <th>Modificación</th>
+                                                        <th>Tamaño</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Publicación</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Recepción</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
                                             <iframe class="col-lg-12" height="425"
                                                 src="<?php echo $this->raiz; ?>/resources/assets/logs/carga_AMS.log"></iframe>
                                         </div>
                                         <div class="tab-pane fade" id="BBMS" role="tabpanel" aria-labelledby="BBMS-tab">
+
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ℹ</th>
+                                                        <th>Nombre</th>
+                                                        <th>Modificación</th>
+                                                        <th>Tamaño</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Publicación</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Recepción</b></td>
+                                                        <td>Nombre</td>
+                                                        <td>Modificación</td>
+                                                        <td>Tamaño✔⚠</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
                                             <iframe class="col-lg-12" height="425"
                                                 src="<?php echo $this->raiz; ?>/resources/assets/logs/carga_BBMS.log"></iframe>
                                         </div>

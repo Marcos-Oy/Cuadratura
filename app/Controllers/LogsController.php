@@ -34,7 +34,8 @@ public function ViewsLogs()
                 "/Cuadratura/Tablas/carga_incognito/FTTH/carga_Inventario.log",
                 "/Cuadratura/Tablas/carga_incognito/FTTH/carga_AMS.log",
                 "/Cuadratura/Tablas/carga_incognito/FTTH/carga_BBMS.log",
-                "/Cuadratura/Plataforma/TIVO/ARCHIVOS/Carga_Tivo.log"
+                "/Cuadratura/Plataforma/TIVO/ARCHIVOS/Carga_Tivo.log",
+                "/Cuadratura/FTTH_ONT_GW/Carga_FTTH_ONT_GW.log"
                 // Agrega aquí más rutas de archivos que deseas descargar...
             ];
 
@@ -234,9 +235,114 @@ public function ViewsArchLogs()
     }
 }
 
+//
+
+public function ViewsModelDatos()
+{
+    $viewPath = __DIR__ . '/../../resources/views/logs/ArchLog.php';
+
+    if (file_exists($viewPath)) {
+        if ($this->sftpManager->connect() && $this->sftpManager->login()) {
+            $filesToDownload = [
+                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_tmp_portaandes.log",
+                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_1.log",
+                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_2.log",
+                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_3.log",
+                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_4.log",
+                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_5.log",
+                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_6.log",
+                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_7.log"                
+                // Agrega aquí más rutas de archivos que deseas descargar...
+            ];
+
+            $filesToDownload1 = [
+                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_ATTRIB_46.log",
+                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_ATTRIB_42.log",
+                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_X_OCS_ATTRIB_59.log",
+                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_CPE_TECHNOLOGY.log",
+                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_ATTRIB_45.log",
+                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_X_OCS_ATTRIB_57.log",
+                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_CPE_TYPE.log",
+                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_ATTRIB_44.log"                               
+                // Agrega aquí más rutas de archivos que deseas descargar...
+            ];
+
+            foreach ($filesToDownload as $fileIndex => $filePath) {
+                $fileContents = $this->sftpManager->getFileContentsByPath($filePath);
+
+                if ($fileContents !== false) {
+                    // Ruta donde se guardará el archivo descargado
+                    $downloadPath = __DIR__ . '/../../resources/assets/logs/' . basename($filePath);
+
+                    // Verificamos si el archivo ya existe
+                    if (file_exists($downloadPath)) {
+                        unlink($downloadPath);
+                    } else {
+                        // Si el archivo no existe, lo creamos
+                        if (!file_exists(dirname($downloadPath))) {
+                            mkdir(dirname($downloadPath), 0755, true);
+                        }
+                    }
+
+                    // Guardamos el contenido del archivo en la nueva ubicación
+                    file_put_contents($downloadPath, $fileContents);
+
+                    // Actualizamos el array para tener la ruta descargada
+                    $filesToDownload[$fileIndex] = str_replace($_SERVER['DOCUMENT_ROOT'], '', $downloadPath);
+                } else {
+                    echo '<p>Error: No se pudo obtener el archivo desde el servidor SFTP: ' . $filePath . '</p>';
+                }
+            }
+
+            foreach ($filesToDownload1 as $fileIndex1 => $filePath1) {
+                $fileContents1 = $this->sftpManager->getFileContentsByPath($filePath1);
+
+                if ($fileContents1 !== false) {
+                    // Ruta donde se guardará el archivo descargado
+                    $downloadPath1 = __DIR__ . '/../../resources/assets/logs/' . basename($filePath1);
+
+                    // Verificamos si el archivo ya existe
+                    if (file_exists($downloadPath1)) {
+                        unlink($downloadPath1);
+                    } else {
+                        // Si el archivo no existe, lo creamos
+                        if (!file_exists(dirname($downloadPath1))) {
+                            mkdir(dirname($downloadPath1), 0755, true);
+                        }
+                    }
+
+                    // Guardamos el contenido del archivo en la nueva ubicación
+                    file_put_contents($downloadPath1, $fileContents1);
+
+                    // Actualizamos el array para tener la ruta descargada
+                    $filesToDownload1[$fileIndex1] = str_replace($_SERVER['DOCUMENT_ROOT'], '', $downloadPath1);
+                } else {
+                    echo '<p>Error: No se pudo obtener el archivo desde el servidor SFTP: ' . $filePath1 . '</p>';
+                }
+            }
+
+            $namesOnly = array();
+            foreach ($filesToDownload as $filePath) {
+                $fileName = basename($filePath);
+                $namesOnly[] = $fileName;
+            }
+
+            $namesOnly1 = array();
+            foreach ($filesToDownload1 as $filePath1) {
+                $fileName1 = basename($filePath1);
+                $namesOnly1[] = $fileName1;
+            }
+            // Incluimos la vista y pasamos la lista de URLs de archivos descargados al <iframe>
+            include_once $viewPath;
+        } else {
+            echo '<p>Error: No se pudo conectar al servidor SFTP.</p>';
+        }
+    } else {
+        echo "Error: la vista no existe";
+    }
+}
 
 // ...
 
-    
 }
 
