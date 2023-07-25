@@ -117,22 +117,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     <tr>
                                                         <th>ℹ</th>
                                                         <th>Nombre</th>
-                                                        <th>Modificación</th>
                                                         <th>Tamaño</th>
+                                                        <th>Modificación</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td><b>Publicación</b></td>
+                                                        <td><b>Publ</b></td>
                                                         <td>Nombre</td>
-                                                        <td>Modificación</td>
                                                         <td>Tamaño✔⚠</td>
+                                                        <td>Modificación</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><b>Recepción</b></td>
-                                                        <td>Nombre</td>
-                                                        <td>Modificación</td>
-                                                        <td>Tamaño✔⚠</td>
+                                                        <td><b>Re</b></td>
+                                                        <td><?php echo $filesToInfo[0]['path']; ?></td>
+                                                        <td>
+                                                            <?php echo ceil($filesToInfo[0]['size'] / 1024); ?> KB
+                                                            <?php if(ceil($filesToInfo[0]['size'] / 1024) >= 24){ echo " ✔";}else{ echo " ⚠";} ?>
+                                                        </td>
+                                                        <td><?php echo $filesToInfo[0]['modification_time']; ?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>

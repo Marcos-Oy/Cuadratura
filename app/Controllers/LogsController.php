@@ -44,8 +44,10 @@ public function ViewsLogs()
                 "/Cuadratura/Plataforma/TIVO/ARCHIVOS/Carga_Tivo.log",
 
                 "/Cuadratura/FTTH_ONT_GW/Carga_FTTH_ONT_GW.log"
-                // Agrega aquí más rutas de archivos que deseas descargar...
+                // Agrega aquí más rutas de archivos que deseas consultar...
             ];
+
+            $filesToInfo = $filesToDownload;
 
             foreach ($filesToDownload as $fileIndex => $filePath) {
                 $fileContents = $this->sftpManager->getFileContentsByPath($filePath);
@@ -74,7 +76,23 @@ public function ViewsLogs()
                 }
             }
 
-            // Incluimos la vista y pasamos la lista de URLs de archivos descargados al <iframe>
+            foreach ($filesToInfo as $fileIndex => $filePath) {
+                $fileInfo = $this->sftpManager->getFileInfoByPath($filePath);
+
+                if ($fileInfo !== false) {
+                    $fileSize = $fileInfo['size'];
+                    $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
+
+                    $filesToInfo[$fileIndex] = [
+                        'path' => basename($filePath),
+                        'size' => $fileSize,
+                        'modification_time' => $fileModificationTime
+                    ];
+                } else {
+                    echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
+                }
+            }
+
             include_once $viewPath;
         } else {
             echo '<p>Error: No se pudo conectar al servidor SFTP.</p>';
@@ -83,6 +101,7 @@ public function ViewsLogs()
         echo "Error: la vista no existe";
     }
 }
+
 
 //
 

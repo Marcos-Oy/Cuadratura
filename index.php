@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set('America/Santiago');
+
 // Define la raíz del proyecto según el nombre del proyecto
 $raiz = '/Cuadratura';
 

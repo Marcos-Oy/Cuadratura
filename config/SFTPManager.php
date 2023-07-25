@@ -33,6 +33,21 @@ class SFTPManager
         return true;
     }
 
+    public function getFileInfoByPath($filePath)
+    {
+        $sftp = ssh2_sftp($this->conn_id);
+        if (!$sftp) {
+            die("No se pudo obtener el objeto SFTP");
+        }
+
+        $fileStat = ssh2_sftp_stat($sftp, $filePath);
+        if ($fileStat === false) {
+            die("No se pudo obtener la información del archivo en el servidor SFTP");
+        }
+
+        return $fileStat;
+    }
+
     public function getFileContentsByPath($filePath)
     {
         $sftp = ssh2_sftp($this->conn_id);
