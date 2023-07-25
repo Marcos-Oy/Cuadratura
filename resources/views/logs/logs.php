@@ -66,10 +66,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </button>
                                     </div>
                                     <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
-                                        
+
                                         <li class="nav-item">
-                                            <a class="nav-link" id="HSS-tab" data-toggle="pill" href="#HSS"
-                                                role="tab" aria-controls="HSS" aria-selected="true">HSS</a>
+                                            <a class="nav-link" id="HSS-tab" data-toggle="pill" href="#HSS" role="tab"
+                                                aria-controls="HSS" aria-selected="true">HSS</a>
                                         </li>
 
                                         <li class="nav-item">
@@ -109,10 +109,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             Seleccione una opción para visualizar .log
                                         </div>
 
-                                        <div class="tab-pane fade" id="HSS" role="tabpanel"
-                                            aria-labelledby="HSS-tab">
+                                        <div class="tab-pane fade" id="HSS" role="tabpanel" aria-labelledby="HSS-tab">
 
-                                            <table class="table table-bordered">
+                                            <style>
+                                            .table-small-font td,
+                                            .table-small-font th {
+                                                font-size: 12px;
+                                                /* Puedes ajustar el tamaño de fuente según tus preferencias */
+                                            }
+                                            </style>
+
+                                            <!-- Tabla con tamaño de fuente reducido -->
+                                            <table class="table table-bordered table-small-font">
                                                 <thead>
                                                     <tr>
                                                         <th>ℹ</th>
@@ -124,21 +132,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <tbody>
                                                     <tr>
                                                         <td><b>Publ</b></td>
-                                                        <td>Nombre</td>
-                                                        <td>Tamaño✔⚠</td>
-                                                        <td>Modificación</td>
+                                                        <td><?php echo $filesToPublicVlr['path']; ?></td>
+                                                        <td>
+                                                            <?php echo ceil($filesToPublicVlr['size'] / 1024); ?> KB
+                                                            <?php if (ceil($filesToPublicVlr['size'] / 1024) >= 15) { echo " ✔"; } else { echo " ⚠"; } ?>
+                                                        </td>
+                                                        <td><?php echo $filesToPublicVlr['modification_time']; ?>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td><b>Re</b></td>
                                                         <td><?php echo $filesToInfo[0]['path']; ?></td>
                                                         <td>
                                                             <?php echo ceil($filesToInfo[0]['size'] / 1024); ?> KB
-                                                            <?php if(ceil($filesToInfo[0]['size'] / 1024) >= 24){ echo " ✔";}else{ echo " ⚠";} ?>
+                                                            <?php if (ceil($filesToInfo[0]['size'] / 1024) >= 24) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
                                                         <td><?php echo $filesToInfo[0]['modification_time']; ?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
+
 
                                             <iframe class="col-lg-12" height="425"
                                                 src="<?php echo $this->raiz; ?>/resources/assets/logs/Carga_HSS.log"></iframe>
@@ -324,9 +337,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
 
                                         <li class="nav-item">
-                                            <a class="nav-link" id="Internet-tab" data-toggle="pill"
-                                                href="#Internet" role="tab" aria-controls="Internet"
-                                                aria-selected="true">Internet</a>
+                                            <a class="nav-link" id="Internet-tab" data-toggle="pill" href="#Internet"
+                                                role="tab" aria-controls="Internet" aria-selected="true">Internet</a>
                                         </li>
 
                                         <li class="nav-item">
@@ -501,8 +513,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
 
                                         <li class="nav-item">
-                                            <a class="nav-link" id="Adrenalin-tab" data-toggle="pill"
-                                                href="#Adrenalin" role="tab" aria-controls="Adrenalin"
+                                            <a class="nav-link" id="Adrenalin-tab" data-toggle="pill" href="#Adrenalin"
+                                                role="tab" aria-controls="Adrenalin"
                                                 aria-selected="false">Carga-Adrenalin</a>
                                         </li>
 

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use Config\Connection\SFTPManager;
+use Config\Connection\SFTPVlr;
 
 class LogsController
 {
@@ -10,19 +11,92 @@ class LogsController
 
     public function __construct()
     {
+        require_once(__DIR__ . '/../../Config/SFTPVlr.php');
+        $this->sftpVlr = new SFTPVlr();
+
         require_once(__DIR__ . '/../../Config/SFTPManager.php');
         $this->sftpManager = new SFTPManager();
+
         global $raiz;
         $this->raiz = $raiz;
     }
 
-// ...
+// ... lo ideal separar vistas con descargas e infos
 
+public function InfoLogs(){
+    
+}
+
+public function DownloadLogs(){
+
+}
+
+public function DownloadArchLogs(){
+    
+}
+
+//
 public function ViewsLogs()
 {
     $viewPath = __DIR__ . '/../../resources/views/logs/logs.php';
 
     if (file_exists($viewPath)) {
+
+        if ($this->sftpVlr->connect() && $this->sftpVlr->login()) {
+            $fechaActual = date('Ymd');
+            $searchPattern = "OK_HSS9860_2_{$fechaActual}";
+        
+            // Obtener la lista de archivos en el directorio deseado
+            $remoteDir = "/ftphome/home/VLR/";
+            $allFiles = $this->sftpVlr->getFilesInDirectory($remoteDir);
+        
+            $matchingFiles = [];
+        
+            // Buscar los archivos que contienen el fragmento de búsqueda
+            foreach ($allFiles as $file) {
+                if (strpos($file, $searchPattern) !== false) {
+                    $matchingFiles[] = $file;
+                }
+            }
+        
+            if (!empty($matchingFiles)) {
+                // Ordenar los archivos por fecha de modificación en orden descendente (el más reciente primero)
+                usort($matchingFiles, function($a, $b) use ($remoteDir) {
+                    $fileA = $remoteDir . $a;
+                    $fileB = $remoteDir . $b;
+                    $timeA = $this->sftpVlr->getFileInfoByPath($fileA)['mtime'];
+                    $timeB = $this->sftpVlr->getFileInfoByPath($fileB)['mtime'];
+                    return $timeB - $timeA;
+                });
+        
+                // Obtener la ruta del archivo más reciente (el primer archivo de la lista)
+                $rutaArchivoMasReciente = $remoteDir . $matchingFiles[0];
+        
+                // Obtener el nombre del archivo más reciente sin la ruta completa
+                $nombreArchivoMasReciente = basename($rutaArchivoMasReciente);
+        
+                // Obtener información del archivo más reciente utilizando el método getFileInfoByPath
+                $fileInfo = $this->sftpVlr->getFileInfoByPath($rutaArchivoMasReciente);
+                if ($fileInfo !== false) {
+                    $fileSize = $fileInfo['size'];
+                    $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
+        
+                    $filesToPublicVlr = [
+                        'path' => $nombreArchivoMasReciente,
+                        'size' => $fileSize,
+                        'modification_time' => $fileModificationTime
+                    ];
+
+                } else {
+                    echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $rutaArchivoMasReciente . '</p>';
+                }
+            } else {
+                echo "No se encontraron archivos para la fecha actual con el fragmento de búsqueda: {$searchPattern}";
+            }
+        }
+        
+        
+
         if ($this->sftpManager->connect() && $this->sftpManager->login()) {
             $filesToDownload = [
                 "/Cuadratura/Tablas/HSS/OUT/Carga_HSS.log",
@@ -101,7 +175,6 @@ public function ViewsLogs()
         echo "Error: la vista no existe";
     }
 }
-
 
 //
 
