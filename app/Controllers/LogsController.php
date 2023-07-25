@@ -25,16 +25,24 @@ public function ViewsLogs()
     if (file_exists($viewPath)) {
         if ($this->sftpManager->connect() && $this->sftpManager->login()) {
             $filesToDownload = [
-                "/Cuadratura/Plataforma/PSVA/Carga_PSVA.log",
                 "/Cuadratura/Tablas/HSS/OUT/Carga_HSS.log",
-                "/Cuadratura/Plataforma/ValidLines/carga_Validline.log",
+
                 "/Cuadratura/Plataforma/IbnLines/carga_ibnlines.log",
+                "/Cuadratura/Plataforma/ValidLines/carga_Validline.log",
+                "/Cuadratura/Plataforma/PSVA/Carga_PSVA.log",
+
                 "/Cuadratura/Plataforma/data/carga_inet.log",
+                "/Cuadratura/Plataforma/data/ProcesoAdrenalin.log",
+                "/Cuadratura/Plataforma/data/Estadisticas_Adrenalin.log",
                 "/Cuadratura/Plataforma/data/Carga_Adrenalin2.log",
+                "/Cuadratura/Plataforma/data/Secuencia_Adrenalin.log",
+                
                 "/Cuadratura/Tablas/carga_incognito/FTTH/carga_Inventario.log",
                 "/Cuadratura/Tablas/carga_incognito/FTTH/carga_AMS.log",
                 "/Cuadratura/Tablas/carga_incognito/FTTH/carga_BBMS.log",
+
                 "/Cuadratura/Plataforma/TIVO/ARCHIVOS/Carga_Tivo.log",
+
                 "/Cuadratura/FTTH_ONT_GW/Carga_FTTH_ONT_GW.log"
                 // Agrega aquí más rutas de archivos que deseas descargar...
             ];
