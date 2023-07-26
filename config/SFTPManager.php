@@ -66,6 +66,27 @@ class SFTPManager
         return $contents;
     }
 
+    public function getFilesInDirectory($directory)
+    {
+        $sftp = ssh2_sftp($this->conn_id);
+        if (!$sftp) {
+            die("No se pudo obtener el objeto SFTP");
+        }
+
+        $files = [];
+        $dirHandle = opendir("ssh2.sftp://{$sftp}{$directory}");
+
+        while (($file = readdir($dirHandle)) !== false) {
+            if ($file !== '.' && $file !== '..') {
+                $files[] = $file;
+            }
+        }
+
+        closedir($dirHandle);
+
+        return $files;
+    }
+
     public function close()
     {
         ssh2_disconnect($this->conn_id);

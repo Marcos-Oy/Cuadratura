@@ -33,22 +33,40 @@ class SFTPAdrenalin
         return true;
     }
 
-    public function getFileContentsByPath($filePath)
+    public function getFileInfoByPath($filePath)
     {
         $sftp = ssh2_sftp($this->conn_id);
         if (!$sftp) {
             die("No se pudo obtener el objeto SFTP");
         }
 
-        $stream = fopen("ssh2.sftp://{$sftp}{$filePath}", 'rb');
-        if (!$stream) {
-            die("No se pudo abrir el archivo en el servidor SFTP");
+        $fileStat = ssh2_sftp_stat($sftp, $filePath);
+        if ($fileStat === false) {
+            die("No se pudo obtener la información del archivo en el servidor SFTP");
         }
 
-        $contents = stream_get_contents($stream);
-        fclose($stream);
+        return $fileStat;
+    }
 
-        return $contents;
+    public function getFilesInDirectory($directory)
+    {
+        $sftp = ssh2_sftp($this->conn_id);
+        if (!$sftp) {
+            die("No se pudo obtener el objeto SFTP");
+        }
+
+        $files = [];
+        $dirHandle = opendir("ssh2.sftp://{$sftp}{$directory}");
+
+        while (($file = readdir($dirHandle)) !== false) {
+            if ($file !== '.' && $file !== '..') {
+                $files[] = $file;
+            }
+        }
+
+        closedir($dirHandle);
+
+        return $files;
     }
 
     public function close()

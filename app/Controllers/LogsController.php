@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use Config\Connection\SFTPManager;
 use Config\Connection\SFTPVlr;
+use Config\Connection\SFTPIncognito;
+use Config\Connection\SFTPMapuche;
 
 class LogsController
 {
@@ -11,11 +13,17 @@ class LogsController
 
     public function __construct()
     {
+        require_once(__DIR__ . '/../../Config/SFTPManager.php');
+        $this->sftpManager = new SFTPManager();
+
         require_once(__DIR__ . '/../../Config/SFTPVlr.php');
         $this->sftpVlr = new SFTPVlr();
 
-        require_once(__DIR__ . '/../../Config/SFTPManager.php');
-        $this->sftpManager = new SFTPManager();
+        require_once(__DIR__ . '/../../Config/SFTPIncognito.php');
+        $this->sftpIncognito = new SFTPIncognito();
+
+        require_once(__DIR__ . '/../../Config/SFTPMapuche.php');
+        $this->sftpMapuche = new SFTPMapuche();
 
         global $raiz;
         $this->raiz = $raiz;
@@ -29,8 +37,20 @@ public function ViewsLogs()
 
     if (file_exists($viewPath)) {
 
-        $filesToInfo = $this->InfoLogs();
-        $filesToPublicVlr = $this->InfoHSSLogs();
+        $filesToInfo = $this->InfoLogs('MANAGER');
+        $filesToPublicTIVO = $this->InfoLogs('TIVO');
+
+        $filesToPublicHSS = $this->InfoVLRLogs('HSS');
+
+        $filesToPublicINVENTARIO = $this->InfoINCOGNITOLogs('INVENTARIO');
+        $filesToPublicAMS = $this->InfoINCOGNITOLogs('AMS');
+        $filesToPublicBBMS = $this->InfoINCOGNITOLogs('BBMS');
+        $filesToPublicINET = $this->InfoINCOGNITOLogs('INET');
+        $filesToPublicONT = $this->InfoINCOGNITOLogs('ONT');
+
+        $filesToPublicPSVA = $this->InfoMAPUCHELogs('PSVA');
+        $filesToPublicIbnLines = $this->InfoMAPUCHELogs('IbnLines');
+        $filesToPublicValidLines = $this->InfoMAPUCHELogs('ValidLines');
 
         $filesToDownload = $this->DownloadLogs($this->LogsDirectories());
 
@@ -77,25 +97,25 @@ public function ViewsModelDatos()
 public function LogsDirectories()
 {
     $Dir = [
-        "/Cuadratura/Tablas/HSS/OUT/Carga_HSS.log",
+        "/Cuadratura/Tablas/HSS/OUT/Carga_HSS.log", // 0
 
-        "/Cuadratura/Plataforma/IbnLines/carga_ibnlines.log",
-        "/Cuadratura/Plataforma/ValidLines/carga_Validline.log",
-        "/Cuadratura/Plataforma/PSVA/Carga_PSVA.log",
+        "/Cuadratura/Plataforma/IbnLines/carga_ibnlines.log", // 1
+        "/Cuadratura/Plataforma/ValidLines/carga_Validline.log", // 2
+        "/Cuadratura/Plataforma/PSVA/Carga_PSVA.log", // 3
 
-        "/Cuadratura/Plataforma/data/carga_inet.log",
-        "/Cuadratura/Plataforma/data/ProcesoAdrenalin.log",
-        "/Cuadratura/Plataforma/data/Estadisticas_Adrenalin.log",
-        "/Cuadratura/Plataforma/data/Carga_Adrenalin2.log",
-        "/Cuadratura/Plataforma/data/Secuencia_Adrenalin.log",
+        "/Cuadratura/Plataforma/data/carga_inet.log", // 4
+        "/Cuadratura/Plataforma/data/ProcesoAdrenalin.log", // 5
+        "/Cuadratura/Plataforma/data/Estadisticas_Adrenalin.log", // 6
+        "/Cuadratura/Plataforma/data/Carga_Adrenalin2.log", // 7
+        "/Cuadratura/Plataforma/data/Secuencia_Adrenalin.log", // 8
         
-        "/Cuadratura/Tablas/carga_incognito/FTTH/carga_Inventario.log",
-        "/Cuadratura/Tablas/carga_incognito/FTTH/carga_AMS.log",
-        "/Cuadratura/Tablas/carga_incognito/FTTH/carga_BBMS.log",
+        "/Cuadratura/Tablas/carga_incognito/FTTH/carga_Inventario.log", // 9
+        "/Cuadratura/Tablas/carga_incognito/FTTH/carga_AMS.log", // 10
+        "/Cuadratura/Tablas/carga_incognito/FTTH/carga_BBMS.log", // 11
 
-        "/Cuadratura/Plataforma/TIVO/ARCHIVOS/Carga_Tivo.log",
+        "/Cuadratura/Plataforma/TIVO/ARCHIVOS/Carga_Tivo.log", // 12
 
-        "/Cuadratura/FTTH_ONT_GW/Carga_FTTH_ONT_GW.log"
+        "/Cuadratura/FTTH_ONT_GW/Carga_FTTH_ONT_GW.log" // 13
         // Agrega aquí más rutas de archivos que deseas consultar...
     ];
     return $Dir;
@@ -204,7 +224,7 @@ public function ModelDatosDirectories($iDir)
             // Agrega aquí más rutas de archivos que deseas descargar...
         ];
     }
-    
+
     if($iDir == 1)
     {
         $Dir = [
@@ -225,43 +245,103 @@ public function ModelDatosDirectories($iDir)
 
 ///////////////////////////////////// INFOS /////////////////////////////////////
 
-public function InfoLogs()
+public function InfoLogs($iDir)
 {
     if ($this->sftpManager->connect() && $this->sftpManager->login()) {
 
-        $filesToInfo = $this->LogsDirectories();
+        if($iDir == 'MANAGER'){
+            $filesToInfo = $this->LogsDirectories();
 
-        foreach ($filesToInfo as $fileIndex => $filePath) {
-            $fileInfo = $this->sftpManager->getFileInfoByPath($filePath);
+            foreach ($filesToInfo as $fileIndex => $filePath) {
+                $fileInfo = $this->sftpManager->getFileInfoByPath($filePath);
 
-            if ($fileInfo !== false) {
-                $fileSize = $fileInfo['size'];
-                $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
+                if ($fileInfo !== false) {
+                    $fileSize = $fileInfo['size'];
+                    $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
 
-                $filesToInfo[$fileIndex] = [
-                    'path' => basename($filePath),
-                    'size' => $fileSize,
-                    'modification_time' => $fileModificationTime
-                ];
+                    $filesToInfo[$fileIndex] = [
+                        'path' => basename($filePath),
+                        'size' => $fileSize,
+                        'modification_time' => $fileModificationTime
+                    ];
+                } else {
+                    echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
+                }
+            }
+            return $filesToInfo;
+        }
+
+        if($iDir == 'TIVO'){
+        
+            $searchPattern = "data_tivo.csv";
+            // Obtener la lista de archivos en el directorio deseado
+            $remoteDir = "/Cuadratura/Plataforma/TIVO/ARCHIVOS/";
+
+            $allFiles = $this->sftpManager->getFilesInDirectory($remoteDir);
+        
+            $matchingFiles = [];
+        
+            // Buscar los archivos que contienen el fragmento de búsqueda
+            foreach ($allFiles as $file) {
+                if (strpos($file, $searchPattern) !== false) {
+                    $matchingFiles[] = $file;
+                }
+            }
+        
+            if (!empty($matchingFiles)) {
+                // Ordenar los archivos por fecha de modificación en orden descendente (el más reciente primero)
+                usort($matchingFiles, function($a, $b) use ($remoteDir) {
+                    $fileA = $remoteDir . $a;
+                    $fileB = $remoteDir . $b;
+                    $timeA = $this->sftpManager->getFileInfoByPath($fileA)['mtime'];
+                    $timeB = $this->sftpManager->getFileInfoByPath($fileB)['mtime'];
+                    return $timeB - $timeA;
+                });
+        
+                // Obtener la ruta del archivo más reciente (el primer archivo de la lista)
+                $rutaArchivoMasReciente = $remoteDir . $matchingFiles[0];
+        
+                // Obtener el nombre del archivo más reciente sin la ruta completa
+                $nombreArchivoMasReciente = basename($rutaArchivoMasReciente);
+        
+                // Obtener información del archivo más reciente utilizando el método getFileInfoByPath
+                $fileInfo = $this->sftpManager->getFileInfoByPath($rutaArchivoMasReciente);
+                if ($fileInfo !== false) {
+                    $fileSize = $fileInfo['size'];
+                    $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
+        
+                    $filesToPublicTIVO = [
+                        'path' => $nombreArchivoMasReciente,
+                        'size' => $fileSize,
+                        'modification_time' => $fileModificationTime
+                    ];
+    
+                    return $filesToPublicTIVO;
+                } else {
+                    echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $rutaArchivoMasReciente . '</p>';
+                }
             } else {
-                echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
+                echo "No se encontraron archivos para la fecha actual con el fragmento de búsqueda: {$searchPattern}";
             }
         }
-        return $filesToInfo;
+        
     } else {
         echo '<p>Error: No se pudo conectar al servidor SFTP.</p>';
     }
 }
 
-public function InfoHSSLogs()
+public function InfoVLRLogs($iDir)
 {
 
     if ($this->sftpVlr->connect() && $this->sftpVlr->login()) {
         $fechaActual = date('Ymd');
-        $searchPattern = "OK_HSS9860_2_{$fechaActual}";
-    
-        // Obtener la lista de archivos en el directorio deseado
-        $remoteDir = "/ftphome/home/VLR/";
+        
+        if($iDir == 'HSS'){
+            $searchPattern = "OK_HSS9860_2_{$fechaActual}";
+            // Obtener la lista de archivos en el directorio deseado
+            $remoteDir = "/ftphome/home/VLR/";
+        }
+
         $allFiles = $this->sftpVlr->getFilesInDirectory($remoteDir);
     
         $matchingFiles = [];
@@ -310,6 +390,161 @@ public function InfoHSSLogs()
         }
     }
 }
+
+public function InfoMAPUCHELogs($iDir)
+{
+
+    if ($this->sftpMapuche->connect() && $this->sftpMapuche->login()) {
+
+        if($iDir == 'PSVA'){
+            $searchPattern = "DB_PSVA.csv.gz";
+            // Obtener la lista de archivos en el directorio deseado
+            $remoteDir = "/ftphome/home/trabajos/psva/";
+        }
+        if($iDir == 'IbnLines'){
+            $searchPattern = "datos_ibnlines.csv.gz";
+            // Obtener la lista de archivos en el directorio deseado
+            $remoteDir = "/ftphome/home/trabajos/telefonia/";
+        }
+        if($iDir == 'ValidLines'){
+            $searchPattern = "validLines.csv.gz";
+            // Obtener la lista de archivos en el directorio deseado
+            $remoteDir = "/ftphome/home/trabajos/telefonia/";
+        }
+        
+        $allFiles = $this->sftpMapuche->getFilesInDirectory($remoteDir);
+    
+        $matchingFiles = [];
+    
+        // Buscar los archivos que contienen el fragmento de búsqueda
+        foreach ($allFiles as $file) {
+            if (strpos($file, $searchPattern) !== false) {
+                $matchingFiles[] = $file;
+            }
+        }
+    
+        if (!empty($matchingFiles)) {
+            // Ordenar los archivos por fecha de modificación en orden descendente (el más reciente primero)
+            usort($matchingFiles, function($a, $b) use ($remoteDir) {
+                $fileA = $remoteDir . $a;
+                $fileB = $remoteDir . $b;
+                $timeA = $this->sftpMapuche->getFileInfoByPath($fileA)['mtime'];
+                $timeB = $this->sftpMapuche->getFileInfoByPath($fileB)['mtime'];
+                return $timeB - $timeA;
+            });
+    
+            // Obtener la ruta del archivo más reciente (el primer archivo de la lista)
+            $rutaArchivoMasReciente = $remoteDir . $matchingFiles[0];
+    
+            // Obtener el nombre del archivo más reciente sin la ruta completa
+            $nombreArchivoMasReciente = basename($rutaArchivoMasReciente);
+    
+            // Obtener información del archivo más reciente utilizando el método getFileInfoByPath
+            $fileInfo = $this->sftpMapuche->getFileInfoByPath($rutaArchivoMasReciente);
+            if ($fileInfo !== false) {
+                $fileSize = $fileInfo['size'];
+                $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
+    
+                $filesToPublicMapuche = [
+                    'path' => $nombreArchivoMasReciente,
+                    'size' => $fileSize,
+                    'modification_time' => $fileModificationTime
+                ];
+
+                return $filesToPublicMapuche;
+            } else {
+                echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $rutaArchivoMasReciente . '</p>';
+            }
+        } else {
+            echo "No se encontraron archivos para la fecha actual con el fragmento de búsqueda: {$searchPattern}";
+        }
+    }
+}
+
+public function InfoINCOGNITOLogs($iDir)
+{
+
+    if ($this->sftpIncognito->connect() && $this->sftpIncognito->login()) {
+        $fechaActual = date('j-n-Y');
+        // Obtener la lista de archivos en el directorio deseado
+        $remoteDir = "/home/cuadraturas/FTTH/kpi/archivos/";
+
+        if($iDir == 'INVENTARIO'){
+            
+            // Declarar el nombre del archivo
+            $searchPattern = "FTTH_AMS_BBMS_INVETARIO_{$fechaActual}";
+        }
+        if($iDir == 'BBMS'){
+            // Declarar el nombre del archivo
+            $searchPattern = "FTTH_SOLO_BBMS_{$fechaActual}";
+        }
+        if($iDir == 'AMS'){
+            // Declarar el nombre del archivo
+            $searchPattern = "FTTH_SOLO_AMS_{$fechaActual}";
+        }
+        if($iDir == 'INET'){
+            // Obtener la lista de archivos en el directorio deseado
+            $remoteDir = "/home/cuadraturas/cuadra_incognito/";
+            // Declarar el nombre del archivo
+            $searchPattern = "cuadratura-{$fechaActual}";
+        }
+        if($iDir == 'ONT'){
+            $fechaActual = date('dmY');
+            // Obtener la lista de archivos en el directorio deseado
+            $remoteDir = "/home/cuadraturas/";
+            // Declarar el nombre del archivo
+            $searchPattern = "FTTH_ONT_GW_{$fechaActual}";
+        }
+
+        $allFiles = $this->sftpIncognito->getFilesInDirectory($remoteDir);
+    
+        $matchingFiles = [];
+    
+        // Buscar los archivos que contienen el fragmento de búsqueda
+        foreach ($allFiles as $file) {
+            if (strpos($file, $searchPattern) !== false) {
+                $matchingFiles[] = $file;
+            }
+        }
+    
+        if (!empty($matchingFiles)) {
+            // Ordenar los archivos por fecha de modificación en orden descendente (el más reciente primero)
+            usort($matchingFiles, function($a, $b) use ($remoteDir) {
+                $fileA = $remoteDir . $a;
+                $fileB = $remoteDir . $b;
+                $timeA = $this->sftpIncognito->getFileInfoByPath($fileA)['mtime'];
+                $timeB = $this->sftpIncognito->getFileInfoByPath($fileB)['mtime'];
+                return $timeB - $timeA;
+            });
+    
+            // Obtener la ruta del archivo más reciente (el primer archivo de la lista)
+            $rutaArchivoMasReciente = $remoteDir . $matchingFiles[0];
+    
+            // Obtener el nombre del archivo más reciente sin la ruta completa
+            $nombreArchivoMasReciente = basename($rutaArchivoMasReciente);
+    
+            // Obtener información del archivo más reciente utilizando el método getFileInfoByPath
+            $fileInfo = $this->sftpIncognito->getFileInfoByPath($rutaArchivoMasReciente);
+            if ($fileInfo !== false) {
+                $fileSize = $fileInfo['size'];
+                $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
+    
+                $filesToPublicIncognito = [
+                    'path' => $nombreArchivoMasReciente,
+                    'size' => $fileSize,
+                    'modification_time' => $fileModificationTime
+                ];
+
+                return $filesToPublicIncognito;
+            } else {
+                echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $rutaArchivoMasReciente . '</p>';
+            }
+        } else {
+            echo "No se encontraron archivos para la fecha actual con el fragmento de búsqueda: {$searchPattern}";
+        }
+    }
+}
+
 
 ///////////////////////////////////// DOWNLOADS /////////////////////////////////////
 
