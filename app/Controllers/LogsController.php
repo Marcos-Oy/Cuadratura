@@ -470,7 +470,6 @@ public function InfoINCOGNITOLogs($iDir)
         $remoteDir = "/home/cuadraturas/FTTH/kpi/archivos/";
 
         if($iDir == 'INVENTARIO'){
-            
             // Declarar el nombre del archivo
             $searchPattern = "FTTH_AMS_BBMS_INVETARIO_{$fechaActual}";
         }
@@ -540,7 +539,56 @@ public function InfoINCOGNITOLogs($iDir)
                 echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $rutaArchivoMasReciente . '</p>';
             }
         } else {
-            echo "No se encontraron archivos para la fecha actual con el fragmento de búsqueda: {$searchPattern}";
+            // echo "No se encontraron archivos para la fecha actual con el fragmento de búsqueda: {$searchPattern}";
+            
+            if($iDir == 'INVENTARIO'){
+                // Declarar el nombre del archivo
+                $searchPattern = "FTTH_AMS_BBMS_INVETARIO_{$fechaActual}";
+                $filesToPublicIncognito = [
+                    'path' => $searchPattern,
+                    'size' => 0,
+                    'modification_time' => "Publ. 09:45"
+                ];
+            }
+            if($iDir == 'BBMS'){
+                // Declarar el nombre del archivo
+                $searchPattern = "FTTH_SOLO_BBMS_{$fechaActual}";
+                $filesToPublicIncognito = [
+                    'path' => $searchPattern,
+                    'size' => 0,
+                    'modification_time' => "Publ. 09:45"
+                ];
+            }
+            if($iDir == 'AMS'){
+                // Declarar el nombre del archivo
+                $searchPattern = "FTTH_SOLO_AMS_{$fechaActual}";
+                $filesToPublicIncognito = [
+                    'path' => $searchPattern,
+                    'size' => 0,
+                    'modification_time' => "Publ. 09:45"
+                ];
+            }
+            if($iDir == 'INET'){
+                // Declarar el nombre del archivo
+                $searchPattern = "cuadratura-{$fechaActual}";
+                $filesToPublicIncognito = [
+                    'path' => $searchPattern,
+                    'size' => 0,
+                    'modification_time' => "Publ. 10:01"
+                ];
+            }
+            if($iDir == 'ONT'){
+                $fechaActual = date('dmY');
+                // Declarar el nombre del archivo
+                $searchPattern = "FTTH_ONT_GW_{$fechaActual}";
+                $filesToPublicIncognito = [
+                    'path' => $searchPattern,
+                    'size' => 0,
+                    'modification_time' => "Publ. 10:05"
+                ];
+            }
+
+            return $filesToPublicIncognito;
         }
     }
 }

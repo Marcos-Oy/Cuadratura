@@ -30,15 +30,16 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-               <li class="nav-item">
-                    <a id="Dash" href="<?php echo $this->raiz; ?>/Home/dashboard" class="nav-link">
+
+               <!-- <li class="nav-item">
+                    <a id="Dash" href="<?php //echo $this->raiz; ?>/Home/dashboard" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
                             <span class="right badge badge-secondary">soon</span>
                         </p>
                     </a>
-                </li>
+                </li> -->
 
                 <!-- <li class="nav-item menu-closed">
                     <a href="#" class="nav-link">
@@ -69,7 +70,7 @@
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Logs cargas
-                            <span class="right badge badge-warning">Develop</span>
+                            <span class="right badge badge-danger">New</span>
                         </p>
                     </a>
                 </li>
@@ -98,15 +99,15 @@
                     </ul>
                 </li> -->
 
-                <li class="nav-item">
-                    <a id="ShowUsers" href="<?php echo $this->raiz; ?>/users/show" class="nav-link">
+                <!-- <li class="nav-item">
+                    <a id="ShowUsers" href="<?php //echo $this->raiz; ?>/users/show" class="nav-link">
                         <i class="nav-icon fas fa-user"></i>
                         <p>
                             Users
                             <span class="right badge badge-danger">new</span>
                         </p>
                     </a>
-                </li>
+                </li> -->
 
             </ul>
         </nav>
