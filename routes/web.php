@@ -24,6 +24,7 @@ if (isset($_SESSION['TOKEN'])) {
     $router->get($raiz.'/logs', [LogsController::class, 'ViewsLogs']);
     $router->get($raiz.'/ArchLogs', [LogsController::class, 'ViewsArchLogs']);
     $router->get($raiz.'/ModelDatos', [LogsController::class, 'ViewsModelDatos']);
+    $router->get($raiz.'/ViewsProceduresAMPM', [LogsController::class, 'ViewsProceduresAMPM']);
 
     // Rutas usuarios GET
     $router->get($raiz.'/users/show', [UsersController::class, 'index']);

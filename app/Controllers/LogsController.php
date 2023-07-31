@@ -92,6 +92,21 @@ public function ViewsModelDatos()
     }
 }
 
+public function ViewsProceduresAMPM()
+{
+    $viewPath = __DIR__ . '/../../resources/views/logs/ArchLog.php';
+
+    if (file_exists($viewPath)) {
+
+        $namesOnly = $this->DownloadModelDatos($this->ModelDatosDirectories(2));
+        $namesOnly1 = $this->DownloadModelDatos($this->ModelDatosDirectories(3));
+        // Incluimos la vista y pasamos la lista de URLs de archivos descargados al <iframe>
+        include_once $viewPath;
+    } else {
+        echo "Error: la vista no existe";
+    }
+}
+
 ///////////////////////////////////// BANCO DE DIRECTORIOS /////////////////////////////////////
 
 public function LogsDirectories()
@@ -236,6 +251,31 @@ public function ModelDatosDirectories($iDir)
             "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_X_OCS_ATTRIB_57.log",
             "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_CPE_TYPE.log",
             "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_ATTRIB_44.log"                               
+            // Agrega aquí más rutas de archivos que deseas descargar...
+        ];
+    }
+
+    if($iDir == 2)
+    {
+        $Dir = [
+            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_DBOX_61.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_ADH_CSV_STATUS.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_FTTH_GW.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAMACCOMPARTIDAIPTV.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_SIEBEL_GIS.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_ASSET_HUERFANOS.log"
+            // Agrega aquí más rutas de archivos que deseas descargar...
+        ];
+    }
+
+    if($iDir == 3)
+    {
+        $Dir = [
+            "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORRECCION_DBOX_61.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORREGIR_PREVENTIVO_2257.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORREGIR_SERIES_REPETIDAS.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORRIGE_SIEBEL_GIS.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORRIGEMACCOMPARTIDAIPTV.log"
             // Agrega aquí más rutas de archivos que deseas descargar...
         ];
     }

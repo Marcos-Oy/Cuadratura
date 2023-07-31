@@ -37,8 +37,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="<?php echo $this->raiz; ?>/ArchLogs">Arch Logs</a></li>
-                                <li class="breadcrumb-item"><a href="<?php echo $this->raiz; ?>/ModelDatos">Modelo de datos 2</a></li>
+                            <li class="breadcrumb-item">
+                                    <a href="<?php echo $this->raiz; ?>/ArchLogs">
+                                        Arch Logs
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="<?php echo $this->raiz; ?>/ModelDatos">
+                                        Modelo de datos 2
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="<?php echo $this->raiz; ?>/ViewsProceduresAMPM">
+                                        Procesos AM - PM
+                                    </a>
+                                </li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
