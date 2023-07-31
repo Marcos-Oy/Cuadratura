@@ -10,8 +10,9 @@
 * se configura en milisegundos
 */
 
-// Variable para almacenar el tiempo de inactividad permitido en milisegundos (15 minutos en este caso)
-var inactivityTimeout = 900000;
+// Variable para almacenar el tiempo de inactividad permitido en milisegundos (1 hora en este caso)
+var inactivityTimeout = 3600000;
+
 
 // Variable para almacenar el ID del temporizador
 var inactivityTimer;
