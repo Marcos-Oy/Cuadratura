@@ -31,15 +31,15 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-               <!-- <li class="nav-item">
-                    <a id="Dash" href="<?php //echo $this->raiz; ?>/Home/dashboard" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+               <li class="nav-item">
+                    <a id="Dash" href="<?php echo $this->raiz; ?>/Home/dashboard" class="nav-link">
+                        <i class="nav-icon fa fa-home"></i>
                         <p>
-                            Dashboard
-                            <span class="right badge badge-secondary">soon</span>
+                            Home
+                            <!-- <span class="right badge badge-secondary">soon</span> -->
                         </p>
                     </a>
-                </li> -->
+                </li>
 
                 <!-- <li class="nav-item menu-closed">
                     <a href="#" class="nav-link">
