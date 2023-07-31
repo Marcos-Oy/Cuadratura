@@ -106,7 +106,7 @@ class UsersDAO {
     public function updateAuthToken($userId, $token)
     {
         // Calcula la fecha y hora de expiración sumando 15 minutos a la fecha actual
-        $expirationDateTime = "SYSTIMESTAMP + INTERVAL '15' MINUTE";
+        $expirationDateTime = "SYSTIMESTAMP + INTERVAL '60' MINUTE";
         
         // Actualiza el token y la fecha de expiración en la tabla de usuarios
         $stmt = oci_parse($this->conn, "UPDATE cut_web_users SET token = :token, token_expiration = $expirationDateTime WHERE id = :id");
