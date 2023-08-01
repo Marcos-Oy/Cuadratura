@@ -42,7 +42,7 @@ class SFTPManager
 
         $fileStat = ssh2_sftp_stat($sftp, $filePath);
         if ($fileStat === false) {
-            die("No se pudo obtener la información del archivo en el servidor SFTP");
+            die("No se pudo obtener la información del archivo en el servidor SFTP {$filePath}");
         }
 
         return $fileStat;
@@ -57,7 +57,7 @@ class SFTPManager
 
         $stream = fopen("ssh2.sftp://{$sftp}{$filePath}", 'rb');
         if (!$stream) {
-            die("No se pudo abrir el archivo en el servidor SFTP");
+            die("No se pudo abrir el archivo en el servidor SFTP {$filePath}");
         }
 
         $contents = stream_get_contents($stream);
