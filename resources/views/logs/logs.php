@@ -148,7 +148,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <?php echo ceil($filesToPublicHSS['size'] / 1024); ?> KB
                                                             <?php if (ceil($filesToPublicHSS['size'] / 1024) >= 15) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToPublicHSS['modification_time']; ?>
+                                                        <td><?php echo $filesToPublicHSS['modification_time'];
+                                                        if (date('Y-m-d') === date('Y-m-d', strtotime($filesToPublicHSS['modification_time']))) {
+                                                            echo " ✔";
+                                                        } else {
+                                                            echo " ⚠";
+                                                        } ?>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -158,7 +163,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <?php echo ceil($filesToInfo[0]['size'] / 1024); ?> KB
                                                             <?php if (ceil($filesToInfo[0]['size'] / 1024) >= 24) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToInfo[0]['modification_time']; ?></td>
+                                                        <td><?php echo $filesToInfo[0]['modification_time']; 
+                                                                if (date('Y-m-d') === date('Y-m-d', strtotime($filesToInfo[0]['modification_time']))) {
+                                                                    echo " ✔";
+                                                                } else {
+                                                                    echo " ⚠";
+                                                                }?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -198,7 +208,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             KB
                                                             <?php if (ceil($filesToPublicValidLines['size'] / 1024) >= 13000) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToPublicValidLines['modification_time']; ?>
+                                                        <td><?php echo $filesToPublicValidLines['modification_time'];
+                                                        if (date('Y-m-d') === date('Y-m-d', strtotime($filesToPublicValidLines['modification_time']))) {
+                                                            echo " ✔";
+                                                        } else {
+                                                            echo " ⚠";
+                                                        }  ?>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -208,7 +223,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <?php echo ceil($filesToInfo[2]['size'] / 1024); ?> KB
                                                             <?php if (ceil($filesToInfo[2]['size'] / 1024) >= 3) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToInfo[2]['modification_time']; ?></td>
+                                                        <td><?php echo $filesToInfo[2]['modification_time']; 
+                                                                if (date('Y-m-d') === date('Y-m-d', strtotime($filesToInfo[2]['modification_time']))) {
+                                                                    echo " ✔";
+                                                                } else {
+                                                                    echo " ⚠";
+                                                                }?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -246,7 +266,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             KB
                                                             <?php if (ceil($filesToPublicIbnLines['size'] / 1024) >= 5000) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToPublicIbnLines['modification_time']; ?>
+                                                        <td><?php echo $filesToPublicIbnLines['modification_time'];
+                                                        if (date('Y-m-d') === date('Y-m-d', strtotime($filesToPublicIbnLines['modification_time']))) {
+                                                            echo " ✔";
+                                                        } else {
+                                                            echo " ⚠";
+                                                        } ?>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -256,7 +281,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <?php echo ceil($filesToInfo[1]['size'] / 1024); ?> KB
                                                             <?php if (ceil($filesToInfo[1]['size'] / 1024) >= 1) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToInfo[1]['modification_time']; ?></td>
+                                                        <td><?php echo $filesToInfo[1]['modification_time']; 
+                                                                if (date('Y-m-d') === date('Y-m-d', strtotime($filesToInfo[1]['modification_time']))) {
+                                                                    echo " ✔";
+                                                                } else {
+                                                                    echo " ⚠";
+                                                                }?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -294,7 +324,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             KB
                                                             <?php if (ceil($filesToPublicPSVA['size'] / 1024) >= 4000) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToPublicPSVA['modification_time']; ?>
+                                                        <td><?php echo $filesToPublicPSVA['modification_time'];
+                                                        if (date('Y-m-d') === date('Y-m-d', strtotime($filesToPublicPSVA['modification_time']))) {
+                                                            echo " ✔";
+                                                        } else {
+                                                            echo " ⚠";
+                                                        } ?>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -304,7 +339,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <?php echo ceil($filesToInfo[3]['size'] / 1024); ?> KB
                                                             <?php if (ceil($filesToInfo[3]['size'] / 1024) >= 2) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToInfo[3]['modification_time']; ?></td>
+                                                        <td><?php echo $filesToInfo[3]['modification_time']; 
+                                                                if (date('Y-m-d') === date('Y-m-d', strtotime($filesToInfo[3]['modification_time']))) {
+                                                                    echo " ✔";
+                                                                } else {
+                                                                    echo " ⚠";
+                                                                }?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -342,7 +382,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             KB
                                                             <?php if (ceil($filesToPublicTIVO['size'] / 1024) >= 1400000) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToPublicTIVO['modification_time']; ?>
+                                                        <td><?php echo $filesToPublicTIVO['modification_time'];
+                                                        if (date('Y-m-d') === date('Y-m-d', strtotime($filesToPublicTIVO['modification_time']))) {
+                                                            echo " ✔";
+                                                        } else {
+                                                            echo " ⚠";
+                                                        } ?>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -352,7 +397,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <?php echo ceil($filesToInfo[12]['size'] / 1024); ?> KB
                                                             <?php if (ceil($filesToInfo[12]['size'] / 1024) >= 3) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToInfo[12]['modification_time']; ?></td>
+                                                        <td><?php echo $filesToInfo[12]['modification_time']; 
+                                                                if (date('Y-m-d') === date('Y-m-d', strtotime($filesToInfo[12]['modification_time']))) {
+                                                                    echo " ✔";
+                                                                } else {
+                                                                    echo " ⚠";
+                                                                }?>
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -391,7 +442,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             KB
                                                             <?php if (ceil($filesToPublicONT['size'] / 1024) >= 2000) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToPublicONT['modification_time']; ?>
+                                                        <td><?php echo $filesToPublicONT['modification_time'];
+                                                        if (date('Y-m-d') === date('Y-m-d', strtotime($filesToPublicONT['modification_time']))) {
+                                                            echo " ✔";
+                                                        } else {
+                                                            echo " ⚠";
+                                                        } ?>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -401,7 +457,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <?php echo ceil($filesToInfo[13]['size'] / 1024); ?> KB
                                                             <?php if (ceil($filesToInfo[13]['size'] / 1024) >= 3) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToInfo[13]['modification_time']; ?></td>
+                                                        <td><?php echo $filesToInfo[13]['modification_time']; 
+                                                                if (date('Y-m-d') === date('Y-m-d', strtotime($filesToInfo[13]['modification_time']))) {
+                                                                    echo " ✔";
+                                                                } else {
+                                                                    echo " ⚠";
+                                                                }?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -492,7 +553,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <?php echo ceil($filesToInfo[7]['size'] / 1024); ?> KB
                                                             <?php if (ceil($filesToInfo[7]['size'] / 1024) >= 2) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToInfo[7]['modification_time']; ?></td>
+                                                        <td><?php echo $filesToInfo[7]['modification_time']; 
+                                                                if (date('Y-m-d') === date('Y-m-d', strtotime($filesToInfo[7]['modification_time']))) {
+                                                                    echo " ✔";
+                                                                } else {
+                                                                    echo " ⚠";
+                                                                }?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -530,7 +596,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <?php echo ceil($filesToInfo[5]['size'] / 1024); ?> KB
                                                             <?php if (ceil($filesToInfo[5]['size'] / 1024) >= 1) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToInfo[5]['modification_time']; ?></td>
+                                                        <td><?php echo $filesToInfo[5]['modification_time']; 
+                                                                if (date('Y-m-d') === date('Y-m-d', strtotime($filesToInfo[5]['modification_time']))) {
+                                                                    echo " ✔";
+                                                                } else {
+                                                                    echo " ⚠";
+                                                                }?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -568,7 +639,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <?php echo ceil($filesToInfo[6]['size'] / 1024); ?> KB
                                                             <?php if (ceil($filesToInfo[6]['size'] / 1024) >= 1) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToInfo[6]['modification_time']; ?></td>
+                                                        <td><?php echo $filesToInfo[6]['modification_time']; 
+                                                                if (date('Y-m-d') === date('Y-m-d', strtotime($filesToInfo[6]['modification_time']))) {
+                                                                    echo " ✔";
+                                                                } else {
+                                                                    echo " ⚠";
+                                                                }?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -606,7 +682,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <?php echo ceil($filesToInfo[8]['size'] / 1024); ?> KB
                                                             <?php if (ceil($filesToInfo[8]['size'] / 1024) >= 1) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToInfo[8]['modification_time']; ?></td>
+                                                        <td><?php echo $filesToInfo[8]['modification_time']; 
+                                                                if (date('Y-m-d') === date('Y-m-d', strtotime($filesToInfo[8]['modification_time']))) {
+                                                                    echo " ✔";
+                                                                } else {
+                                                                    echo " ⚠";
+                                                                }?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -695,7 +776,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             KB
                                                             <?php if (ceil($filesToPublicINET['size'] / 1024) >= 30000) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToPublicINET['modification_time']; ?>
+                                                        <td><?php echo $filesToPublicINET['modification_time'];
+                                                        if (date('Y-m-d') === date('Y-m-d', strtotime($filesToPublicINET['modification_time']))) {
+                                                            echo " ✔";
+                                                        } else {
+                                                            echo " ⚠";
+                                                        } ?>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -705,7 +791,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <?php echo ceil($filesToInfo[4]['size'] / 1024); ?> KB
                                                             <?php if (ceil($filesToInfo[4]['size'] / 1024) >= 3) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToInfo[4]['modification_time']; ?></td>
+                                                        <td><?php echo $filesToInfo[4]['modification_time']; 
+                                                                if (date('Y-m-d') === date('Y-m-d', strtotime($filesToInfo[4]['modification_time']))) {
+                                                                    echo " ✔";
+                                                                } else {
+                                                                    echo " ⚠";
+                                                                }?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -744,7 +835,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             KB
                                                             <?php if (ceil($filesToPublicINVENTARIO['size'] / 1024) >= 23) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToPublicINVENTARIO['modification_time']; ?>
+                                                        <td><?php echo $filesToPublicINVENTARIO['modification_time'];
+                                                        if (date('Y-m-d') === date('Y-m-d', strtotime($filesToPublicINVENTARIO['modification_time']))) {
+                                                            echo " ✔";
+                                                        } else {
+                                                            echo " ⚠";
+                                                        } ?>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -754,7 +850,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <?php echo ceil($filesToInfo[9]['size'] / 1024); ?> KB
                                                             <?php if (ceil($filesToInfo[9]['size'] / 1024) >= 3) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToInfo[9]['modification_time']; ?></td>
+                                                        <td><?php echo $filesToInfo[9]['modification_time']; 
+                                                                if (date('Y-m-d') === date('Y-m-d', strtotime($filesToInfo[9]['modification_time']))) {
+                                                                    echo " ✔";
+                                                                } else {
+                                                                    echo " ⚠";
+                                                                }?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -791,7 +892,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <?php echo ceil($filesToPublicAMS['size'] / 1024); ?> KB
                                                             <?php if (ceil($filesToPublicAMS['size'] / 1024) >= 15) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToPublicAMS['modification_time']; ?>
+                                                        <td><?php echo $filesToPublicAMS['modification_time'];
+                                                        if (date('Y-m-d') === date('Y-m-d', strtotime($filesToPublicAMS['modification_time']))) {
+                                                            echo " ✔";
+                                                        } else {
+                                                            echo " ⚠";
+                                                        } ?>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -801,7 +907,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <?php echo ceil($filesToInfo[10]['size'] / 1024); ?> KB
                                                             <?php if (ceil($filesToInfo[10]['size'] / 1024) >= 3) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToInfo[10]['modification_time']; ?></td>
+                                                        <td><?php echo $filesToInfo[10]['modification_time']; 
+                                                                if (date('Y-m-d') === date('Y-m-d', strtotime($filesToInfo[10]['modification_time']))) {
+                                                                    echo " ✔";
+                                                                } else {
+                                                                    echo " ⚠";
+                                                                }?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -838,7 +949,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <?php echo ceil($filesToPublicBBMS['size'] / 1024); ?> KB
                                                             <?php if (ceil($filesToPublicBBMS['size'] / 1024) >= 28) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToPublicBBMS['modification_time']; ?>
+                                                        <td><?php echo $filesToPublicBBMS['modification_time']; 
+                                                        if (date('Y-m-d') === date('Y-m-d', strtotime($filesToPublicBBMS['modification_time']))) {
+                                                            echo " ✔";
+                                                        } else {
+                                                            echo " ⚠";
+                                                        }
+                                                        ?>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -848,7 +965,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <?php echo ceil($filesToInfo[11]['size'] / 1024); ?> KB
                                                             <?php if (ceil($filesToInfo[11]['size'] / 1024) >= 3) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
-                                                        <td><?php echo $filesToInfo[11]['modification_time']; ?></td>
+                                                        <td><?php echo $filesToInfo[11]['modification_time']; 
+                                                                if (date('Y-m-d') === date('Y-m-d', strtotime($filesToInfo[11]['modification_time']))) {
+                                                                    echo " ✔";
+                                                                } else {
+                                                                    echo " ⚠";
+                                                                }?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
