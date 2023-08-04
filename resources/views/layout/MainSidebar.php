@@ -67,7 +67,7 @@
 
                 <li class="nav-item">
                     <a id="Dash" href="<?php echo $this->raiz; ?>/logs" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-info"></i>
                         <p>
                             Logs cargas
                             <span class="right badge badge-danger">New</span>
