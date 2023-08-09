@@ -75,15 +75,15 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a id="Dash" href="<?php echo $this->raiz; ?>/Tables/Boxes" class="nav-link">
+                <!-- <li class="nav-item">
+                    <a id="Dash" href="<?php //echo $this->raiz; ?>/Tables/Boxes" class="nav-link">
                         <i class="nav-icon fa fa-table"></i>
                         <p>
                             Caja
                             <span class="right badge badge-warning">Develop</span>
                         </p>
                     </a>
-                </li>
+                </li> -->
 
                 <!-- <li class="nav-item menu-closed">
                     <a href="#" class="nav-link">
