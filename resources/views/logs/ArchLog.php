@@ -63,10 +63,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="row">
                     
                         <div class="col-12 col-sm-6">
-                        <?php foreach ($namesOnly as $fileName) {?>
+                        <?php foreach ($infoArchLogs as $clave => $fileName) {?>
                             <div class="card card-dark card-tabs">
                                 <div class="card-header p-0 pt-1">
-                                    <h3 class="card-title"><?php echo '| AM | '. $fileName; ?></h3>
+                                    <h3 class="card-title">
+                                        <?php echo '| '. $fileName['modification_time']; 
+                                        if (date('Y-m-d') === date('Y-m-d', strtotime($fileName['modification_time']))) {
+                                            echo " ✔";
+                                        } else {
+                                            echo " ⚠";
+                                        }
+                                        echo "<br>".' | '. $fileName['path']; ?>
+                                    </h3>
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                             <i class="fas fa-minus"></i>
@@ -82,7 +90,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="tab-pane fade show active" id="HSS" role="tabpanel"
                                             aria-labelledby="HSS-tab">
                                             <iframe class="col-lg-12" height="425"
-                                                src="<?php echo $this->raiz; ?>/resources/assets/logs/<?php echo $fileName; ?>"></iframe>
+                                                src="<?php echo $this->raiz; ?>/resources/assets/logs/<?php echo $fileName['path']; ?>"></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -91,10 +99,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div><!-- /.col -->
 
                         <div class="col-12 col-sm-6">
-                        <?php foreach ($namesOnly1 as $fileName1) {?>
+                        <?php foreach ($infoArchLogs1 as $clave1 => $fileName1) {?>
                             <div class="card card-dark card-tabs">
                                 <div class="card-header p-0 pt-1">
-                                    <h3 class="card-title"><?php echo '| PM | '. $fileName1; ?></h3>
+                                    <h3 class="card-title">
+                                        <?php echo '| '. $fileName1['modification_time']; 
+                                        if (date('Y-m-d') === date('Y-m-d', strtotime($fileName1['modification_time']))) {
+                                            echo " ✔";
+                                        } else {
+                                            echo " ⚠";
+                                        }
+                                        echo "<br>".' | '. $fileName1['path']; ?>
+                                    </h3>
+
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                             <i class="fas fa-minus"></i>
@@ -110,19 +127,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="tab-pane fade show active" id="HSS" role="tabpanel"
                                             aria-labelledby="HSS-tab">
                                             <iframe class="col-lg-12" height="425"
-                                                src="<?php echo $this->raiz; ?>/resources/assets/logs/<?php echo $fileName1; ?>"></iframe>
+                                                src="<?php echo $this->raiz; ?>/resources/assets/logs/<?php echo $fileName1['path']; ?>"></iframe>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <?php } ?>  
                         </div><!-- /.col -->
-                      
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div><!-- /.content -->
-            
-
         </div><!-- /.content-wrapper -->
 
         <?php include ('resources/views/layout/ControlSidebar.php'); ?>
