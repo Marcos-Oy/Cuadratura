@@ -75,7 +75,6 @@ public function ViewsArchLogs()
         $this->DownloadArchLogs($this->ArchLogsDirectories(0));
         $this->DownloadArchLogs($this->ArchLogsDirectories(1));
 
-        // var_dump ($infoArchLogs1);
         // Incluimos la vista y pasamos la lista de URLs de archivos descargados al <iframe>
         include_once $viewPath;
     } else {
@@ -89,8 +88,14 @@ public function ViewsModelDatos()
 
     if (file_exists($viewPath)) {
 
-        $namesOnly = $this->DownloadModelDatos($this->ModelDatosDirectories(0));
-        $namesOnly1 = $this->DownloadModelDatos($this->ModelDatosDirectories(1));
+        //Obtenemos la info de los logs remotamente
+        $infoArchLogs = $this->InfoModelDatos(0);
+        $infoArchLogs1 = $this->InfoModelDatos(1);
+
+        //Descargamos los logs
+        $this->DownloadModelDatos($this->ModelDatosDirectories(0));
+        $this->DownloadModelDatos($this->ModelDatosDirectories(1));
+
         // Incluimos la vista y pasamos la lista de URLs de archivos descargados al <iframe>
         include_once $viewPath;
     } else {
@@ -104,8 +109,13 @@ public function ViewsProceduresAMPM()
 
     if (file_exists($viewPath)) {
 
-        $namesOnly = $this->DownloadModelDatos($this->ModelDatosDirectories(2));
-        $namesOnly1 = $this->DownloadModelDatos($this->ModelDatosDirectories(3));
+        //Obtenemos la info de los logs remotamente
+        $infoArchLogs = $this->InfoProceduresAMPM(0);
+        $infoArchLogs1 = $this->InfoProceduresAMPM(1);
+
+        $this->DownloadProceduresAMPM($this->ProceduresAMPMDirectories(0));
+        $this->DownloadProceduresAMPM($this->ProceduresAMPMDirectories(1));
+        
         // Incluimos la vista y pasamos la lista de URLs de archivos descargados al <iframe>
         include_once $viewPath;
     } else {
@@ -286,6 +296,36 @@ public function ModelDatosDirectories($iDir)
             "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORREGIR_SERIES_REPETIDAS.log",
             "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORRIGE_SIEBEL_GIS.log",
             "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORRIGEMACCOMPARTIDAIPTV.log"
+            // Agrega aquí más rutas de archivos que deseas descargar...
+        ];
+    }
+
+    return $Dir;
+}
+
+public function ProceduresAMPMDirectories($iDir)
+{
+    if($iDir == 0)
+    {
+        $Dir = [
+            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_DBOX_61.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_ADH_CSV_STATUS.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_FTTH_GW.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAMACCOMPARTIDAIPTV.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_SIEBEL_GIS.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_ASSET_HUERFANOS.log"
+            // Agrega aquí más rutas de archivos que deseas descargar...
+        ];
+    }
+
+    if($iDir == 1)
+    {
+        $Dir = [
+            "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORRECCION_DBOX_61.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORRIGE_SIEBEL_GIS.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORREGIR_PREVENTIVO_2257.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORRIGEMACCOMPARTIDAIPTV.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORREGIR_SERIES_REPETIDAS.log"
             // Agrega aquí más rutas de archivos que deseas descargar...
         ];
     }
@@ -682,6 +722,116 @@ public function InfoArchLogs($iDir)
 
 }
 
+public function InfoModelDatos($iDir)
+{
+    if($iDir == 0){
+        if ($this->sftpManager->connect() && $this->sftpManager->login()) {
+            $filesToInfo = $this->ModelDatosDirectories(0);
+    
+            foreach ($filesToInfo as $fileIndex => $filePath) {
+                $fileInfo = $this->sftpManager->getFileInfoByPath($filePath);
+
+                if ($fileInfo !== false) {
+                    $fileSize = $fileInfo['size'];
+                    $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
+
+                    $filesToInfo[$fileIndex] = [
+                        'path' => basename($filePath),
+                        'size' => $fileSize,
+                        'modification_time' => $fileModificationTime
+                    ];
+                    // echo '<p>✅: Si se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
+                } else {
+                    echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
+                }
+            }
+            return $filesToInfo;   
+        }
+    }
+
+    if($iDir == 1){
+        if ($this->sftpManager->connect() && $this->sftpManager->login()) {
+            $filesToInfo = $this->ModelDatosDirectories(1);
+    
+            foreach ($filesToInfo as $fileIndex => $filePath) {
+                $fileInfo = $this->sftpManager->getFileInfoByPath($filePath);
+
+                if ($fileInfo !== false) {
+                    $fileSize = $fileInfo['size'];
+                    $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
+
+                    $filesToInfo[$fileIndex] = [
+                        'path' => basename($filePath),
+                        'size' => $fileSize,
+                        'modification_time' => $fileModificationTime
+                    ];
+                    // echo '<p>✅: Si se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
+                } else {
+                    echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
+                }
+            }
+            return $filesToInfo;   
+        }
+    }
+
+}
+
+public function InfoProceduresAMPM($iDir)
+{
+    if($iDir == 0){
+        if ($this->sftpManager->connect() && $this->sftpManager->login()) {
+            $filesToInfo = $this->ProceduresAMPMDirectories(0);
+    
+            foreach ($filesToInfo as $fileIndex => $filePath) {
+                $fileInfo = $this->sftpManager->getFileInfoByPath($filePath);
+
+                if ($fileInfo !== false) {
+                    $fileSize = $fileInfo['size'];
+                    $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
+
+                    $filesToInfo[$fileIndex] = [
+                        'path' => basename($filePath),
+                        'size' => $fileSize,
+                        'modification_time' => $fileModificationTime
+                    ];
+                    // echo '<p>✅: Si se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
+                } else {
+                    echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
+                }
+            }
+            return $filesToInfo;   
+        }
+    }
+
+    if($iDir == 1){
+        if ($this->sftpManager->connect() && $this->sftpManager->login()) {
+            $filesToInfo = $this->ModelDatosDirectories(1);
+    
+            foreach ($filesToInfo as $fileIndex => $filePath) {
+                $fileInfo = $this->sftpManager->getFileInfoByPath($filePath);
+
+                if ($fileInfo !== false) {
+                    $fileSize = $fileInfo['size'];
+                    $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
+
+                    $filesToInfo[$fileIndex] = [
+                        'path' => basename($filePath),
+                        'size' => $fileSize,
+                        'modification_time' => $fileModificationTime
+                    ];
+                    // echo '<p>✅: Si se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
+                } else {
+                    echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
+                }
+            }
+            return $filesToInfo;   
+        }
+    }
+
+}
+
+
+
 
 ///////////////////////////////////// DOWNLOADS /////////////////////////////////////
 
@@ -766,6 +916,49 @@ public function DownloadArchLogs($filesToDownload)
 }
 
 public function DownloadModelDatos($filesToDownload)
+{
+    if ($this->sftpManager->connect() && $this->sftpManager->login()) {
+
+        foreach ($filesToDownload as $fileIndex => $filePath) {
+            $fileContents = $this->sftpManager->getFileContentsByPath($filePath);
+
+            if ($fileContents !== false) {
+                // Ruta donde se guardará el archivo descargado
+                $downloadPath = __DIR__ . '/../../resources/assets/logs/' . basename($filePath);
+
+                // Verificamos si el archivo ya existe
+                if (file_exists($downloadPath)) {
+                    unlink($downloadPath);
+                } else {
+                    // Si el archivo no existe, lo creamos
+                    if (!file_exists(dirname($downloadPath))) {
+                        mkdir(dirname($downloadPath), 0755, true);
+                    }
+                }
+
+                // Guardamos el contenido del archivo en la nueva ubicación
+                file_put_contents($downloadPath, $fileContents);
+
+                // Actualizamos el array para tener la ruta descargada
+                $filesToDownload[$fileIndex] = str_replace($_SERVER['DOCUMENT_ROOT'], '', $downloadPath);
+            } else {
+                echo '<p>Error: No se pudo obtener el archivo desde el servidor SFTP: ' . $filePath . '</p>';
+            }
+        }
+
+        $namesOnly = array();
+        foreach ($filesToDownload as $filePath) {
+            $fileName = basename($filePath);
+            $namesOnly[] = $fileName;
+        }
+
+        return $namesOnly;
+    } else {
+        echo '<p>Error: No se pudo conectar al servidor SFTP.</p>';
+    }
+}
+
+public function DownloadProceduresAMPM($filesToDownload)
 {
     if ($this->sftpManager->connect() && $this->sftpManager->login()) {
 
