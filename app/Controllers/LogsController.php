@@ -72,8 +72,8 @@ public function ViewsArchLogs()
         $infoArchLogs1 = $this->InfoArchLogs(1);
 
         //Descargamos los logs
-        $this->DownloadArchLogs($this->ArchLogsDirectories(0));
-        $this->DownloadArchLogs($this->ArchLogsDirectories(1));
+        $this->DownloadLogs($this->ArchLogsDirectories(0));
+        $this->DownloadLogs($this->ArchLogsDirectories(1));
 
         // Incluimos la vista y pasamos la lista de URLs de archivos descargados al <iframe>
         include_once $viewPath;
@@ -93,8 +93,8 @@ public function ViewsModelDatos()
         $infoArchLogs1 = $this->InfoModelDatos(1);
 
         //Descargamos los logs
-        $this->DownloadModelDatos($this->ModelDatosDirectories(0));
-        $this->DownloadModelDatos($this->ModelDatosDirectories(1));
+        $this->DownloadLogs($this->ModelDatosDirectories(0));
+        $this->DownloadLogs($this->ModelDatosDirectories(1));
 
         // Incluimos la vista y pasamos la lista de URLs de archivos descargados al <iframe>
         include_once $viewPath;
@@ -113,8 +113,8 @@ public function ViewsProceduresAMPM()
         $infoArchLogs = $this->InfoProceduresAMPM(0);
         $infoArchLogs1 = $this->InfoProceduresAMPM(1);
 
-        $this->DownloadProceduresAMPM($this->ProceduresAMPMDirectories(0));
-        $this->DownloadProceduresAMPM($this->ProceduresAMPMDirectories(1));
+        $this->DownloadLogs($this->ProceduresAMPMDirectories(0));
+        $this->DownloadLogs($this->ProceduresAMPMDirectories(1));
         
         // Incluimos la vista y pasamos la lista de URLs de archivos descargados al <iframe>
         include_once $viewPath;
@@ -830,9 +830,6 @@ public function InfoProceduresAMPM($iDir)
 
 }
 
-
-
-
 ///////////////////////////////////// DOWNLOADS /////////////////////////////////////
 
 public function DownloadLogs($filesToDownload)
@@ -865,137 +862,6 @@ public function DownloadLogs($filesToDownload)
                 echo '<p>Error: No se pudo obtener el archivo desde el servidor SFTP: ' . $filePath . '</p>';
             }
         }
-    } else {
-        echo '<p>Error: No se pudo conectar al servidor SFTP.</p>';
-    }
-}
-
-public function DownloadArchLogs($filesToDownload)
-{
-    if ($this->sftpManager->connect() && $this->sftpManager->login()) {
-
-        foreach ($filesToDownload as $fileIndex => $filePath) {
-            $fileContents = $this->sftpManager->getFileContentsByPath($filePath);
-
-            if ($fileContents !== false) {
-                // Ruta donde se guardará el archivo descargado
-                $downloadPath = __DIR__ . '/../../resources/assets/logs/' . basename($filePath);
-
-                // Verificamos si el archivo ya existe
-                if (file_exists($downloadPath)) {
-                    unlink($downloadPath);
-                } else {
-                    // Si el archivo no existe, lo creamos
-                    if (!file_exists(dirname($downloadPath))) {
-                        mkdir(dirname($downloadPath), 0755, true);
-                    }
-                }
-
-                // Guardamos el contenido del archivo en la nueva ubicación
-                file_put_contents($downloadPath, $fileContents);
-
-                // Actualizamos el array para tener la ruta descargada
-                $filesToDownload[$fileIndex] = str_replace($_SERVER['DOCUMENT_ROOT'], '', $downloadPath);
-            } else {
-                echo '<p>Error: No se pudo obtener el archivo desde el servidor SFTP: ' . $filePath . '</p>';
-            }
-        }
-
-        $namesOnly = array();
-        foreach ($filesToDownload as $filePath) {
-            $fileName = basename($filePath);
-            $namesOnly[] = $fileName;
-        }
-
-
-        
-        return $namesOnly;
-    } else {
-        echo '<p>Error: No se pudo conectar al servidor SFTP.</p>';
-    }
-}
-
-public function DownloadModelDatos($filesToDownload)
-{
-    if ($this->sftpManager->connect() && $this->sftpManager->login()) {
-
-        foreach ($filesToDownload as $fileIndex => $filePath) {
-            $fileContents = $this->sftpManager->getFileContentsByPath($filePath);
-
-            if ($fileContents !== false) {
-                // Ruta donde se guardará el archivo descargado
-                $downloadPath = __DIR__ . '/../../resources/assets/logs/' . basename($filePath);
-
-                // Verificamos si el archivo ya existe
-                if (file_exists($downloadPath)) {
-                    unlink($downloadPath);
-                } else {
-                    // Si el archivo no existe, lo creamos
-                    if (!file_exists(dirname($downloadPath))) {
-                        mkdir(dirname($downloadPath), 0755, true);
-                    }
-                }
-
-                // Guardamos el contenido del archivo en la nueva ubicación
-                file_put_contents($downloadPath, $fileContents);
-
-                // Actualizamos el array para tener la ruta descargada
-                $filesToDownload[$fileIndex] = str_replace($_SERVER['DOCUMENT_ROOT'], '', $downloadPath);
-            } else {
-                echo '<p>Error: No se pudo obtener el archivo desde el servidor SFTP: ' . $filePath . '</p>';
-            }
-        }
-
-        $namesOnly = array();
-        foreach ($filesToDownload as $filePath) {
-            $fileName = basename($filePath);
-            $namesOnly[] = $fileName;
-        }
-
-        return $namesOnly;
-    } else {
-        echo '<p>Error: No se pudo conectar al servidor SFTP.</p>';
-    }
-}
-
-public function DownloadProceduresAMPM($filesToDownload)
-{
-    if ($this->sftpManager->connect() && $this->sftpManager->login()) {
-
-        foreach ($filesToDownload as $fileIndex => $filePath) {
-            $fileContents = $this->sftpManager->getFileContentsByPath($filePath);
-
-            if ($fileContents !== false) {
-                // Ruta donde se guardará el archivo descargado
-                $downloadPath = __DIR__ . '/../../resources/assets/logs/' . basename($filePath);
-
-                // Verificamos si el archivo ya existe
-                if (file_exists($downloadPath)) {
-                    unlink($downloadPath);
-                } else {
-                    // Si el archivo no existe, lo creamos
-                    if (!file_exists(dirname($downloadPath))) {
-                        mkdir(dirname($downloadPath), 0755, true);
-                    }
-                }
-
-                // Guardamos el contenido del archivo en la nueva ubicación
-                file_put_contents($downloadPath, $fileContents);
-
-                // Actualizamos el array para tener la ruta descargada
-                $filesToDownload[$fileIndex] = str_replace($_SERVER['DOCUMENT_ROOT'], '', $downloadPath);
-            } else {
-                echo '<p>Error: No se pudo obtener el archivo desde el servidor SFTP: ' . $filePath . '</p>';
-            }
-        }
-
-        $namesOnly = array();
-        foreach ($filesToDownload as $filePath) {
-            $fileName = basename($filePath);
-            $namesOnly[] = $fileName;
-        }
-
-        return $namesOnly;
     } else {
         echo '<p>Error: No se pudo conectar al servidor SFTP.</p>';
     }
