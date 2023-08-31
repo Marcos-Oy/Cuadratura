@@ -17,6 +17,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/dist/css/adminlte.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/plugins/toastr/toastr.min.css">
+      <!-- Font Awesome -->
+    <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/plugins/fontawesome-free/css/all.min.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+
+    <!-- REQUIRED SCRIPTS -->
+
+    <!-- jQuery -->
+    <script src="<?php echo $this->raiz; ?>/public/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="<?php echo $this->raiz; ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="<?php echo $this->raiz; ?>/public/dist/js/adminlte.min.js"></script>
 
 </head>
 
@@ -63,7 +78,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="row">
                     
                         <div class="col-12 col-sm-6">
-                        <?php foreach ($infoArchLogs as $clave => $fileName) {?>
+
+                        <?php
+                        include_once $Toasts; 
+                        foreach ($infoArchLogs as $clave => $fileName) {?>
                             <div class="card card-dark card-tabs">
                                 <div class="card-header p-0 pt-1">
                                     <h3 class="card-title">
@@ -99,7 +117,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div><!-- /.col -->
 
                         <div class="col-12 col-sm-6">
-                        <?php foreach ($infoArchLogs1 as $clave1 => $fileName1) {?>
+                        <?php foreach ($infoArchLogs1 as $clave1 => $fileName1) { ?>
                             <div class="card card-dark card-tabs">
                                 <div class="card-header p-0 pt-1">
                                     <h3 class="card-title">
@@ -143,13 +161,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <?php include ('resources/views/layout/footer.php'); ?>
 
     </div>
-    <!-- REQUIRED SCRIPTS -->
-    <!-- jQuery -->
-    <script src="<?php echo $this->raiz; ?>/public/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="<?php echo $this->raiz; ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="<?php echo $this->raiz; ?>/public/dist/js/adminlte.min.js"></script>
+    
 
 </body>
 

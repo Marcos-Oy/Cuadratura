@@ -100,11 +100,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </li>
 
                                         <li class="nav-item">
-                                            <a class="nav-link" id="TIVO-tab" data-toggle="pill" href="#TIVO" role="tab"
-                                                aria-controls="TIVO" aria-selected="false">TIVO</a>
-                                        </li>
-
-                                        <li class="nav-item">
                                             <a class="nav-link" id="FTTH-ONT-GW-tab" data-toggle="pill"
                                                 href="#FTTH-ONT-GW" role="tab" aria-controls="FTTH-ONT-GW"
                                                 aria-selected="false">FtthONTGW</a>
@@ -351,65 +346,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                             <iframe class="col-lg-12" height="425"
                                                 src="<?php echo $this->raiz; ?>/resources/assets/logs/Carga_PSVA.log"></iframe>
-                                        </div>
-
-                                        <div class="tab-pane fade" id="TIVO" role="tabpanel" aria-labelledby="TIVO-tab">
-
-                                            <style>
-                                            .table-small-font td,
-                                            .table-small-font th {
-                                                font-size: 12px;
-                                                /* Puedes ajustar el tamaño de fuente según tus preferencias */
-                                            }
-                                            </style>
-
-                                            <!-- Tabla con tamaño de fuente reducido -->
-                                            <table class="table table-bordered table-small-font">
-                                                <thead>
-                                                    <tr>
-                                                        <th>ℹ</th>
-                                                        <th>Nombre</th>
-                                                        <th>Tamaño</th>
-                                                        <th>Modificación</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td><b>Publ</b></td>
-                                                        <td><?php echo $filesToPublicTIVO['path']; ?></td>
-                                                        <td>
-                                                            <?php echo ceil($filesToPublicTIVO['size'] / 1024); ?>
-                                                            KB
-                                                            <?php if (ceil($filesToPublicTIVO['size'] / 1024) >= 1400000) { echo " ✔"; } else { echo " ⚠"; } ?>
-                                                        </td>
-                                                        <td><?php echo $filesToPublicTIVO['modification_time'];
-                                                        if (date('Y-m-d') === date('Y-m-d', strtotime($filesToPublicTIVO['modification_time']))) {
-                                                            echo " ✔";
-                                                        } else {
-                                                            echo " ⚠";
-                                                        } ?>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><b>Re</b></td>
-                                                        <td><?php echo $filesToInfo[12]['path']; ?></td>
-                                                        <td>
-                                                            <?php echo ceil($filesToInfo[12]['size'] / 1024); ?> KB
-                                                            <?php if (ceil($filesToInfo[12]['size'] / 1024) >= 3) { echo " ✔"; } else { echo " ⚠"; } ?>
-                                                        </td>
-                                                        <td><?php echo $filesToInfo[12]['modification_time']; 
-                                                                if (date('Y-m-d') === date('Y-m-d', strtotime($filesToInfo[12]['modification_time']))) {
-                                                                    echo " ✔";
-                                                                } else {
-                                                                    echo " ⚠";
-                                                                }?>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-
-                                            <iframe class="col-lg-12" height="425"
-                                                src="<?php echo $this->raiz; ?>/resources/assets/logs/Carga_Tivo.log"></iframe>
                                         </div>
 
                                         <div class="tab-pane fade" id="FTTH-ONT-GW" role="tabpanel"
@@ -983,6 +919,135 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <!-- /.card -->
                             </div>
+
+                            <div class="card card-dark card-tabs">
+                                <div class="card-header p-0 pt-1">
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-tool custom-btn-tool"
+                                            data-card-widget="remove">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="TIVO-tab" data-toggle="pill" href="#TIVO" role="tab"
+                                                aria-controls="TIVO" aria-selected="false">TIVO</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="tab-content" id="custom-tabs-one-tabContent">
+
+                                        <div class="tab-pane fade show active">
+                                            Seleccione una opción para visualizar .log
+                                        </div>
+
+                                        <div class="tab-pane fade" id="TIVO" role="tabpanel" aria-labelledby="TIVO-tab">
+
+                                            <style>
+                                            .table-small-font td,
+                                            .table-small-font th {
+                                                font-size: 12px;
+                                                /* Puedes ajustar el tamaño de fuente según tus preferencias */
+                                            }
+                                            </style>
+
+                                            <!-- Tabla con tamaño de fuente reducido -->
+                                            <table class="table table-bordered table-small-font">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ℹ</th>
+                                                        <th>Nombre</th>
+                                                        <th>Tamaño</th>
+                                                        <th>Modificación</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Publ</b></td>
+                                                        <td><?php echo $filesToPublicTIVO['path']; ?></td>
+                                                        <td>
+                                                            <?php echo ceil($filesToPublicTIVO['size'] / 1024); ?>
+                                                            KB
+                                                            <?php if (ceil($filesToPublicTIVO['size'] / 1024) >= 1400000) { echo " ✔"; } else { echo " ⚠"; } ?>
+                                                        </td>
+                                                        <td><?php echo $filesToPublicTIVO['modification_time'];
+                                                            if (date('Y-m-d') === date('Y-m-d', strtotime($filesToPublicTIVO['modification_time']))) {
+                                                                echo " ✔";
+                                                            } else {
+                                                                echo " ⚠";
+                                                            } ?>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Re</b></td>
+                                                        <td><?php echo $filesToInfo[12]['path']; ?></td>
+                                                        <td>
+                                                            <?php echo ceil($filesToInfo[12]['size'] / 1024); ?> KB
+                                                            <?php if (ceil($filesToInfo[12]['size'] / 1024) >= 3) { echo " ✔"; } else { echo " ⚠"; } ?>
+                                                        </td>
+                                                        <td><?php echo $filesToInfo[12]['modification_time']; 
+                                                            if (date('Y-m-d') === date('Y-m-d', strtotime($filesToInfo[12]['modification_time']))) {
+                                                                echo " ✔";
+                                                            } else {
+                                                                echo " ⚠";
+                                                            }?>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><b>Re</b></td>
+                                                        <td><?php echo $filesToInfo[15]['path']; ?></td>
+                                                        <td>
+                                                            <?php echo ceil($filesToInfo[15]['size'] / 1024); ?> KB
+                                                            <?php if (ceil($filesToInfo[15]['size'] / 1024) >= 1) { echo " ✔"; } else { echo " ⚠"; } ?>
+                                                        </td>
+                                                        <td><?php echo $filesToInfo[15]['modification_time']; 
+                                                            if (date('Y-m-d') === date('Y-m-d', strtotime($filesToInfo[15]['modification_time']))) {
+                                                                echo " ✔";
+                                                            } else {
+                                                                echo " ⚠";
+                                                            }?>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Re</b></td>
+                                                        <td><?php echo $filesToInfo[14]['path']; ?></td>
+                                                        <td>
+                                                            <?php echo ceil($filesToInfo[14]['size'] / 1024); ?> KB
+                                                            <?php if (ceil($filesToInfo[14]['size'] / 1024) >= 1) { echo " ✔"; } else { echo " ⚠"; } ?>
+                                                        </td>
+                                                        <td><?php echo $filesToInfo[14]['modification_time']; 
+                                                            if (date('Y-m-d') === date('Y-m-d', strtotime($filesToInfo[14]['modification_time']))) {
+                                                                echo " ✔";
+                                                            } else {
+                                                                echo " ⚠";
+                                                            }?>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                            <b>CARGA</b>
+                                            <iframe class="col-lg-12" height="215"
+                                                src="<?php echo $this->raiz; ?>/resources/assets/logs/Carga_Tivo.log"></iframe>
+                                            <b>INSERTA REG</b>
+                                            <iframe class="col-lg-12" height="115"
+                                                src="<?php echo $this->raiz; ?>/resources/assets/logs/Inserta_Reg_Tivo.log"></iframe>
+                                            <b>SEPARA RUT</b>
+                                            <iframe class="col-lg-12" height="80"
+                                                src="<?php echo $this->raiz; ?>/resources/assets/logs/Separa_Rut_Tivo.log"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.card -->
+                            </div>
+
                         </div>
 
 

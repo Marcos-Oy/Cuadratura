@@ -63,6 +63,7 @@ public function ViewsLogs()
 
 public function ViewsArchLogs()
 {
+    $Toasts = __DIR__ . '/../../resources/views/logs/Toasts.php';
     $viewPath = __DIR__ . '/../../resources/views/logs/ArchLog.php';
 
     if (file_exists($viewPath)) {
@@ -70,6 +71,9 @@ public function ViewsArchLogs()
         //Obtenemos la info de los logs remotamente
         $infoArchLogs = $this->InfoArchLogs(0);
         $infoArchLogs1 = $this->InfoArchLogs(1);
+
+        $RinfoArchLogs = array_reverse($infoArchLogs);
+        $RinfoArchLogs1 = array_reverse($infoArchLogs1);
 
         //Descargamos los logs
         $this->DownloadLogs($this->ArchLogsDirectories(0));
@@ -84,6 +88,7 @@ public function ViewsArchLogs()
 
 public function ViewsModelDatos()
 {
+    $Toasts = __DIR__ . '/../../resources/views/logs/Toasts.php';
     $viewPath = __DIR__ . '/../../resources/views/logs/ArchLog.php';
 
     if (file_exists($viewPath)) {
@@ -96,6 +101,8 @@ public function ViewsModelDatos()
         $this->DownloadLogs($this->ModelDatosDirectories(0));
         $this->DownloadLogs($this->ModelDatosDirectories(1));
 
+        $RinfoArchLogs = array_reverse($infoArchLogs);
+        $RinfoArchLogs1 = array_reverse($infoArchLogs1);
         // Incluimos la vista y pasamos la lista de URLs de archivos descargados al <iframe>
         include_once $viewPath;
     } else {
@@ -105,6 +112,7 @@ public function ViewsModelDatos()
 
 public function ViewsProceduresAMPM()
 {
+    $Toasts = __DIR__ . '/../../resources/views/logs/Toasts.php';
     $viewPath = __DIR__ . '/../../resources/views/logs/ArchLog.php';
 
     if (file_exists($viewPath)) {
@@ -112,6 +120,9 @@ public function ViewsProceduresAMPM()
         //Obtenemos la info de los logs remotamente
         $infoArchLogs = $this->InfoProceduresAMPM(0);
         $infoArchLogs1 = $this->InfoProceduresAMPM(1);
+
+        $RinfoArchLogs = array_reverse($infoArchLogs);
+        $RinfoArchLogs1 = array_reverse($infoArchLogs1);
 
         $this->DownloadLogs($this->ProceduresAMPMDirectories(0));
         $this->DownloadLogs($this->ProceduresAMPMDirectories(1));
@@ -146,7 +157,11 @@ public function LogsDirectories()
 
         "/Cuadratura/Plataforma/TIVO/ARCHIVOS/Carga_Tivo.log", // 12
 
-        "/Cuadratura/FTTH_ONT_GW/Carga_FTTH_ONT_GW.log" // 13
+        "/Cuadratura/FTTH_ONT_GW/Carga_FTTH_ONT_GW.log", // 13
+
+        "/Cuadratura/Plataforma/TIVO/ARCHIVOS/Separa_Rut_Tivo.log", // 14
+        "/Cuadratura/Plataforma/TIVO/ARCHIVOS/Inserta_Reg_Tivo.log" // 15
+
         // Agrega aquí más rutas de archivos que deseas consultar...
     ];
     return $Dir;
@@ -157,42 +172,40 @@ public function ArchLogsDirectories($iDir)
     if($iDir == 0)
     {
         $Dir = [
-            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_gis_vivienda.log",
-            "/Cuadratura/Tablas/Arch_Log/Proceso_Efectividad.log",
-            "/Cuadratura/Tablas/Arch_Log/ejecuta_fono_02.log",
-            "/Cuadratura/Tablas/Arch_Log/ejecuta_cable_02.log",
-            "/Cuadratura/Tablas/Arch_Log/Respaldo_Correcciones_UIM.log",
-            "/Cuadratura/Tablas/Arch_Log/Respaldo_Validaciones_Automatizadas.log",
-            "/Cuadratura/Tablas/Arch_Log/Respaldo_Correcciones_Siebel.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_clasemater.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_grupotar.log",
-            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_giap_traductor.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_giap_voiceplan_movil.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_order_type.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_prod_int.log",
-            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_osm_ordenesactivas.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_giap_traductor.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_user.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_uim_servicios_baja.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_uim_servicios.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_inv_prof.log",
-            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_asset_om.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_canales.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_asset_om.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_dbox.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_org_ext.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_siebel_act.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_equipos.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_order_item.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_tarifaUIM.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_material.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_servicio.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_place_char.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_conservi.log",
-            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_equipos.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_uim_rfs.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_indices_sut_servicio.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_asset_x.log",
-            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_uim_rfs.log",
-            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_asset_xa.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_uim_cfs.log",
-            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_pat_localidad.log"
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_asset_xa.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_pat_localidad.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_redt_calles.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_ss_derivadas.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_pat_prproducto.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_concgtar_new.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_redt_vivienda.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_stbseries.log"
             // Agrega aquí más rutas de archivos que deseas descargar...
         ];
     }
@@ -200,42 +213,40 @@ public function ArchLogsDirectories($iDir)
     if($iDir == 1)
     {
         $Dir = [
-            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_redt_calles.log",
-            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_ss_derivadas.log",
-            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_pat_prproducto.log",
-            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_concgtar_new.log",
-            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_redt_vivienda.log",
-            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_stbseries.log",
-            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_activtemp.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_asset.log",
-            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_velocidadesnetuim.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_activtemp.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_pat_prcontxprod.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_velocidadesnetuim.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_ret_cablemodem.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_addr_per.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_ret_lineared.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_tnassignment.log",
-            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_addr_per.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_telephonenumber.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_tnconsumer.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_infodbox_uim_1.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_config_paquete.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_migradb.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_gis_direccion.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_osm_ordenesactivas.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_equipos_mta.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_xvtr_siebel_info_series_t.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_productop.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_productop_baja.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_clientes.log",
-            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_productop.log",
             "/Cuadratura/Tablas/Arch_Log/proceso_cup_cicloini.log",
             "/Cuadratura/Tablas/Arch_Log/proceso_cup_validamaterialinet.log",
-            "/Cuadratura/Tablas/Arch_Log/proceso_ftth.log",
+            "/Cuadratura/Tablas/Arch_Log/limpia_tablas_desc_uim.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tablas_cut.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_businessinteraction.log",
             "/Cuadratura/Tablas/Arch_Log/ejecuta_tango_procinet.log",
+            "/Cuadratura/Tablas/Arch_Log/proceso_ftth.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_order.log",
             "/Cuadratura/Tablas/Arch_Log/Procesos_2140_2151.log",
-            "/Cuadratura/Tablas/Arch_Log/limpia_tablas_desc_uim.log",
+            "/Cuadratura/Tablas/Arch_Log/Proceso_UIM.log",
             "/Cuadratura/Tablas/Arch_Log/Proceso_Siebel.log",
-            "/Cuadratura/Tablas/Arch_Log/Proceso_UIM.log"    
+            "/Cuadratura/Tablas/Arch_Log/Respaldo_Correcciones_UIM.log",
+            "/Cuadratura/Tablas/Arch_Log/Respaldo_Correcciones_Siebel.log",
+            "/Cuadratura/Tablas/Arch_Log/Respaldo_Validaciones_Automatizadas.log"
             // Agrega aquí más rutas de archivos que deseas descargar...
         ];
     }
@@ -461,7 +472,7 @@ public function InfoVLRLogs($iDir)
                 echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $rutaArchivoMasReciente . '</p>';
             }
         } else {
-            echo "No se encontraron archivos para la fecha actual con el fragmento de búsqueda: {$searchPattern}";
+            echo '<p> No se encontraron archivos para la fecha actual con el fragmento de búsqueda: '. $searchPattern .'</p>';
         }
     }
 }
