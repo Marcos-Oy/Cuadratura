@@ -6,7 +6,7 @@
     <a class="brand-link">
         <img src="<?php echo $this->raiz; ?>/public/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
-        <span class="brand-text font-weight-light">Cuadratura 1.0</span>
+        <span class="brand-text font-weight-light">Cuadratura</span>
     </a>
 
     <!-- Sidebar -->
