@@ -19,10 +19,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/dist/css/adminlte.min.css">
     <!-- Toastr -->
     <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/plugins/toastr/toastr.min.css">
-      <!-- Font Awesome -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/plugins/fontawesome-free/css/all.min.css">
     <!-- SweetAlert2 -->
-    <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <link rel="stylesheet"
+        href="<?php echo $this->raiz; ?>/public/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
 
     <!-- REQUIRED SCRIPTS -->
 
@@ -52,7 +53,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item">
+                                <li class="breadcrumb-item">
                                     <a href="<?php echo $this->raiz; ?>/ArchLogs">
                                         Arch Logs
                                     </a>
@@ -76,81 +77,90 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                    
+
                         <div class="col-12 col-sm-6">
 
-                        <?php
-                        include_once $Toasts; 
-                        foreach ($infoArchLogs as $clave => $fileName) {?>
-                            <div class="card card-dark card-tabs">
-                                <div class="card-header p-0 pt-1">
-                                    <h3 class="card-title">
-                                        <?php echo '| '. $fileName['modification_time']; 
+                            <?php
+                         
+                        foreach ($infoArchLogs as $clave => $fileName) {
+                            $cleanedPath = preg_replace('/[^a-zA-Z0-9]+/', '', $fileName['path']);
+                            $sectionId = 'section_' . $cleanedPath;?>
+                            <section id="<?php echo $sectionId ?>">
+                                <div class="card card-dark card-tabs">
+                                    <div class="card-header p-0 pt-1">
+                                        <h3 class="card-title">
+                                            <?php echo '| '. $fileName['modification_time']; 
                                         if (date('Y-m-d') === date('Y-m-d', strtotime($fileName['modification_time']))) {
                                             echo " ✔";
                                         } else {
                                             echo " ⚠";
                                         }
                                         echo "<br>".' | '. $fileName['path']; ?>
-                                    </h3>
-                                    <div class="card-tools">
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool custom-btn-tool"
-                                            data-card-widget="remove">
-                                            <i class="fas fa-times"></i>
-                                        </button>
+                                        </h3>
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool custom-btn-tool"
+                                                data-card-widget="remove">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="tab-content" id="custom-tabs-one-tabContent">
-                                        <div class="tab-pane fade show active" id="HSS" role="tabpanel"
-                                            aria-labelledby="HSS-tab">
-                                            <iframe class="col-lg-12" height="425"
-                                                src="<?php echo $this->raiz; ?>/resources/assets/logs/<?php echo $fileName['path']; ?>"></iframe>
+                                    <div class="card-body">
+                                        <div class="tab-content" id="custom-tabs-one-tabContent">
+                                            <div class="tab-pane fade show active" id="HSS" role="tabpanel"
+                                                aria-labelledby="HSS-tab">
+                                                <iframe class="col-lg-12" height="425"
+                                                    src="<?php echo $this->raiz; ?>/resources/assets/logs/<?php echo $fileName['path']; ?>"></iframe>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <?php } ?>  
+                            </section>
+                            <?php } ?>
                         </div><!-- /.col -->
 
                         <div class="col-12 col-sm-6">
-                        <?php foreach ($infoArchLogs1 as $clave1 => $fileName1) { ?>
-                            <div class="card card-dark card-tabs">
-                                <div class="card-header p-0 pt-1">
-                                    <h3 class="card-title">
-                                        <?php echo '| '. $fileName1['modification_time']; 
+                            <?php foreach ($infoArchLogs1 as $clave1 => $fileName1) { 
+                                $cleanedPath1 = preg_replace('/[^a-zA-Z0-9]+/', '', $fileName1['path']);
+                                $sectionId1 = 'section_' . $cleanedPath1;?>
+                            <section id="<?php echo $sectionId1 ?>">
+                                <div class="card card-dark card-tabs">
+                                    <div class="card-header p-0 pt-1">
+                                        <h3 class="card-title">
+                                            <?php echo '| '. $fileName1['modification_time']; 
                                         if (date('Y-m-d') === date('Y-m-d', strtotime($fileName1['modification_time']))) {
                                             echo " ✔";
                                         } else {
                                             echo " ⚠";
                                         }
                                         echo "<br>".' | '. $fileName1['path']; ?>
-                                    </h3>
+                                        </h3>
 
-                                    <div class="card-tools">
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool custom-btn-tool"
-                                            data-card-widget="remove">
-                                            <i class="fas fa-times"></i>
-                                        </button>
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool custom-btn-tool"
+                                                data-card-widget="remove">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="tab-content" id="custom-tabs-one-tabContent">
-                                        <div class="tab-pane fade show active" id="HSS" role="tabpanel"
-                                            aria-labelledby="HSS-tab">
-                                            <iframe class="col-lg-12" height="425"
-                                                src="<?php echo $this->raiz; ?>/resources/assets/logs/<?php echo $fileName1['path']; ?>"></iframe>
+                                    <div class="card-body">
+                                        <div class="tab-content" id="custom-tabs-one-tabContent">
+                                            <div class="tab-pane fade show active" id="HSS" role="tabpanel"
+                                                aria-labelledby="HSS-tab">
+                                                <iframe class="col-lg-12" height="425"
+                                                    src="<?php echo $this->raiz; ?>/resources/assets/logs/<?php echo $fileName1['path']; ?>"></iframe>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <?php } ?>  
+                            </section>
+                            <?php } 
+                            include_once $Toasts;?>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -161,7 +171,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <?php include ('resources/views/layout/footer.php'); ?>
 
     </div>
-    
+
 
 </body>
 

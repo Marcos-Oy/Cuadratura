@@ -1,6 +1,8 @@
 <?php 
 
 foreach ($RinfoArchLogs1 as $Rclave1 => $RfileName1) {
+    $RcleanedPath1 = preg_replace('/[^a-zA-Z0-9]+/', '', $RfileName1['path']);
+    $RsectionId1 = 'section_' . $RcleanedPath1;
     // Construye la ruta completa al archivo .log (usando barras inclinadas en Windows)
     $archivo = $_SERVER['DOCUMENT_ROOT'] .$this->raiz.'/resources/assets/logs/'.$RfileName1['path'];
     // Lee el contenido del archivo
@@ -13,7 +15,7 @@ foreach ($RinfoArchLogs1 as $Rclave1 => $RfileName1) {
             $(document).Toasts("create", {
                 class: "bg-success",
                 title: "Carga exitosa ✔",
-                body: "El siguiente archivo se ha cargado correctamente: <br>'.$RfileName1['path'].'<br>'.$RfileName1['modification_time'].'"
+                body: "El siguiente archivo se ha cargado correctamente: <br><a href=\'#' . $RsectionId1 . '\'>' . $RfileName1['path'] . '</a><br>' . $RfileName1['modification_time'] . '"
             });
             </script>';
     }
@@ -25,7 +27,7 @@ foreach ($RinfoArchLogs1 as $Rclave1 => $RfileName1) {
             $(document).Toasts("create", {
                 class: "bg-danger",
                 title: "Error inesperado ❌",
-                body: "Se encontró un inconveniente en el archivo: <br>'.$RfileName1['path'].'<br>'.$RfileName1['modification_time'].'"
+                body: "Se encontró un inconveniente en el archivo: <br><a href=\'#' . $RsectionId1 . '\'>' . $RfileName1['path'] . '</a><br>' . $RfileName1['modification_time'] . '"
             });
             </script>';
     }
@@ -36,7 +38,7 @@ foreach ($RinfoArchLogs1 as $Rclave1 => $RfileName1) {
             $(document).Toasts("create", {
                 class: "bg-info",
                 title: "Proceso de carga 🔄",
-                body: "El siguiente archivo se encuentra en ejecución: <br>'.$RfileName1['path'].'<br>'.$RfileName1['modification_time'].'"
+                body: "El siguiente archivo se encuentra en ejecución: <br><a href=\'#' . $RsectionId1 . '\'>' . $RfileName1['path'] . '</a><br>' . $RfileName1['modification_time'] . '"
             });
             </script>';
     }
@@ -49,13 +51,15 @@ foreach ($RinfoArchLogs1 as $Rclave1 => $RfileName1) {
         $(document).Toasts("create", {
             class: "bg-warning",
             title: "Carga pendiente ⚠",
-            body: "Se el siguiente archivo aún no se ha cargado: <br>'.$RfileName1['path'].'<br>'.$RfileName1['modification_time'].'"
+            body: "Se el siguiente archivo aún no se ha cargado: <br><a href=\'#' . $RsectionId1 . '\'>' . $RfileName1['path'] . '</a><br>' . $RfileName1['modification_time'] . '"
         });
         </script>';
     }
 } 
 
 foreach ($RinfoArchLogs as $Rclave => $RfileName) {
+    $RcleanedPath = preg_replace('/[^a-zA-Z0-9]+/', '', $RfileName['path']);
+    $RsectionId = 'section_' . $RcleanedPath;
     // Construye la ruta completa al archivo .log (usando barras inclinadas en Windows)
     $archivo = $_SERVER['DOCUMENT_ROOT'] .$this->raiz.'/resources/assets/logs/'.$RfileName['path'];
     // Lee el contenido del archivo
@@ -68,7 +72,7 @@ foreach ($RinfoArchLogs as $Rclave => $RfileName) {
             $(document).Toasts("create", {
                 class: "bg-success",
                 title: "Carga exitosa ✔",
-                body: "El siguiente archivo se ha cargado correctamente: <br>'.$RfileName['path'].'<br>'.$RfileName['modification_time'].'"
+                body: "El siguiente archivo se ha cargado correctamente: <br><a href=\'#' . $RsectionId . '\'>' . $RfileName['path'] . '</a><br>' . $RfileName['modification_time'] . '"
             });
             </script>';
     }
@@ -80,7 +84,7 @@ foreach ($RinfoArchLogs as $Rclave => $RfileName) {
             $(document).Toasts("create", {
                 class: "bg-danger",
                 title: "Error inesperado ❌",
-                body: "Se encontró un inconveniente en el archivo: <br>'.$RfileName['path'].'<br>'.$RfileName['modification_time'].'"
+                body: "Se encontró un inconveniente en el archivo: <br><a href=\'#' . $RsectionId . '\'>' . $RfileName['path'] . '</a><br>' . $RfileName['modification_time'] . '"
             });
             </script>';
     }
@@ -91,7 +95,7 @@ foreach ($RinfoArchLogs as $Rclave => $RfileName) {
             $(document).Toasts("create", {
                 class: "bg-info",
                 title: "Proceso de carga 🔄",
-                body: "El siguiente archivo se encuentra en ejecución: <br>'.$RfileName['path'].'<br>'.$RfileName['modification_time'].'"
+                body: "El siguiente archivo se encuentra en ejecución: <br><a href=\'#' . $RsectionId . '\'>' . $RfileName['path'] . '</a><br>' . $RfileName['modification_time'] . '"
             });
             </script>';
     }
@@ -104,7 +108,7 @@ foreach ($RinfoArchLogs as $Rclave => $RfileName) {
         $(document).Toasts("create", {
             class: "bg-warning",
             title: "Carga pendiente ⚠",
-            body: "Se el siguiente archivo aún no se ha cargado: <br>'.$RfileName['path'].'<br>'.$RfileName['modification_time'].'"
+            body: "Se el siguiente archivo aún no se ha cargado:  <br><a href=\'#' . $RsectionId . '\'>' . $RfileName['path'] . '</a><br>' . $RfileName['modification_time'] . '"
         });
         </script>';
     }
