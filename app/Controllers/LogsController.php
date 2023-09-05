@@ -286,31 +286,6 @@ public function ModelDatosDirectories($iDir)
         ];
     }
 
-    if($iDir == 2)
-    {
-        $Dir = [
-            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_DBOX_61.log",
-            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_ADH_CSV_STATUS.log",
-            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_FTTH_GW.log",
-            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAMACCOMPARTIDAIPTV.log",
-            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_SIEBEL_GIS.log",
-            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_ASSET_HUERFANOS.log"
-            // Agrega aquí más rutas de archivos que deseas descargar...
-        ];
-    }
-
-    if($iDir == 3)
-    {
-        $Dir = [
-            "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORRECCION_DBOX_61.log",
-            "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORREGIR_PREVENTIVO_2257.log",
-            "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORREGIR_SERIES_REPETIDAS.log",
-            "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORRIGE_SIEBEL_GIS.log",
-            "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORRIGEMACCOMPARTIDAIPTV.log"
-            // Agrega aquí más rutas de archivos que deseas descargar...
-        ];
-    }
-
     return $Dir;
 }
 
@@ -816,7 +791,7 @@ public function InfoProceduresAMPM($iDir)
 
     if($iDir == 1){
         if ($this->sftpManager->connect() && $this->sftpManager->login()) {
-            $filesToInfo = $this->ModelDatosDirectories(1);
+            $filesToInfo = $this->ProceduresAMPMDirectories(1);
     
             foreach ($filesToInfo as $fileIndex => $filePath) {
                 $fileInfo = $this->sftpManager->getFileInfoByPath($filePath);
