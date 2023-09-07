@@ -2,6 +2,7 @@
 use App\Controllers\HomeController;
 use App\Controllers\LogsController;
 use App\Controllers\UsersController;
+use App\Controllers\LoadsController;
 use App\Controllers\AuthController;
 
 // El usuario no ha iniciado sesión, redirigir a la ruta
@@ -30,6 +31,9 @@ if (isset($_SESSION['TOKEN'])) {
     $router->get($raiz.'/users/show', [UsersController::class, 'index']);
     $router->get($raiz.'/users/create', [UsersController::class, 'create']);
     $router->get($raiz.'/users/setup', [UsersController::class, 'setup']);
+
+    $router->get($raiz.'/loads/show', [LoadsController::class, 'index']);
+
     // Rutas usuarios POST
     $router->post($raiz.'/create/user', [UsersController::class, 'createUser']);
     $router->post($raiz.'/users/edit', [UsersController::class, 'edit']);

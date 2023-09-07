@@ -18,15 +18,15 @@ $(function () {
         },
         "csv",
         "excel",
-        "pdf",
+        // "pdf",
         {
           extend: "print",
           text: "imprimir",
         },
-        {
-          extend: "colvis",
-          text: "columnas visibles",
-        },
+        // {
+        //   extend: "colvis",
+        //   text: "columnas visibles",
+        // },
       ],
     })
     .buttons()

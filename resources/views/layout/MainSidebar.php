@@ -41,29 +41,29 @@
                     </a>
                 </li>
 
-                <!-- <li class="nav-item menu-closed">
+                <li class="nav-item menu-closed">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Informes
-                            <span class="right badge badge-secondary">soon<i class="right fas fa-angle-left"></i></span>
+                            Count Cargas
+                            <span class="right badge badge-warning">Develop<i class="right fas fa-angle-left"></i></span>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="<?php echo $this->raiz; ?>/loads/show" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>I. Andes</p>
+                                <p>C. Refresco</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>I. Eficiencia</p>
+                                <p>C. Plataformas</p>
                             </a>
                         </li>
                     </ul>          
-                </li> -->
+                </li>
 
                 <li class="nav-item">
                     <a id="Dash" href="<?php echo $this->raiz; ?>/logs" class="nav-link">

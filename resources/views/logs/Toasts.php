@@ -14,8 +14,8 @@ foreach ($RinfoArchLogs1 as $Rclave1 => $RfileName1) {
         echo '<script>
             $(document).Toasts("create", {
                 class: "bg-success",
-                title: "Carga exitosa ✔",
-                body: "El siguiente archivo se ha cargado correctamente: <br><a href=\'#' . $RsectionId1 . '\'>' . $RfileName1['path'] . '</a><br>' . $RfileName1['modification_time'] . '"
+                title: "Ejecución exitosa ✔",
+                body: "El siguiente archivo se ha ejecutado correctamente: <br><a href=\'#' . $RsectionId1 . '\'>' . $RfileName1['path'] . '</a><br>' . $RfileName1['modification_time'] . '"
             });
             </script>';
     }
@@ -50,8 +50,8 @@ foreach ($RinfoArchLogs1 as $Rclave1 => $RfileName1) {
         echo '<script>
         $(document).Toasts("create", {
             class: "bg-warning",
-            title: "Carga pendiente ⚠",
-            body: "Se el siguiente archivo aún no se ha cargado: <br><a href=\'#' . $RsectionId1 . '\'>' . $RfileName1['path'] . '</a><br>' . $RfileName1['modification_time'] . '"
+            title: "Ejecución pendiente ⚠",
+            body: "Se el siguiente archivo aún no se ha ejecutado: <br><a href=\'#' . $RsectionId1 . '\'>' . $RfileName1['path'] . '</a><br>' . $RfileName1['modification_time'] . '"
         });
         </script>';
     }
@@ -71,8 +71,8 @@ foreach ($RinfoArchLogs as $Rclave => $RfileName) {
         echo '<script>
             $(document).Toasts("create", {
                 class: "bg-success",
-                title: "Carga exitosa ✔",
-                body: "El siguiente archivo se ha cargado correctamente: <br><a href=\'#' . $RsectionId . '\'>' . $RfileName['path'] . '</a><br>' . $RfileName['modification_time'] . '"
+                title: "Ejecución exitosa ✔",
+                body: "El siguiente archivo se ha ejecutado correctamente: <br><a href=\'#' . $RsectionId . '\'>' . $RfileName['path'] . '</a><br>' . $RfileName['modification_time'] . '"
             });
             </script>';
     }
@@ -94,7 +94,7 @@ foreach ($RinfoArchLogs as $Rclave => $RfileName) {
         echo '<script>
             $(document).Toasts("create", {
                 class: "bg-info",
-                title: "Proceso de carga 🔄",
+                title: "Proceso de Ejecución 🔄",
                 body: "El siguiente archivo se encuentra en ejecución: <br><a href=\'#' . $RsectionId . '\'>' . $RfileName['path'] . '</a><br>' . $RfileName['modification_time'] . '"
             });
             </script>';
@@ -107,8 +107,8 @@ foreach ($RinfoArchLogs as $Rclave => $RfileName) {
         echo '<script>
         $(document).Toasts("create", {
             class: "bg-warning",
-            title: "Carga pendiente ⚠",
-            body: "Se el siguiente archivo aún no se ha cargado:  <br><a href=\'#' . $RsectionId . '\'>' . $RfileName['path'] . '</a><br>' . $RfileName['modification_time'] . '"
+            title: "Ejecución pendiente ⚠",
+            body: "Se el siguiente archivo aún no se ha ejecutado:  <br><a href=\'#' . $RsectionId . '\'>' . $RfileName['path'] . '</a><br>' . $RfileName['modification_time'] . '"
         });
         </script>';
     }
