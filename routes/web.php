@@ -32,8 +32,6 @@ if (isset($_SESSION['TOKEN'])) {
     $router->get($raiz.'/users/create', [UsersController::class, 'create']);
     $router->get($raiz.'/users/setup', [UsersController::class, 'setup']);
 
-    $router->get($raiz.'/loads/show', [LoadsController::class, 'index']);
-
     // Rutas usuarios POST
     $router->post($raiz.'/create/user', [UsersController::class, 'createUser']);
     $router->post($raiz.'/users/edit', [UsersController::class, 'edit']);
