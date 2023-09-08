@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cargas</title>
+    <title>Cargas y Refresco</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -31,16 +31,25 @@
                         <div class="col-12">
                             <div class="card card-dark">
                                 <div class="card-header">
-                                    <h2>Cargas</h2>
+                                    <h2>Cargas y Refresco
+                                        <a href="<?php echo $this->raiz; ?>/insert/refresco"
+                                            class="justify-content-md-end">
+                                            <?php if($user['USERNAME'] === "MARCOS"){ ?>
+                                            <button id="CargaRefresco" type="button" class="btn btn-success">
+                                                Proceder
+                                            </button>
+                                            <?php } ?>
+                                        </a>
+                                    </h2>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <div class="card-body table-responsive">
-                                        <table id="UsersTable"
+                                        <table id="RefrescoTable"
                                             class="table table-striped table-bordered table-condensed table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th>FECHA:</th>
+                                                    <th>TABLA ⬇ FECHA ➡</th>
                                                     <?php foreach($rows as $row): ?>
                                                     <th><?= $row['FECHA'] ?></th>
                                                     <?php endforeach; ?>
@@ -537,10 +546,38 @@
     <script src="<?php echo $this->raiz; ?>/public/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="<?php echo $this->raiz; ?>/public/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
-
-
     <!-- JS de tables -->
-    <script src="<?php echo $this->raiz; ?>/resources/assets/js/tables.js"></script>
+    <!-- <script src="<?php //echo $this->raiz; ?>/resources/assets/js/tables.js"></script> -->
+
+    <script>
+    $(function() {
+        $("#RefrescoTable")
+            .DataTable({
+                responsive: true,
+                searching: true,
+                lengthChange: true,
+                autoWidth: true,
+                ordering: false,
+                info: true,
+                paging: true,
+                buttons: [
+                    "csv",
+                    "excel",
+                    {
+                        extend: "print",
+                        text: "imprimir",
+                    },
+                    {
+                        extend: "colvis",
+                        text: "Columnas",
+                    }
+                ]
+            })
+            .buttons()
+            .container()
+            .appendTo("#RefrescoTable_wrapper .col-md-6:eq(0)");
+    });
+    </script>
 
 </body>
 

@@ -28,5 +28,27 @@ class LoadsDAO {
         }
         return $result;
     }
+
+    public function InsertPlataforma() {
+
+        $stmt = oci_parse($this->conn, 
+        "BEGIN
+            INSERT_CUT_CARGA_PLATAFORMA;
+        END;");
+        $result = oci_execute($stmt);
+        oci_commit($this->conn);
+        return $result;
+    }
+
+    public function InsertRefresco() {
+
+        $stmt = oci_parse($this->conn, 
+        "BEGIN
+            INSERT_CUT_CARGA_REFRESCO;
+        END;");
+        $result = oci_execute($stmt);
+        oci_commit($this->conn);
+        return $result;
+    }
     
 }

@@ -38,17 +38,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item">
-                                    <a href="<?php echo $this->raiz; ?>/ArchLogs">
+                                    <a id="ArchLogs" href="<?php echo $this->raiz; ?>/ArchLogs">
                                         Arch Logs
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="<?php echo $this->raiz; ?>/ModelDatos">
+                                    <a id="ModelDatos" href="<?php echo $this->raiz; ?>/ModelDatos">
                                         Modelo de datos 2
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="<?php echo $this->raiz; ?>/ViewsProceduresAMPM">
+                                    <a id="ViewsProceduresAMPM" href="<?php echo $this->raiz; ?>/ViewsProceduresAMPM">
                                         Procesos AM - PM
                                     </a>
                                 </li>
@@ -126,7 +126,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             </style>
 
                                             <!-- Tabla con tamaño de fuente reducido -->
-                                            <table class="table table-responsive table-responsive table-bordered table-small-font">
+                                            <table
+                                                class="table table-responsive table-responsive table-bordered table-small-font">
                                                 <thead>
                                                     <tr>
                                                         <th>ℹ</th>
@@ -868,7 +869,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             </style>
 
                                             <!-- Tabla con tamaño de fuente reducido -->
-                                            <table class="table table-responsive table-responsive table-bordered table-small-font">
+                                            <table
+                                                class="table table-responsive table-responsive table-bordered table-small-font">
                                                 <thead>
                                                     <tr>
                                                         <th>ℹ</th>
@@ -958,7 +960,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             </style>
 
                                             <!-- Tabla con tamaño de fuente reducido -->
-                                            <table class="table table-responsive table-responsive table-bordered table-small-font">
+                                            <table
+                                                class="table table-responsive table-responsive table-bordered table-small-font">
                                                 <thead>
                                                     <tr>
                                                         <th>ℹ</th>

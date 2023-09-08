@@ -23,12 +23,12 @@ class LoadsController {
 
     /*************************LLAMADA A LAS VISTAS**********************/
     
-    public function index() {
+    public function ShowRefresco() {
 
         $rows = $this->LoadsDAO->getAllRefresco();   
 
         // Obtén la ruta completa de la vista
-        $viewPath = __DIR__ . '/../../resources/views/loads/show.php';
+        $viewPath = __DIR__ . '/../../resources/views/loads/ShowRefresco.php';
 
         // Verifica si el archivo de vista existe
         if (file_exists($viewPath)) {
@@ -39,5 +39,36 @@ class LoadsController {
             echo "Error: la vista no existe";
         }
     }
+
+    public function ShowPlataforma() {
+        
+        $rows = $this->LoadsDAO->getAllPlataforma();   
+
+        // Obtén la ruta completa de la vista
+        $viewPath = __DIR__ . '/../../resources/views/loads/ShowPlataforma.php';
+
+        // Verifica si el archivo de vista existe
+        if (file_exists($viewPath)) {
+            // Incluye la vista
+            include_once $viewPath;
+        } else {
+            // Si la vista no existe, muestra un mensaje de error
+            echo "Error: la vista no existe";
+        }
+    }
+
+    public function InsertPlataform() {
+        
+        $this->LoadsDAO->InsertPlataforma(); 
+        header("Location:$this->raiz/loads/Plataforma");
+    }
+
+    public function InsertRefresco() {
+        
+        $this->LoadsDAO->InsertRefresco(); 
+        header("Location:$this->raiz/loads/Refresco");
+    }
+
+    
 }
 
