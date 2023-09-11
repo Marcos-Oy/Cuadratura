@@ -977,7 +977,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                         <td>
                                                             <?php echo ceil($filesToPublicTIVO['size'] / 1024); ?>
                                                             KB
-                                                            <?php if (ceil($filesToPublicTIVO['size'] / 1024) >= 1400000) { echo " ✔"; } else { echo " ⚠"; } ?>
+                                                            <?php if (ceil($filesToPublicTIVO['size'] / 1024) >= 1300000) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
                                                         <td><?php echo $filesToPublicTIVO['modification_time'];
                                                             if (date('Y-m-d') === date('Y-m-d', strtotime($filesToPublicTIVO['modification_time']))) {

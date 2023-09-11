@@ -50,7 +50,7 @@
                         </p>
                     </a>
                 </li>
-                <?php if($user['USERNAME'] === "MARCOS"){ ?>
+                <?php if($user['USERNAME'] === "MARCOS" || $user['USERNAME'] === "MARIA" || $user['USERNAME'] === "CARLOS"){ ?>
                 <li class="nav-item menu-closed">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -75,7 +75,9 @@
                         </li>
                     </ul>
                 </li>
-
+                <?php } ?>
+                
+                <?php if($user['USERNAME'] === "MARCOS"){ ?>
                 <li class="nav-item">
                     <a id="ShowUsers" href="<?php echo $this->raiz; ?>/users/show" class="nav-link">
                         <i class="nav-icon fas fa-user"></i>
