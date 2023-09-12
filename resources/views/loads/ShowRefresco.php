@@ -9,6 +9,7 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
@@ -49,6 +50,15 @@
                                             class="table table-striped table-bordered table-condensed table-hover">
                                             <thead>
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="TODO" class="btn btn-success" type='submit'
+                                                                name='TODO'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"> </i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <th>TABLA ⬇ FECHA ➡</th>
                                                     <?php foreach($rows as $row): ?>
                                                     <th><?= $row['FECHA'] ?></th>
@@ -58,6 +68,15 @@
                                             <tbody>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="BUSINESSIINTERACTION" class="btn btn-info"
+                                                                type='submit' name='BUSINESSIINTERACTION'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>BUSINESSIINTERACTION</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['BUSINESSIINTERACTION'] ?></td>
@@ -65,6 +84,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="CLIENTES" class="btn btn-info" type='submit'
+                                                                name='CLIENTES'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>CLIENTES</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['CLIENTES'] ?></td>
@@ -72,6 +100,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="CUT_SIEBEL_CANALES" class="btn btn-info"
+                                                                type='submit' name='CUT_SIEBEL_CANALES'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>CUT_SIEBEL_CANALES</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['CUT_SIEBEL_CANALES'] ?></td>
@@ -79,6 +116,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="CUT_SIEBEL_DBOX" class="btn btn-info"
+                                                                type='submit' name='CUT_SIEBEL_DBOX'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>CUT_SIEBEL_DBOX</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['CUT_SIEBEL_DBOX'] ?></td>
@@ -86,6 +132,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="CUT_SIEBEL_EQUIPOS" class="btn btn-info"
+                                                                type='submit' name='CUT_SIEBEL_EQUIPOS'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>CUT_SIEBEL_EQUIPOS</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['CUT_SIEBEL_EQUIPOS'] ?></td>
@@ -93,6 +148,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="CUT_SIEBEL_EQUIPOS_MTA" class="btn btn-info"
+                                                                type='submit' name='CUT_SIEBEL_EQUIPOS_MTA'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>CUT_SIEBEL_EQUIPOS_MTA</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['CUT_SIEBEL_EQUIPOS_MTA'] ?></td>
@@ -100,6 +164,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="CUT_SIEBEL_PRODUCTOP" class="btn btn-info"
+                                                                type='submit' name='CUT_SIEBEL_PRODUCTOP'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>CUT_SIEBEL_PRODUCTOP</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['CUT_SIEBEL_PRODUCTOP'] ?></td>
@@ -107,6 +180,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="CUT_SIEBEL_PRODUCTOP_BAJA" class="btn btn-info"
+                                                                type='submit' name='CUT_SIEBEL_PRODUCTOP_BAJA'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>CUT_SIEBEL_PRODUCTOP_BAJA</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['CUT_SIEBEL_PRODUCTOP_BAJA'] ?></td>
@@ -114,6 +196,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="CUT_UIM_CFS" class="btn btn-info" type='submit'
+                                                                name='CUT_UIM_CFS'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>CUT_UIM_CFS</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['CUT_UIM_CFS'] ?></td>
@@ -121,6 +212,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="CUT_UIM_RFS" class="btn btn-info" type='submit'
+                                                                name='CUT_UIM_RFS'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>CUT_UIM_RFS</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['CUT_UIM_RFS'] ?></td>
@@ -128,6 +228,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="CUT_UIM_RFS_IN_PROGRESS" class="btn btn-info"
+                                                                type='submit' name='CUT_UIM_RFS_IN_PROGRESS'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>CUT_UIM_RFS_IN_PROGRESS</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['CUT_UIM_RFS_IN_PROGRESS'] ?></td>
@@ -135,6 +244,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="CUT_UIM_SERVICIOS" class="btn btn-info"
+                                                                type='submit' name='CUT_UIM_SERVICIOS'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>CUT_UIM_SERVICIOS</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['CUT_UIM_SERVICIOS'] ?></td>
@@ -142,6 +260,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="CUT_UIM_SERVICIOS_BAJA" class="btn btn-info"
+                                                                type='submit' name='CUT_UIM_SERVICIOS_BAJA'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>CUT_UIM_SERVICIOS_BAJA</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['CUT_UIM_SERVICIOS_BAJA'] ?></td>
@@ -149,6 +276,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="FDT_ACTIVTEMP" class="btn btn-info"
+                                                                type='submit' name='FDT_ACTIVTEMP'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>FDT_ACTIVTEMP</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['FDT_ACTIVTEMP'] ?></td>
@@ -156,6 +292,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="FDT_AREAFUN" class="btn btn-info" type='submit'
+                                                                name='FDT_AREAFUN'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>FDT_AREAFUN</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['FDT_AREAFUN'] ?></td>
@@ -163,6 +308,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="FDT_CLASEMATER" class="btn btn-info"
+                                                                type='submit' name='FDT_CLASEMATER'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>FDT_CLASEMATER</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['FDT_CLASEMATER'] ?></td>
@@ -170,6 +324,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="FDT_CONFIG_PAQUETE" class="btn btn-info"
+                                                                type='submit' name='FDT_CONFIG_PAQUETE'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>FDT_CONFIG_PAQUETE</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['FDT_CONFIG_PAQUETE'] ?></td>
@@ -177,6 +340,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="FDT_MATERIAL" class="btn btn-info" type='submit'
+                                                                name='FDT_MATERIAL'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>FDT_MATERIAL</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['FDT_MATERIAL'] ?></td>
@@ -184,6 +356,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="FDT_STBSERIES" class="btn btn-info"
+                                                                type='submit' name='FDT_STBSERIES'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>FDT_STBSERIES</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['FDT_STBSERIES'] ?></td>
@@ -191,6 +372,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="FDT_TIPOORD" class="btn btn-info" type='submit'
+                                                                name='FDT_TIPOORD'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>FDT_TIPOORD</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['FDT_TIPOORD'] ?></td>
@@ -198,6 +388,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="GIAP_TRADUCTOR" class="btn btn-info"
+                                                                type='submit' name='GIAP_TRADUCTOR'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>GIAP_TRADUCTOR</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['GIAP_TRADUCTOR'] ?></td>
@@ -205,6 +404,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="GIAP_VOICEPLAN_MOVIL" class="btn btn-info"
+                                                                type='submit' name='GIAP_VOICEPLAN_MOVIL'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>GIAP_VOICEPLAN_MOVIL</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['GIAP_VOICEPLAN_MOVIL'] ?></td>
@@ -212,6 +420,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="GIT_DIRECCION" class="btn btn-info"
+                                                                type='submit' name='GIT_DIRECCION'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>GIT_DIRECCION</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['GIT_DIRECCION'] ?></td>
@@ -219,6 +436,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="GIT_VIVIENDA" class="btn btn-info" type='submit'
+                                                                name='GIT_VIVIENDA'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>GIT_VIVIENDA</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['GIT_VIVIENDA'] ?></td>
@@ -226,6 +452,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="MIGRADB" class="btn btn-info" type='submit'
+                                                                name='MIGRADB'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>MIGRADB</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['MIGRADB'] ?></td>
@@ -233,6 +468,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="OSM_ORDENESACTIVAS" class="btn btn-info"
+                                                                type='submit' name='OSM_ORDENESACTIVAS'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>OSM_ORDENESACTIVAS</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['OSM_ORDENESACTIVAS'] ?></td>
@@ -240,6 +484,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="PAT_LOCALIDAD" class="btn btn-info"
+                                                                type='submit' name='PAT_LOCALIDAD'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>PAT_LOCALIDAD</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['PAT_LOCALIDAD'] ?></td>
@@ -247,6 +500,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="PAT_PRCONTXPROD" class="btn btn-info"
+                                                                type='submit' name='PAT_PRCONTXPROD'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>PAT_PRCONTXPROD</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['PAT_PRCONTXPROD'] ?></td>
@@ -254,6 +516,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="PAT_PRPRODUCTO" class="btn btn-info"
+                                                                type='submit' name='PAT_PRPRODUCTO'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>PAT_PRPRODUCTO</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['PAT_PRPRODUCTO'] ?></td>
@@ -261,6 +532,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="PLACE_CHAR" class="btn btn-info" type='submit'
+                                                                name='PLACE_CHAR'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>PLACE_CHAR</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['PLACE_CHAR'] ?></td>
@@ -268,6 +548,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="REDT_CALLES" class="btn btn-info" type='submit'
+                                                                name='REDT_CALLES'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>REDT_CALLES</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['REDT_CALLES'] ?></td>
@@ -275,6 +564,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="REDT_LINEA" class="btn btn-info" type='submit'
+                                                                name='REDT_LINEA'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>REDT_LINEA</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['REDT_LINEA'] ?></td>
@@ -282,6 +580,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="REDT_VIVIENDA" class="btn btn-info"
+                                                                type='submit' name='REDT_VIVIENDA'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>REDT_VIVIENDA</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['REDT_VIVIENDA'] ?></td>
@@ -289,6 +596,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="RET_CABLEMODEM" class="btn btn-info"
+                                                                type='submit' name='RET_CABLEMODEM'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>RET_CABLEMODEM</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['RET_CABLEMODEM'] ?></td>
@@ -296,6 +612,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="RET_LINEARED" class="btn btn-info"
+                                                                type='submit' name='RET_LINEARED'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>RET_LINEARED</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['RET_LINEARED'] ?></td>
@@ -303,6 +628,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="S_ADDR_PER" class="btn btn-info"
+                                                                type='submit' name='S_ADDR_PER'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>S_ADDR_PER</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['S_ADDR_PER'] ?></td>
@@ -310,6 +644,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="S_ASSET" class="btn btn-info"
+                                                                type='submit' name='S_ASSET'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>S_ASSET</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['S_ASSET'] ?></td>
@@ -317,6 +660,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="S_ASSET_OM" class="btn btn-info"
+                                                                type='submit' name='S_ASSET_OM'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>S_ASSET_OM</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['S_ASSET_OM'] ?></td>
@@ -324,6 +676,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="S_ASSET_X" class="btn btn-info"
+                                                                type='submit' name='S_ASSET_X'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>S_ASSET_X</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['S_ASSET_X'] ?></td>
@@ -331,6 +692,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="S_ASSET_XA" class="btn btn-info"
+                                                                type='submit' name='S_ASSET_XA'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>S_ASSET_XA</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['S_ASSET_XA'] ?></td>
@@ -338,6 +708,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="S_INV_PROF" class="btn btn-info"
+                                                                type='submit' name='S_INV_PROF'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>S_INV_PROF</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['S_INV_PROF'] ?></td>
@@ -345,6 +724,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="S_ORDER" class="btn btn-info"
+                                                                type='submit' name='S_ORDER'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>S_ORDER</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['S_ORDER'] ?></td>
@@ -352,6 +740,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="S_ORDER_ITEM" class="btn btn-info"
+                                                                type='submit' name='S_ORDER_ITEM'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>S_ORDER_ITEM</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['S_ORDER_ITEM'] ?></td>
@@ -359,6 +756,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="S_ORDER_TYPE" class="btn btn-info"
+                                                                type='submit' name='S_ORDER_TYPE'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>S_ORDER_TYPE</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['S_ORDER_TYPE'] ?></td>
@@ -366,6 +772,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="S_ORG_EXT" class="btn btn-info"
+                                                                type='submit' name='S_ORG_EXT'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>S_ORG_EXT</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['S_ORG_EXT'] ?></td>
@@ -373,6 +788,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="S_PROD_INT" class="btn btn-info"
+                                                                type='submit' name='S_PROD_INT'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>S_PROD_INT</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['S_PROD_INT'] ?></td>
@@ -380,6 +804,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="S_USER" class="btn btn-info"
+                                                                type='submit' name='S_USER'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>S_USER</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['S_USER'] ?></td>
@@ -387,6 +820,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="SIEBEL_ACT" class="btn btn-info"
+                                                                type='submit' name='SIEBEL_ACT'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>SIEBEL_ACT</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['SIEBEL_ACT'] ?></td>
@@ -394,6 +836,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="SS_DERIVADAS" class="btn btn-info"
+                                                                type='submit' name='SS_DERIVADAS'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>SS_DERIVADAS</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['SS_DERIVADAS'] ?></td>
@@ -401,6 +852,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="SUT_CONCGTAR_NEW" class="btn btn-info"
+                                                                type='submit' name='SUT_CONCGTAR_NEW'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>SUT_CONCGTAR_NEW</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['SUT_CONCGTAR_NEW'] ?></td>
@@ -408,6 +868,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="SUT_CONSERVI" class="btn btn-info"
+                                                                type='submit' name='SUT_CONSERVI'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>SUT_CONSERVI</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['SUT_CONSERVI'] ?></td>
@@ -415,6 +884,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="SUT_GRUPOTAR" class="btn btn-info"
+                                                                type='submit' name='SUT_GRUPOTAR'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>SUT_GRUPOTAR</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['SUT_GRUPOTAR'] ?></td>
@@ -422,6 +900,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="SUT_GRUPOTARIFA" class="btn btn-info"
+                                                                type='submit' name='SUT_GRUPOTARIFA'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>SUT_GRUPOTARIFA</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['SUT_GRUPOTARIFA'] ?></td>
@@ -429,6 +916,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="SUT_INFODBOX_UIM_1" class="btn btn-info"
+                                                                type='submit' name='SUT_INFODBOX_UIM_1'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>SUT_INFODBOX_UIM_1</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['SUT_INFODBOX_UIM_1'] ?></td>
@@ -436,6 +932,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="SUT_SERVICIO" class="btn btn-info"
+                                                                type='submit' name='SUT_SERVICIO'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>SUT_SERVICIO</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['SUT_SERVICIO'] ?></td>
@@ -443,6 +948,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="SUT_TARIFAUIM" class="btn btn-info"
+                                                                type='submit' name='SUT_TARIFAUIM'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>SUT_TARIFAUIM</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['SUT_TARIFAUIM'] ?></td>
@@ -450,6 +964,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="SUT_VELOCIDADESNETUIM" class="btn btn-info"
+                                                                type='submit' name='SUT_VELOCIDADESNETUIM'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>SUT_VELOCIDADESNETUIM</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['SUT_VELOCIDADESNETUIM'] ?></td>
@@ -457,6 +980,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="TELEPHONENUMBER" class="btn btn-info"
+                                                                type='submit' name='TELEPHONENUMBER'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>TELEPHONENUMBER</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['TELEPHONENUMBER'] ?></td>
@@ -464,6 +996,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="TMP_EQUIPOS_MTA" class="btn btn-info"
+                                                                type='submit' name='TMP_EQUIPOS_MTA'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>TMP_EQUIPOS_MTA</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['TMP_EQUIPOS_MTA'] ?></td>
@@ -471,6 +1012,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="TNASSIGNMENT" class="btn btn-info"
+                                                                type='submit' name='TNASSIGNMENT'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>TNASSIGNMENT</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['TNASSIGNMENT'] ?></td>
@@ -478,6 +1028,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="TNCONSUMER" class="btn btn-info"
+                                                                type='submit' name='TNCONSUMER'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>TNCONSUMER</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['TNCONSUMER'] ?></td>
@@ -485,6 +1044,15 @@
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button id="XVTR_SIEBEL_INFO_SERIES_T" class="btn btn-info"
+                                                                type='submit' name='XVTR_SIEBEL_INFO_SERIES_T'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>XVTR_SIEBEL_INFO_SERIES_T</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['XVTR_SIEBEL_INFO_SERIES_T'] ?></td>

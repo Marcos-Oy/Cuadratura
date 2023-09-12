@@ -50,5 +50,35 @@ class LoadsDAO {
         oci_commit($this->conn);
         return $result;
     }
+
+    public function UpdatePlataforma($tabla) {
+        if($tabla != 'Cgm_Ea_Seu' && $tabla != 'SUT_INTERNET'){
+            $stmt = oci_parse($this->conn, "UPDATE CUT_CARGA_PLATAFORMA SET $tabla = (SELECT COUNT(*) FROM $tabla) 
+            WHERE TO_DATE(FECHA, 'YYYY-MM-DD') = TRUNC(SYSDATE)");
+        }
+
+        if($tabla === 'Cgm_Ea_Seu'){
+            $stmt = oci_parse($this->conn, "UPDATE CUT_CARGA_PLATAFORMA SET $tabla = (SELECT COUNT(*) FROM $tabla WHERE FECHA = TRUNC(SYSDATE)) 
+            WHERE TO_DATE(FECHA, 'YYYY-MM-DD') = TRUNC(SYSDATE)");
+        }
+
+        if($tabla === 'SUT_INTERNET'){
+            $stmt = oci_parse($this->conn, "UPDATE CUT_CARGA_PLATAFORMA SET $tabla = (SELECT COUNT(*) FROM $tabla WHERE FECHA_ACTUAL >= TRUNC(SYSDATE) AND FECHA_ACTUAL < TRUNC(SYSDATE) + 1) 
+            WHERE TO_DATE(FECHA, 'YYYY-MM-DD') = TRUNC(SYSDATE)");
+        }
+
+        $result = oci_execute($stmt);
+        oci_commit($this->conn);
+        return $result;
+    }
+
+    public function UpdateRefresco($tabla) {
+        $stmt = oci_parse($this->conn, "UPDATE CUT_CARGA_REFRESCO SET $tabla = (SELECT COUNT(*) FROM $tabla) 
+            WHERE TO_DATE(FECHA, 'YYYY-MM-DD') = TRUNC(SYSDATE)");
+        $result = oci_execute($stmt);
+        oci_commit($this->conn);
+        return $result;
+    }
+    
     
 }

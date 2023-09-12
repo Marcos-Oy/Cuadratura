@@ -9,6 +9,7 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
@@ -53,110 +54,289 @@
                                             class="table table-striped table-bordered table-condensed table-hover">
                                             <thead>
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
+                                                            <button id="TODO" class="btn btn-success" type='submit'
+                                                                name='TODO'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"> </i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <th>TABLA ⬇ FECHA ➡</th>
                                                     <?php foreach($rows as $row): ?>
                                                     <th><?= $row['FECHA'] ?></th>
                                                     <?php endforeach; ?>
+                                                    <th>Grafic.</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
+                                                            <button id="DAC" class="btn btn-info" type='submit'
+                                                                name='DAC'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>DAC</td>
                                                     <?php foreach($rows as $row): ?>
-                                                    <td><?= $row['DAC'] ?></td>
+                                                    <td data-sut-dac="<?= $row['DAC'] ?>"><?= $row['DAC'] ?></td>
+                                                    <!-- <td><?= $row['DAC'] ?></td> -->
                                                     <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-DAC"></div>
+                                                    </td>
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
+                                                            <button id="CUT_LICENCIA_HSS" class="btn btn-info"
+                                                                type='submit' name='CUT_LICENCIA_HSS'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>CUT_LICENCIA_HSS</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['CUT_LICENCIA_HSS'] ?></td>
                                                     <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-CUT_LICENCIA_HSS"></div>
+                                                    </td>
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
+                                                            <button id="VALIDLINES" class="btn btn-info" type='submit'
+                                                                name='VALIDLINES'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>VALIDLINES</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['VALIDLINES'] ?></td>
                                                     <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-VALIDLINES"></div>
+                                                    </td>
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
+                                                            <button id="SUT_TELEFONIA_IBNLINES" class="btn btn-info"
+                                                                type='submit' name='SUT_TELEFONIA_IBNLINES'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>SUT_TELEFONIA_IBNLINES</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['SUT_TELEFONIA_IBNLINES'] ?></td>
                                                     <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-SUT_TELEFONIA_IBNLINES"></div>
+                                                    </td>
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
+                                                            <button id="SUT_PSVA" class="btn btn-info" type='submit'
+                                                                name='SUT_PSVA'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>SUT_PSVA</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['SUT_PSVA'] ?></td>
                                                     <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-SUT_PSVA"></div>
+                                                    </td>
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
+                                                            <button id="CUT_TIVO" class="btn btn-info" type='submit'
+                                                                name='CUT_TIVO'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>CUT_TIVO</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['CUT_TIVO'] ?></td>
                                                     <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-CUT_TIVO"></div>
+                                                    </td>
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
+                                                            <button id="Cgm_Ea_Seu" class="btn btn-info" type='submit'
+                                                                name='Cgm_Ea_Seu'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>Cgm_Ea_Seu (Modelo de datos)</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['CGM_EA_SEU'] ?></td>
                                                     <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-Cgm_Ea_Seu"></div>
+                                                    </td>
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
+                                                            <button id="cut_Siebel_FTTH_Inventario" class="btn btn-info"
+                                                                type='submit' name='cut_Siebel_FTTH_Inventario'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>cut_Siebel_FTTH_Inventario</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['CUT_SIEBEL_FTTH_INVENTARIO'] ?></td>
                                                     <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-CUT_SIEBEL_FTTH_INVENTARIO"></div>
+                                                    </td>
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
+                                                            <button id="CUT_SIEBEL_FTTH_AMS" class="btn btn-info"
+                                                                type='submit' name='CUT_SIEBEL_FTTH_AMS'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>CUT_SIEBEL_FTTH_AMS</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['CUT_SIEBEL_FTTH_AMS'] ?></td>
                                                     <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-CUT_SIEBEL_FTTH_AMS"></div>
+                                                    </td>
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
+                                                            <button id="CUT_SIEBEL_FTTH_BBMS" class="btn btn-info"
+                                                                type='submit' name='CUT_SIEBEL_FTTH_BBMS'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>CUT_SIEBEL_FTTH_BBMS</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['CUT_SIEBEL_FTTH_BBMS'] ?></td>
                                                     <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-CUT_SIEBEL_FTTH_BBMS"></div>
+                                                    </td>
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
+                                                            <button id="SUT_INTERNET" class="btn btn-info" type='submit'
+                                                                name='SUT_INTERNET'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>SUT_INTERNET</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['SUT_INTERNET'] ?></td>
                                                     <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-SUT_INTERNET"></div>
+                                                    </td>
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
+                                                            <button id="CUT_FTTHGW" class="btn btn-info" type='submit'
+                                                                name='CUT_FTTHGW'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>CUT_FTTHGW</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['CUT_FTTHGW'] ?></td>
                                                     <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-CUT_FTTHGW"></div>
+                                                    </td>
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
+                                                            <button id="SUT_ADRENALIN_XML2" class="btn btn-info"
+                                                                type='submit' name='SUT_ADRENALIN_XML2'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>SUT_ADRENALIN_XML2</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['SUT_ADRENALIN_XML2'] ?></td>
                                                     <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-SUT_ADRENALIN_XML2"></div>
+                                                    </td>
                                                 </tr>
 
                                                 <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
+                                                            <button id="SUT_ADRENALIN_AUX" class="btn btn-info"
+                                                                type='submit' name='SUT_ADRENALIN_AUX'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
                                                     <td>SUT_ADRENALIN_AUX</td>
                                                     <?php foreach($rows as $row): ?>
                                                     <td><?= $row['SUT_ADRENALIN_AUX'] ?></td>
                                                     <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-SUT_ADRENALIN_AUX"></div>
+                                                    </td>
                                                 </tr>
 
 
@@ -193,6 +373,11 @@
     <!-- AdminLTE App -->
     <script src="<?php echo $this->raiz; ?>/public/dist/js/adminlte.min.js"></script>
 
+    <!-- jQuery Knob -->
+    <script src="<?php echo $this->raiz; ?>/public/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- Sparkline -->
+    <script src="<?php echo $this->raiz; ?>/public/plugins/sparklines/sparkline.js"></script>
+
     <!-- DataTables -->
     <link rel="stylesheet"
         href="<?php echo $this->raiz; ?>/public/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
@@ -218,11 +403,13 @@
     <!-- JS de tables -->
     <!-- <script src="<?php //echo $this->raiz; ?>/resources/assets/js/tables.js"></script> -->
 
+    <?php include_once 'GraficPlataforma.php'?>
+
     <script>
     $(function() {
         $("#RefrescoTable")
             .DataTable({
-                responsive: true,
+                responsive: false,
                 searching: true,
                 lengthChange: true,
                 autoWidth: true,
@@ -247,7 +434,6 @@
             .appendTo("#RefrescoTable_wrapper .col-md-6:eq(0)");
     });
     </script>
-
 
 
 </body>

@@ -38,6 +38,9 @@ if (isset($_SESSION['TOKEN'])) {
     $router->get($raiz.'/insert/plataform', [LoadsController::class, 'InsertPlataform']);
     $router->get($raiz.'/insert/refresco', [LoadsController::class, 'InsertRefresco']);
 
+    $router->post($raiz.'/update/plataform', [LoadsController::class, 'UpdatePlataform']);
+    $router->post($raiz.'/update/refresco', [LoadsController::class, 'UpdateRefresco']);
+
     // Rutas usuarios POST
     $router->post($raiz.'/create/user', [UsersController::class, 'createUser']);
     $router->post($raiz.'/users/edit', [UsersController::class, 'edit']);
@@ -47,6 +50,7 @@ if (isset($_SESSION['TOKEN'])) {
     $router->post($raiz.'/edit/state', [UsersController::class, 'editState']);
     $router->post($raiz.'/drop/user', [UsersController::class, 'dropUser']);
     $router->post($raiz.'/setup/user', [UsersController::class, 'setupUser']);
+
 }
 
 ?>

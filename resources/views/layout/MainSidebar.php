@@ -41,7 +41,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a id="Logs" href="<?php echo $this->raiz; ?>/logs" class="nav-link">
                         <i class="nav-icon fas fa-info"></i>
                         <p>
@@ -49,8 +49,45 @@
                             <span class="right badge badge-danger">New</span>
                         </p>
                     </a>
+                </li> -->
+
+                <li class="nav-item menu-closed">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-info"></i>
+                        <p>
+                            Logs Cargas
+                            <span class="right badge badge-danger">New<i
+                                    class="right fas fa-angle-left"></i></span>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a id="Logs" href="<?php echo $this->raiz; ?>/logs" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Registros Plataformas</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="ArchLogs" href="<?php echo $this->raiz; ?>/ArchLogs" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Refresco ArchLogs</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="ModelDatos" href="<?php echo $this->raiz; ?>/ModelDatos" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Modelo de datos</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="ViewsProceduresAMPM" href="<?php echo $this->raiz; ?>/ViewsProceduresAMPM" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Procesos AM PM</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                <?php if($user['USERNAME'] === "MARCOS" || $user['USERNAME'] === "MARIA" || $user['USERNAME'] === "CARLOS"){ ?>
+                <?php //if($user['USERNAME'] === "MARCOS" || $user['USERNAME'] === "MARIA" || $user['USERNAME'] === "CARLOS"){ ?>
                 <li class="nav-item menu-closed">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -75,7 +112,7 @@
                         </li>
                     </ul>
                 </li>
-                <?php } ?>
+                <?php //} ?>
                 
                 <?php if($user['USERNAME'] === "MARCOS"){ ?>
                 <li class="nav-item">

@@ -26,33 +26,97 @@ function agregarPreloader() {
     preloaderContainer.appendChild(preloader);
 }
 
-const CargaPlataforma = document.getElementById("CargaPlataforma");
-if (CargaPlataforma) {
-    CargaPlataforma.addEventListener("click", agregarPreloader);
-}
+const elementos = [
+    "CargaPlataforma",
+    "CargaRefresco",
+    "Logs",
+    "ArchLogs",
+    "ModelDatos",
+    "ViewsProceduresAMPM",
+    "TODO",
+    "DAC",
+    "CUT_LICENCIA_HSS",
+    "VALIDLINES",
+    "SUT_TELEFONIA_IBNLINES",
+    "SUT_PSVA",
+    "CUT_TIVO",
+    "Cgm_Ea_Seu",
+    "cut_Siebel_FTTH_Inventario",
+    "CUT_SIEBEL_FTTH_AMS",
+    "CUT_SIEBEL_FTTH_BBMS",
+    "SUT_INTERNET",
+    "CUT_FTTHGW",
+    "SUT_ADRENALIN_XML2",
+    "SUT_ADRENALIN_AUX",
+    "BUSINESSIINTERACTION",
+    "CLIENTES",
+    "CUT_SIEBEL_CANALES",
+    "CUT_SIEBEL_DBOX",
+    "CUT_SIEBEL_EQUIPOS",
+    "CUT_SIEBEL_EQUIPOS_MTA",
+    "CUT_SIEBEL_PRODUCTOP",
+    "CUT_SIEBEL_PRODUCTOP_BAJA",
+    "CUT_UIM_CFS",
+    "CUT_UIM_RFS",
+    "CUT_UIM_RFS_IN_PROGRESS",
+    "CUT_UIM_SERVICIOS",
+    "CUT_UIM_SERVICIOS_BAJA",
+    "FDT_ACTIVTEMP",
+    "FDT_AREAFUN",
+    "FDT_CLASEMATER",
+    "FDT_CONFIG_PAQUETE",
+    "FDT_MATERIAL",
+    "FDT_STBSERIES",
+    "FDT_TIPOORD",
+    "GIAP_TRADUCTOR",
+    "GIAP_VOICEPLAN_MOVIL",
+    "GIT_DIRECCION",
+    "GIT_VIVIENDA",
+    "MIGRADB",
+    "OSM_ORDENESACTIVAS",
+    "PAT_LOCALIDAD",
+    "PAT_PRCONTXPROD",
+    "PAT_PRPRODUCTO",
+    "PLACE_CHAR",
+    "REDT_CALLES",
+    "REDT_LINEA",
+    "REDT_VIVIENDA",
+    "RET_CABLEMODEM",
+    "RET_LINEARED",
+    "S_ADDR_PER",
+    "S_ASSET",
+    "S_ASSET_OM",
+    "S_ASSET_X",
+    "S_ASSET_XA",
+    "S_INV_PROF",
+    "S_ORDER",
+    "S_ORDER_ITEM",
+    "S_ORDER_TYPE",
+    "S_ORG_EXT",
+    "S_PROD_INT",
+    "S_USER",
+    "SIEBEL_ACT",
+    "SS_DERIVADAS",
+    "SUT_CONCGTAR_NEW",
+    "SUT_CONSERVI",
+    "SUT_GRUPOTAR",
+    "SUT_GRUPOTARIFA",
+    "SUT_INFODBOX_UIM_1",
+    "SUT_SERVICIO",
+    "SUT_TARIFAUIM",
+    "SUT_VELOCIDADESNETUIM",
+    "TELEPHONENUMBER",
+    "TMP_EQUIPOS_MTA",
+    "TNASSIGNMENT",
+    "TNCONSUMER",
+    "XVTR_SIEBEL_INFO_SERIES_T"
+];
 
-const CargaRefresco = document.getElementById("CargaRefresco");
-if (CargaRefresco) {
-    CargaRefresco.addEventListener("click", agregarPreloader);
-}
+elementos.forEach((elemento) => {
+    const elementoDOM = document.getElementById(elemento);
+    if (elementoDOM) {
+        elementoDOM.addEventListener("click", agregarPreloader);
+    }
+});
 
-const Logs = document.getElementById("Logs");
-if (Logs) {
-    Logs.addEventListener("click", agregarPreloader);
-}
-
-const ArchLogs = document.getElementById("ArchLogs");
-if (ArchLogs) {
-    ArchLogs.addEventListener("click", agregarPreloader);
-}
-
-const ModelDatos = document.getElementById("ModelDatos");
-if (ModelDatos) {
-    ModelDatos.addEventListener("click", agregarPreloader);
-}
-
-const ViewsProceduresAMPM = document.getElementById("ViewsProceduresAMPM");
-if (ViewsProceduresAMPM) {
-    ViewsProceduresAMPM.addEventListener("click", agregarPreloader);
-}
 </script>

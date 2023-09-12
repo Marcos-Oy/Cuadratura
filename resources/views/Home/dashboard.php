@@ -43,17 +43,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
             </section>
 
-            <!-- Main content -->
-            <section class="content">
-                <div class="error-page">
-                    <h2 class="headline text-primary"> ¡Bienvenidos!</h2>
-
-                    <div class="error-content">
-                        <h1 class="headline text-success"><div id="hora"></div></h1>
-                    </div>
-                </div>
-            </section>
+            <h2 class="headline text-primary text-center"> ¡Bienvenidos!</h2>
+            <br>
+            <h1 class="headline text-success text-center">
+                <div id="hora"></div>
+            </h1>
         </div>
+
+        <style>
+        /* Estilo para hacer que el texto "¡Bienvenidos!" sea responsivo */
+        .headline.text-primary {
+            font-size: 4vw;
+            /* Tamaño de fuente relativo al ancho de la pantalla */
+        }
+        </style>
 
         <?php include ('resources/views/layout/ControlSidebar.php'); ?>
         <?php include ('resources/views/layout/footer.php'); ?>
@@ -69,19 +72,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
     <script>
-        function actualizarHora() {
-            var fecha = new Date();
-            var hora = fecha.getHours();
-            var minutos = fecha.getMinutes();
-            var segundos = fecha.getSeconds();
-            hora = hora < 10 ? "0" + hora : hora;
-            minutos = minutos < 10 ? "0" + minutos : minutos;
-            segundos = segundos < 10 ? "0" + segundos : segundos;
-            var horaActual = hora + ":" + minutos + ":" + segundos;
-            document.getElementById("hora").innerText = horaActual;
-        }
+    function actualizarHora() {
+        var fecha = new Date();
+        var hora = fecha.getHours();
+        var minutos = fecha.getMinutes();
+        var segundos = fecha.getSeconds();
+        hora = hora < 10 ? "0" + hora : hora;
+        minutos = minutos < 10 ? "0" + minutos : minutos;
+        segundos = segundos < 10 ? "0" + segundos : segundos;
+        var horaActual = hora + ":" + minutos + ":" + segundos;
+        document.getElementById("hora").innerText = horaActual;
+    }
 
-        setInterval(actualizarHora, 1000); // Actualizar cada segundo (1000 ms)
+    setInterval(actualizarHora, 1000); // Actualizar cada segundo (1000 ms)
     </script>
 
 </body>

@@ -21,12 +21,40 @@
     <!-- Custom styles for this template-->
     <link href="<?php echo $this->raiz; ?>/resources/assets/css/sb-admin-2.min.css" rel="stylesheet">
 
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
+
+    <!-- REQUIRED SCRIPTS -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/plugins/fontawesome-free/css/all.min.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/plugins/toastr/toastr.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/dist/css/adminlte.min.css">
+
+    <!-- jQuery -->
+    <script src="<?php echo $this->raiz; ?>/public/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="<?php echo $this->raiz; ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src=".<?php echo $this->raiz; ?>/public/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Toastr -->
+    <script src="<?php echo $this->raiz; ?>/public/plugins/toastr/toastr.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="<?php echo $this->raiz; ?>/public/dist/js/adminlte.min.js"></script>
+
 </head>
 
 <body class="bg-gradient-primary">
 
     <div class="container">
 
+    <?php include 'resources/views/login/Toasts.php'; ?>
         <!-- Outer Row -->
         <div class="row justify-content-center">
 
