@@ -148,9 +148,9 @@ $(function() {
 
     const Cgm_Ea_Seu = [
         <?php foreach($rows as $row): ?>
-            <?php if (!empty($row['CGM_EA_SEU'])): ?>
-                <?= $row['CGM_EA_SEU'] ?>,
-            <?php endif; ?>
+        <?php if ($row['CGM_EA_SEU'] !== null && $row['CGM_EA_SEU'] !== ''): ?>
+        <?= $row['CGM_EA_SEU'] ?>,
+        <?php endif; ?>
         <?php endforeach; ?>
     ];
 
@@ -162,6 +162,12 @@ $(function() {
         endColor: '#92c1dc'
     });
     sparklineCgm_Ea_Seu.draw(Cgm_Ea_Seu);
+
+    if (Cgm_Ea_Seu.length > 0 && Cgm_Ea_Seu[Cgm_Ea_Seu.length - 1] <= 1300000) {
+        sparklineCgm_Ea_Seu.options.lineColor = '#f56954';
+        sparklineCgm_Ea_Seu.options.endColor = '#f56954';
+        sparklineCgm_Ea_Seu.draw(Cgm_Ea_Seu);
+    }
 });
 </script>
 
