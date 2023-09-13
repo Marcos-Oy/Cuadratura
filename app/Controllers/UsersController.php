@@ -127,7 +127,7 @@ class UsersController {
             $id = $this->usersDAO->updateUser($this->usersModel->getId(),$this->usersModel->getUsername(),
             $this->usersModel->getEmail(),$this->usersModel->getState());
 
-            return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/setup");
+            return ($id!=false) ? header("Location:$this->raiz/logouts") : header("Location:$this->raiz/users/setup");
         }
 
         if (isset($_POST['btn2'])) {
@@ -150,7 +150,7 @@ class UsersController {
                 if($nueva === $confirmar){
 
                     $id = $this->usersDAO->updatePassword($this->usersModel->getId(),$this->usersModel->getPassword());
-                    return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/setup");
+                    return ($id!=false) ? header("Location:$this->raiz/Home/dashboard") : header("Location:$this->raiz/users/setup");
 
                 }else{
                     echo 'las nuevas contraseñas no concuerdan';

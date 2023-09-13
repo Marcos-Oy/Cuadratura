@@ -99,9 +99,9 @@ class Tokens
             header('Location:' . $this->raiz . '/Home/dashboard');
         }
     
-        if (!isset($_SESSION['TOKEN']) && $_SERVER['REQUEST_URI'] != $this->raiz . "/") {
-            header('Location:' . $this->raiz . '/');
-        }
+        // if (!isset($_SESSION['TOKEN']) && $_SERVER['REQUEST_URI'] != $this->raiz . "/") {
+        //     header('Location:' . $this->raiz . '/');
+        // }
     }
     
     public function validateToken($token)

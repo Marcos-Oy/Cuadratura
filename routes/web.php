@@ -17,6 +17,7 @@ if(!isset($_SESSION['TOKEN'])){
 if (isset($_SESSION['TOKEN'])) { 
     // Rutas del login POST
     $router->post($raiz.'/logout', [AuthController::class, 'logout']);
+    $router->get($raiz.'/logouts', [AuthController::class, 'logout']);
     
     //Rutas dashboard GET
     $router->get($raiz.'/Home/dashboard', [HomeController::class, 'index']);
@@ -32,6 +33,14 @@ if (isset($_SESSION['TOKEN'])) {
     $router->get($raiz.'/users/create', [UsersController::class, 'create']);
     $router->get($raiz.'/users/setup', [UsersController::class, 'setup']);
 
+    $router->get($raiz.'/loads/Refresco', [LoadsController::class, 'ShowRefresco']);
+    $router->get($raiz.'/loads/Plataforma', [LoadsController::class, 'ShowPlataforma']);
+    $router->get($raiz.'/insert/plataform', [LoadsController::class, 'InsertPlataform']);
+    $router->get($raiz.'/insert/refresco', [LoadsController::class, 'InsertRefresco']);
+
+    $router->post($raiz.'/update/plataform', [LoadsController::class, 'UpdatePlataform']);
+    $router->post($raiz.'/update/refresco', [LoadsController::class, 'UpdateRefresco']);
+
     // Rutas usuarios POST
     $router->post($raiz.'/create/user', [UsersController::class, 'createUser']);
     $router->post($raiz.'/users/edit', [UsersController::class, 'edit']);
@@ -41,6 +50,7 @@ if (isset($_SESSION['TOKEN'])) {
     $router->post($raiz.'/edit/state', [UsersController::class, 'editState']);
     $router->post($raiz.'/drop/user', [UsersController::class, 'dropUser']);
     $router->post($raiz.'/setup/user', [UsersController::class, 'setupUser']);
+
 }
 
 ?>

@@ -41,84 +41,90 @@
                     </a>
                 </li>
 
-                <!-- <li class="nav-item menu-closed">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Count Cargas
-                            <span class="right badge badge-warning">Develop<i class="right fas fa-angle-left"></i></span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="<?php //echo $this->raiz; ?>/loads/show" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>C. Refresco</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>C. Plataformas</p>
-                            </a>
-                        </li>
-                    </ul>          
-                </li> -->
-
-                <li class="nav-item">
-                    <a id="Dash" href="<?php echo $this->raiz; ?>/logs" class="nav-link">
+                <!-- <li class="nav-item">
+                    <a id="Logs" href="<?php echo $this->raiz; ?>/logs" class="nav-link">
                         <i class="nav-icon fas fa-info"></i>
                         <p>
                             Logs cargas
                             <span class="right badge badge-danger">New</span>
                         </p>
                     </a>
-                </li>
-
-                <!-- <li class="nav-item">
-                    <a id="Dash" href="<?php //echo $this->raiz; ?>/Tables/Boxes" class="nav-link">
-                        <i class="nav-icon fa fa-table"></i>
-                        <p>
-                            Caja
-                            <span class="right badge badge-warning">Develop</span>
-                        </p>
-                    </a>
                 </li> -->
 
-                <!-- <li class="nav-item menu-closed">
+                <li class="nav-item menu-closed">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-info"></i>
                         <p>
-                            Logs procedures
-                            <span class="right badge badge-secondary">soon<i class="right fas fa-angle-left"></i></span>
+                            Logs Cargas
+                            <span class="right badge badge-danger">New<i
+                                    class="right fas fa-angle-left"></i></span>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a id="Logs" href="<?php echo $this->raiz; ?>/logs" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Cargas</p>
+                                <p>Registros Plataformas</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a id="ArchLogs" href="<?php echo $this->raiz; ?>/ArchLogs" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Correcciones</p>
+                                <p>Refresco ArchLogs</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="ModelDatos" href="<?php echo $this->raiz; ?>/ModelDatos" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Modelo de datos</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="ViewsProceduresAMPM" href="<?php echo $this->raiz; ?>/ViewsProceduresAMPM" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Procesos AM PM</p>
                             </a>
                         </li>
                     </ul>
-                </li> -->
-
-                <!-- <li class="nav-item">
-                    <a id="ShowUsers" href="<?php //echo $this->raiz; ?>/users/show" class="nav-link">
+                </li>
+                <?php //if($user['USERNAME'] === "MARCOS" || $user['USERNAME'] === "MARIA" || $user['USERNAME'] === "CARLOS"){ ?>
+                <li class="nav-item menu-closed">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Count Cargas
+                            <span class="right badge badge-warning">Develop<i
+                                    class="right fas fa-angle-left"></i></span>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?php echo $this->raiz; ?>/loads/Plataforma" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>C. Plataformas</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?php echo $this->raiz; ?>/loads/Refresco" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>C. Refresco</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <?php //} ?>
+                
+                <?php if($user['USERNAME'] === "MARCOS"){ ?>
+                <li class="nav-item">
+                    <a id="ShowUsers" href="<?php echo $this->raiz; ?>/users/show" class="nav-link">
                         <i class="nav-icon fas fa-user"></i>
                         <p>
                             Users
-                            <span class="right badge badge-danger">new</span>
+                            <!-- <span class="right badge badge-danger">new</span> -->
                         </p>
                     </a>
-                </li> -->
-
+                </li>
+                <?php } ?>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

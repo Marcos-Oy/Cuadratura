@@ -49,26 +49,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
+                        <?php if($_SERVER['REQUEST_URI'] === $this->raiz . "/ArchLogs"){ ?>
+                            <h1 class="m-0">Registros Refrescos ArchLogs</h1>
+                        <?php } if($_SERVER['REQUEST_URI'] === $this->raiz . "/ModelDatos"){ ?>
+                            <h1 class="m-0">Registros de Modelo de Datos 2.0</h1>
+                        <?php } if($_SERVER['REQUEST_URI'] === $this->raiz . "/ViewsProceduresAMPM"){ ?>
                             <h1 class="m-0">Registros de cargas</h1>
-                        </div><!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item">
-                                    <a href="<?php echo $this->raiz; ?>/ArchLogs">
-                                        Arch Logs
-                                    </a>
-                                </li>
-                                <li class="breadcrumb-item">
-                                    <a href="<?php echo $this->raiz; ?>/ModelDatos">
-                                        Modelo de datos 2
-                                    </a>
-                                </li>
-                                <li class="breadcrumb-item">
-                                    <a href="<?php echo $this->raiz; ?>/ViewsProceduresAMPM">
-                                        Procesos AM - PM
-                                    </a>
-                                </li>
-                            </ol>
+                        <?php } ?>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->

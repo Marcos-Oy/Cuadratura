@@ -35,25 +35,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="col-sm-6">
                             <h1 class="m-0">Registros de cargas</h1>
                         </div><!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item">
-                                    <a href="<?php echo $this->raiz; ?>/ArchLogs">
-                                        Arch Logs
-                                    </a>
-                                </li>
-                                <li class="breadcrumb-item">
-                                    <a href="<?php echo $this->raiz; ?>/ModelDatos">
-                                        Modelo de datos 2
-                                    </a>
-                                </li>
-                                <li class="breadcrumb-item">
-                                    <a href="<?php echo $this->raiz; ?>/ViewsProceduresAMPM">
-                                        Procesos AM - PM
-                                    </a>
-                                </li>
-                            </ol>
-                        </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
@@ -126,7 +107,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             </style>
 
                                             <!-- Tabla con tamaño de fuente reducido -->
-                                            <table class="table table-responsive table-responsive table-bordered table-small-font">
+                                            <table
+                                                class="table table-responsive table-responsive table-bordered table-small-font">
                                                 <thead>
                                                     <tr>
                                                         <th>ℹ</th>
@@ -868,7 +850,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             </style>
 
                                             <!-- Tabla con tamaño de fuente reducido -->
-                                            <table class="table table-responsive table-responsive table-bordered table-small-font">
+                                            <table
+                                                class="table table-responsive table-responsive table-bordered table-small-font">
                                                 <thead>
                                                     <tr>
                                                         <th>ℹ</th>
@@ -958,7 +941,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             </style>
 
                                             <!-- Tabla con tamaño de fuente reducido -->
-                                            <table class="table table-responsive table-responsive table-bordered table-small-font">
+                                            <table
+                                                class="table table-responsive table-responsive table-bordered table-small-font">
                                                 <thead>
                                                     <tr>
                                                         <th>ℹ</th>
@@ -974,7 +958,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                         <td>
                                                             <?php echo ceil($filesToPublicTIVO['size'] / 1024); ?>
                                                             KB
-                                                            <?php if (ceil($filesToPublicTIVO['size'] / 1024) >= 1400000) { echo " ✔"; } else { echo " ⚠"; } ?>
+                                                            <?php if (ceil($filesToPublicTIVO['size'] / 1024) >= 1300000) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
                                                         <td><?php echo $filesToPublicTIVO['modification_time'];
                                                             if (date('Y-m-d') === date('Y-m-d', strtotime($filesToPublicTIVO['modification_time']))) {
