@@ -53,7 +53,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="TODO" class="btn btn-success" type='submit'
+                                                            <button id="TODO" class="btn btn-success btn-xs" type='submit'
                                                                 name='TODO'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"> </i>
                                                             </button>
@@ -72,7 +72,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="BUSINESSIINTERACTION" class="btn btn-info"
+                                                            <button id="BUSINESSIINTERACTION" class="btn btn-info btn-xs"
                                                                 type='submit' name='BUSINESSIINTERACTION'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -91,7 +91,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="CLIENTES" class="btn btn-info" type='submit'
+                                                            <button id="CLIENTES" class="btn btn-info btn-xs" type='submit'
                                                                 name='CLIENTES'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -110,7 +110,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="CUT_SIEBEL_CANALES" class="btn btn-info"
+                                                            <button id="CUT_SIEBEL_CANALES" class="btn btn-info btn-xs"
                                                                 type='submit' name='CUT_SIEBEL_CANALES'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -129,7 +129,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="CUT_SIEBEL_DBOX" class="btn btn-info"
+                                                            <button id="CUT_SIEBEL_DBOX" class="btn btn-info btn-xs"
                                                                 type='submit' name='CUT_SIEBEL_DBOX'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -148,7 +148,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="CUT_SIEBEL_EQUIPOS" class="btn btn-info"
+                                                            <button id="CUT_SIEBEL_EQUIPOS" class="btn btn-info btn-xs"
                                                                 type='submit' name='CUT_SIEBEL_EQUIPOS'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -167,7 +167,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="CUT_SIEBEL_EQUIPOS_MTA" class="btn btn-info"
+                                                            <button id="CUT_SIEBEL_EQUIPOS_MTA" class="btn btn-info btn-xs"
                                                                 type='submit' name='CUT_SIEBEL_EQUIPOS_MTA'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -186,7 +186,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="CUT_SIEBEL_PRODUCTOP" class="btn btn-info"
+                                                            <button id="CUT_SIEBEL_PRODUCTOP" class="btn btn-info btn-xs"
                                                                 type='submit' name='CUT_SIEBEL_PRODUCTOP'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -205,7 +205,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="CUT_SIEBEL_PRODUCTOP_BAJA" class="btn btn-info"
+                                                            <button id="CUT_SIEBEL_PRODUCTOP_BAJA" class="btn btn-info btn-xs"
                                                                 type='submit' name='CUT_SIEBEL_PRODUCTOP_BAJA'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -224,7 +224,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="CUT_UIM_CFS" class="btn btn-info" type='submit'
+                                                            <button id="CUT_UIM_CFS" class="btn btn-info btn-xs" type='submit'
                                                                 name='CUT_UIM_CFS'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -243,7 +243,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="CUT_UIM_RFS" class="btn btn-info" type='submit'
+                                                            <button id="CUT_UIM_RFS" class="btn btn-info btn-xs" type='submit'
                                                                 name='CUT_UIM_RFS'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -262,7 +262,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="CUT_UIM_RFS_IN_PROGRESS" class="btn btn-info"
+                                                            <button id="CUT_UIM_RFS_IN_PROGRESS" class="btn btn-info btn-xs"
                                                                 type='submit' name='CUT_UIM_RFS_IN_PROGRESS'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -281,7 +281,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="CUT_UIM_SERVICIOS" class="btn btn-info"
+                                                            <button id="CUT_UIM_SERVICIOS" class="btn btn-info btn-xs"
                                                                 type='submit' name='CUT_UIM_SERVICIOS'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -300,7 +300,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="CUT_UIM_SERVICIOS_BAJA" class="btn btn-info"
+                                                            <button id="CUT_UIM_SERVICIOS_BAJA" class="btn btn-info btn-xs"
                                                                 type='submit' name='CUT_UIM_SERVICIOS_BAJA'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -319,7 +319,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="FDT_ACTIVTEMP" class="btn btn-info"
+                                                            <button id="FDT_ACTIVTEMP" class="btn btn-info btn-xs"
                                                                 type='submit' name='FDT_ACTIVTEMP'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -338,7 +338,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="FDT_AREAFUN" class="btn btn-info" type='submit'
+                                                            <button id="FDT_AREAFUN" class="btn btn-info btn-xs" type='submit'
                                                                 name='FDT_AREAFUN'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -357,7 +357,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="FDT_CLASEMATER" class="btn btn-info"
+                                                            <button id="FDT_CLASEMATER" class="btn btn-info btn-xs"
                                                                 type='submit' name='FDT_CLASEMATER'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -376,7 +376,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="FDT_CONFIG_PAQUETE" class="btn btn-info"
+                                                            <button id="FDT_CONFIG_PAQUETE" class="btn btn-info btn-xs"
                                                                 type='submit' name='FDT_CONFIG_PAQUETE'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -395,7 +395,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="FDT_MATERIAL" class="btn btn-info" type='submit'
+                                                            <button id="FDT_MATERIAL" class="btn btn-info btn-xs" type='submit'
                                                                 name='FDT_MATERIAL'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -414,7 +414,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="FDT_STBSERIES" class="btn btn-info"
+                                                            <button id="FDT_STBSERIES" class="btn btn-info btn-xs"
                                                                 type='submit' name='FDT_STBSERIES'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -433,7 +433,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="FDT_TIPOORD" class="btn btn-info" type='submit'
+                                                            <button id="FDT_TIPOORD" class="btn btn-info btn-xs" type='submit'
                                                                 name='FDT_TIPOORD'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -452,7 +452,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="GIAP_TRADUCTOR" class="btn btn-info"
+                                                            <button id="GIAP_TRADUCTOR" class="btn btn-info btn-xs"
                                                                 type='submit' name='GIAP_TRADUCTOR'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -471,7 +471,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="GIAP_VOICEPLAN_MOVIL" class="btn btn-info"
+                                                            <button id="GIAP_VOICEPLAN_MOVIL" class="btn btn-info btn-xs"
                                                                 type='submit' name='GIAP_VOICEPLAN_MOVIL'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -490,7 +490,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="GIT_DIRECCION" class="btn btn-info"
+                                                            <button id="GIT_DIRECCION" class="btn btn-info btn-xs"
                                                                 type='submit' name='GIT_DIRECCION'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -509,7 +509,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="GIT_VIVIENDA" class="btn btn-info" type='submit'
+                                                            <button id="GIT_VIVIENDA" class="btn btn-info btn-xs" type='submit'
                                                                 name='GIT_VIVIENDA'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -528,7 +528,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="MIGRADB" class="btn btn-info" type='submit'
+                                                            <button id="MIGRADB" class="btn btn-info btn-xs" type='submit'
                                                                 name='MIGRADB'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -547,7 +547,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="OSM_ORDENESACTIVAS" class="btn btn-info"
+                                                            <button id="OSM_ORDENESACTIVAS" class="btn btn-info btn-xs"
                                                                 type='submit' name='OSM_ORDENESACTIVAS'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -566,7 +566,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="PAT_LOCALIDAD" class="btn btn-info"
+                                                            <button id="PAT_LOCALIDAD" class="btn btn-info btn-xs"
                                                                 type='submit' name='PAT_LOCALIDAD'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -585,7 +585,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="PAT_PRCONTXPROD" class="btn btn-info"
+                                                            <button id="PAT_PRCONTXPROD" class="btn btn-info btn-xs"
                                                                 type='submit' name='PAT_PRCONTXPROD'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -604,7 +604,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="PAT_PRPRODUCTO" class="btn btn-info"
+                                                            <button id="PAT_PRPRODUCTO" class="btn btn-info btn-xs"
                                                                 type='submit' name='PAT_PRPRODUCTO'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -623,7 +623,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="PLACE_CHAR" class="btn btn-info" type='submit'
+                                                            <button id="PLACE_CHAR" class="btn btn-info btn-xs" type='submit'
                                                                 name='PLACE_CHAR'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -642,7 +642,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="REDT_CALLES" class="btn btn-info" type='submit'
+                                                            <button id="REDT_CALLES" class="btn btn-info btn-xs" type='submit'
                                                                 name='REDT_CALLES'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -661,7 +661,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="REDT_LINEA" class="btn btn-info" type='submit'
+                                                            <button id="REDT_LINEA" class="btn btn-info btn-xs" type='submit'
                                                                 name='REDT_LINEA'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -680,7 +680,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="REDT_VIVIENDA" class="btn btn-info"
+                                                            <button id="REDT_VIVIENDA" class="btn btn-info btn-xs"
                                                                 type='submit' name='REDT_VIVIENDA'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -699,7 +699,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="RET_CABLEMODEM" class="btn btn-info"
+                                                            <button id="RET_CABLEMODEM" class="btn btn-info btn-xs"
                                                                 type='submit' name='RET_CABLEMODEM'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -718,7 +718,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="RET_LINEARED" class="btn btn-info" type='submit'
+                                                            <button id="RET_LINEARED" class="btn btn-info btn-xs" type='submit'
                                                                 name='RET_LINEARED'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -737,7 +737,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="S_ADDR_PER" class="btn btn-info" type='submit'
+                                                            <button id="S_ADDR_PER" class="btn btn-info btn-xs" type='submit'
                                                                 name='S_ADDR_PER'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -756,7 +756,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="S_ASSET" class="btn btn-info" type='submit'
+                                                            <button id="S_ASSET" class="btn btn-info btn-xs" type='submit'
                                                                 name='S_ASSET'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -775,7 +775,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="S_ASSET_OM" class="btn btn-info" type='submit'
+                                                            <button id="S_ASSET_OM" class="btn btn-info btn-xs" type='submit'
                                                                 name='S_ASSET_OM'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -794,7 +794,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="S_ASSET_X" class="btn btn-info" type='submit'
+                                                            <button id="S_ASSET_X" class="btn btn-info btn-xs" type='submit'
                                                                 name='S_ASSET_X'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -813,7 +813,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="S_ASSET_XA" class="btn btn-info" type='submit'
+                                                            <button id="S_ASSET_XA" class="btn btn-info btn-xs" type='submit'
                                                                 name='S_ASSET_XA'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -832,7 +832,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="S_INV_PROF" class="btn btn-info" type='submit'
+                                                            <button id="S_INV_PROF" class="btn btn-info btn-xs" type='submit'
                                                                 name='S_INV_PROF'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -851,7 +851,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="S_ORDER" class="btn btn-info" type='submit'
+                                                            <button id="S_ORDER" class="btn btn-info btn-xs" type='submit'
                                                                 name='S_ORDER'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -870,7 +870,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="S_ORDER_ITEM" class="btn btn-info" type='submit'
+                                                            <button id="S_ORDER_ITEM" class="btn btn-info btn-xs" type='submit'
                                                                 name='S_ORDER_ITEM'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -889,7 +889,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="S_ORDER_TYPE" class="btn btn-info" type='submit'
+                                                            <button id="S_ORDER_TYPE" class="btn btn-info btn-xs" type='submit'
                                                                 name='S_ORDER_TYPE'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -908,7 +908,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="S_ORG_EXT" class="btn btn-info" type='submit'
+                                                            <button id="S_ORG_EXT" class="btn btn-info btn-xs" type='submit'
                                                                 name='S_ORG_EXT'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -927,7 +927,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="S_PROD_INT" class="btn btn-info" type='submit'
+                                                            <button id="S_PROD_INT" class="btn btn-info btn-xs" type='submit'
                                                                 name='S_PROD_INT'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -946,7 +946,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="S_USER" class="btn btn-info" type='submit'
+                                                            <button id="S_USER" class="btn btn-info btn-xs" type='submit'
                                                                 name='S_USER'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -965,7 +965,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="SIEBEL_ACT" class="btn btn-info" type='submit'
+                                                            <button id="SIEBEL_ACT" class="btn btn-info btn-xs" type='submit'
                                                                 name='SIEBEL_ACT'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -984,7 +984,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="SS_DERIVADAS" class="btn btn-info" type='submit'
+                                                            <button id="SS_DERIVADAS" class="btn btn-info btn-xs" type='submit'
                                                                 name='SS_DERIVADAS'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -1003,7 +1003,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="SUT_CONCGTAR_NEW" class="btn btn-info"
+                                                            <button id="SUT_CONCGTAR_NEW" class="btn btn-info btn-xs"
                                                                 type='submit' name='SUT_CONCGTAR_NEW'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -1022,7 +1022,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="SUT_CONSERVI" class="btn btn-info" type='submit'
+                                                            <button id="SUT_CONSERVI" class="btn btn-info btn-xs" type='submit'
                                                                 name='SUT_CONSERVI'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -1041,7 +1041,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="SUT_GRUPOTAR" class="btn btn-info" type='submit'
+                                                            <button id="SUT_GRUPOTAR" class="btn btn-info btn-xs" type='submit'
                                                                 name='SUT_GRUPOTAR'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -1060,7 +1060,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="SUT_GRUPOTARIFA" class="btn btn-info"
+                                                            <button id="SUT_GRUPOTARIFA" class="btn btn-info btn-xs"
                                                                 type='submit' name='SUT_GRUPOTARIFA'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -1079,7 +1079,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="SUT_INFODBOX_UIM_1" class="btn btn-info"
+                                                            <button id="SUT_INFODBOX_UIM_1" class="btn btn-info btn-xs"
                                                                 type='submit' name='SUT_INFODBOX_UIM_1'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -1098,7 +1098,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="SUT_SERVICIO" class="btn btn-info" type='submit'
+                                                            <button id="SUT_SERVICIO" class="btn btn-info btn-xs" type='submit'
                                                                 name='SUT_SERVICIO'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -1117,7 +1117,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="SUT_TARIFAUIM" class="btn btn-info"
+                                                            <button id="SUT_TARIFAUIM" class="btn btn-info btn-xs"
                                                                 type='submit' name='SUT_TARIFAUIM'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -1136,7 +1136,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="SUT_VELOCIDADESNETUIM" class="btn btn-info"
+                                                            <button id="SUT_VELOCIDADESNETUIM" class="btn btn-info btn-xs"
                                                                 type='submit' name='SUT_VELOCIDADESNETUIM'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -1155,7 +1155,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="TELEPHONENUMBER" class="btn btn-info"
+                                                            <button id="TELEPHONENUMBER" class="btn btn-info btn-xs"
                                                                 type='submit' name='TELEPHONENUMBER'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -1174,7 +1174,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="TMP_EQUIPOS_MTA" class="btn btn-info"
+                                                            <button id="TMP_EQUIPOS_MTA" class="btn btn-info btn-xs"
                                                                 type='submit' name='TMP_EQUIPOS_MTA'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -1193,7 +1193,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="TNASSIGNMENT" class="btn btn-info" type='submit'
+                                                            <button id="TNASSIGNMENT" class="btn btn-info btn-xs" type='submit'
                                                                 name='TNASSIGNMENT'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -1212,7 +1212,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="TNCONSUMER" class="btn btn-info" type='submit'
+                                                            <button id="TNCONSUMER" class="btn btn-info btn-xs" type='submit'
                                                                 name='TNCONSUMER'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -1231,7 +1231,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button id="XVTR_SIEBEL_INFO_SERIES_T" class="btn btn-info"
+                                                            <button id="XVTR_SIEBEL_INFO_SERIES_T" class="btn btn-info btn-xs"
                                                                 type='submit' name='XVTR_SIEBEL_INFO_SERIES_T'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>

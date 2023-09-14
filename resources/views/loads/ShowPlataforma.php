@@ -50,6 +50,7 @@
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <div class="card-body table-responsive">
+                                        
                                         <table id="RefrescoTable"
                                             class="table table-striped table-bordered table-condensed table-hover">
                                             <thead>
@@ -57,8 +58,8 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="TODO" class="btn btn-success" type='submit'
-                                                                name='TODO'>
+                                                            <button id="TODO" class="btn btn-success btn-xs"
+                                                                type='submit' name='TODO'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"> </i>
                                                             </button>
                                                         </form>
@@ -76,7 +77,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="DAC" class="btn btn-info" type='submit'
+                                                            <button id="DAC" class="btn btn-info btn-xs" type='submit'
                                                                 name='DAC'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -96,7 +97,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="CUT_LICENCIA_HSS" class="btn btn-info"
+                                                            <button id="CUT_LICENCIA_HSS" class="btn btn-info btn-xs"
                                                                 type='submit' name='CUT_LICENCIA_HSS'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -115,7 +116,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="VALIDLINES" class="btn btn-info" type='submit'
+                                                            <button id="VALIDLINES" class="btn btn-info btn-xs" type='submit'
                                                                 name='VALIDLINES'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -134,7 +135,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="SUT_TELEFONIA_IBNLINES" class="btn btn-info"
+                                                            <button id="SUT_TELEFONIA_IBNLINES" class="btn btn-info btn-xs"
                                                                 type='submit' name='SUT_TELEFONIA_IBNLINES'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -153,7 +154,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="SUT_PSVA" class="btn btn-info" type='submit'
+                                                            <button id="SUT_PSVA" class="btn btn-info btn-xs" type='submit'
                                                                 name='SUT_PSVA'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -172,7 +173,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="CUT_TIVO" class="btn btn-info" type='submit'
+                                                            <button id="CUT_TIVO" class="btn btn-info btn-xs" type='submit'
                                                                 name='CUT_TIVO'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -191,7 +192,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="Cgm_Ea_Seu" class="btn btn-info" type='submit'
+                                                            <button id="Cgm_Ea_Seu" class="btn btn-info btn-xs" type='submit'
                                                                 name='Cgm_Ea_Seu'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -210,7 +211,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="cut_Siebel_FTTH_Inventario" class="btn btn-info"
+                                                            <button id="cut_Siebel_FTTH_Inventario" class="btn btn-info btn-xs"
                                                                 type='submit' name='cut_Siebel_FTTH_Inventario'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -229,7 +230,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="CUT_SIEBEL_FTTH_AMS" class="btn btn-info"
+                                                            <button id="CUT_SIEBEL_FTTH_AMS" class="btn btn-info btn-xs"
                                                                 type='submit' name='CUT_SIEBEL_FTTH_AMS'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -248,7 +249,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="CUT_SIEBEL_FTTH_BBMS" class="btn btn-info"
+                                                            <button id="CUT_SIEBEL_FTTH_BBMS" class="btn btn-info btn-xs"
                                                                 type='submit' name='CUT_SIEBEL_FTTH_BBMS'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -267,7 +268,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="SUT_INTERNET" class="btn btn-info" type='submit'
+                                                            <button id="SUT_INTERNET" class="btn btn-info btn-xs" type='submit'
                                                                 name='SUT_INTERNET'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -286,7 +287,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="CUT_FTTHGW" class="btn btn-info" type='submit'
+                                                            <button id="CUT_FTTHGW" class="btn btn-info btn-xs" type='submit'
                                                                 name='CUT_FTTHGW'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -305,7 +306,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="SUT_ADRENALIN_XML2" class="btn btn-info"
+                                                            <button id="SUT_ADRENALIN_XML2" class="btn btn-info btn-xs"
                                                                 type='submit' name='SUT_ADRENALIN_XML2'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -324,7 +325,7 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="SUT_ADRENALIN_AUX" class="btn btn-info"
+                                                            <button id="SUT_ADRENALIN_AUX" class="btn btn-info btn-xs"
                                                                 type='submit' name='SUT_ADRENALIN_AUX'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>

@@ -56,8 +56,8 @@
                         <i class="nav-icon fas fa-info"></i>
                         <p>
                             Logs Cargas
-                            <span class="right badge badge-danger">New<i
-                                    class="right fas fa-angle-left"></i></span>
+                            <!-- <span class="right badge badge-danger">New<i
+                                    class="right fas fa-angle-left"></i></span> -->
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -93,7 +93,7 @@
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Count Cargas
-                            <span class="right badge badge-warning">Develop<i
+                            <span class="right badge badge-danger">New<i
                                     class="right fas fa-angle-left"></i></span>
                         </p>
                     </a>
