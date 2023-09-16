@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Starter</title>
+    <title>Home</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -48,6 +48,70 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <h1 class="headline text-success text-center">
                 <div id="hora"></div>
             </h1>
+
+            <section class="content">
+                <div class="container-fluid">
+                    <h5 class="mb-2 mt-4">Resumen</h5>
+                    <div class="row">
+                        <div class="col-lg-3 col-6">
+                            <!-- small card -->
+                            <div class="small-box bg-info">
+                                <div class="inner">
+                                    <h3>150</h3>
+
+                                    <p>Proceso de carga</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small card -->
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3>150</h3>
+
+                                    <p>Ejecución completa</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small card -->
+                            <div class="small-box bg-warning">
+                                <div class="inner">
+                                    <h3>150</h3>
+
+                                    <p>Carga pendiente</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-exclamation"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small card -->
+                            <div class="small-box bg-danger">
+                                <div class="inner">
+                                    <h3>150</h3>
+
+                                    <p>Errores</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                    </div>
+                </div>
+            </section>
         </div>
 
         <style>

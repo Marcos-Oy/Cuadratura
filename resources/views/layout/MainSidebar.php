@@ -36,7 +36,7 @@
                         <i class="nav-icon fa fa-home"></i>
                         <p>
                             Home
-                            <!-- <span class="right badge badge-secondary">soon</span> -->
+                            <span class="right badge badge-warning">Develop</span>
                         </p>
                     </a>
                 </li>
@@ -56,8 +56,7 @@
                         <i class="nav-icon fas fa-info"></i>
                         <p>
                             Logs Cargas
-                            <!-- <span class="right badge badge-danger">New<i
-                                    class="right fas fa-angle-left"></i></span> -->
+                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">

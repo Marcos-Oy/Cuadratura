@@ -6,6 +6,7 @@ use Config\Connection\SFTPManager;
 use Config\Connection\SFTPVlr;
 use Config\Connection\SFTPIncognito;
 use Config\Connection\SFTPMapuche;
+use Config\Connection\FTPAdrenalin2;
 
 class LogsController
 {
@@ -25,6 +26,9 @@ class LogsController
         require_once(__DIR__ . '/../../Config/SFTPMapuche.php');
         $this->sftpMapuche = new SFTPMapuche();
 
+        require_once(__DIR__ . '/../../Config/FTPAdrenalin2.php');
+        $this->ftpAdrenalin2 = new FTPAdrenalin2();
+
         global $raiz;
         $this->raiz = $raiz;
     }
@@ -33,6 +37,7 @@ class LogsController
 
 public function ViewsLogs()
 {
+    $user = $_SESSION['USER'];
     $viewPath = __DIR__ . '/../../resources/views/logs/logs.php';
 
     if (file_exists($viewPath)) {
@@ -41,6 +46,12 @@ public function ViewsLogs()
         $filesToPublicTIVO = $this->InfoLogs('TIVO');
 
         $filesToPublicHSS = $this->InfoVLRLogs('HSS');
+
+        if($user['USERNAME'] === 'MARCOS' || $user['USERNAME'] === 'MARIA' 
+        || $user['USERNAME'] === 'FRANCISCO' || $user['USERNAME'] === 'KARIM')
+        {
+            $filesToPublicAdrenalin2 = $this->InfoAdrenalin2Logs('ADRENALIN2');
+        }
 
         $filesToPublicINVENTARIO = $this->InfoINCOGNITOLogs('INVENTARIO');
         $filesToPublicAMS = $this->InfoINCOGNITOLogs('AMS');
@@ -399,9 +410,58 @@ public function InfoLogs($iDir)
     }
 }
 
+public function InfoAdrenalin2Logs($iDir)
+{
+    if ($this->ftpAdrenalin2->connect() && $this->ftpAdrenalin2->login()) {
+        $fechaAyer = date('Ymd', strtotime('-1 day'));
+        
+        if($iDir == 'ADRENALIN2'){
+            $searchPattern = "customer_relation_{$fechaAyer}";
+            // Obtener la lista de archivos en el directorio deseado
+            $remoteDir = "/";
+        }
+
+        $allFiles = $this->ftpAdrenalin2->getFilesInDirectory($remoteDir);
+        $matchingFiles = [];
+        // Buscar los archivos que contienen el fragmento de búsqueda
+        foreach ($allFiles as $file) {
+            if (strpos($file, $searchPattern) !== false) {
+                $matchingFiles[] = $file;
+            }
+        }
+    
+        if (!empty($matchingFiles)) {
+            // Obtener la ruta del archivo más reciente (el primer archivo de la lista)
+            $rutaArchivoMasReciente = $matchingFiles[0];
+            // Obtener el nombre del archivo más reciente sin la ruta completa
+            $nombreArchivoMasReciente = basename($rutaArchivoMasReciente);
+            // Obtener información del archivo más reciente utilizando el método getFileInfoByPath
+            $fileInfo = $this->ftpAdrenalin2->getFileInfoByPath($rutaArchivoMasReciente);
+            if ($fileInfo !== false) {
+                $fileSize = $fileInfo['size'];
+                $fileModificationTime = strtotime($fileInfo['mtime']);
+                if ($fileModificationTime === false) {
+                    echo '<p>Error: No se pudo analizar la fecha de modificación del archivo</p>';
+                } else {
+                    $formattedModificationTime = date('Y-m-d H:i:s', $fileModificationTime);
+                    $filesToPublicAdrenalin2 = [
+                        'path' => $nombreArchivoMasReciente,
+                        'size' => $fileSize,
+                        'modification_time' => $formattedModificationTime
+                    ];
+                    return $filesToPublicAdrenalin2;
+                }
+            } else {
+                echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $rutaArchivoMasReciente . '</p>';
+            }
+        } else {
+            echo '<p> No se encontraron archivos para la fecha actual con el fragmento de búsqueda: '. $searchPattern .'</p>';
+        }
+    }
+}
+
 public function InfoVLRLogs($iDir)
 {
-
     if ($this->sftpVlr->connect() && $this->sftpVlr->login()) {
         $fechaActual = date('Ymd');
         
@@ -412,7 +472,6 @@ public function InfoVLRLogs($iDir)
         }
 
         $allFiles = $this->sftpVlr->getFilesInDirectory($remoteDir);
-    
         $matchingFiles = [];
     
         // Buscar los archivos que contienen el fragmento de búsqueda
@@ -423,25 +482,20 @@ public function InfoVLRLogs($iDir)
         }
     
         if (!empty($matchingFiles)) {
-    
             // Obtener la ruta del archivo más reciente (el primer archivo de la lista)
             $rutaArchivoMasReciente = $remoteDir . $matchingFiles[0];
-    
             // Obtener el nombre del archivo más reciente sin la ruta completa
             $nombreArchivoMasReciente = basename($rutaArchivoMasReciente);
-    
             // Obtener información del archivo más reciente utilizando el método getFileInfoByPath
             $fileInfo = $this->sftpVlr->getFileInfoByPath($rutaArchivoMasReciente);
             if ($fileInfo !== false) {
                 $fileSize = $fileInfo['size'];
                 $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
-    
                 $filesToPublicVlr = [
                     'path' => $nombreArchivoMasReciente,
                     'size' => $fileSize,
                     'modification_time' => $fileModificationTime
                 ];
-
                 return $filesToPublicVlr;
             } else {
                 echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $rutaArchivoMasReciente . '</p>';

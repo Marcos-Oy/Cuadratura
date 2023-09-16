@@ -464,6 +464,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    <?php 
+                                                        if($user['USERNAME'] === 'MARCOS' || $user['USERNAME'] === 'MARIA' 
+                                                        || $user['USERNAME'] === 'FRANCISCO' || $user['USERNAME'] === 'KARIM'){ 
+                                                    ?>
+                                                    <tr>
+                                                        <td><b>Publ</b></td>
+                                                        <td><?php echo $filesToPublicAdrenalin2['path']; ?></td>
+                                                        <td>
+                                                            <?php echo ceil($filesToPublicAdrenalin2['size'] / 1024); ?>
+                                                            KB
+                                                            <?php if (ceil($filesToPublicAdrenalin2['size'] / 1024) >= 1500000) { echo " ✔"; } else { echo " ⚠"; } ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php 
+                                                                echo $filesToPublicAdrenalin2['modification_time'];
+                                                                $hour = date('H', strtotime($filesToPublicAdrenalin2['modification_time']));
+                                                                if ($hour < 6) {
+                                                                    echo " ✔";
+                                                                } else {
+                                                                    echo " ⚠";
+                                                                }
+                                                            ?>
+                                                        </td>
+                                                    </tr>
+                                                    <?php } ?>
                                                     <tr>
                                                         <td><b>Re</b></td>
                                                         <td><?php echo $filesToInfo[7]['path']; ?></td>
