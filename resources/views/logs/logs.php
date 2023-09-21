@@ -480,7 +480,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <?php 
                                                                 echo $filesToPublicAdrenalin2['modification_time'];
                                                                 $hour = date('H', strtotime($filesToPublicAdrenalin2['modification_time']));
-                                                                if ($hour < 6) {
+                                                                $date = date('Y-m-d', strtotime($filesToPublicAdrenalin2['modification_time']));
+                                                                if ($date === date('Y-m-d') && $hour < 6) {
                                                                     echo " ✔";
                                                                 } else {
                                                                     echo " ⚠";

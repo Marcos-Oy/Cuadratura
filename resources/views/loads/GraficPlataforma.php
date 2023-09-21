@@ -17,7 +17,7 @@ $(function() {
     });
     sparklineDAC.draw(DAC);
 
-    if (DAC.length > 0 && DAC[DAC.length - 1] <= 2681000) {
+    if (DAC.length > 0 && DAC[DAC.length - 1] <= 2680000) {
         sparklineDAC.options.lineColor = '#f56954';
         sparklineDAC.options.endColor = '#f56954';
         sparklineDAC.draw(DAC);
@@ -44,7 +44,7 @@ $(function() {
     });
     sparklineCUT_LICENCIA_HSS.draw(CUT_LICENCIA_HSS);
 
-    if (CUT_LICENCIA_HSS.length > 0 && CUT_LICENCIA_HSS[CUT_LICENCIA_HSS.length - 1] <= 537000) {
+    if (CUT_LICENCIA_HSS.length > 0 && CUT_LICENCIA_HSS[CUT_LICENCIA_HSS.length - 1] <= 530000) {
         sparklineCUT_LICENCIA_HSS.options.lineColor = '#f56954';
         sparklineCUT_LICENCIA_HSS.options.endColor = '#f56954';
         sparklineCUT_LICENCIA_HSS.draw(CUT_LICENCIA_HSS);
@@ -152,7 +152,7 @@ $(function() {
     });
     sparklineCUT_TIVO.draw(CUT_TIVO);
 
-    if (CUT_TIVO.length > 0 && CUT_TIVO[CUT_TIVO.length - 1] <= 9910000) {
+    if (CUT_TIVO.length > 0 && CUT_TIVO[CUT_TIVO.length - 1] <= 9700000) {
         sparklineCUT_TIVO.options.lineColor = '#f56954';
         sparklineCUT_TIVO.options.endColor = '#f56954';
         sparklineCUT_TIVO.draw(CUT_TIVO);
@@ -342,7 +342,7 @@ $(function() {
     });
     sparklineSUT_ADRENALIN_XML2.draw(SUT_ADRENALIN_XML2);
 
-    if (SUT_ADRENALIN_XML2.length > 0 && SUT_ADRENALIN_XML2[SUT_ADRENALIN_XML2.length - 1] <= 44700000) {
+    if (SUT_ADRENALIN_XML2.length > 0 && SUT_ADRENALIN_XML2[SUT_ADRENALIN_XML2.length - 1] <= 44000000) {
         sparklineSUT_ADRENALIN_XML2.options.lineColor = '#f56954';
         sparklineSUT_ADRENALIN_XML2.options.endColor = '#f56954';
         sparklineSUT_ADRENALIN_XML2.draw(SUT_ADRENALIN_XML2);

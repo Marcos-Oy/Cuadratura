@@ -74,7 +74,7 @@ $(function() {
     });
     sparklineCUT_SIEBEL_CANALES.draw(CUT_SIEBEL_CANALES);
 
-    if (CUT_SIEBEL_CANALES.length > 0 && CUT_SIEBEL_CANALES[CUT_SIEBEL_CANALES.length - 1] <= 225000) {
+    if (CUT_SIEBEL_CANALES.length > 0 && CUT_SIEBEL_CANALES[CUT_SIEBEL_CANALES.length - 1] <= 220000) {
         sparklineCUT_SIEBEL_CANALES.options.lineColor = '#f56954';
         sparklineCUT_SIEBEL_CANALES.options.endColor = '#f56954';
         sparklineCUT_SIEBEL_CANALES.draw(CUT_SIEBEL_CANALES);
@@ -266,7 +266,7 @@ $(function() {
     });
     sparklineCUT_UIM_RFS.draw(CUT_UIM_RFS);
 
-    if (CUT_UIM_RFS.length > 0 && CUT_UIM_RFS[CUT_UIM_RFS.length - 1] <= 104610000) {
+    if (CUT_UIM_RFS.length > 0 && CUT_UIM_RFS[CUT_UIM_RFS.length - 1] <= 104600000) {
         sparklineCUT_UIM_RFS.options.lineColor = '#f56954';
         sparklineCUT_UIM_RFS.options.endColor = '#f56954';
         sparklineCUT_UIM_RFS.draw(CUT_UIM_RFS);
@@ -1489,7 +1489,7 @@ $(function() {
     });
     sparklineSUT_INFODBOX_UIM_1.draw(SUT_INFODBOX_UIM_1);
 
-    if (SUT_INFODBOX_UIM_1.length > 0 && SUT_INFODBOX_UIM_1[SUT_INFODBOX_UIM_1.length - 1] <= 2890000) {
+    if (SUT_INFODBOX_UIM_1.length > 0 && SUT_INFODBOX_UIM_1[SUT_INFODBOX_UIM_1.length - 1] <= 2880000) {
         sparklineSUT_INFODBOX_UIM_1.options.lineColor = '#f56954';
         sparklineSUT_INFODBOX_UIM_1.options.endColor = '#f56954';
         sparklineSUT_INFODBOX_UIM_1.draw(SUT_INFODBOX_UIM_1);

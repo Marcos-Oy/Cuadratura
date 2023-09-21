@@ -116,6 +116,63 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
+                                                            <button id="CUT_TIVO" class="btn btn-info btn-xs" type='submit'
+                                                                name='CUT_TIVO'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                    <td>CUT_TIVO</td>
+                                                    <?php foreach($rows as $row): ?>
+                                                    <td><?= $row['CUT_TIVO'] ?></td>
+                                                    <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-CUT_TIVO"></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
+                                                            <button id="SUT_ADRENALIN_XML2" class="btn btn-info btn-xs"
+                                                                type='submit' name='SUT_ADRENALIN_XML2'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                    <td>SUT_ADRENALIN_XML2</td>
+                                                    <?php foreach($rows as $row): ?>
+                                                    <td><?= $row['SUT_ADRENALIN_XML2'] ?></td>
+                                                    <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-SUT_ADRENALIN_XML2"></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
+                                                            <button id="SUT_ADRENALIN_AUX" class="btn btn-info btn-xs"
+                                                                type='submit' name='SUT_ADRENALIN_AUX'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                    <td>SUT_ADRENALIN_AUX</td>
+                                                    <?php foreach($rows as $row): ?>
+                                                    <td><?= $row['SUT_ADRENALIN_AUX'] ?></td>
+                                                    <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-SUT_ADRENALIN_AUX"></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
                                                             <button id="VALIDLINES" class="btn btn-info btn-xs" type='submit'
                                                                 name='VALIDLINES'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
@@ -166,25 +223,6 @@
                                                     <?php endforeach; ?>
                                                     <td>
                                                         <div id="sparkline-SUT_PSVA"></div>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>
-                                                        <form method='POST'
-                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="CUT_TIVO" class="btn btn-info btn-xs" type='submit'
-                                                                name='CUT_TIVO'>
-                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
-                                                            </button>
-                                                        </form>
-                                                    </td>
-                                                    <td>CUT_TIVO</td>
-                                                    <?php foreach($rows as $row): ?>
-                                                    <td><?= $row['CUT_TIVO'] ?></td>
-                                                    <?php endforeach; ?>
-                                                    <td>
-                                                        <div id="sparkline-CUT_TIVO"></div>
                                                     </td>
                                                 </tr>
 
@@ -301,45 +339,6 @@
                                                         <div id="sparkline-CUT_FTTHGW"></div>
                                                     </td>
                                                 </tr>
-
-                                                <tr>
-                                                    <td>
-                                                        <form method='POST'
-                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="SUT_ADRENALIN_XML2" class="btn btn-info btn-xs"
-                                                                type='submit' name='SUT_ADRENALIN_XML2'>
-                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
-                                                            </button>
-                                                        </form>
-                                                    </td>
-                                                    <td>SUT_ADRENALIN_XML2</td>
-                                                    <?php foreach($rows as $row): ?>
-                                                    <td><?= $row['SUT_ADRENALIN_XML2'] ?></td>
-                                                    <?php endforeach; ?>
-                                                    <td>
-                                                        <div id="sparkline-SUT_ADRENALIN_XML2"></div>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>
-                                                        <form method='POST'
-                                                            action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="SUT_ADRENALIN_AUX" class="btn btn-info btn-xs"
-                                                                type='submit' name='SUT_ADRENALIN_AUX'>
-                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
-                                                            </button>
-                                                        </form>
-                                                    </td>
-                                                    <td>SUT_ADRENALIN_AUX</td>
-                                                    <?php foreach($rows as $row): ?>
-                                                    <td><?= $row['SUT_ADRENALIN_AUX'] ?></td>
-                                                    <?php endforeach; ?>
-                                                    <td>
-                                                        <div id="sparkline-SUT_ADRENALIN_AUX"></div>
-                                                    </td>
-                                                </tr>
-
 
                                             </tbody>
 

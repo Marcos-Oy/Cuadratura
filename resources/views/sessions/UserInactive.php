@@ -1,1 +1,0 @@
-Aparecerá un modal de usuario inactivo siempre y cuando un usuario que está inactivo haya intentado iniciar sesión

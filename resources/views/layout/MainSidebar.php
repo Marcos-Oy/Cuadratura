@@ -36,7 +36,7 @@
                         <i class="nav-icon fa fa-home"></i>
                         <p>
                             Home
-                            <span class="right badge badge-warning">Develop</span>
+                            <?php if($user['USERNAME'] === "MARCOS"){ ?><span class="right badge badge-warning">Develop</span><?php } ?>
                         </p>
                     </a>
                 </li>
