@@ -185,7 +185,7 @@ $(function() {
     });
     sparklineCUT_SIEBEL_PRODUCTOP.draw(CUT_SIEBEL_PRODUCTOP);
 
-    if (CUT_SIEBEL_PRODUCTOP.length > 0 && CUT_SIEBEL_PRODUCTOP[CUT_SIEBEL_PRODUCTOP.length - 1] <= 25390000) {
+    if (CUT_SIEBEL_PRODUCTOP.length > 0 && CUT_SIEBEL_PRODUCTOP[CUT_SIEBEL_PRODUCTOP.length - 1] <= 25380000) {
         sparklineCUT_SIEBEL_PRODUCTOP.options.lineColor = '#f56954';
         sparklineCUT_SIEBEL_PRODUCTOP.options.endColor = '#f56954';
         sparklineCUT_SIEBEL_PRODUCTOP.draw(CUT_SIEBEL_PRODUCTOP);
@@ -377,7 +377,7 @@ $(function() {
     });
     sparklineFDT_ACTIVTEMP.draw(FDT_ACTIVTEMP);
 
-    if (FDT_ACTIVTEMP.length > 0 && FDT_ACTIVTEMP[FDT_ACTIVTEMP.length - 1] <= 4982379) {
+    if (FDT_ACTIVTEMP.length > 0 && FDT_ACTIVTEMP[FDT_ACTIVTEMP.length - 1] <= 4982378) {
         sparklineFDT_ACTIVTEMP.options.lineColor = '#f56954';
         sparklineFDT_ACTIVTEMP.options.endColor = '#f56954';
         sparklineFDT_ACTIVTEMP.draw(FDT_ACTIVTEMP);
@@ -601,7 +601,7 @@ $(function() {
     });
     sparklineGIAP_VOICEPLAN_MOVIL.draw(GIAP_VOICEPLAN_MOVIL);
 
-    if (GIAP_VOICEPLAN_MOVIL.length > 0 && GIAP_VOICEPLAN_MOVIL[GIAP_VOICEPLAN_MOVIL.length - 1] <= 1300) {
+    if (GIAP_VOICEPLAN_MOVIL.length > 0 && GIAP_VOICEPLAN_MOVIL[GIAP_VOICEPLAN_MOVIL.length - 1] <= 796) {
         sparklineGIAP_VOICEPLAN_MOVIL.options.lineColor = '#f56954';
         sparklineGIAP_VOICEPLAN_MOVIL.options.endColor = '#f56954';
         sparklineGIAP_VOICEPLAN_MOVIL.draw(GIAP_VOICEPLAN_MOVIL);
@@ -1489,7 +1489,7 @@ $(function() {
     });
     sparklineSUT_INFODBOX_UIM_1.draw(SUT_INFODBOX_UIM_1);
 
-    if (SUT_INFODBOX_UIM_1.length > 0 && SUT_INFODBOX_UIM_1[SUT_INFODBOX_UIM_1.length - 1] <= 2880000) {
+    if (SUT_INFODBOX_UIM_1.length > 0 && SUT_INFODBOX_UIM_1[SUT_INFODBOX_UIM_1.length - 1] <= 2870000) {
         sparklineSUT_INFODBOX_UIM_1.options.lineColor = '#f56954';
         sparklineSUT_INFODBOX_UIM_1.options.endColor = '#f56954';
         sparklineSUT_INFODBOX_UIM_1.draw(SUT_INFODBOX_UIM_1);

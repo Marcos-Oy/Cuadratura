@@ -66,6 +66,32 @@ class SFTPManager
         return $contents;
     }
 
+    public function getFileContentsByPaths($filePaths)
+    {
+        $contents = [];
+    
+        foreach ($filePaths as $filePath) {
+            $sftp = ssh2_sftp($this->conn_id);
+            if (!$sftp) {
+                die("No se pudo obtener el objeto SFTP");
+            }
+    
+            $stream = fopen("ssh2.sftp://{$sftp}{$filePath}", 'rb');
+            if (!$stream) {
+                die("No se pudo abrir el archivo en el servidor SFTP {$filePath}");
+            }
+    
+            $content = stream_get_contents($stream);
+            fclose($stream);
+    
+            $contents[$filePath] = $content;
+        }
+    
+        return $contents;
+    }
+    
+    
+    
     public function getFilesInDirectory($directory)
     {
         $sftp = ssh2_sftp($this->conn_id);

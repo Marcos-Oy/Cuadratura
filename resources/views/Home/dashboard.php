@@ -48,7 +48,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <h1 class="headline text-success text-center">
                 <div id="hora"></div>
             </h1>
-            <?php if($user['USERNAME'] === "MARCOS"){ ?>
+            <?php if($user['USERNAME'] === "MARCOS"){ 
+                include_once 'Resumen.php';
+                ?>
+
             <section class="content">
                 <div class="container-fluid">
                     <h5 class="mb-2 mt-4">Resumen</h5>
