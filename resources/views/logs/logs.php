@@ -466,7 +466,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <tbody>
                                                     <?php 
                                                         if($user['USERNAME'] === 'MARCOS' || $user['USERNAME'] === 'MARIA' 
-                                                        || $user['USERNAME'] === 'FRANCISCO' || $user['USERNAME'] === 'KARIM'){ 
+                                                        || $user['USERNAME'] === 'MARCOS' || $user['USERNAME'] === 'KARIM'){ 
                                                     ?>
                                                     <tr>
                                                         <td><b>Publ</b></td>

@@ -48,7 +48,7 @@ public function ViewsLogs()
         $filesToPublicHSS = $this->InfoVLRLogs('HSS');
 
         if($user['USERNAME'] === 'MARCOS' || $user['USERNAME'] === 'MARIA' 
-        || $user['USERNAME'] === 'FRANCISCO' || $user['USERNAME'] === 'KARIM')
+        || $user['USERNAME'] === 'MARCOS' || $user['USERNAME'] === 'KARIM')
         {
             $filesToPublicAdrenalin2 = $this->InfoAdrenalin2Logs('ADRENALIN2');
         }
