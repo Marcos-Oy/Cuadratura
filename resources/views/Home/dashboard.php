@@ -51,7 +51,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <?php if($user['USERNAME'] === "MARCOS"){ 
                 include_once 'Resumen.php';
                 ?>
-
             <section class="content">
                 <div class="container-fluid">
                     <h5 class="mb-2 mt-4">Resumen</h5>
@@ -60,13 +59,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <!-- small card -->
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h3>150</h3>
-
-                                    <p>Proceso de carga</p>
+                                    <h3><?php echo $CountBlanco; ?></h3>
+                                    <p>Logs en blanco</p>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-sync-alt"></i>
                                 </div>
+                                <a href="#" class="small-box-footer" data-toggle="tab"
+                                    data-target="#custom-tabs-two-Blanc">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -74,13 +75,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <!-- small card -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>150</h3>
+                                    <h3><?php echo $CountOk; ?></h3>
 
                                     <p>Ejecución completa</p>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-check"></i>
                                 </div>
+                                <a href="#" class="small-box-footer" data-toggle="tab"
+                                    data-target="#custom-tabs-two-Ok">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -88,35 +92,104 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <!-- small card -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    <h3>150</h3>
+                                    <h3><?php echo $CountPendiente; ?></h3>
 
-                                    <p>Carga pendiente</p>
+                                    <p>Ejecución pendiente</p>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-exclamation"></i>
                                 </div>
+                                <a href="#" class="small-box-footer" data-toggle="tab"
+                                    data-target="#custom-tabs-two-pen">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
                         <div class="col-lg-3 col-6">
                             <!-- small card -->
-                            <div class="small-box bg-danger">
+                            <div class="small-box bg-danger" id="custom-tabs-two-tabContent">
                                 <div class="inner">
-                                    <h3>150</h3>
+                                    <h3><?php echo $CountErrores; ?></h3>
 
                                     <p>Errores</p>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-times"></i>
                                 </div>
+                                <a href="#" class="small-box-footer" data-toggle="tab"
+                                    data-target="#custom-tabs-two-errors">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
+
                             </div>
                         </div>
                         <!-- ./col -->
                     </div>
                 </div>
+
+                <?php } ?>
+
+                <style>
+                .card-header {
+                    display: none;
+                }
+                </style>
+
+                <!-- <div class="row"> -->
+                <div class="col-12 col-sm-12">
+                    <!-- <div class="card card-primary card-tabs"> -->
+                    <div class="card-header p-0 pt-1">
+                        <ul class="nav nav-tabs" id="custom-tabs-two-tab" role="tablist" type="hidden">
+
+                            <li class="nav-item">
+                                <a class="nav-link" id="custom-tabs-two-Blanc-tab" data-toggle="pill"
+                                    href="#custom-tabs-two-Blanc" role="tab" aria-controls="custom-tabs-two-Blanc"
+                                    aria-selected="true"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="custom-tabs-two-Ok-tab" data-toggle="pill"
+                                    href="#custom-tabs-two-Ok" role="tab" aria-controls="custom-tabs-two-Ok"
+                                    aria-selected="false"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="custom-tabs-two-pen-tab" data-toggle="pill"
+                                    href="#custom-tabs-two-pen" role="tab" aria-controls="custom-tabs-two-pen"
+                                    aria-selected="false"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="custom-tabs-two-errors-tab" data-toggle="pill"
+                                    href="#custom-tabs-two-errors" role="tab" aria-controls="custom-tabs-two-errors"
+                                    aria-selected="false"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="tab-content" id="custom-tabs-two-tabContent">
+                            <div class="tab-pane fade" id="custom-tabs-two-Blanc" role="tabpanel"
+                                aria-labelledby="custom-tabs-two-Blanc-tab">
+                                <?php include_once ('BlancResumen.php')?>
+                            </div>
+                            <div class="tab-pane fade" id="custom-tabs-two-Ok" role="tabpanel"
+                                aria-labelledby="custom-tabs-two-Ok-tab">
+                                <?php include_once ('OkResumen.php')?>
+                            </div>
+                            <div class="tab-pane fade" id="custom-tabs-two-pen" role="tabpanel"
+                                aria-labelledby="custom-tabs-two-pen-tab">
+                                <?php include_once ('PenResumen.php')?>
+                            </div>
+                            <div class="tab-pane fade" id="custom-tabs-two-errors" role="tabpanel"
+                                aria-labelledby="custom-tabs-two-errors-tab">
+                                <?php include_once ('ErrorsResumen.php')?>
+                            </div>
+                            <!-- </div> -->
+                        </div>
+                        <!-- /.card -->
+                        <!-- </div> -->
+                    </div>
+                </div>
             </section>
-            <?php } ?>
+
         </div>
+
 
         <style>
         /* Estilo para hacer que el texto "¡Bienvenidos!" sea responsivo */
@@ -126,6 +199,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         }
         </style>
 
+        <?php //include ('VerticalMenu.php')?>
         <?php include ('resources/views/layout/ControlSidebar.php'); ?>
         <?php include ('resources/views/layout/footer.php'); ?>
 
@@ -154,6 +228,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     setInterval(actualizarHora, 1000); // Actualizar cada segundo (1000 ms)
     </script>
+
+    <script>
+    $(document).ready(function() {
+        $('.small-box-footer[data-toggle="tab"]').on('click', function() {
+            var target = $(this).data('target');
+
+            // Oculta todos los encabezados de tarjetas
+            $('.card-header').hide();
+
+            // Muestra el encabezado de tarjeta correspondiente
+            $(target + ' .card-header').show();
+
+            // Activa la pestaña correspondiente
+            $('.nav-link[href="' + target + '"]').tab('show');
+        });
+    });
+    </script>
+
+
 
 </body>
 

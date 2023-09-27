@@ -79,7 +79,8 @@
                                             <input type="password" class="form-control form-control-user"
                                                 name="PASSWORD" placeholder="Contraseña">
                                         </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">Iniciar sesión</button>
+                                        <button id="Login" type="submit" class="btn btn-primary btn-user btn-block">Iniciar sesión</button>
+                                        <div id="preloaderContainer"></div>
                                     </form>
                                 </div>
                             </div>
@@ -102,6 +103,8 @@
 
     <!-- Custom scripts for all pages-->
     <script src="<?php echo $this->raiz; ?>/resources/assets/js/sb-admin-2.min.js"></script>
+
+    <?php include_once ('Loading.php'); ?>
 
 </body>
 

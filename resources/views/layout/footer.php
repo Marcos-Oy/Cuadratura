@@ -27,6 +27,7 @@ function agregarPreloader() {
 }
 
 const elementos = [
+    "Dash",
     "CargaPlataforma",
     "CargaRefresco",
     "Logs",

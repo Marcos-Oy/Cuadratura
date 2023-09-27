@@ -50,9 +50,15 @@
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <div class="card-body table-responsive">
-
+                                        <style>
+                                        .table-small-font td,
+                                        .table-small-font th {
+                                            font-size: 12px;
+                                            /* Puedes ajustar el tamaño de fuente según tus preferencias */
+                                        }
+                                        </style>
                                         <table id="RefrescoTable"
-                                            class="table table-striped table-bordered table-condensed table-hover">
+                                            class="table table-striped table-bordered table-condensed table-hover table-small-font">
                                             <thead>
                                                 <tr>
                                                     <td>
@@ -79,8 +85,7 @@
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
 
                                                             <button type="button" class="btn btn-warning btn-xs"
-                                                                data-toggle="modal"
-                                                                data-target="#modal-DAC">
+                                                                data-toggle="modal" data-target="#modal-DAC">
                                                                 <i class="fas fa-pen" aria-hidden="true"></i>
                                                             </button>
 
@@ -106,8 +111,7 @@
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
                                                             <button type="button" class="btn btn-warning btn-xs"
-                                                                data-toggle="modal"
-                                                                data-target="#modal-HSS">
+                                                                data-toggle="modal" data-target="#modal-HSS">
                                                                 <i class="fas fa-pen" aria-hidden="true"></i>
                                                             </button>
                                                             <button id="CUT_LICENCIA_HSS" class="btn btn-info btn-sm"
@@ -130,8 +134,7 @@
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
                                                             <button type="button" class="btn btn-warning btn-xs"
-                                                                data-toggle="modal"
-                                                                data-target="#modal-TIVO">
+                                                                data-toggle="modal" data-target="#modal-TIVO">
                                                                 <i class="fas fa-pen" aria-hidden="true"></i>
                                                             </button>
                                                             <button id="CUT_TIVO" class="btn btn-info btn-sm"
@@ -202,8 +205,7 @@
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
                                                             <button type="button" class="btn btn-warning btn-xs"
-                                                                data-toggle="modal"
-                                                                data-target="#modal-VALIDLINES">
+                                                                data-toggle="modal" data-target="#modal-VALIDLINES">
                                                                 <i class="fas fa-pen" aria-hidden="true"></i>
                                                             </button>
                                                             <button id="VALIDLINES" class="btn btn-info btn-sm"
@@ -251,8 +253,7 @@
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
                                                             <button type="button" class="btn btn-warning btn-xs"
-                                                                data-toggle="modal"
-                                                                data-target="#modal-SUT_PSVA">
+                                                                data-toggle="modal" data-target="#modal-SUT_PSVA">
                                                                 <i class="fas fa-pen" aria-hidden="true"></i>
                                                             </button>
                                                             <button id="SUT_PSVA" class="btn btn-info btn-sm"
@@ -275,8 +276,7 @@
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
                                                             <button type="button" class="btn btn-warning btn-xs"
-                                                                data-toggle="modal"
-                                                                data-target="#modal-Cgm_Ea_Seu">
+                                                                data-toggle="modal" data-target="#modal-Cgm_Ea_Seu">
                                                                 <i class="fas fa-pen" aria-hidden="true"></i>
                                                             </button>
                                                             <button id="Cgm_Ea_Seu" class="btn btn-info btn-sm"
@@ -373,8 +373,7 @@
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
                                                             <button type="button" class="btn btn-warning btn-xs"
-                                                                data-toggle="modal"
-                                                                data-target="#modal-SUT_INTERNET">
+                                                                data-toggle="modal" data-target="#modal-SUT_INTERNET">
                                                                 <i class="fas fa-pen" aria-hidden="true"></i>
                                                             </button>
                                                             <button id="SUT_INTERNET" class="btn btn-info btn-sm"
@@ -397,8 +396,7 @@
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
                                                             <button type="button" class="btn btn-warning btn-xs"
-                                                                data-toggle="modal"
-                                                                data-target="#modal-CUT_FTTHGW">
+                                                                data-toggle="modal" data-target="#modal-CUT_FTTHGW">
                                                                 <i class="fas fa-pen" aria-hidden="true"></i>
                                                             </button>
                                                             <button id="CUT_FTTHGW" class="btn btn-info btn-sm"
