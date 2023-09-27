@@ -48,7 +48,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <h1 class="headline text-success text-center">
                 <div id="hora"></div>
             </h1>
-            <?php if($user['USERNAME'] === "MARCOS"){ 
+            <?php 
                 include_once 'Resumen.php';
                 ?>
             <section class="content">
@@ -125,8 +125,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <!-- ./col -->
                     </div>
                 </div>
-
-                <?php } ?>
 
                 <style>
                 .card-header {
