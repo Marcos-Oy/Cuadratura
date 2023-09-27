@@ -86,6 +86,8 @@ public function ViewsArchLogs()
         $RinfoArchLogs = array_reverse($infoArchLogs);
         $RinfoArchLogs1 = array_reverse($infoArchLogs1);
 
+        $FileInfo = array_merge($RinfoArchLogs, $RinfoArchLogs1);
+
         //Descargamos los logs
         $this->DownloadLogs($this->ArchLogsDirectories(0));
         $this->DownloadLogs($this->ArchLogsDirectories(1));

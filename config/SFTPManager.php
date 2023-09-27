@@ -65,7 +65,7 @@ class SFTPManager
 
         return $contents;
     }
-
+    
     public function getFilesInDirectory($directory)
     {
         $sftp = ssh2_sftp($this->conn_id);

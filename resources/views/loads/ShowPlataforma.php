@@ -50,17 +50,23 @@
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <div class="card-body table-responsive">
-                                        
+                                        <style>
+                                        .table-small-font td,
+                                        .table-small-font th {
+                                            font-size: 12px;
+                                            /* Puedes ajustar el tamaño de fuente según tus preferencias */
+                                        }
+                                        </style>
                                         <table id="RefrescoTable"
-                                            class="table table-striped table-bordered table-condensed table-hover">
+                                            class="table table-striped table-bordered table-condensed table-hover table-small-font">
                                             <thead>
                                                 <tr>
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
                                                             <button id="TODO" class="btn btn-success btn-xs"
-                                                                type='submit' name='TODO'>
-                                                                <i class="fas fa-refresh" aria-hidden="true"> </i>
+                                                                type='submit' name='TODO'>Refresh
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
                                                         </form>
                                                     </td>
@@ -77,10 +83,17 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="DAC" class="btn btn-info btn-xs" type='submit'
+
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal" data-target="#modal-DAC">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+
+                                                            <button id="DAC" class="btn btn-info btn-sm" type='submit'
                                                                 name='DAC'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
+
                                                         </form>
                                                     </td>
                                                     <td>DAC</td>
@@ -97,7 +110,11 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="CUT_LICENCIA_HSS" class="btn btn-info btn-xs"
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal" data-target="#modal-HSS">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="CUT_LICENCIA_HSS" class="btn btn-info btn-sm"
                                                                 type='submit' name='CUT_LICENCIA_HSS'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -116,8 +133,12 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="CUT_TIVO" class="btn btn-info btn-xs" type='submit'
-                                                                name='CUT_TIVO'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal" data-target="#modal-TIVO">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="CUT_TIVO" class="btn btn-info btn-sm"
+                                                                type='submit' name='CUT_TIVO'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
                                                         </form>
@@ -135,7 +156,12 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="SUT_ADRENALIN_XML2" class="btn btn-info btn-xs"
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal"
+                                                                data-target="#modal-SUT_ADRENALIN_XML2">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="SUT_ADRENALIN_XML2" class="btn btn-info btn-sm"
                                                                 type='submit' name='SUT_ADRENALIN_XML2'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -154,7 +180,12 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="SUT_ADRENALIN_AUX" class="btn btn-info btn-xs"
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal"
+                                                                data-target="#modal-SUT_ADRENALIN_AUX">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="SUT_ADRENALIN_AUX" class="btn btn-info btn-sm"
                                                                 type='submit' name='SUT_ADRENALIN_AUX'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -173,8 +204,12 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="VALIDLINES" class="btn btn-info btn-xs" type='submit'
-                                                                name='VALIDLINES'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal" data-target="#modal-VALIDLINES">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="VALIDLINES" class="btn btn-info btn-sm"
+                                                                type='submit' name='VALIDLINES'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
                                                         </form>
@@ -192,8 +227,14 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="SUT_TELEFONIA_IBNLINES" class="btn btn-info btn-xs"
-                                                                type='submit' name='SUT_TELEFONIA_IBNLINES'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal"
+                                                                data-target="#modal-SUT_TELEFONIA_IBNLINES">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="SUT_TELEFONIA_IBNLINES"
+                                                                class="btn btn-info btn-sm" type='submit'
+                                                                name='SUT_TELEFONIA_IBNLINES'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
                                                         </form>
@@ -211,8 +252,12 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="SUT_PSVA" class="btn btn-info btn-xs" type='submit'
-                                                                name='SUT_PSVA'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal" data-target="#modal-SUT_PSVA">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="SUT_PSVA" class="btn btn-info btn-sm"
+                                                                type='submit' name='SUT_PSVA'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
                                                         </form>
@@ -230,8 +275,12 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="Cgm_Ea_Seu" class="btn btn-info btn-xs" type='submit'
-                                                                name='Cgm_Ea_Seu'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal" data-target="#modal-Cgm_Ea_Seu">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="Cgm_Ea_Seu" class="btn btn-info btn-sm"
+                                                                type='submit' name='Cgm_Ea_Seu'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
                                                         </form>
@@ -249,8 +298,14 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="cut_Siebel_FTTH_Inventario" class="btn btn-info btn-xs"
-                                                                type='submit' name='cut_Siebel_FTTH_Inventario'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal"
+                                                                data-target="#modal-cut_Siebel_FTTH_Inventario">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="cut_Siebel_FTTH_Inventario"
+                                                                class="btn btn-info btn-sm" type='submit'
+                                                                name='cut_Siebel_FTTH_Inventario'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
                                                         </form>
@@ -268,7 +323,12 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="CUT_SIEBEL_FTTH_AMS" class="btn btn-info btn-xs"
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal"
+                                                                data-target="#modal-CUT_SIEBEL_FTTH_AMS">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="CUT_SIEBEL_FTTH_AMS" class="btn btn-info btn-sm"
                                                                 type='submit' name='CUT_SIEBEL_FTTH_AMS'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
@@ -287,8 +347,14 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="CUT_SIEBEL_FTTH_BBMS" class="btn btn-info btn-xs"
-                                                                type='submit' name='CUT_SIEBEL_FTTH_BBMS'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal"
+                                                                data-target="#modal-CUT_SIEBEL_FTTH_BBMS">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="CUT_SIEBEL_FTTH_BBMS"
+                                                                class="btn btn-info btn-sm" type='submit'
+                                                                name='CUT_SIEBEL_FTTH_BBMS'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
                                                         </form>
@@ -306,8 +372,12 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="SUT_INTERNET" class="btn btn-info btn-xs" type='submit'
-                                                                name='SUT_INTERNET'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal" data-target="#modal-SUT_INTERNET">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="SUT_INTERNET" class="btn btn-info btn-sm"
+                                                                type='submit' name='SUT_INTERNET'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
                                                         </form>
@@ -325,8 +395,12 @@
                                                     <td>
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/plataform'>
-                                                            <button id="CUT_FTTHGW" class="btn btn-info btn-xs" type='submit'
-                                                                name='CUT_FTTHGW'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal" data-target="#modal-CUT_FTTHGW">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="CUT_FTTHGW" class="btn btn-info btn-sm"
+                                                                type='submit' name='CUT_FTTHGW'>
                                                                 <i class="fas fa-refresh" aria-hidden="true"></i>
                                                             </button>
                                                         </form>
@@ -404,6 +478,7 @@
     <!-- <script src="<?php //echo $this->raiz; ?>/resources/assets/js/tables.js"></script> -->
 
     <?php include_once 'GraficPlataforma.php'?>
+    <?php include_once 'ModalsPlataforma.php'?>
 
     <script>
     $(function() {
