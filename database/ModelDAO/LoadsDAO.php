@@ -79,6 +79,24 @@ class LoadsDAO {
         oci_commit($this->conn);
         return $result;
     }
+
+    public function getAllRange() {
+        $stmt = oci_parse($this->conn, "SELECT * FROM CUT_RANGE_COUNT_CARGAS");
+        oci_execute($stmt);
+        $result = [];
+        while ($row = oci_fetch_assoc($stmt)) {
+            $result[] = $row;
+        }
+        return $result;
+    }
+
+    public function UpdateRange($atributo, $valor) {
+        // var_dump ($valor);
+        $stmt = oci_parse($this->conn, "UPDATE CUT_RANGE_COUNT_CARGAS SET $atributo = $valor");
+        $result = oci_execute($stmt);
+        oci_commit($this->conn);
+        return $result;
+    }
     
     
 }

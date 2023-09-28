@@ -40,6 +40,8 @@ if (isset($_SESSION['TOKEN'])) {
 
     $router->post($raiz.'/update/plataform', [LoadsController::class, 'UpdatePlataform']);
     $router->post($raiz.'/update/refresco', [LoadsController::class, 'UpdateRefresco']);
+    $router->post($raiz.'/update/RangePlataforma', [LoadsController::class, 'RangePlataforma']);
+    $router->post($raiz.'/update/RangeRefresco', [LoadsController::class, 'RangeRefresco']);
 
     // Rutas usuarios POST
     $router->post($raiz.'/create/user', [UsersController::class, 'createUser']);

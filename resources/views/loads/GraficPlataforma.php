@@ -17,7 +17,7 @@ $(function() {
     });
     sparklineDAC.draw(DAC);
 
-    if (DAC.length > 0 && DAC[DAC.length - 1] <= 2680000) {
+    if (DAC.length > 0 && DAC[DAC.length - 1] <= <?= $range[0]['DAC']; ?>) {
         sparklineDAC.options.lineColor = '#f56954';
         sparklineDAC.options.endColor = '#f56954';
         sparklineDAC.draw(DAC);
@@ -44,7 +44,7 @@ $(function() {
     });
     sparklineCUT_LICENCIA_HSS.draw(CUT_LICENCIA_HSS);
 
-    if (CUT_LICENCIA_HSS.length > 0 && CUT_LICENCIA_HSS[CUT_LICENCIA_HSS.length - 1] <= 530000) {
+    if (CUT_LICENCIA_HSS.length > 0 && CUT_LICENCIA_HSS[CUT_LICENCIA_HSS.length - 1] <= <?= $range[0]['CUT_LICENCIA_HSS']; ?>) {
         sparklineCUT_LICENCIA_HSS.options.lineColor = '#f56954';
         sparklineCUT_LICENCIA_HSS.options.endColor = '#f56954';
         sparklineCUT_LICENCIA_HSS.draw(CUT_LICENCIA_HSS);
@@ -71,7 +71,7 @@ $(function() {
     });
     sparklineVALIDLINES.draw(VALIDLINES);
 
-    if (VALIDLINES.length > 0 && VALIDLINES[VALIDLINES.length - 1] <= 650000) {
+    if (VALIDLINES.length > 0 && VALIDLINES[VALIDLINES.length - 1] <= <?= $range[0]['VALIDLINES']; ?>) {
         sparklineVALIDLINES.options.lineColor = '#f56954';
         sparklineVALIDLINES.options.endColor = '#f56954';
         sparklineVALIDLINES.draw(VALIDLINES);
@@ -98,7 +98,7 @@ $(function() {
     });
     sparklineSUT_TELEFONIA_IBNLINES.draw(SUT_TELEFONIA_IBNLINES);
 
-    if (SUT_TELEFONIA_IBNLINES.length > 0 && SUT_TELEFONIA_IBNLINES[SUT_TELEFONIA_IBNLINES.length - 1] <= 481000) {
+    if (SUT_TELEFONIA_IBNLINES.length > 0 && SUT_TELEFONIA_IBNLINES[SUT_TELEFONIA_IBNLINES.length - 1] <= <?= $range[0]['SUT_TELEFONIA_IBNLINES']; ?>) {
         sparklineSUT_TELEFONIA_IBNLINES.options.lineColor = '#f56954';
         sparklineSUT_TELEFONIA_IBNLINES.options.endColor = '#f56954';
         sparklineSUT_TELEFONIA_IBNLINES.draw(SUT_TELEFONIA_IBNLINES);
@@ -125,7 +125,7 @@ $(function() {
     });
     sparklineSUT_PSVA.draw(SUT_PSVA);
 
-    if (SUT_PSVA.length > 0 && SUT_PSVA[SUT_PSVA.length - 1] <= 531000) {
+    if (SUT_PSVA.length > 0 && SUT_PSVA[SUT_PSVA.length - 1] <= <?= $range[0]['SUT_PSVA']; ?>) {
         sparklineSUT_PSVA.options.lineColor = '#f56954';
         sparklineSUT_PSVA.options.endColor = '#f56954';
         sparklineSUT_PSVA.draw(SUT_PSVA);
@@ -152,7 +152,7 @@ $(function() {
     });
     sparklineCUT_TIVO.draw(CUT_TIVO);
 
-    if (CUT_TIVO.length > 0 && CUT_TIVO[CUT_TIVO.length - 1] <= 9700000) {
+    if (CUT_TIVO.length > 0 && CUT_TIVO[CUT_TIVO.length - 1] <= <?= $range[0]['CUT_TIVO']; ?>) {
         sparklineCUT_TIVO.options.lineColor = '#f56954';
         sparklineCUT_TIVO.options.endColor = '#f56954';
         sparklineCUT_TIVO.draw(CUT_TIVO);
@@ -180,7 +180,7 @@ $(function() {
     });
     sparklineCgm_Ea_Seu.draw(Cgm_Ea_Seu);
 
-    if (Cgm_Ea_Seu.length > 0 && Cgm_Ea_Seu[Cgm_Ea_Seu.length - 1] <= 1300000) {
+    if (Cgm_Ea_Seu.length > 0 && Cgm_Ea_Seu[Cgm_Ea_Seu.length - 1] <= <?= $range[0]['CGM_EA_SEU']; ?>) {
         sparklineCgm_Ea_Seu.options.lineColor = '#f56954';
         sparklineCgm_Ea_Seu.options.endColor = '#f56954';
         sparklineCgm_Ea_Seu.draw(Cgm_Ea_Seu);
@@ -207,7 +207,7 @@ $(function() {
     });
     sparklineCut_Siebel_FTTH_Inventario.draw(cut_Siebel_FTTH_Inventario);
 
-    if (cut_Siebel_FTTH_Inventario.length > 0 && cut_Siebel_FTTH_Inventario[cut_Siebel_FTTH_Inventario.length - 1] <= 112000) {
+    if (cut_Siebel_FTTH_Inventario.length > 0 && cut_Siebel_FTTH_Inventario[cut_Siebel_FTTH_Inventario.length - 1] <= <?= $range[0]['CUT_SIEBEL_FTTH_INVENTARIO']; ?>) {
         sparklineCut_Siebel_FTTH_Inventario.options.lineColor = '#f56954';
         sparklineCut_Siebel_FTTH_Inventario.options.endColor = '#f56954';
         sparklineCut_Siebel_FTTH_Inventario.draw(cut_Siebel_FTTH_Inventario);
@@ -234,7 +234,7 @@ $(function() {
     });
     sparklineCUT_SIEBEL_FTTH_AMS.draw(CUT_SIEBEL_FTTH_AMS);
 
-    if (CUT_SIEBEL_FTTH_AMS.length > 0 && CUT_SIEBEL_FTTH_AMS[CUT_SIEBEL_FTTH_AMS.length - 1] <= 145) {
+    if (CUT_SIEBEL_FTTH_AMS.length > 0 && CUT_SIEBEL_FTTH_AMS[CUT_SIEBEL_FTTH_AMS.length - 1] <= <?= $range[0]['CUT_SIEBEL_FTTH_AMS']; ?>) {
         sparklineCUT_SIEBEL_FTTH_AMS.options.lineColor = '#f56954';
         sparklineCUT_SIEBEL_FTTH_AMS.options.endColor = '#f56954';
         sparklineCUT_SIEBEL_FTTH_AMS.draw(CUT_SIEBEL_FTTH_AMS);
@@ -261,7 +261,7 @@ $(function() {
     });
     sparklineCUT_SIEBEL_FTTH_BBMS.draw(CUT_SIEBEL_FTTH_BBMS);
 
-    if (CUT_SIEBEL_FTTH_BBMS.length > 0 && CUT_SIEBEL_FTTH_BBMS[CUT_SIEBEL_FTTH_BBMS.length - 1] <= 445) {
+    if (CUT_SIEBEL_FTTH_BBMS.length > 0 && CUT_SIEBEL_FTTH_BBMS[CUT_SIEBEL_FTTH_BBMS.length - 1] <= <?= $range[0]['CUT_SIEBEL_FTTH_BBMS']; ?>) {
         sparklineCUT_SIEBEL_FTTH_BBMS.options.lineColor = '#f56954';
         sparklineCUT_SIEBEL_FTTH_BBMS.options.endColor = '#f56954';
         sparklineCUT_SIEBEL_FTTH_BBMS.draw(CUT_SIEBEL_FTTH_BBMS);
@@ -288,7 +288,7 @@ $(function() {
     });
     sparklineSUT_INTERNET.draw(SUT_INTERNET);
 
-    if (SUT_INTERNET.length > 0 && SUT_INTERNET[SUT_INTERNET.length - 1] <= 2170000) {
+    if (SUT_INTERNET.length > 0 && SUT_INTERNET[SUT_INTERNET.length - 1] <= <?= $range[0]['SUT_INTERNET']; ?>) {
         sparklineSUT_INTERNET.options.lineColor = '#f56954';
         sparklineSUT_INTERNET.options.endColor = '#f56954';
         sparklineSUT_INTERNET.draw(SUT_INTERNET);
@@ -315,7 +315,7 @@ $(function() {
     });
     sparklineCUT_FTTHGW.draw(CUT_FTTHGW);
 
-    if (CUT_FTTHGW.length > 0 && CUT_FTTHGW[CUT_FTTHGW.length - 1] <= 106000) {
+    if (CUT_FTTHGW.length > 0 && CUT_FTTHGW[CUT_FTTHGW.length - 1] <= <?= $range[0]['CUT_FTTHGW']; ?>) {
         sparklineCUT_FTTHGW.options.lineColor = '#f56954';
         sparklineCUT_FTTHGW.options.endColor = '#f56954';
         sparklineCUT_FTTHGW.draw(CUT_FTTHGW);
@@ -342,7 +342,7 @@ $(function() {
     });
     sparklineSUT_ADRENALIN_XML2.draw(SUT_ADRENALIN_XML2);
 
-    if (SUT_ADRENALIN_XML2.length > 0 && SUT_ADRENALIN_XML2[SUT_ADRENALIN_XML2.length - 1] <= 44000000) {
+    if (SUT_ADRENALIN_XML2.length > 0 && SUT_ADRENALIN_XML2[SUT_ADRENALIN_XML2.length - 1] <= <?= $range[0]['SUT_ADRENALIN_XML2']; ?>) {
         sparklineSUT_ADRENALIN_XML2.options.lineColor = '#f56954';
         sparklineSUT_ADRENALIN_XML2.options.endColor = '#f56954';
         sparklineSUT_ADRENALIN_XML2.draw(SUT_ADRENALIN_XML2);
@@ -369,7 +369,7 @@ $(function() {
     });
     sparklineSUT_ADRENALIN_AUX.draw(SUT_ADRENALIN_AUX);
 
-    if (SUT_ADRENALIN_AUX.length > 0 && SUT_ADRENALIN_AUX[SUT_ADRENALIN_AUX.length - 1] <= 2570000) {
+    if (SUT_ADRENALIN_AUX.length > 0 && SUT_ADRENALIN_AUX[SUT_ADRENALIN_AUX.length - 1] <= <?= $range[0]['SUT_ADRENALIN_AUX']; ?>) {
         sparklineSUT_ADRENALIN_AUX.options.lineColor = '#f56954';
         sparklineSUT_ADRENALIN_AUX.options.endColor = '#f56954';
         sparklineSUT_ADRENALIN_AUX.draw(SUT_ADRENALIN_AUX);
