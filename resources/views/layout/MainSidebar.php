@@ -4,8 +4,8 @@
 <aside class="main-sidebar sidebar-dark-warning elevation-1">
     <!-- Brand Logo -->
     <a class="brand-link">
-        <img src="<?php echo $this->raiz; ?>/public/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-            style="opacity: .8">
+        <img src="<?php echo $this->raiz; ?>/public/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+            class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">Cuadratura</span>
     </a>
 
@@ -28,28 +28,16 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
 
-               <li class="nav-item">
+                <li class="nav-item">
                     <a id="Dash" href="<?php echo $this->raiz; ?>/Home/dashboard" class="nav-link">
                         <i class="nav-icon fa fa-home"></i>
                         <p>
                             Home
-                            <?php if($user['USERNAME'] === "MARCOS"){ ?><span class="right badge badge-warning">Develop</span><?php } ?>
-                        </p>
-                    </a>
-                </li>
-
-                <!-- <li class="nav-item">
-                    <a id="Logs" href="<?php echo $this->raiz; ?>/logs" class="nav-link">
-                        <i class="nav-icon fas fa-info"></i>
-                        <p>
-                            Logs cargas
                             <span class="right badge badge-danger">New</span>
                         </p>
                     </a>
-                </li> -->
+                </li>
 
                 <li class="nav-item menu-closed">
                     <a href="#" class="nav-link">
@@ -79,21 +67,22 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="ViewsProceduresAMPM" href="<?php echo $this->raiz; ?>/ViewsProceduresAMPM" class="nav-link">
+                            <a id="ViewsProceduresAMPM" href="<?php echo $this->raiz; ?>/ViewsProceduresAMPM"
+                                class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Procesos AM PM</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <?php //if($user['USERNAME'] === "MARCOS" || $user['USERNAME'] === "MARIA" || $user['USERNAME'] === "CARLOS"){ ?>
+
                 <li class="nav-item menu-closed">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Count Cargas
-                            <span class="right badge badge-danger">New<i
-                                    class="right fas fa-angle-left"></i></span>
+                            <i class="right fas fa-angle-left"></i>
+                            <!-- <span class="right badge badge-info">Develop<i class="right fas fa-angle-left"></i></span> -->
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -111,8 +100,7 @@
                         </li>
                     </ul>
                 </li>
-                <?php //} ?>
-                
+
                 <?php if($user['USERNAME'] === "MARCOS"){ ?>
                 <li class="nav-item">
                     <a id="ShowUsers" href="<?php echo $this->raiz; ?>/users/show" class="nav-link">
