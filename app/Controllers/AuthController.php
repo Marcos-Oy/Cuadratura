@@ -63,7 +63,7 @@ class AuthController
     
                     // Obtén la ruta completa de la vista
                     $_SESSION['USER'] = $user;
-                    header("Location: " . $this->raiz . "/Home/dashboard");
+                    header("Location: " . $this->raiz . "/Home");
     
                 } else{
                     // Condición de que tiene una sesión activa

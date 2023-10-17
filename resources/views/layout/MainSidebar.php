@@ -30,7 +30,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                 <li class="nav-item">
-                    <a id="Dash" href="<?php echo $this->raiz; ?>/Home/dashboard" class="nav-link">
+                    <a id="Dash" href="<?php echo $this->raiz; ?>/Home" class="nav-link">
                         <i class="nav-icon fa fa-home"></i>
                         <p>
                             Home

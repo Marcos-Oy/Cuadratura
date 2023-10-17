@@ -20,6 +20,7 @@ if (isset($_SESSION['TOKEN'])) {
     $router->get($raiz.'/logouts', [AuthController::class, 'logout']);
     
     //Rutas dashboard GET
+    $router->get($raiz.'/Home', [HomeController::class, 'home']);
     $router->get($raiz.'/Home/dashboard', [HomeController::class, 'index']);
 
     // Rutas LOGS GET
@@ -27,6 +28,8 @@ if (isset($_SESSION['TOKEN'])) {
     $router->get($raiz.'/ArchLogs', [LogsController::class, 'ViewsArchLogs']);
     $router->get($raiz.'/ModelDatos', [LogsController::class, 'ViewsModelDatos']);
     $router->get($raiz.'/ViewsProceduresAMPM', [LogsController::class, 'ViewsProceduresAMPM']);
+    $router->get($raiz.'/Comportamientos', [LogsController::class, 'ViewsComportamientos']);
+
 
     // Rutas usuarios GET
     $router->get($raiz.'/users/show', [UsersController::class, 'index']);

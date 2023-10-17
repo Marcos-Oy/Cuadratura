@@ -150,6 +150,23 @@ class LogsController
         }
     }
 
+    public function ViewsComportamientos()
+    {
+        $user = $_SESSION['USER'];
+        $viewPath = __DIR__ . '/../../resources/views/logs/Comportamientos.php';
+
+        if (file_exists($viewPath)) {
+
+            $FilesToInfo = $this->InfoComportamientos('MANAGER'); // Para obtener tamaño - Hora - Fecha
+            $this->DownloadLogs($this->ComportamientosDirectories()); // Descargamos los archivos para visuaizarlos
+
+            include_once $viewPath;
+
+        } else {
+            echo "Error: la vista no existe";
+        }
+    }
+
     ///////////////////////////////////// BANCO DE DIRECTORIOS /////////////////////////////////////
 
     public function LogsDirectories()
@@ -335,6 +352,21 @@ class LogsController
         return $Dir;
     }
 
+    public function ComportamientosDirectories()
+    {
+        $Dir = [
+            "/Cuadratura/Tablas/HSS/registro_HSS.txt", // 0
+            "/Cuadratura/Tablas/carga_incognito/FTTH/registro_FTTH_CARGA.txt", // 1
+            "/Cuadratura/Plataforma/IbnLines/registro_carga_ibnlines.txt", // 2
+            "/Cuadratura/Plataforma/PSVA/registro_Carga_PSVA.txt", // 3
+            "/Cuadratura/Plataforma/ValidLines/registro_carga_validlines.txt", // 4
+            "/Cuadratura/FTTH_ONT_GW/registro_Carga_FTTH_ONT_GW.txt", // 5
+
+            // Agrega aquí más rutas de archivos que deseas consultar...
+        ];
+        return $Dir;
+    }
+
     ///////////////////////////////////// INFOS /////////////////////////////////////
 
     public function InfoLogs($iDir)
@@ -408,6 +440,38 @@ class LogsController
                 } else {
                     echo "No se encontraron archivos para la fecha actual con el fragmento de búsqueda: {$searchPattern}";
                 }
+            }
+            
+        } else {
+            echo '<p>Error: No se pudo conectar al servidor SFTP.</p>';
+        }
+    }
+
+    public function InfoComportamientos($iDir)
+    {
+        if ($this->sftpManager->connect() && $this->sftpManager->login()) {
+
+            if($iDir == 'MANAGER'){
+                $filesToInfo = $this->ComportamientosDirectories();
+
+                foreach ($filesToInfo as $fileIndex => $filePath) {
+                    $fileInfo = $this->sftpManager->getFileInfoByPath($filePath);
+
+                    if ($fileInfo !== false) {
+                        $fileSize = $fileInfo['size'];
+                        $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
+
+                        $filesToInfo[$fileIndex] = [
+                            'path' => basename($filePath),
+                            'size' => $fileSize,
+                            'modification_time' => $fileModificationTime
+                        ];
+                        // echo '<p>✅: Si se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
+                    } else {
+                        echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
+                    }
+                }
+                return $filesToInfo;
             }
             
         } else {
