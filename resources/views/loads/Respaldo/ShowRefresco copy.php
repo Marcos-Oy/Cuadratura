@@ -395,6 +395,29 @@
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
                                                             <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal" data-target="#modal-FDT_ACTIVTEMP">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="FDT_ACTIVTEMP" class="btn btn-info btn-sm"
+                                                                type='submit' name='FDT_ACTIVTEMP'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                    <td>FDT_ACTIVTEMP</td>
+                                                    <?php foreach($rows as $row): ?>
+                                                    <td><?= $row['FDT_ACTIVTEMP'] ?></td>
+                                                    <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-FDT_ACTIVTEMP"></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
                                                                 data-toggle="modal" data-target="#modal-FDT_AREAFUN">
                                                                 <i class="fas fa-pen" aria-hidden="true"></i>
                                                             </button>
@@ -410,6 +433,99 @@
                                                     <?php endforeach; ?>
                                                     <td>
                                                         <div id="sparkline-FDT_AREAFUN"></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal" data-target="#modal-FDT_CLASEMATER">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="FDT_CLASEMATER" class="btn btn-info btn-sm"
+                                                                type='submit' name='FDT_CLASEMATER'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                    <td>FDT_CLASEMATER</td>
+                                                    <?php foreach($rows as $row): ?>
+                                                    <td><?= $row['FDT_CLASEMATER'] ?></td>
+                                                    <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-FDT_CLASEMATER"></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal"
+                                                                data-target="#modal-FDT_CONFIG_PAQUETE">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="FDT_CONFIG_PAQUETE" class="btn btn-info btn-sm"
+                                                                type='submit' name='FDT_CONFIG_PAQUETE'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                    <td>FDT_CONFIG_PAQUETE</td>
+                                                    <?php foreach($rows as $row): ?>
+                                                    <td><?= $row['FDT_CONFIG_PAQUETE'] ?></td>
+                                                    <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-FDT_CONFIG_PAQUETE"></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal" data-target="#modal-FDT_MATERIAL">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="FDT_MATERIAL" class="btn btn-info btn-sm"
+                                                                type='submit' name='FDT_MATERIAL'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                    <td>FDT_MATERIAL</td>
+                                                    <?php foreach($rows as $row): ?>
+                                                    <td><?= $row['FDT_MATERIAL'] ?></td>
+                                                    <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-FDT_MATERIAL"></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal" data-target="#modal-FDT_STBSERIES">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="FDT_STBSERIES" class="btn btn-info btn-sm"
+                                                                type='submit' name='FDT_STBSERIES'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                    <td>FDT_STBSERIES</td>
+                                                    <?php foreach($rows as $row): ?>
+                                                    <td><?= $row['FDT_STBSERIES'] ?></td>
+                                                    <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-FDT_STBSERIES"></div>
                                                     </td>
                                                 </tr>
 
@@ -605,6 +721,53 @@
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
                                                             <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal"
+                                                                data-target="#modal-PAT_PRCONTXPROD">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="PAT_PRCONTXPROD" class="btn btn-info btn-sm"
+                                                                type='submit' name='PAT_PRCONTXPROD'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                    <td>PAT_PRCONTXPROD</td>
+                                                    <?php foreach($rows as $row): ?>
+                                                    <td><?= $row['PAT_PRCONTXPROD'] ?></td>
+                                                    <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-PAT_PRCONTXPROD"></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal" data-target="#modal-PAT_PRPRODUCTO">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="PAT_PRPRODUCTO" class="btn btn-info btn-sm"
+                                                                type='submit' name='PAT_PRPRODUCTO'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                    <td>PAT_PRPRODUCTO</td>
+                                                    <?php foreach($rows as $row): ?>
+                                                    <td><?= $row['PAT_PRPRODUCTO'] ?></td>
+                                                    <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-PAT_PRPRODUCTO"></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
                                                                 data-toggle="modal" data-target="#modal-PLACE_CHAR">
                                                                 <i class="fas fa-pen" aria-hidden="true"></i>
                                                             </button>
@@ -666,6 +829,75 @@
                                                     <?php endforeach; ?>
                                                     <td>
                                                         <div id="sparkline-REDT_LINEA"></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal" data-target="#modal-REDT_VIVIENDA">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="REDT_VIVIENDA" class="btn btn-info btn-sm"
+                                                                type='submit' name='REDT_VIVIENDA'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                    <td>REDT_VIVIENDA</td>
+                                                    <?php foreach($rows as $row): ?>
+                                                    <td><?= $row['REDT_VIVIENDA'] ?></td>
+                                                    <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-REDT_VIVIENDA"></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal" data-target="#modal-RET_CABLEMODEM">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="RET_CABLEMODEM" class="btn btn-info btn-sm"
+                                                                type='submit' name='RET_CABLEMODEM'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                    <td>RET_CABLEMODEM</td>
+                                                    <?php foreach($rows as $row): ?>
+                                                    <td><?= $row['RET_CABLEMODEM'] ?></td>
+                                                    <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-RET_CABLEMODEM"></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal" data-target="#modal-RET_LINEARED">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="RET_LINEARED" class="btn btn-info btn-sm"
+                                                                type='submit' name='RET_LINEARED'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                    <td>RET_LINEARED</td>
+                                                    <?php foreach($rows as $row): ?>
+                                                    <td><?= $row['RET_LINEARED'] ?></td>
+                                                    <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-RET_LINEARED"></div>
                                                     </td>
                                                 </tr>
 
@@ -997,6 +1229,76 @@
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
                                                             <button type="button" class="btn btn-warning btn-xs"
                                                                 data-toggle="modal"
+                                                                data-target="#modal-SUT_CONCGTAR_NEW">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="SUT_CONCGTAR_NEW" class="btn btn-info btn-sm"
+                                                                type='submit' name='SUT_CONCGTAR_NEW'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                    <td>SUT_CONCGTAR_NEW</td>
+                                                    <?php foreach($rows as $row): ?>
+                                                    <td><?= $row['SUT_CONCGTAR_NEW'] ?></td>
+                                                    <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-SUT_CONCGTAR_NEW"></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal" data-target="#modal-SUT_CONSERVI">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="SUT_CONSERVI" class="btn btn-info btn-sm"
+                                                                type='submit' name='SUT_CONSERVI'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                    <td>SUT_CONSERVI</td>
+                                                    <?php foreach($rows as $row): ?>
+                                                    <td><?= $row['SUT_CONSERVI'] ?></td>
+                                                    <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-SUT_CONSERVI"></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal" data-target="#modal-SUT_GRUPOTAR">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="SUT_GRUPOTAR" class="btn btn-info btn-sm"
+                                                                type='submit' name='SUT_GRUPOTAR'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                    <td>SUT_GRUPOTAR</td>
+                                                    <?php foreach($rows as $row): ?>
+                                                    <td><?= $row['SUT_GRUPOTAR'] ?></td>
+                                                    <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-SUT_GRUPOTAR"></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal"
                                                                 data-target="#modal-SUT_GRUPOTARIFA">
                                                                 <i class="fas fa-pen" aria-hidden="true"></i>
                                                             </button>
@@ -1036,6 +1338,77 @@
                                                     <?php endforeach; ?>
                                                     <td>
                                                         <div id="sparkline-SUT_INFODBOX_UIM_1"></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal" data-target="#modal-SUT_SERVICIO">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="SUT_SERVICIO" class="btn btn-info btn-sm"
+                                                                type='submit' name='SUT_SERVICIO'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                    <td>SUT_SERVICIO</td>
+                                                    <?php foreach($rows as $row): ?>
+                                                    <td><?= $row['SUT_SERVICIO'] ?></td>
+                                                    <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-SUT_SERVICIO"></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal" data-target="#modal-SUT_TARIFAUIM">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="SUT_TARIFAUIM" class="btn btn-info btn-sm"
+                                                                type='submit' name='SUT_TARIFAUIM'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                    <td>SUT_TARIFAUIM</td>
+                                                    <?php foreach($rows as $row): ?>
+                                                    <td><?= $row['SUT_TARIFAUIM'] ?></td>
+                                                    <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-SUT_TARIFAUIM"></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <form method='POST'
+                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
+                                                            <button type="button" class="btn btn-warning btn-xs"
+                                                                data-toggle="modal"
+                                                                data-target="#modal-SUT_VELOCIDADESNETUIM">
+                                                                <i class="fas fa-pen" aria-hidden="true"></i>
+                                                            </button>
+                                                            <button id="SUT_VELOCIDADESNETUIM"
+                                                                class="btn btn-info btn-sm" type='submit'
+                                                                name='SUT_VELOCIDADESNETUIM'>
+                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                    <td>SUT_VELOCIDADESNETUIM</td>
+                                                    <?php foreach($rows as $row): ?>
+                                                    <td><?= $row['SUT_VELOCIDADESNETUIM'] ?></td>
+                                                    <?php endforeach; ?>
+                                                    <td>
+                                                        <div id="sparkline-SUT_VELOCIDADESNETUIM"></div>
                                                     </td>
                                                 </tr>
 

@@ -360,6 +360,34 @@ $(function() {
 <script>
 $(function() {
 
+    const FDT_ACTIVTEMP = [
+        <?php foreach($rows as $row): ?>
+        <?php if ($row['FDT_ACTIVTEMP'] !== null && $row['FDT_ACTIVTEMP'] !== ''): ?>
+        <?= $row['FDT_ACTIVTEMP'] ?>,
+        <?php endif; ?>
+        <?php endforeach; ?>
+    ];
+
+    // Inicializar el gráfico Sparkline para FDT_ACTIVTEMP
+    var sparklineFDT_ACTIVTEMP = new Sparkline($('#sparkline-FDT_ACTIVTEMP')[0], {
+        width: 200,
+        height: 20,
+        lineColor: '#92c1dc',
+        endColor: '#92c1dc'
+    });
+    sparklineFDT_ACTIVTEMP.draw(FDT_ACTIVTEMP);
+
+    if (FDT_ACTIVTEMP.length > 0 && FDT_ACTIVTEMP[FDT_ACTIVTEMP.length - 1] <= <?= $range[0]['FDT_ACTIVTEMP']; ?>) {
+        sparklineFDT_ACTIVTEMP.options.lineColor = '#f56954';
+        sparklineFDT_ACTIVTEMP.options.endColor = '#f56954';
+        sparklineFDT_ACTIVTEMP.draw(FDT_ACTIVTEMP);
+    }
+});
+</script>
+
+<script>
+$(function() {
+
     const FDT_AREAFUN = [
         <?php foreach($rows as $row): ?>
         <?php if ($row['FDT_AREAFUN'] !== null && $row['FDT_AREAFUN'] !== ''): ?>
@@ -381,6 +409,118 @@ $(function() {
         sparklineFDT_AREAFUN.options.lineColor = '#f56954';
         sparklineFDT_AREAFUN.options.endColor = '#f56954';
         sparklineFDT_AREAFUN.draw(FDT_AREAFUN);
+    }
+});
+</script>
+
+<script>
+$(function() {
+
+    const FDT_CLASEMATER = [
+        <?php foreach($rows as $row): ?>
+        <?php if ($row['FDT_CLASEMATER'] !== null && $row['FDT_CLASEMATER'] !== ''): ?>
+        <?= $row['FDT_CLASEMATER'] ?>,
+        <?php endif; ?>
+        <?php endforeach; ?>
+    ];
+
+    // Inicializar el gráfico Sparkline para FDT_CLASEMATER
+    var sparklineFDT_CLASEMATER = new Sparkline($('#sparkline-FDT_CLASEMATER')[0], {
+        width: 200,
+        height: 20,
+        lineColor: '#92c1dc',
+        endColor: '#92c1dc'
+    });
+    sparklineFDT_CLASEMATER.draw(FDT_CLASEMATER);
+
+    if (FDT_CLASEMATER.length > 0 && FDT_CLASEMATER[FDT_CLASEMATER.length - 1] <= <?= $range[0]['FDT_CLASEMATER']; ?>) {
+        sparklineFDT_CLASEMATER.options.lineColor = '#f56954';
+        sparklineFDT_CLASEMATER.options.endColor = '#f56954';
+        sparklineFDT_CLASEMATER.draw(FDT_CLASEMATER);
+    }
+});
+</script>
+
+<script>
+$(function() {
+
+    const FDT_CONFIG_PAQUETE = [
+        <?php foreach($rows as $row): ?>
+        <?php if ($row['FDT_CONFIG_PAQUETE'] !== null && $row['FDT_CONFIG_PAQUETE'] !== ''): ?>
+        <?= $row['FDT_CONFIG_PAQUETE'] ?>,
+        <?php endif; ?>
+        <?php endforeach; ?>
+    ];
+
+    // Inicializar el gráfico Sparkline para FDT_CONFIG_PAQUETE
+    var sparklineFDT_CONFIG_PAQUETE = new Sparkline($('#sparkline-FDT_CONFIG_PAQUETE')[0], {
+        width: 200,
+        height: 20,
+        lineColor: '#92c1dc',
+        endColor: '#92c1dc'
+    });
+    sparklineFDT_CONFIG_PAQUETE.draw(FDT_CONFIG_PAQUETE);
+
+    if (FDT_CONFIG_PAQUETE.length > 0 && FDT_CONFIG_PAQUETE[FDT_CONFIG_PAQUETE.length - 1] <= <?= $range[0]['FDT_CONFIG_PAQUETE']; ?>) {
+        sparklineFDT_CONFIG_PAQUETE.options.lineColor = '#f56954';
+        sparklineFDT_CONFIG_PAQUETE.options.endColor = '#f56954';
+        sparklineFDT_CONFIG_PAQUETE.draw(FDT_CONFIG_PAQUETE);
+    }
+});
+</script>
+
+<script>
+$(function() {
+
+    const FDT_MATERIAL = [
+        <?php foreach($rows as $row): ?>
+        <?php if ($row['FDT_MATERIAL'] !== null && $row['FDT_MATERIAL'] !== ''): ?>
+        <?= $row['FDT_MATERIAL'] ?>,
+        <?php endif; ?>
+        <?php endforeach; ?>
+    ];
+
+    // Inicializar el gráfico Sparkline para FDT_MATERIAL
+    var sparklineFDT_MATERIAL = new Sparkline($('#sparkline-FDT_MATERIAL')[0], {
+        width: 200,
+        height: 20,
+        lineColor: '#92c1dc',
+        endColor: '#92c1dc'
+    });
+    sparklineFDT_MATERIAL.draw(FDT_MATERIAL);
+
+    if (FDT_MATERIAL.length > 0 && FDT_MATERIAL[FDT_MATERIAL.length - 1] <= <?= $range[0]['FDT_MATERIAL']; ?>) {
+        sparklineFDT_MATERIAL.options.lineColor = '#f56954';
+        sparklineFDT_MATERIAL.options.endColor = '#f56954';
+        sparklineFDT_MATERIAL.draw(FDT_MATERIAL);
+    }
+});
+</script>
+
+<script>
+$(function() {
+
+    const FDT_STBSERIES = [
+        <?php foreach($rows as $row): ?>
+        <?php if ($row['FDT_STBSERIES'] !== null && $row['FDT_STBSERIES'] !== ''): ?>
+        <?= $row['FDT_STBSERIES'] ?>,
+        <?php endif; ?>
+        <?php endforeach; ?>
+    ];
+
+    // Inicializar el gráfico Sparkline para FDT_STBSERIES
+    var sparklineFDT_STBSERIES = new Sparkline($('#sparkline-FDT_STBSERIES')[0], {
+        width: 200,
+        height: 20,
+        lineColor: '#92c1dc',
+        endColor: '#92c1dc'
+    });
+    sparklineFDT_STBSERIES.draw(FDT_STBSERIES);
+
+    if (FDT_STBSERIES.length > 0 && FDT_STBSERIES[FDT_STBSERIES.length - 1] <= <?= $range[0]['FDT_STBSERIES']; ?>) {
+        sparklineFDT_STBSERIES.options.lineColor = '#f56954';
+        sparklineFDT_STBSERIES.options.endColor = '#f56954';
+        sparklineFDT_STBSERIES.draw(FDT_STBSERIES);
     }
 });
 </script>
@@ -612,6 +752,62 @@ $(function() {
 <script>
 $(function() {
 
+    const PAT_PRCONTXPROD = [
+        <?php foreach($rows as $row): ?>
+        <?php if ($row['PAT_PRCONTXPROD'] !== null && $row['PAT_PRCONTXPROD'] !== ''): ?>
+        <?= $row['PAT_PRCONTXPROD'] ?>,
+        <?php endif; ?>
+        <?php endforeach; ?>
+    ];
+
+    // Inicializar el gráfico Sparkline para PAT_PRCONTXPROD
+    var sparklinePAT_PRCONTXPROD = new Sparkline($('#sparkline-PAT_PRCONTXPROD')[0], {
+        width: 200,
+        height: 20,
+        lineColor: '#92c1dc',
+        endColor: '#92c1dc'
+    });
+    sparklinePAT_PRCONTXPROD.draw(PAT_PRCONTXPROD);
+
+    if (PAT_PRCONTXPROD.length > 0 && PAT_PRCONTXPROD[PAT_PRCONTXPROD.length - 1] <= <?= $range[0]['PAT_PRCONTXPROD']; ?>) {
+        sparklinePAT_PRCONTXPROD.options.lineColor = '#f56954';
+        sparklinePAT_PRCONTXPROD.options.endColor = '#f56954';
+        sparklinePAT_PRCONTXPROD.draw(PAT_PRCONTXPROD);
+    }
+});
+</script>
+
+<script>
+$(function() {
+
+    const PAT_PRPRODUCTO = [
+        <?php foreach($rows as $row): ?>
+        <?php if ($row['PAT_PRPRODUCTO'] !== null && $row['PAT_PRPRODUCTO'] !== ''): ?>
+        <?= $row['PAT_PRPRODUCTO'] ?>,
+        <?php endif; ?>
+        <?php endforeach; ?>
+    ];
+
+    // Inicializar el gráfico Sparkline para PAT_PRPRODUCTO
+    var sparklinePAT_PRPRODUCTO = new Sparkline($('#sparkline-PAT_PRPRODUCTO')[0], {
+        width: 200,
+        height: 20,
+        lineColor: '#92c1dc',
+        endColor: '#92c1dc'
+    });
+    sparklinePAT_PRPRODUCTO.draw(PAT_PRPRODUCTO);
+
+    if (PAT_PRPRODUCTO.length > 0 && PAT_PRPRODUCTO[PAT_PRPRODUCTO.length - 1] <= <?= $range[0]['PAT_PRPRODUCTO']; ?>) {
+        sparklinePAT_PRPRODUCTO.options.lineColor = '#f56954';
+        sparklinePAT_PRPRODUCTO.options.endColor = '#f56954';
+        sparklinePAT_PRPRODUCTO.draw(PAT_PRPRODUCTO);
+    }
+});
+</script>
+
+<script>
+$(function() {
+
     const PLACE_CHAR = [
         <?php foreach($rows as $row): ?>
         <?php if ($row['PLACE_CHAR'] !== null && $row['PLACE_CHAR'] !== ''): ?>
@@ -689,6 +885,90 @@ $(function() {
         sparklineREDT_LINEA.options.lineColor = '#f56954';
         sparklineREDT_LINEA.options.endColor = '#f56954';
         sparklineREDT_LINEA.draw(REDT_LINEA);
+    }
+});
+</script>
+
+<script>
+$(function() {
+
+    const REDT_VIVIENDA = [
+        <?php foreach($rows as $row): ?>
+        <?php if ($row['REDT_VIVIENDA'] !== null && $row['REDT_VIVIENDA'] !== ''): ?>
+        <?= $row['REDT_VIVIENDA'] ?>,
+        <?php endif; ?>
+        <?php endforeach; ?>
+    ];
+
+    // Inicializar el gráfico Sparkline para REDT_VIVIENDA
+    var sparklineREDT_VIVIENDA = new Sparkline($('#sparkline-REDT_VIVIENDA')[0], {
+        width: 200,
+        height: 20,
+        lineColor: '#92c1dc',
+        endColor: '#92c1dc'
+    });
+    sparklineREDT_VIVIENDA.draw(REDT_VIVIENDA);
+
+    if (REDT_VIVIENDA.length > 0 && REDT_VIVIENDA[REDT_VIVIENDA.length - 1] <= <?= $range[0]['REDT_VIVIENDA']; ?>) {
+        sparklineREDT_VIVIENDA.options.lineColor = '#f56954';
+        sparklineREDT_VIVIENDA.options.endColor = '#f56954';
+        sparklineREDT_VIVIENDA.draw(REDT_VIVIENDA);
+    }
+});
+</script>
+
+<script>
+$(function() {
+
+    const RET_CABLEMODEM = [
+        <?php foreach($rows as $row): ?>
+        <?php if ($row['RET_CABLEMODEM'] !== null && $row['RET_CABLEMODEM'] !== ''): ?>
+        <?= $row['RET_CABLEMODEM'] ?>,
+        <?php endif; ?>
+        <?php endforeach; ?>
+    ];
+
+    // Inicializar el gráfico Sparkline para RET_CABLEMODEM
+    var sparklineRET_CABLEMODEM = new Sparkline($('#sparkline-RET_CABLEMODEM')[0], {
+        width: 200,
+        height: 20,
+        lineColor: '#92c1dc',
+        endColor: '#92c1dc'
+    });
+    sparklineRET_CABLEMODEM.draw(RET_CABLEMODEM);
+
+    if (RET_CABLEMODEM.length > 0 && RET_CABLEMODEM[RET_CABLEMODEM.length - 1] <= <?= $range[0]['RET_CABLEMODEM']; ?>) {
+        sparklineRET_CABLEMODEM.options.lineColor = '#f56954';
+        sparklineRET_CABLEMODEM.options.endColor = '#f56954';
+        sparklineRET_CABLEMODEM.draw(RET_CABLEMODEM);
+    }
+});
+</script>
+
+<script>
+$(function() {
+
+    const RET_LINEARED = [
+        <?php foreach($rows as $row): ?>
+        <?php if ($row['RET_LINEARED'] !== null && $row['RET_LINEARED'] !== ''): ?>
+        <?= $row['RET_LINEARED'] ?>,
+        <?php endif; ?>
+        <?php endforeach; ?>
+    ];
+
+    // Inicializar el gráfico Sparkline para RET_LINEARED
+    var sparklineRET_LINEARED = new Sparkline($('#sparkline-RET_LINEARED')[0], {
+        width: 200,
+        height: 20,
+        lineColor: '#92c1dc',
+        endColor: '#92c1dc'
+    });
+    sparklineRET_LINEARED.draw(RET_LINEARED);
+
+    if (RET_LINEARED.length > 0 && RET_LINEARED[RET_LINEARED.length - 1] <= <?= $range[0]['RET_LINEARED']; ?>) {
+        sparklineRET_LINEARED.options.lineColor = '#f56954';
+        sparklineRET_LINEARED.options.endColor = '#f56954';
+        sparklineRET_LINEARED.draw(RET_LINEARED);
     }
 });
 </script>
@@ -1084,6 +1364,87 @@ $(function() {
 
 <script>
 $(function() {
+    const SUT_CONCGTAR_NEW = [
+        <?php foreach($rows as $row): ?>
+        <?php if ($row['SUT_CONCGTAR_NEW'] !== null && $row['SUT_CONCGTAR_NEW'] !== ''): ?>
+        <?= $row['SUT_CONCGTAR_NEW'] ?>,
+        <?php endif; ?>
+        <?php endforeach; ?>
+    ];
+
+    // Inicializar el gráfico Sparkline para SUT_CONCGTAR_NEW
+    var sparklineSUT_CONCGTAR_NEW = new Sparkline($('#sparkline-SUT_CONCGTAR_NEW')[0], {
+        width: 200,
+        height: 20,
+        lineColor: '#92c1dc',
+        endColor: '#92c1dc'
+    });
+    sparklineSUT_CONCGTAR_NEW.draw(SUT_CONCGTAR_NEW);
+
+    if (SUT_CONCGTAR_NEW.length > 0 && SUT_CONCGTAR_NEW[SUT_CONCGTAR_NEW.length - 1] <= <?= $range[0]['SUT_CONCGTAR_NEW']; ?>) {
+        sparklineSUT_CONCGTAR_NEW.options.lineColor = '#f56954';
+        sparklineSUT_CONCGTAR_NEW.options.endColor = '#f56954';
+        sparklineSUT_CONCGTAR_NEW.draw(SUT_CONCGTAR_NEW);
+    }
+});
+</script>
+
+<script>
+$(function() {
+    const SUT_CONSERVI = [
+        <?php foreach($rows as $row): ?>
+        <?php if ($row['SUT_CONSERVI'] !== null && $row['SUT_CONSERVI'] !== ''): ?>
+        <?= $row['SUT_CONSERVI'] ?>,
+        <?php endif; ?>
+        <?php endforeach; ?>
+    ];
+
+    // Inicializar el gráfico Sparkline para SUT_CONSERVI
+    var sparklineSUT_CONSERVI = new Sparkline($('#sparkline-SUT_CONSERVI')[0], {
+        width: 200,
+        height: 20,
+        lineColor: '#92c1dc',
+        endColor: '#92c1dc'
+    });
+    sparklineSUT_CONSERVI.draw(SUT_CONSERVI);
+
+    if (SUT_CONSERVI.length > 0 && SUT_CONSERVI[SUT_CONSERVI.length - 1] <= <?= $range[0]['SUT_CONSERVI']; ?>) {
+        sparklineSUT_CONSERVI.options.lineColor = '#f56954';
+        sparklineSUT_CONSERVI.options.endColor = '#f56954';
+        sparklineSUT_CONSERVI.draw(SUT_CONSERVI);
+    }
+});
+</script>
+
+<script>
+$(function() {
+    const SUT_GRUPOTAR = [
+        <?php foreach($rows as $row): ?>
+        <?php if ($row['SUT_GRUPOTAR'] !== null && $row['SUT_GRUPOTAR'] !== ''): ?>
+        <?= $row['SUT_GRUPOTAR'] ?>,
+        <?php endif; ?>
+        <?php endforeach; ?>
+    ];
+
+    // Inicializar el gráfico Sparkline para SUT_GRUPOTAR
+    var sparklineSUT_GRUPOTAR = new Sparkline($('#sparkline-SUT_GRUPOTAR')[0], {
+        width: 200,
+        height: 20,
+        lineColor: '#92c1dc',
+        endColor: '#92c1dc'
+    });
+    sparklineSUT_GRUPOTAR.draw(SUT_GRUPOTAR);
+
+    if (SUT_GRUPOTAR.length > 0 && SUT_GRUPOTAR[SUT_GRUPOTAR.length - 1] <= <?= $range[0]['SUT_GRUPOTAR']; ?>) {
+        sparklineSUT_GRUPOTAR.options.lineColor = '#f56954';
+        sparklineSUT_GRUPOTAR.options.endColor = '#f56954';
+        sparklineSUT_GRUPOTAR.draw(SUT_GRUPOTAR);
+    }
+});
+</script>
+
+<script>
+$(function() {
     const SUT_GRUPOTARIFA = [
         <?php foreach($rows as $row): ?>
         <?php if ($row['SUT_GRUPOTARIFA'] !== null && $row['SUT_GRUPOTARIFA'] !== ''): ?>
@@ -1132,6 +1493,86 @@ $(function() {
         sparklineSUT_INFODBOX_UIM_1.options.lineColor = '#f56954';
         sparklineSUT_INFODBOX_UIM_1.options.endColor = '#f56954';
         sparklineSUT_INFODBOX_UIM_1.draw(SUT_INFODBOX_UIM_1);
+    }
+});
+</script>
+
+<script>
+$(function() {
+    const SUT_SERVICIO = [
+        <?php foreach($rows as $row): ?>
+        <?php if ($row['SUT_SERVICIO'] !== null && $row['SUT_SERVICIO'] !== ''): ?>
+        <?= $row['SUT_SERVICIO'] ?>,
+        <?php endif; ?>
+        <?php endforeach; ?>
+    ];
+    // Inicializar el gráfico Sparkline para SUT_SERVICIO
+    var sparklineSUT_SERVICIO = new Sparkline($('#sparkline-SUT_SERVICIO')[0], {
+        width: 200,
+        height: 20,
+        lineColor: '#92c1dc',
+        endColor: '#92c1dc'
+    });
+    sparklineSUT_SERVICIO.draw(SUT_SERVICIO);
+
+    if (SUT_SERVICIO.length > 0 && SUT_SERVICIO[SUT_SERVICIO.length - 1] <= <?= $range[0]['SUT_SERVICIO']; ?>) {
+        sparklineSUT_SERVICIO.options.lineColor = '#f56954';
+        sparklineSUT_SERVICIO.options.endColor = '#f56954';
+        sparklineSUT_SERVICIO.draw(SUT_SERVICIO);
+    }
+});
+</script>
+
+<script>
+$(function() {
+    const SUT_TARIFAUIM = [
+        <?php foreach($rows as $row): ?>
+        <?php if ($row['SUT_TARIFAUIM'] !== null && $row['SUT_TARIFAUIM'] !== ''): ?>
+        <?= $row['SUT_TARIFAUIM'] ?>,
+        <?php endif; ?>
+        <?php endforeach; ?>
+    ];
+
+    // Inicializar el gráfico Sparkline para SUT_TARIFAUIM
+    var sparklineSUT_TARIFAUIM = new Sparkline($('#sparkline-SUT_TARIFAUIM')[0], {
+        width: 200,
+        height: 20,
+        lineColor: '#92c1dc',
+        endColor: '#92c1dc'
+    });
+    sparklineSUT_TARIFAUIM.draw(SUT_TARIFAUIM);
+
+    if (SUT_TARIFAUIM.length > 0 && SUT_TARIFAUIM[SUT_TARIFAUIM.length - 1] <= <?= $range[0]['SUT_TARIFAUIM']; ?>) {
+        sparklineSUT_TARIFAUIM.options.lineColor = '#f56954';
+        sparklineSUT_TARIFAUIM.options.endColor = '#f56954';
+        sparklineSUT_TARIFAUIM.draw(SUT_TARIFAUIM);
+    }
+});
+</script>
+
+<script>
+$(function() {
+    const SUT_VELOCIDADESNETUIM = [
+        <?php foreach($rows as $row): ?>
+        <?php if ($row['SUT_VELOCIDADESNETUIM'] !== null && $row['SUT_VELOCIDADESNETUIM'] !== ''): ?>
+        <?= $row['SUT_VELOCIDADESNETUIM'] ?>,
+        <?php endif; ?>
+        <?php endforeach; ?>
+    ];
+
+    // Inicializar el gráfico Sparkline para SUT_VELOCIDADESNETUIM
+    var sparklineSUT_VELOCIDADESNETUIM = new Sparkline($('#sparkline-SUT_VELOCIDADESNETUIM')[0], {
+        width: 200,
+        height: 20,
+        lineColor: '#92c1dc',
+        endColor: '#92c1dc'
+    });
+    sparklineSUT_VELOCIDADESNETUIM.draw(SUT_VELOCIDADESNETUIM);
+
+    if (SUT_VELOCIDADESNETUIM.length > 0 && SUT_VELOCIDADESNETUIM[SUT_VELOCIDADESNETUIM.length - 1] <= <?= $range[0]['SUT_VELOCIDADESNETUIM']; ?>) {
+        sparklineSUT_VELOCIDADESNETUIM.options.lineColor = '#f56954';
+        sparklineSUT_VELOCIDADESNETUIM.options.endColor = '#f56954';
+        sparklineSUT_VELOCIDADESNETUIM.draw(SUT_VELOCIDADESNETUIM);
     }
 });
 </script>

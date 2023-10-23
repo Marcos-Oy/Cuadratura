@@ -1,5 +1,5 @@
 <?php 
-foreach ($FileInfo as $Rclave => $RfileName) {
+foreach ($RinfoArchLogs as $Rclave => $RfileName) {
     $RcleanedPath = preg_replace('/[^a-zA-Z0-9]+/', '', $RfileName['path']);
     $RsectionId = 'section_' . $RcleanedPath;
     // Construye la ruta completa al archivo .log (usando barras inclinadas en Windows)

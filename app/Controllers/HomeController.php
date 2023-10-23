@@ -45,34 +45,22 @@ class HomeController {
         if ($this->sftpManager->connect() && $this->sftpManager->login()) {
 
             //Obtenemos la info de los logs remotamente
-            $InfoLogsM = $this->LogsController->InfoLogs('MANAGER');
+            $InfoLogs = $this->LogsController->InfoLogs('MANAGER');
+            $infoArchLogs = $this->LogsController->InfoArchLogs();
+            $InfoModelDatos = $this->LogsController->InfoModelDatos();
+            $InfoProceduresAMPM = $this->LogsController->InfoProceduresAMPM();
 
-            $infoArchLogs0 = $this->LogsController->InfoArchLogs(0);
-            $infoArchLogs1 = $this->LogsController->InfoArchLogs(1);
-
-            $InfoModelDatos0 = $this->LogsController->InfoModelDatos(0);
-            $InfoModelDatos1 = $this->LogsController->InfoModelDatos(1);
-
-            $InfoProceduresAMPM0 = $this->LogsController->InfoProceduresAMPM(0);
-            $InfoProceduresAMPM1 = $this->LogsController->InfoProceduresAMPM(1);
-
-            $FileInfo = array_merge($InfoLogsM,
-            $infoArchLogs0, $infoArchLogs1,
-            $InfoModelDatos0, $InfoModelDatos1,
-            $InfoProceduresAMPM0, $InfoProceduresAMPM1);
+            $FileInfo = array_merge($InfoLogs,
+            $infoArchLogs,
+            $InfoModelDatos,
+            $InfoProceduresAMPM);
 
             //Descargamos los logs
 
             $this->LogsController->DownloadLogs($this->LogsController->LogsDirectories());
-
-            $this->LogsController->DownloadLogs($this->LogsController->ArchLogsDirectories(0));
-            $this->LogsController->DownloadLogs($this->LogsController->ArchLogsDirectories(1));
-
-            $this->LogsController->DownloadLogs($this->LogsController->ModelDatosDirectories(0));
-            $this->LogsController->DownloadLogs($this->LogsController->ModelDatosDirectories(1));
-
-            $this->LogsController->DownloadLogs($this->LogsController->ProceduresAMPMDirectories(0));
-            $this->LogsController->DownloadLogs($this->LogsController->ProceduresAMPMDirectories(1));
+            $this->LogsController->DownloadLogs($this->LogsController->ArchLogsDirectories());
+            $this->LogsController->DownloadLogs($this->LogsController->ModelDatosDirectories());
+            $this->LogsController->DownloadLogs($this->LogsController->ProceduresAMPMDirectories());
             
 
             // Verifica si el archivo de vista existe

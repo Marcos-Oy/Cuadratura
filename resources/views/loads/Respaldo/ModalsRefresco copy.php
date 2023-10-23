@@ -335,6 +335,32 @@
 </form>
 
 <form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
+    <div class="modal fade" id="modal-FDT_ACTIVTEMP">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modificar valor de alerta grafical de FDT_ACTIVTEMP</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>El gráfico de alerta cambiará de color negativo cuando el valor sea menor o igual a:</p>
+                    <input id="FDT_ACTIVTEMP" name="FDT_ACTIVTEMP" type="number" class="form-control"
+                        value="<?= $range[0]['FDT_ACTIVTEMP'];?>">
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button id="btn-FDT_ACTIVTEMP" name='btn-FDT_ACTIVTEMP' class="btn btn-info" type='submit'>Salvar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
     <div class="modal fade" id="modal-FDT_AREAFUN">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -353,6 +379,110 @@
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                     <button id="btn-FDT_AREAFUN" name='btn-FDT_AREAFUN' class="btn btn-info" type='submit'>Salvar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
+    <div class="modal fade" id="modal-FDT_CLASEMATER">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modificar valor de alerta grafical de FDT_CLASEMATER</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>El gráfico de alerta cambiará de color negativo cuando el valor sea menor o igual a:</p>
+                    <input id="FDT_CLASEMATER" name="FDT_CLASEMATER" type="number" class="form-control"
+                        value="<?= $range[0]['FDT_CLASEMATER'];?>">
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button id="btn-FDT_CLASEMATER" name='btn-FDT_CLASEMATER' class="btn btn-info" type='submit'>Salvar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
+    <div class="modal fade" id="modal-FDT_CONFIG_PAQUETE">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modificar valor de alerta grafical de FDT_CONFIG_PAQUETE</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>El gráfico de alerta cambiará de color negativo cuando el valor sea menor o igual a:</p>
+                    <input id="FDT_CONFIG_PAQUETE" name="FDT_CONFIG_PAQUETE" type="number" class="form-control"
+                        value="<?= $range[0]['FDT_CONFIG_PAQUETE'];?>">
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button id="btn-FDT_CONFIG_PAQUETE" name='btn-FDT_CONFIG_PAQUETE' class="btn btn-info" type='submit'>Salvar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
+    <div class="modal fade" id="modal-FDT_MATERIAL">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modificar valor de alerta grafical de FDT_MATERIAL</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>El gráfico de alerta cambiará de color negativo cuando el valor sea menor o igual a:</p>
+                    <input id="FDT_MATERIAL" name="FDT_MATERIAL" type="number" class="form-control"
+                        value="<?= $range[0]['FDT_MATERIAL'];?>">
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button id="btn-FDT_MATERIAL" name='btn-FDT_MATERIAL' class="btn btn-info" type='submit'>Salvar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
+    <div class="modal fade" id="modal-FDT_STBSERIES">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modificar valor de alerta grafical de FDT_STBSERIES</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>El gráfico de alerta cambiará de color negativo cuando el valor sea menor o igual a:</p>
+                    <input id="FDT_STBSERIES" name="FDT_STBSERIES" type="number" class="form-control"
+                        value="<?= $range[0]['FDT_STBSERIES'];?>">
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button id="btn-FDT_STBSERIES" name='btn-FDT_STBSERIES' class="btn btn-info" type='submit'>Salvar</button>
 
                 </div>
             </div>
@@ -569,6 +699,58 @@
 </form>
 
 <form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
+    <div class="modal fade" id="modal-PAT_PRCONTXPROD">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modificar valor de alerta grafical de PAT_PRCONTXPROD</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>El gráfico de alerta cambiará de color negativo cuando el valor sea menor o igual a:</p>
+                    <input id="PAT_PRCONTXPROD" name="PAT_PRCONTXPROD" type="number" class="form-control"
+                        value="<?= $range[0]['PAT_PRCONTXPROD'];?>">
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button id="btn-PAT_PRCONTXPROD" name='btn-PAT_PRCONTXPROD' class="btn btn-info" type='submit'>Salvar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
+    <div class="modal fade" id="modal-PAT_PRPRODUCTO">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modificar valor de alerta grafical de PAT_PRPRODUCTO</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>El gráfico de alerta cambiará de color negativo cuando el valor sea menor o igual a:</p>
+                    <input id="PAT_PRPRODUCTO" name="PAT_PRPRODUCTO" type="number" class="form-control"
+                        value="<?= $range[0]['PAT_PRPRODUCTO'];?>">
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button id="btn-PAT_PRPRODUCTO" name='btn-PAT_PRPRODUCTO' class="btn btn-info" type='submit'>Salvar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
     <div class="modal fade" id="modal-PLACE_CHAR">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -639,6 +821,84 @@
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                     <button id="btn-REDT_LINEA" name='btn-REDT_LINEA' class="btn btn-info" type='submit'>Salvar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
+    <div class="modal fade" id="modal-REDT_VIVIENDA">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modificar valor de alerta grafical de REDT_VIVIENDA</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>El gráfico de alerta cambiará de color negativo cuando el valor sea menor o igual a:</p>
+                    <input id="REDT_VIVIENDA" name="REDT_VIVIENDA" type="number" class="form-control"
+                        value="<?= $range[0]['REDT_VIVIENDA'];?>">
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button id="btn-REDT_VIVIENDA" name='btn-REDT_VIVIENDA' class="btn btn-info" type='submit'>Salvar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
+    <div class="modal fade" id="modal-RET_CABLEMODEM">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modificar valor de alerta grafical de RET_CABLEMODEM</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>El gráfico de alerta cambiará de color negativo cuando el valor sea menor o igual a:</p>
+                    <input id="RET_CABLEMODEM" name="RET_CABLEMODEM" type="number" class="form-control"
+                        value="<?= $range[0]['RET_CABLEMODEM'];?>">
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button id="btn-RET_CABLEMODEM" name='btn-RET_CABLEMODEM' class="btn btn-info" type='submit'>Salvar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
+    <div class="modal fade" id="modal-RET_LINEARED">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modificar valor de alerta grafical de RET_LINEARED</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>El gráfico de alerta cambiará de color negativo cuando el valor sea menor o igual a:</p>
+                    <input id="RET_LINEARED" name="RET_LINEARED" type="number" class="form-control"
+                        value="<?= $range[0]['RET_LINEARED'];?>">
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button id="btn-RET_LINEARED" name='btn-RET_LINEARED' class="btn btn-info" type='submit'>Salvar</button>
 
                 </div>
             </div>
@@ -1011,6 +1271,84 @@
 </form>
 
 <form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
+    <div class="modal fade" id="modal-SUT_CONCGTAR_NEW">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modificar valor de alerta grafical de SUT_CONCGTAR_NEW</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>El gráfico de alerta cambiará de color negativo cuando el valor sea menor o igual a:</p>
+                    <input id="SUT_CONCGTAR_NEW" name="SUT_CONCGTAR_NEW" type="number" class="form-control"
+                        value="<?= $range[0]['SUT_CONCGTAR_NEW'];?>">
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button id="btn-SUT_CONCGTAR_NEW" name='btn-SUT_CONCGTAR_NEW' class="btn btn-info" type='submit'>Salvar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
+    <div class="modal fade" id="modal-SUT_CONSERVI">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modificar valor de alerta grafical de SUT_CONSERVI</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>El gráfico de alerta cambiará de color negativo cuando el valor sea menor o igual a:</p>
+                    <input id="SUT_CONSERVI" name="SUT_CONSERVI" type="number" class="form-control"
+                        value="<?= $range[0]['SUT_CONSERVI'];?>">
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button id="btn-SUT_CONSERVI" name='btn-SUT_CONSERVI' class="btn btn-info" type='submit'>Salvar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
+    <div class="modal fade" id="modal-SUT_GRUPOTAR">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modificar valor de alerta grafical de SUT_GRUPOTAR</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>El gráfico de alerta cambiará de color negativo cuando el valor sea menor o igual a:</p>
+                    <input id="SUT_GRUPOTAR" name="SUT_GRUPOTAR" type="number" class="form-control"
+                        value="<?= $range[0]['SUT_GRUPOTAR'];?>">
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button id="btn-SUT_GRUPOTAR" name='btn-SUT_GRUPOTAR' class="btn btn-info" type='submit'>Salvar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
     <div class="modal fade" id="modal-SUT_GRUPOTARIFA">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -1055,6 +1393,84 @@
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                     <button id="btn-SUT_INFODBOX_UIM_1" name='btn-SUT_INFODBOX_UIM_1' class="btn btn-info" type='submit'>Salvar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
+    <div class="modal fade" id="modal-SUT_SERVICIO">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modificar valor de alerta grafical de SUT_SERVICIO</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>El gráfico de alerta cambiará de color negativo cuando el valor sea menor o igual a:</p>
+                    <input id="SUT_SERVICIO" name="SUT_SERVICIO" type="number" class="form-control"
+                        value="<?= $range[0]['SUT_SERVICIO'];?>">
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button id="btn-SUT_SERVICIO" name='btn-SUT_SERVICIO' class="btn btn-info" type='submit'>Salvar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
+    <div class="modal fade" id="modal-SUT_TARIFAUIM">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modificar valor de alerta grafical de SUT_TARIFAUIM</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>El gráfico de alerta cambiará de color negativo cuando el valor sea menor o igual a:</p>
+                    <input id="SUT_TARIFAUIM" name="SUT_TARIFAUIM" type="number" class="form-control"
+                        value="<?= $range[0]['SUT_TARIFAUIM'];?>">
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button id="btn-SUT_TARIFAUIM" name='btn-SUT_TARIFAUIM' class="btn btn-info" type='submit'>Salvar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
+    <div class="modal fade" id="modal-SUT_VELOCIDADESNETUIM">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modificar valor de alerta grafical de SUT_VELOCIDADESNETUIM</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>El gráfico de alerta cambiará de color negativo cuando el valor sea menor o igual a:</p>
+                    <input id="SUT_VELOCIDADESNETUIM" name="SUT_VELOCIDADESNETUIM" type="number" class="form-control"
+                        value="<?= $range[0]['SUT_VELOCIDADESNETUIM'];?>">
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button id="btn-SUT_VELOCIDADESNETUIM" name='btn-SUT_VELOCIDADESNETUIM' class="btn btn-info" type='submit'>Salvar</button>
 
                 </div>
             </div>
