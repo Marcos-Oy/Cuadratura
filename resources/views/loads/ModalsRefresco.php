@@ -621,32 +621,6 @@
 </form>
 
 <form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
-    <div class="modal fade" id="modal-REDT_LINEA">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modificar valor de alerta grafical de REDT_LINEA</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>El gráfico de alerta cambiará de color negativo cuando el valor sea menor o igual a:</p>
-                    <input id="REDT_LINEA" name="REDT_LINEA" type="number" class="form-control"
-                        value="<?= $range[0]['REDT_LINEA'];?>">
-
-                </div>
-                <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button id="btn-REDT_LINEA" name='btn-REDT_LINEA' class="btn btn-info" type='submit'>Salvar</button>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
-
-<form method='POST' action='<?php echo $this->raiz; ?>/update/RangeRefresco'>
     <div class="modal fade" id="modal-S_ADDR_PER">
         <div class="modal-dialog">
             <div class="modal-content">

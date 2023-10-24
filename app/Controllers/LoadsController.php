@@ -195,7 +195,7 @@ class LoadsController {
             // 'PAT_PRPRODUCTO',
             'PLACE_CHAR',
             'REDT_CALLES',
-            'REDT_LINEA',
+            // 'REDT_LINEA',
             // 'REDT_VIVIENDA',
             // 'RET_CABLEMODEM',
             // 'RET_LINEARED',
@@ -338,9 +338,9 @@ class LoadsController {
             $this->LoadsDAO->UpdateRefresco('REDT_CALLES');
         }
         
-        if (isset($_POST['REDT_LINEA'])) {
-            $this->LoadsDAO->UpdateRefresco('REDT_LINEA');
-        }
+        // if (isset($_POST['REDT_LINEA'])) {
+        //     $this->LoadsDAO->UpdateRefresco('REDT_LINEA');
+        // }
         
         // if (isset($_POST['REDT_VIVIENDA'])) {
         //     $this->LoadsDAO->UpdateRefresco('REDT_VIVIENDA');
@@ -632,9 +632,9 @@ class LoadsController {
             $this->LoadsDAO->UpdateRange('REDT_CALLES', $_POST['REDT_CALLES']);
         }
         
-        if (isset($_POST['btn-REDT_LINEA'])) {
-            $this->LoadsDAO->UpdateRange('REDT_LINEA', $_POST['REDT_LINEA']);
-        }
+        // if (isset($_POST['btn-REDT_LINEA'])) {
+        //     $this->LoadsDAO->UpdateRange('REDT_LINEA', $_POST['REDT_LINEA']);
+        // }
         
         // if (isset($_POST['btn-REDT_VIVIENDA'])) {
         //     $this->LoadsDAO->UpdateRange('REDT_VIVIENDA', $_POST['REDT_VIVIENDA']);

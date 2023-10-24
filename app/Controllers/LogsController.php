@@ -242,6 +242,7 @@ class LogsController
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_productop_baja.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_clientes.log",
             "/Cuadratura/Tablas/Arch_Log/proceso_cup_cicloini.log",
+            "/Cuadratura/Tablas/Arch_Log/tabla_cut_valida_promoinac.log",
             // "/Cuadratura/Tablas/Arch_Log/proceso_cup_validamaterialinet.log",
             "/Cuadratura/Tablas/Arch_Log/limpia_tablas_desc_uim.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tablas_cut.log",

@@ -645,30 +645,7 @@
                                                         <div id="sparkline-REDT_CALLES"></div>
                                                     </td>
                                                 </tr>
-
-                                                <tr>
-                                                    <td>
-                                                        <form method='POST'
-                                                            action='<?php echo $this->raiz; ?>/update/refresco'>
-                                                            <button type="button" class="btn btn-warning btn-xs"
-                                                                data-toggle="modal" data-target="#modal-REDT_LINEA">
-                                                                <i class="fas fa-pen" aria-hidden="true"></i>
-                                                            </button>
-                                                            <button id="REDT_LINEA" class="btn btn-info btn-sm"
-                                                                type='submit' name='REDT_LINEA'>
-                                                                <i class="fas fa-refresh" aria-hidden="true"></i>
-                                                            </button>
-                                                        </form>
-                                                    </td>
-                                                    <td>REDT_LINEA</td>
-                                                    <?php foreach($rows as $row): ?>
-                                                    <td><?= $row['REDT_LINEA'] ?></td>
-                                                    <?php endforeach; ?>
-                                                    <td>
-                                                        <div id="sparkline-REDT_LINEA"></div>
-                                                    </td>
-                                                </tr>
-
+                                                
                                                 <tr>
                                                     <td>
                                                         <form method='POST'

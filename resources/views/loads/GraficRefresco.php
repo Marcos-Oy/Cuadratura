@@ -668,34 +668,6 @@ $(function() {
 <script>
 $(function() {
 
-    const REDT_LINEA = [
-        <?php foreach($rows as $row): ?>
-        <?php if ($row['REDT_LINEA'] !== null && $row['REDT_LINEA'] !== ''): ?>
-        <?= $row['REDT_LINEA'] ?>,
-        <?php endif; ?>
-        <?php endforeach; ?>
-    ];
-
-    // Inicializar el gráfico Sparkline para REDT_LINEA
-    var sparklineREDT_LINEA = new Sparkline($('#sparkline-REDT_LINEA')[0], {
-        width: 200,
-        height: 20,
-        lineColor: '#92c1dc',
-        endColor: '#92c1dc'
-    });
-    sparklineREDT_LINEA.draw(REDT_LINEA);
-
-    if (REDT_LINEA.length > 0 && REDT_LINEA[REDT_LINEA.length - 1] <= <?= $range[0]['REDT_LINEA']; ?>) {
-        sparklineREDT_LINEA.options.lineColor = '#f56954';
-        sparklineREDT_LINEA.options.endColor = '#f56954';
-        sparklineREDT_LINEA.draw(REDT_LINEA);
-    }
-});
-</script>
-
-<script>
-$(function() {
-
     const S_ADDR_PER = [
         <?php foreach($rows as $row): ?>
         <?php if ($row['S_ADDR_PER'] !== null && $row['S_ADDR_PER'] !== ''): ?>
