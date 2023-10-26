@@ -179,10 +179,10 @@ class LoadsController {
             'CUT_UIM_SERVICIOS_BAJA',
             'FDT_ACTIVTEMP',
             'FDT_AREAFUN',
-            'FDT_CLASEMATER',
-            'FDT_CONFIG_PAQUETE',
-            'FDT_MATERIAL',
-            'FDT_STBSERIES',
+            // 'FDT_CLASEMATER',
+            // 'FDT_CONFIG_PAQUETE',
+            // 'FDT_MATERIAL',
+            // 'FDT_STBSERIES',
             'FDT_TIPOORD',
             'GIAP_TRADUCTOR',
             'GIAP_VOICEPLAN_MOVIL',
@@ -191,14 +191,14 @@ class LoadsController {
             'MIGRADB',
             'OSM_ORDENESACTIVAS',
             'PAT_LOCALIDAD',
-            'PAT_PRCONTXPROD',
-            'PAT_PRPRODUCTO',
+            // 'PAT_PRCONTXPROD',
+            // 'PAT_PRPRODUCTO',
             'PLACE_CHAR',
             'REDT_CALLES',
-            'REDT_LINEA',
-            'REDT_VIVIENDA',
-            'RET_CABLEMODEM',
-            'RET_LINEARED',
+            // 'REDT_LINEA',
+            // 'REDT_VIVIENDA',
+            // 'RET_CABLEMODEM',
+            // 'RET_LINEARED',
             'S_ADDR_PER',
             'S_ASSET',
             'S_ASSET_OM',
@@ -214,13 +214,13 @@ class LoadsController {
             'SIEBEL_ACT',
             'SS_DERIVADAS',
             'SUT_CONCGTAR_NEW',
-            'SUT_CONSERVI',
-            'SUT_GRUPOTAR',
+            // 'SUT_CONSERVI',
+            // 'SUT_GRUPOTAR',
             'SUT_GRUPOTARIFA',
             'SUT_INFODBOX_UIM_1',
-            'SUT_SERVICIO',
-            'SUT_TARIFAUIM',
-            'SUT_VELOCIDADESNETUIM',
+            // 'SUT_SERVICIO',
+            // 'SUT_TARIFAUIM',
+            // 'SUT_VELOCIDADESNETUIM',
             'TELEPHONENUMBER',
             'TMP_EQUIPOS_MTA',
             'TNASSIGNMENT',
@@ -266,29 +266,29 @@ class LoadsController {
             $this->LoadsDAO->UpdateRefresco('CUT_SIEBEL_PRODUCTOP_BAJA');
         }
         
-        if (isset($_POST['FDT_ACTIVTEMP'])) {
-            $this->LoadsDAO->UpdateRefresco('FDT_ACTIVTEMP');
-        }
+        // if (isset($_POST['FDT_ACTIVTEMP'])) {
+        //     $this->LoadsDAO->UpdateRefresco('FDT_ACTIVTEMP');
+        // }
         
         if (isset($_POST['FDT_AREAFUN'])) {
             $this->LoadsDAO->UpdateRefresco('FDT_AREAFUN');
         }
         
-        if (isset($_POST['FDT_CLASEMATER'])) {
-            $this->LoadsDAO->UpdateRefresco('FDT_CLASEMATER');
-        }
+        // if (isset($_POST['FDT_CLASEMATER'])) {
+        //     $this->LoadsDAO->UpdateRefresco('FDT_CLASEMATER');
+        // }
         
-        if (isset($_POST['FDT_CONFIG_PAQUETE'])) {
-            $this->LoadsDAO->UpdateRefresco('FDT_CONFIG_PAQUETE');
-        }
+        // if (isset($_POST['FDT_CONFIG_PAQUETE'])) {
+        //     $this->LoadsDAO->UpdateRefresco('FDT_CONFIG_PAQUETE');
+        // }
         
-        if (isset($_POST['FDT_MATERIAL'])) {
-            $this->LoadsDAO->UpdateRefresco('FDT_MATERIAL');
-        }
+        // if (isset($_POST['FDT_MATERIAL'])) {
+        //     $this->LoadsDAO->UpdateRefresco('FDT_MATERIAL');
+        // }
         
-        if (isset($_POST['FDT_STBSERIES'])) {
-            $this->LoadsDAO->UpdateRefresco('FDT_STBSERIES');
-        }
+        // if (isset($_POST['FDT_STBSERIES'])) {
+        //     $this->LoadsDAO->UpdateRefresco('FDT_STBSERIES');
+        // }
         
         if (isset($_POST['FDT_TIPOORD'])) {
             $this->LoadsDAO->UpdateRefresco('FDT_TIPOORD');
@@ -322,9 +322,9 @@ class LoadsController {
             $this->LoadsDAO->UpdateRefresco('PAT_LOCALIDAD');
         }
         
-        if (isset($_POST['PAT_PRCONTXPROD'])) {
-            $this->LoadsDAO->UpdateRefresco('PAT_PRCONTXPROD');
-        }
+        // if (isset($_POST['PAT_PRCONTXPROD'])) {
+        //     $this->LoadsDAO->UpdateRefresco('PAT_PRCONTXPROD');
+        // }
         
         if (isset($_POST['PAT_PRPRODUCTO'])) {
             $this->LoadsDAO->UpdateRefresco('PAT_PRPRODUCTO');
@@ -338,21 +338,21 @@ class LoadsController {
             $this->LoadsDAO->UpdateRefresco('REDT_CALLES');
         }
         
-        if (isset($_POST['REDT_LINEA'])) {
-            $this->LoadsDAO->UpdateRefresco('REDT_LINEA');
-        }
+        // if (isset($_POST['REDT_LINEA'])) {
+        //     $this->LoadsDAO->UpdateRefresco('REDT_LINEA');
+        // }
         
-        if (isset($_POST['REDT_VIVIENDA'])) {
-            $this->LoadsDAO->UpdateRefresco('REDT_VIVIENDA');
-        }
+        // if (isset($_POST['REDT_VIVIENDA'])) {
+        //     $this->LoadsDAO->UpdateRefresco('REDT_VIVIENDA');
+        // }
         
-        if (isset($_POST['RET_CABLEMODEM'])) {
-            $this->LoadsDAO->UpdateRefresco('RET_CABLEMODEM');
-        }
+        // if (isset($_POST['RET_CABLEMODEM'])) {
+        //     $this->LoadsDAO->UpdateRefresco('RET_CABLEMODEM');
+        // }
         
-        if (isset($_POST['RET_LINEARED'])) {
-            $this->LoadsDAO->UpdateRefresco('RET_LINEARED');
-        }
+        // if (isset($_POST['RET_LINEARED'])) {
+        //     $this->LoadsDAO->UpdateRefresco('RET_LINEARED');
+        // }
         
         if (isset($_POST['S_ADDR_PER'])) {
             $this->LoadsDAO->UpdateRefresco('S_ADDR_PER');
@@ -410,17 +410,17 @@ class LoadsController {
             $this->LoadsDAO->UpdateRefresco('SS_DERIVADAS');
         }
         
-        if (isset($_POST['SUT_CONCGTAR_NEW'])) {
-            $this->LoadsDAO->UpdateRefresco('SUT_CONCGTAR_NEW');
-        }
+        // if (isset($_POST['SUT_CONCGTAR_NEW'])) {
+        //     $this->LoadsDAO->UpdateRefresco('SUT_CONCGTAR_NEW');
+        // }
         
-        if (isset($_POST['SUT_CONSERVI'])) {
-            $this->LoadsDAO->UpdateRefresco('SUT_CONSERVI');
-        }
+        // if (isset($_POST['SUT_CONSERVI'])) {
+        //     $this->LoadsDAO->UpdateRefresco('SUT_CONSERVI');
+        // }
         
-        if (isset($_POST['SUT_GRUPOTAR'])) {
-            $this->LoadsDAO->UpdateRefresco('SUT_GRUPOTAR');
-        }
+        // if (isset($_POST['SUT_GRUPOTAR'])) {
+        //     $this->LoadsDAO->UpdateRefresco('SUT_GRUPOTAR');
+        // }
         
         if (isset($_POST['SUT_GRUPOTARIFA'])) {
             $this->LoadsDAO->UpdateRefresco('SUT_GRUPOTARIFA');
@@ -430,17 +430,17 @@ class LoadsController {
             $this->LoadsDAO->UpdateRefresco('SUT_INFODBOX_UIM_1');
         }
         
-        if (isset($_POST['SUT_SERVICIO'])) {
-            $this->LoadsDAO->UpdateRefresco('SUT_SERVICIO');
-        }
+        // if (isset($_POST['SUT_SERVICIO'])) {
+        //     $this->LoadsDAO->UpdateRefresco('SUT_SERVICIO');
+        // }
         
-        if (isset($_POST['SUT_TARIFAUIM'])) {
-            $this->LoadsDAO->UpdateRefresco('SUT_TARIFAUIM');
-        }
+        // if (isset($_POST['SUT_TARIFAUIM'])) {
+        //     $this->LoadsDAO->UpdateRefresco('SUT_TARIFAUIM');
+        // }
         
-        if (isset($_POST['SUT_VELOCIDADESNETUIM'])) {
-            $this->LoadsDAO->UpdateRefresco('SUT_VELOCIDADESNETUIM');
-        }
+        // if (isset($_POST['SUT_VELOCIDADESNETUIM'])) {
+        //     $this->LoadsDAO->UpdateRefresco('SUT_VELOCIDADESNETUIM');
+        // }
         
         if (isset($_POST['TELEPHONENUMBER'])) {
             $this->LoadsDAO->UpdateRefresco('TELEPHONENUMBER');
@@ -560,29 +560,29 @@ class LoadsController {
             $this->LoadsDAO->UpdateRange('CUT_SIEBEL_PRODUCTOP_BAJA', $_POST['CUT_SIEBEL_PRODUCTOP_BAJA']);
         }
         
-        if (isset($_POST['btn-FDT_ACTIVTEMP'])) {
-            $this->LoadsDAO->UpdateRange('FDT_ACTIVTEMP', $_POST['FDT_ACTIVTEMP']);
-        }
+        // if (isset($_POST['btn-FDT_ACTIVTEMP'])) {
+        //     $this->LoadsDAO->UpdateRange('FDT_ACTIVTEMP', $_POST['FDT_ACTIVTEMP']);
+        // }
         
         if (isset($_POST['btn-FDT_AREAFUN'])) {
             $this->LoadsDAO->UpdateRange('FDT_AREAFUN', $_POST['FDT_AREAFUN']);
         }
         
-        if (isset($_POST['btn-FDT_CLASEMATER'])) {
-            $this->LoadsDAO->UpdateRange('FDT_CLASEMATER', $_POST['FDT_CLASEMATER']);
-        }
+        // if (isset($_POST['btn-FDT_CLASEMATER'])) {
+        //     $this->LoadsDAO->UpdateRange('FDT_CLASEMATER', $_POST['FDT_CLASEMATER']);
+        // }
         
-        if (isset($_POST['btn-FDT_CONFIG_PAQUETE'])) {
-            $this->LoadsDAO->UpdateRange('FDT_CONFIG_PAQUETE', $_POST['FDT_CONFIG_PAQUETE']);
-        }
+        // if (isset($_POST['btn-FDT_CONFIG_PAQUETE'])) {
+        //     $this->LoadsDAO->UpdateRange('FDT_CONFIG_PAQUETE', $_POST['FDT_CONFIG_PAQUETE']);
+        // }
         
-        if (isset($_POST['btn-FDT_MATERIAL'])) {
-            $this->LoadsDAO->UpdateRange('FDT_MATERIAL', $_POST['FDT_MATERIAL']);
-        }
+        // if (isset($_POST['btn-FDT_MATERIAL'])) {
+        //     $this->LoadsDAO->UpdateRange('FDT_MATERIAL', $_POST['FDT_MATERIAL']);
+        // }
         
-        if (isset($_POST['btn-FDT_STBSERIES'])) {
-            $this->LoadsDAO->UpdateRange('FDT_STBSERIES', $_POST['FDT_STBSERIES']);
-        }
+        // if (isset($_POST['btn-FDT_STBSERIES'])) {
+        //     $this->LoadsDAO->UpdateRange('FDT_STBSERIES', $_POST['FDT_STBSERIES']);
+        // }
         
         if (isset($_POST['btn-FDT_TIPOORD'])) {
             $this->LoadsDAO->UpdateRange('FDT_TIPOORD', $_POST['FDT_TIPOORD']);
@@ -616,9 +616,9 @@ class LoadsController {
             $this->LoadsDAO->UpdateRange('PAT_LOCALIDAD', $_POST['PAT_LOCALIDAD']);
         }
         
-        if (isset($_POST['btn-PAT_PRCONTXPROD'])) {
-            $this->LoadsDAO->UpdateRange('PAT_PRCONTXPROD', $_POST['PAT_PRCONTXPROD']);
-        }
+        // if (isset($_POST['btn-PAT_PRCONTXPROD'])) {
+        //     $this->LoadsDAO->UpdateRange('PAT_PRCONTXPROD', $_POST['PAT_PRCONTXPROD']);
+        // }
         
         if (isset($_POST['btn-PAT_PRPRODUCTO'])) {
             $this->LoadsDAO->UpdateRange('PAT_PRPRODUCTO', $_POST['PAT_PRPRODUCTO']);
@@ -632,21 +632,21 @@ class LoadsController {
             $this->LoadsDAO->UpdateRange('REDT_CALLES', $_POST['REDT_CALLES']);
         }
         
-        if (isset($_POST['btn-REDT_LINEA'])) {
-            $this->LoadsDAO->UpdateRange('REDT_LINEA', $_POST['REDT_LINEA']);
-        }
+        // if (isset($_POST['btn-REDT_LINEA'])) {
+        //     $this->LoadsDAO->UpdateRange('REDT_LINEA', $_POST['REDT_LINEA']);
+        // }
         
-        if (isset($_POST['btn-REDT_VIVIENDA'])) {
-            $this->LoadsDAO->UpdateRange('REDT_VIVIENDA', $_POST['REDT_VIVIENDA']);
-        }
+        // if (isset($_POST['btn-REDT_VIVIENDA'])) {
+        //     $this->LoadsDAO->UpdateRange('REDT_VIVIENDA', $_POST['REDT_VIVIENDA']);
+        // }
         
-        if (isset($_POST['btn-RET_CABLEMODEM'])) {
-            $this->LoadsDAO->UpdateRange('RET_CABLEMODEM', $_POST['RET_CABLEMODEM']);
-        }
+        // if (isset($_POST['btn-RET_CABLEMODEM'])) {
+        //     $this->LoadsDAO->UpdateRange('RET_CABLEMODEM', $_POST['RET_CABLEMODEM']);
+        // }
         
-        if (isset($_POST['btn-RET_LINEARED'])) {
-            $this->LoadsDAO->UpdateRange('RET_LINEARED', $_POST['RET_LINEARED']);
-        }
+        // if (isset($_POST['btn-RET_LINEARED'])) {
+        //     $this->LoadsDAO->UpdateRange('RET_LINEARED', $_POST['RET_LINEARED']);
+        // }
         
         if (isset($_POST['btn-S_ADDR_PER'])) {
             $this->LoadsDAO->UpdateRange('S_ADDR_PER', $_POST['S_ADDR_PER']);
@@ -704,17 +704,17 @@ class LoadsController {
             $this->LoadsDAO->UpdateRange('SS_DERIVADAS', $_POST['SS_DERIVADAS']);
         }
         
-        if (isset($_POST['btn-SUT_CONCGTAR_NEW'])) {
-            $this->LoadsDAO->UpdateRange('SUT_CONCGTAR_NEW', $_POST['SUT_CONCGTAR_NEW']);
-        }
+        // if (isset($_POST['btn-SUT_CONCGTAR_NEW'])) {
+        //     $this->LoadsDAO->UpdateRange('SUT_CONCGTAR_NEW', $_POST['SUT_CONCGTAR_NEW']);
+        // }
         
-        if (isset($_POST['btn-SUT_CONSERVI'])) {
-            $this->LoadsDAO->UpdateRange('SUT_CONSERVI', $_POST['SUT_CONSERVI']);
-        }
+        // if (isset($_POST['btn-SUT_CONSERVI'])) {
+        //     $this->LoadsDAO->UpdateRange('SUT_CONSERVI', $_POST['SUT_CONSERVI']);
+        // }
         
-        if (isset($_POST['btn-SUT_GRUPOTAR'])) {
-            $this->LoadsDAO->UpdateRange('SUT_GRUPOTAR', $_POST['SUT_GRUPOTAR']);
-        }
+        // if (isset($_POST['btn-SUT_GRUPOTAR'])) {
+        //     $this->LoadsDAO->UpdateRange('SUT_GRUPOTAR', $_POST['SUT_GRUPOTAR']);
+        // }
         
         if (isset($_POST['btn-SUT_GRUPOTARIFA'])) {
             $this->LoadsDAO->UpdateRange('SUT_GRUPOTARIFA', $_POST['SUT_GRUPOTARIFA']);
@@ -724,17 +724,17 @@ class LoadsController {
             $this->LoadsDAO->UpdateRange('SUT_INFODBOX_UIM_1', $_POST['SUT_INFODBOX_UIM_1']);
         }
         
-        if (isset($_POST['btn-SUT_SERVICIO'])) {
-            $this->LoadsDAO->UpdateRange('SUT_SERVICIO', $_POST['SUT_SERVICIO']);
-        }
+        // if (isset($_POST['btn-SUT_SERVICIO'])) {
+        //     $this->LoadsDAO->UpdateRange('SUT_SERVICIO', $_POST['SUT_SERVICIO']);
+        // }
         
-        if (isset($_POST['btn-SUT_TARIFAUIM'])) {
-            $this->LoadsDAO->UpdateRange('SUT_TARIFAUIM', $_POST['SUT_TARIFAUIM']);
-        }
+        // if (isset($_POST['btn-SUT_TARIFAUIM'])) {
+        //     $this->LoadsDAO->UpdateRange('SUT_TARIFAUIM', $_POST['SUT_TARIFAUIM']);
+        // }
         
-        if (isset($_POST['btn-SUT_VELOCIDADESNETUIM'])) {
-            $this->LoadsDAO->UpdateRange('SUT_VELOCIDADESNETUIM', $_POST['SUT_VELOCIDADESNETUIM']);
-        }
+        // if (isset($_POST['btn-SUT_VELOCIDADESNETUIM'])) {
+        //     $this->LoadsDAO->UpdateRange('SUT_VELOCIDADESNETUIM', $_POST['SUT_VELOCIDADESNETUIM']);
+        // }
         
         if (isset($_POST['btn-TELEPHONENUMBER'])) {
             $this->LoadsDAO->UpdateRange('TELEPHONENUMBER', $_POST['TELEPHONENUMBER']);

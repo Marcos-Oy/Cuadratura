@@ -20,6 +20,7 @@ if (isset($_SESSION['TOKEN'])) {
     $router->get($raiz.'/logouts', [AuthController::class, 'logout']);
     
     //Rutas dashboard GET
+    $router->get($raiz.'/Home', [HomeController::class, 'home']);
     $router->get($raiz.'/Home/dashboard', [HomeController::class, 'index']);
 
     // Rutas LOGS GET
@@ -27,11 +28,20 @@ if (isset($_SESSION['TOKEN'])) {
     $router->get($raiz.'/ArchLogs', [LogsController::class, 'ViewsArchLogs']);
     $router->get($raiz.'/ModelDatos', [LogsController::class, 'ViewsModelDatos']);
     $router->get($raiz.'/ViewsProceduresAMPM', [LogsController::class, 'ViewsProceduresAMPM']);
+    $router->get($raiz.'/Comportamientos', [LogsController::class, 'ViewsComportamientos']);
+
 
     // Rutas usuarios GET
     $router->get($raiz.'/users/show', [UsersController::class, 'index']);
     $router->get($raiz.'/users/create', [UsersController::class, 'create']);
     $router->get($raiz.'/users/setup', [UsersController::class, 'setup']);
+
+    // Rutas Diccionario de errores
+    $router->get($raiz.'/dictionary/show', [DiccionaryController::class, 'index']);
+    $router->get($raiz.'/dictionary/create', [UsersController::class, 'create']);
+    $router->get($raiz.'/dictionary/setup', [UsersController::class, 'setup']);
+
+    // Rutas count range
 
     $router->get($raiz.'/loads/Refresco', [LoadsController::class, 'ShowRefresco']);
     $router->get($raiz.'/loads/Plataforma', [LoadsController::class, 'ShowPlataforma']);

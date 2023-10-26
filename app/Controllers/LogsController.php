@@ -80,16 +80,11 @@ class LogsController
         if (file_exists($viewPath)) {
 
             //Obtenemos la info de los logs remotamente
-            $infoArchLogs = $this->InfoArchLogs(0);
-            $infoArchLogs1 = $this->InfoArchLogs(1);
-
+            $infoArchLogs = $this->InfoArchLogs();
             $RinfoArchLogs = array_reverse($infoArchLogs);
-            $RinfoArchLogs1 = array_reverse($infoArchLogs1);
 
-            $FileInfo = array_merge($RinfoArchLogs1, $RinfoArchLogs);
             //Descargamos los logs
-            $this->DownloadLogs($this->ArchLogsDirectories(0));
-            $this->DownloadLogs($this->ArchLogsDirectories(1));
+            $this->DownloadLogs($this->ArchLogsDirectories());
 
             // Incluimos la vista y pasamos la lista de URLs de archivos descargados al <iframe>
             include_once $viewPath;
@@ -106,17 +101,11 @@ class LogsController
         if (file_exists($viewPath)) {
 
             //Obtenemos la info de los logs remotamente
-            $infoArchLogs = $this->InfoModelDatos(0);
-            $infoArchLogs1 = $this->InfoModelDatos(1);
+            $infoArchLogs = $this->InfoModelDatos();
+            $RinfoArchLogs = array_reverse($infoArchLogs);
 
             //Descargamos los logs
-            $this->DownloadLogs($this->ModelDatosDirectories(0));
-            $this->DownloadLogs($this->ModelDatosDirectories(1));
-
-            $RinfoArchLogs = array_reverse($infoArchLogs);
-            $RinfoArchLogs1 = array_reverse($infoArchLogs1);
-
-            $FileInfo = array_merge($RinfoArchLogs1, $RinfoArchLogs);
+            $this->DownloadLogs($this->ModelDatosDirectories());
 
             // Incluimos la vista y pasamos la lista de URLs de archivos descargados al <iframe>
             include_once $viewPath;
@@ -133,18 +122,29 @@ class LogsController
         if (file_exists($viewPath)) {
 
             //Obtenemos la info de los logs remotamente
-            $infoArchLogs = $this->InfoProceduresAMPM(0);
-            $infoArchLogs1 = $this->InfoProceduresAMPM(1);
-
+            $infoArchLogs = $this->InfoProceduresAMPM();
             $RinfoArchLogs = array_reverse($infoArchLogs);
-            $RinfoArchLogs1 = array_reverse($infoArchLogs1);
 
-            $this->DownloadLogs($this->ProceduresAMPMDirectories(0));
-            $this->DownloadLogs($this->ProceduresAMPMDirectories(1));
-
-            $FileInfo = array_merge($RinfoArchLogs1, $RinfoArchLogs);            
+            $this->DownloadLogs($this->ProceduresAMPMDirectories());           
             // Incluimos la vista y pasamos la lista de URLs de archivos descargados al <iframe>
             include_once $viewPath;
+        } else {
+            echo "Error: la vista no existe";
+        }
+    }
+
+    public function ViewsComportamientos()
+    {
+        $user = $_SESSION['USER'];
+        $viewPath = __DIR__ . '/../../resources/views/logs/Comportamientos.php';
+
+        if (file_exists($viewPath)) {
+
+            $FilesToInfo = $this->InfoComportamientos('MANAGER'); // Para obtener tamaño - Hora - Fecha
+            $this->DownloadLogs($this->ComportamientosDirectories()); // Descargamos los archivos para visuaizarlos
+
+            include_once $viewPath;
+
         } else {
             echo "Error: la vista no existe";
         }
@@ -183,155 +183,142 @@ class LogsController
         return $Dir;
     }
 
-    public function ArchLogsDirectories($iDir)
+    public function ArchLogsDirectories()
     {
-        if($iDir == 0)
-        {
-            $Dir = [
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_clasemater.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_grupotar.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_giap_voiceplan_movil.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_order_type.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_prod_int.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_giap_traductor.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_user.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_uim_servicios_baja.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_uim_servicios.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_inv_prof.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_canales.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_asset_om.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_dbox.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_org_ext.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_siebel_act.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_equipos.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_order_item.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_tarifaUIM.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_material.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_servicio.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_place_char.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_conservi.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_uim_rfs.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_indices_sut_servicio.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_asset_x.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_uim_cfs.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_asset_xa.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_pat_localidad.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_redt_calles.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_ss_derivadas.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_pat_prproducto.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_concgtar_new.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_redt_vivienda.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_stbseries.log"
-                // Agrega aquí más rutas de archivos que deseas descargar...
-            ];
-        }
 
-        if($iDir == 1)
-        {
-            $Dir = [
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_asset.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_activtemp.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_pat_prcontxprod.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_velocidadesnetuim.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_ret_cablemodem.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_addr_per.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_ret_lineared.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_tnassignment.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_telephonenumber.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_tnconsumer.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_infodbox_uim_1.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_config_paquete.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_migradb.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_gis_direccion.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_osm_ordenesactivas.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_equipos_mta.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_xvtr_siebel_info_series_t.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_productop.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_productop_baja.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_clientes.log",
-                "/Cuadratura/Tablas/Arch_Log/proceso_cup_cicloini.log",
-                "/Cuadratura/Tablas/Arch_Log/proceso_cup_validamaterialinet.log",
-                "/Cuadratura/Tablas/Arch_Log/limpia_tablas_desc_uim.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tablas_cut.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_businessinteraction.log",
-                "/Cuadratura/Tablas/Arch_Log/ejecuta_tango_procinet.log",
-                "/Cuadratura/Tablas/Arch_Log/proceso_ftth.log",
-                "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_order.log",
-                "/Cuadratura/Tablas/Arch_Log/Procesos_2140_2151.log",
-                "/Cuadratura/Tablas/Arch_Log/Proceso_UIM.log",
-                "/Cuadratura/Tablas/Arch_Log/Proceso_Siebel.log",
-                "/Cuadratura/Tablas/Arch_Log/Respaldo_Correcciones_UIM.log",
-                "/Cuadratura/Tablas/Arch_Log/Respaldo_Correcciones_Siebel.log",
-                "/Cuadratura/Tablas/Arch_Log/Respaldo_Validaciones_Automatizadas.log"
-                // Agrega aquí más rutas de archivos que deseas descargar...
-            ];
-        }
+        $Dir = [
+            // "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_clasemater.log",
+            // "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_grupotar.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_giap_voiceplan_movil.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_order_type.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_prod_int.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_giap_traductor.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_user.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_uim_servicios_baja.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_uim_servicios.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_inv_prof.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_canales.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_asset_om.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_dbox.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_org_ext.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_siebel_act.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_equipos.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_order_item.log",
+            // "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_tarifaUIM.log",
+            // "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_material.log",
+            // "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_servicio.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_place_char.log",
+            // "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_conservi.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_uim_rfs.log",
+            // "/Cuadratura/Tablas/Arch_Log/refresco_indices_sut_servicio.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_asset_x.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_uim_cfs.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_asset_xa.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_pat_localidad.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_redt_calles.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_ss_derivadas.log",
+            // "/Cuadratura/Tablas/Arch_Log/refresco_tabla_pat_prproducto.log",
+            // "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_concgtar_new.log",
+            // "/Cuadratura/Tablas/Arch_Log/refresco_tabla_redt_vivienda.log",
+            // "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_stbseries.log"
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_asset.log",
+            // "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_activtemp.log",
+            // "/Cuadratura/Tablas/Arch_Log/refresco_tabla_pat_prcontxprod.log",
+            // "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_velocidadesnetuim.log",
+            // "/Cuadratura/Tablas/Arch_Log/refresco_tabla_ret_cablemodem.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_addr_per.log",
+            // "/Cuadratura/Tablas/Arch_Log/refresco_tabla_ret_lineared.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_tnassignment.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_telephonenumber.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_tnconsumer.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_sut_infodbox_uim_1.log",
+            // "/Cuadratura/Tablas/Arch_Log/refresco_tabla_fdt_config_paquete.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_migradb.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_gis_direccion.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_osm_ordenesactivas.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_equipos_mta.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_xvtr_siebel_info_series_t.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_productop.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_cut_siebel_productop_baja.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_clientes.log",
+            "/Cuadratura/Tablas/Arch_Log/proceso_cup_cicloini.log",
+            "/Cuadratura/Tablas/Arch_Log/tabla_cut_valida_promoinac.log",
+            // "/Cuadratura/Tablas/Arch_Log/proceso_cup_validamaterialinet.log",
+            "/Cuadratura/Tablas/Arch_Log/limpia_tablas_desc_uim.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tablas_cut.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_businessinteraction.log",
+            "/Cuadratura/Tablas/Arch_Log/ejecuta_tango_procinet.log",
+            "/Cuadratura/Tablas/Arch_Log/proceso_ftth.log",
+            "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_order.log",
+            "/Cuadratura/Tablas/Arch_Log/Procesos_2140_2151.log",
+            "/Cuadratura/Tablas/Arch_Log/Proceso_UIM.log",
+            "/Cuadratura/Tablas/Arch_Log/Proceso_Siebel.log",
+            "/Cuadratura/Tablas/Arch_Log/Respaldo_Correcciones_UIM.log",
+            "/Cuadratura/Tablas/Arch_Log/Respaldo_Correcciones_Siebel.log",
+            "/Cuadratura/Tablas/Arch_Log/Respaldo_Validaciones_Automatizadas.log"
+
+            // Agrega aquí más rutas de archivos que deseas descargar...
+        ];
+        return $Dir;
+    }
+
+    public function ModelDatosDirectories()
+    {
+        $Dir = [
+            "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_tmp_portaandes.log",
+            "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_1.log",
+            "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_2.log",
+            "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_3.log",
+            "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_4.log",
+            "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_5.log",
+            "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_6.log",
+            "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_7.log",
+            "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_ATTRIB_46.log",
+            "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_ATTRIB_42.log",
+            "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_X_OCS_ATTRIB_59.log",
+            "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_CPE_TECHNOLOGY.log",
+            "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_ATTRIB_45.log",
+            "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_X_OCS_ATTRIB_57.log",
+            "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_CPE_TYPE.log",
+            "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_ATTRIB_44.log"                 
+            // Agrega aquí más rutas de archivos que deseas descargar...
+        ];
 
         return $Dir;
     }
 
-    public function ModelDatosDirectories($iDir)
+    public function ProceduresAMPMDirectories()
     {
-        if($iDir == 0)
-        {
-            $Dir = [
-                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_tmp_portaandes.log",
-                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_1.log",
-                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_2.log",
-                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_3.log",
-                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_4.log",
-                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_5.log",
-                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_6.log",
-                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/refresco_modelo_datos_paso_7.log"                
-                // Agrega aquí más rutas de archivos que deseas descargar...
-            ];
-        }
-
-        if($iDir == 1)
-        {
-            $Dir = [
-                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_ATTRIB_46.log",
-                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_ATTRIB_42.log",
-                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_X_OCS_ATTRIB_59.log",
-                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_CPE_TECHNOLOGY.log",
-                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_ATTRIB_45.log",
-                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_X_OCS_ATTRIB_57.log",
-                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_CPE_TYPE.log",
-                "/Cuadratura/Tablas/Modelo_Datos_2/Arch_Log/Corrige_ATTRIB_44.log"                               
-                // Agrega aquí más rutas de archivos que deseas descargar...
-            ];
-        }
+        $Dir = [
+            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_DBOX_61.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_ADH_CSV_STATUS.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_FTTH_GW.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAMACCOMPARTIDAIPTV.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_SIEBEL_GIS.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_ASSET_HUERFANOS.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORRECCION_DBOX_61.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORRIGE_SIEBEL_GIS.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORREGIR_PREVENTIVO_2257.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORRIGEMACCOMPARTIDAIPTV.log",
+            "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORREGIR_SERIES_REPETIDAS.log"
+            // Agrega aquí más rutas de archivos que deseas descargar...
+        ];
 
         return $Dir;
     }
 
-    public function ProceduresAMPMDirectories($iDir)
+    public function ComportamientosDirectories()
     {
-        if($iDir == 0)
-        {
-            $Dir = [
-                "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_DBOX_61.log",
-                "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_ADH_CSV_STATUS.log",
-                "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_FTTH_GW.log",
-                "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAMACCOMPARTIDAIPTV.log",
-                "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_SIEBEL_GIS.log",
-                "/Cuadratura/Procesos_AM_PM/Procesos_Cargas/LOGS/CUP_CARGAR_ASSET_HUERFANOS.log"
-                // Agrega aquí más rutas de archivos que deseas descargar...
-            ];
-        }
+        $Dir = [
+            "/Cuadratura/Tablas/HSS/registro_HSS.txt", // 0
+            "/Cuadratura/Tablas/carga_incognito/FTTH/registro_FTTH_CARGA.txt", // 1
+            "/Cuadratura/Plataforma/IbnLines/registro_carga_ibnlines.txt", // 2
+            "/Cuadratura/Plataforma/PSVA/registro_Carga_PSVA.txt", // 3
+            "/Cuadratura/Plataforma/ValidLines/registro_carga_validlines.txt", // 4
+            "/Cuadratura/FTTH_ONT_GW/registro_Carga_FTTH_ONT_GW.txt", // 5
 
-        if($iDir == 1)
-        {
-            $Dir = [
-                "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORRECCION_DBOX_61.log",
-                "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORRIGE_SIEBEL_GIS.log",
-                "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORREGIR_PREVENTIVO_2257.log",
-                "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORRIGEMACCOMPARTIDAIPTV.log",
-                "/Cuadratura/Procesos_AM_PM/Procesos_Correcciones/LOGS/CUP_CORREGIR_SERIES_REPETIDAS.log"
-                // Agrega aquí más rutas de archivos que deseas descargar...
-            ];
-        }
-
+            // Agrega aquí más rutas de archivos que deseas consultar...
+        ];
         return $Dir;
     }
 
@@ -408,6 +395,38 @@ class LogsController
                 } else {
                     echo "No se encontraron archivos para la fecha actual con el fragmento de búsqueda: {$searchPattern}";
                 }
+            }
+            
+        } else {
+            echo '<p>Error: No se pudo conectar al servidor SFTP.</p>';
+        }
+    }
+
+    public function InfoComportamientos($iDir)
+    {
+        if ($this->sftpManager->connect() && $this->sftpManager->login()) {
+
+            if($iDir == 'MANAGER'){
+                $filesToInfo = $this->ComportamientosDirectories();
+
+                foreach ($filesToInfo as $fileIndex => $filePath) {
+                    $fileInfo = $this->sftpManager->getFileInfoByPath($filePath);
+
+                    if ($fileInfo !== false) {
+                        $fileSize = $fileInfo['size'];
+                        $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
+
+                        $filesToInfo[$fileIndex] = [
+                            'path' => basename($filePath),
+                            'size' => $fileSize,
+                            'modification_time' => $fileModificationTime
+                        ];
+                        // echo '<p>✅: Si se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
+                    } else {
+                        echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
+                    }
+                }
+                return $filesToInfo;
             }
             
         } else {
@@ -713,165 +732,85 @@ class LogsController
         }
     }
 
-    public function InfoArchLogs($iDir)
+    public function InfoArchLogs()
     {
-        if($iDir == 0){
-            if ($this->sftpManager->connect() && $this->sftpManager->login()) {
-                $filesToInfo = $this->ArchLogsDirectories(0);
-        
-                foreach ($filesToInfo as $fileIndex => $filePath) {
-                    $fileInfo = $this->sftpManager->getFileInfoByPath($filePath);
+        if ($this->sftpManager->connect() && $this->sftpManager->login()) {
+            $filesToInfo = $this->ArchLogsDirectories();
+    
+            foreach ($filesToInfo as $fileIndex => $filePath) {
+                $fileInfo = $this->sftpManager->getFileInfoByPath($filePath);
 
-                    if ($fileInfo !== false) {
-                        $fileSize = $fileInfo['size'];
-                        $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
+                if ($fileInfo !== false) {
+                    $fileSize = $fileInfo['size'];
+                    $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
 
-                        $filesToInfo[$fileIndex] = [
-                            'path' => basename($filePath),
-                            'size' => $fileSize,
-                            'modification_time' => $fileModificationTime
-                        ];
-                        // echo '<p>✅: Si se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
-                    } else {
-                        echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
-                    }
+                    $filesToInfo[$fileIndex] = [
+                        'path' => basename($filePath),
+                        'size' => $fileSize,
+                        'modification_time' => $fileModificationTime
+                    ];
+                    // echo '<p>✅: Si se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
+                } else {
+                    echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
                 }
-                return $filesToInfo;   
             }
+            return $filesToInfo;   
         }
-
-        if($iDir == 1){
-            if ($this->sftpManager->connect() && $this->sftpManager->login()) {
-                $filesToInfo = $this->ArchLogsDirectories(1);
-        
-                foreach ($filesToInfo as $fileIndex => $filePath) {
-                    $fileInfo = $this->sftpManager->getFileInfoByPath($filePath);
-
-                    if ($fileInfo !== false) {
-                        $fileSize = $fileInfo['size'];
-                        $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
-
-                        $filesToInfo[$fileIndex] = [
-                            'path' => basename($filePath),
-                            'size' => $fileSize,
-                            'modification_time' => $fileModificationTime
-                        ];
-                        // echo '<p>✅: Si se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
-                    } else {
-                        echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
-                    }
-                }
-                return $filesToInfo;   
-            }
-        }
-
+            
     }
 
-    public function InfoModelDatos($iDir)
+    public function InfoModelDatos()
     {
-        if($iDir == 0){
-            if ($this->sftpManager->connect() && $this->sftpManager->login()) {
-                $filesToInfo = $this->ModelDatosDirectories(0);
-        
-                foreach ($filesToInfo as $fileIndex => $filePath) {
-                    $fileInfo = $this->sftpManager->getFileInfoByPath($filePath);
+        if ($this->sftpManager->connect() && $this->sftpManager->login()) {
+            $filesToInfo = $this->ModelDatosDirectories();
+    
+            foreach ($filesToInfo as $fileIndex => $filePath) {
+                $fileInfo = $this->sftpManager->getFileInfoByPath($filePath);
 
-                    if ($fileInfo !== false) {
-                        $fileSize = $fileInfo['size'];
-                        $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
+                if ($fileInfo !== false) {
+                    $fileSize = $fileInfo['size'];
+                    $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
 
-                        $filesToInfo[$fileIndex] = [
-                            'path' => basename($filePath),
-                            'size' => $fileSize,
-                            'modification_time' => $fileModificationTime
-                        ];
-                        // echo '<p>✅: Si se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
-                    } else {
-                        echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
-                    }
+                    $filesToInfo[$fileIndex] = [
+                        'path' => basename($filePath),
+                        'size' => $fileSize,
+                        'modification_time' => $fileModificationTime
+                    ];
+                    // echo '<p>✅: Si se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
+                } else {
+                    echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
                 }
-                return $filesToInfo;   
             }
+            return $filesToInfo;   
         }
-
-        if($iDir == 1){
-            if ($this->sftpManager->connect() && $this->sftpManager->login()) {
-                $filesToInfo = $this->ModelDatosDirectories(1);
-        
-                foreach ($filesToInfo as $fileIndex => $filePath) {
-                    $fileInfo = $this->sftpManager->getFileInfoByPath($filePath);
-
-                    if ($fileInfo !== false) {
-                        $fileSize = $fileInfo['size'];
-                        $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
-
-                        $filesToInfo[$fileIndex] = [
-                            'path' => basename($filePath),
-                            'size' => $fileSize,
-                            'modification_time' => $fileModificationTime
-                        ];
-                        // echo '<p>✅: Si se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
-                    } else {
-                        echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
-                    }
-                }
-                return $filesToInfo;   
-            }
-        }
-
     }
 
-    public function InfoProceduresAMPM($iDir)
+    public function InfoProceduresAMPM()
     {
-        if($iDir == 0){
-            if ($this->sftpManager->connect() && $this->sftpManager->login()) {
-                $filesToInfo = $this->ProceduresAMPMDirectories(0);
-        
-                foreach ($filesToInfo as $fileIndex => $filePath) {
-                    $fileInfo = $this->sftpManager->getFileInfoByPath($filePath);
 
-                    if ($fileInfo !== false) {
-                        $fileSize = $fileInfo['size'];
-                        $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
+        if ($this->sftpManager->connect() && $this->sftpManager->login()) {
+            $filesToInfo = $this->ProceduresAMPMDirectories();
+    
+            foreach ($filesToInfo as $fileIndex => $filePath) {
+                $fileInfo = $this->sftpManager->getFileInfoByPath($filePath);
 
-                        $filesToInfo[$fileIndex] = [
-                            'path' => basename($filePath),
-                            'size' => $fileSize,
-                            'modification_time' => $fileModificationTime
-                        ];
-                        // echo '<p>✅: Si se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
-                    } else {
-                        echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
-                    }
+                if ($fileInfo !== false) {
+                    $fileSize = $fileInfo['size'];
+                    $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
+
+                    $filesToInfo[$fileIndex] = [
+                        'path' => basename($filePath),
+                        'size' => $fileSize,
+                        'modification_time' => $fileModificationTime
+                    ];
+                    // echo '<p>✅: Si se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
+                } else {
+                    echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
                 }
-                return $filesToInfo;   
             }
+            return $filesToInfo;
         }
-
-        if($iDir == 1){
-            if ($this->sftpManager->connect() && $this->sftpManager->login()) {
-                $filesToInfo = $this->ProceduresAMPMDirectories(1);
         
-                foreach ($filesToInfo as $fileIndex => $filePath) {
-                    $fileInfo = $this->sftpManager->getFileInfoByPath($filePath);
-
-                    if ($fileInfo !== false) {
-                        $fileSize = $fileInfo['size'];
-                        $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
-
-                        $filesToInfo[$fileIndex] = [
-                            'path' => basename($filePath),
-                            'size' => $fileSize,
-                            'modification_time' => $fileModificationTime
-                        ];
-                        // echo '<p>✅: Si se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
-                    } else {
-                        echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $filePath . '</p>';
-                    }
-                }
-                return $filesToInfo;   
-            }
-        }
 
     }
 

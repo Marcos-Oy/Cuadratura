@@ -17,22 +17,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/dist/css/adminlte.min.css">
-    <!-- Toastr -->
-    <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/plugins/toastr/toastr.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="<?php echo $this->raiz; ?>/public/plugins/fontawesome-free/css/all.min.css">
-    <!-- SweetAlert2 -->
-    <link rel="stylesheet"
-        href="<?php echo $this->raiz; ?>/public/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
-
-    <!-- REQUIRED SCRIPTS -->
-
-    <!-- jQuery -->
-    <script src="<?php echo $this->raiz; ?>/public/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="<?php echo $this->raiz; ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="<?php echo $this->raiz; ?>/public/dist/js/adminlte.min.js"></script>
 
 </head>
 
@@ -44,27 +28,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
+
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <?php if($_SERVER['REQUEST_URI'] === $this->raiz . "/ArchLogs"){ ?>
-                            <h1 class="m-0">Registros Refrescos ArchLogs</h1>
-                            <?php } if($_SERVER['REQUEST_URI'] === $this->raiz . "/ModelDatos"){ ?>
-                            <h1 class="m-0">Registros de Modelo de Datos 2.0</h1>
-                            <?php } if($_SERVER['REQUEST_URI'] === $this->raiz . "/ViewsProceduresAMPM"){ ?>
-                            <h1 class="m-0">Registros de cargas</h1>
-                            <?php } ?>
+                            <h1 class="m-0">Comportamientos de cargas</h1>
                         </div><!-- /.col -->
+
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
-            </div><!-- /.content-header -->
+            </div>
 
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <?php foreach ($infoArchLogs as $clave => $fileName) {
+                        <?php
+                        foreach ($FilesToInfo as $clave => $fileName) {
                             $cleanedPath = preg_replace('/[^a-zA-Z0-9]+/', '', $fileName['path']);
                             $sectionId = 'section_' . $cleanedPath;?>
                         <div class="col-12 col-sm-6">
@@ -103,17 +83,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </section>
                         </div><!-- /.col -->
                         <?php } ?>
-                        <?php include_once $Toasts;?>
+
+
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div><!-- /.content -->
-        </div><!-- /.content-wrapper -->
+
+        </div>
+        <!-- /.content-wrapper -->
 
         <?php include ('resources/views/layout/ControlSidebar.php'); ?>
         <?php include ('resources/views/layout/footer.php'); ?>
 
     </div>
-
+    <!-- REQUIRED SCRIPTS -->
+    <!-- jQuery -->
+    <script src="<?php echo $this->raiz; ?>/public/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="<?php echo $this->raiz; ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="<?php echo $this->raiz; ?>/public/dist/js/adminlte.min.js"></script>
 
 </body>
 
