@@ -34,7 +34,7 @@
                         <i class="nav-icon fa fa-home"></i>
                         <p>
                             Home
-                            <span class="right badge badge-danger">New</span>
+                            <!-- <span class="right badge badge-danger">New</span> -->
                         </p>
                     </a>
                 </li>
@@ -100,6 +100,20 @@
                         </li>
                     </ul>
                 </li>
+
+                <?php if($user['USERNAME'] === "MARCOS"){ ?>
+
+                <li class="nav-item">
+                    <a id="Dash" href="<?php echo $this->raiz; ?>/dictionary/show" class="nav-link">
+                        <i class="nav-icon fa fa-book"></i>
+                        <p>
+                            Diccionary
+                            <span class="right badge badge-danger">New</span>
+                        </p>
+                    </a>
+                </li>
+
+                <?php } ?>
 
                 <?php if($user['USERNAME'] === "MARCOS"){ ?>
                 <li class="nav-item">

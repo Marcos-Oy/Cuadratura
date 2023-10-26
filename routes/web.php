@@ -36,6 +36,13 @@ if (isset($_SESSION['TOKEN'])) {
     $router->get($raiz.'/users/create', [UsersController::class, 'create']);
     $router->get($raiz.'/users/setup', [UsersController::class, 'setup']);
 
+    // Rutas Diccionario de errores
+    $router->get($raiz.'/dictionary/show', [DiccionaryController::class, 'index']);
+    $router->get($raiz.'/dictionary/create', [UsersController::class, 'create']);
+    $router->get($raiz.'/dictionary/setup', [UsersController::class, 'setup']);
+
+    // Rutas count range
+
     $router->get($raiz.'/loads/Refresco', [LoadsController::class, 'ShowRefresco']);
     $router->get($raiz.'/loads/Plataforma', [LoadsController::class, 'ShowPlataforma']);
     $router->get($raiz.'/insert/plataform', [LoadsController::class, 'InsertPlataform']);

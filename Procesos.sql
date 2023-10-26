@@ -14,10 +14,13 @@ BEGIN
     RAISE;
 END;
 
-Begin
-    Cup_Siebel_Analiza_dBox_Sieb01;
-End;
 
+-- manual
+-- Begin
+--     Cup_Siebel_Analiza_dBox_Sieb01;
+-- End;
+
+-- manual por defecto
 Begin
     Cup_Siebel_Analiza_dBox_Sieb02;
 End;
@@ -30,6 +33,7 @@ BEGIN
     RAISE;
 END;
 
+-- cuando al menos la resulinet y la ResultDetaInet tengan un registro se ejecuta el siguiente procedimiento
 Begin
     Cup_Siebel_Analiza_Inet_Incogn;
 End;
