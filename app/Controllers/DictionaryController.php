@@ -2,21 +2,21 @@
 
 namespace App\Controllers;
 use Config\Connection\Database;
-use Database\ModelDAO\UsersDAO;
-use Database\Model\UsersModel;
+use Database\ModelDAO\DictionaryDAO;
+use Database\Model\DictionaryModel;
 
-class UsersController {
+class DictionaryController {
     private $raiz;   
-    private $usersDAO;
-    private $usersModel;
+    private $DictionaryDAO;
+    private $DictionaryModel;
     
     public function __construct() {
         require_once (__DIR__ . '/../../Config/database.php');
-        require_once (__DIR__ . '/../../database/ModelDAO/UsersDAO.php');
-        require_once (__DIR__ . '/../../database/Model/UsersModel.php');
+        require_once (__DIR__ . '/../../database/ModelDAO/DictionaryDAO.php');
+        require_once (__DIR__ . '/../../database/Model/DictionaryModel.php');
         $dbConnection = new Database();
-        $this->usersDAO = new UsersDAO($dbConnection->getConnection());
-        $this->usersModel = new UsersModel();
+        $this->DictionaryDAO = new DictionaryDAO($dbConnection->getConnection());
+        $this->DictionaryModel = new DictionaryModel();
         global $raiz;
         $this->raiz = $raiz;
     }
@@ -25,10 +25,10 @@ class UsersController {
     
     public function index() {
 
-        $rows = $this->usersDAO->getAllUsers();   
+        $rows = $this->DictionaryDAO->getAllDictionary();   
 
         // Obtén la ruta completa de la vista
-        $viewPath = __DIR__ . '/../../resources/views/users/show.php';
+        $viewPath = __DIR__ . '/../../resources/views/Dictionary/show.php';
 
         // Verifica si el archivo de vista existe
         if (file_exists($viewPath)) {
@@ -42,7 +42,7 @@ class UsersController {
 
     public function create() {
         // Obtén la ruta completa de la vista
-        $viewPath = __DIR__ . '/../../resources/views/users/create.php';
+        $viewPath = __DIR__ . '/../../resources/views/Dictionary/create.php';
 
         // Verifica si el archivo de vista existe
         if (file_exists($viewPath)) {
@@ -56,29 +56,12 @@ class UsersController {
 
     public function edit() {
         // Obtén la ruta completa de la vista
-        $viewPath = __DIR__ . '/../../resources/views/users/edit.php';
+        $viewPath = __DIR__ . '/../../resources/views/Dictionary/edit.php';
 
         // Verifica si el archivo de vista existe
         if (file_exists($viewPath)) {
-            $this->usersModel->setId($_POST['ID']);
-            $result = $this->usersDAO->getUserById($this->usersModel->getId());
-            // Incluye la vista
-            include_once $viewPath;
-        } else {
-            // Si la vista no existe, muestra un mensaje de error
-            echo "Error: la vista no existe";
-        }
-    }
-
-    public function setup() {
-        // Obtén la ruta completa de la vista
-        $viewPath = __DIR__ . '/../../resources/views/users/SetUp.php';
-
-        // Llama al método getUser() en la instancia de UsersModel
-        $result = $_SESSION['USER'];
-
-        // Verifica si el archivo de vista existe
-        if (file_exists($viewPath)) {
+            $this->DictionaryModel->setClave($_POST['CLAVE']);
+            $result = $this->DictionaryDAO->getDictionaryById($this->DictionaryModel->getClave());
             // Incluye la vista
             include_once $viewPath;
         } else {
@@ -89,104 +72,52 @@ class UsersController {
     
         /*************************CRUD USUARIO**********************/
 
-    public function createUser()
+    public function createDictionary()
     {   
-        $this->usersModel->setId($_POST['ID']);
-        $this->usersModel->setUsername($_POST['USERNAME']);
-        $this->usersModel->setEmail($_POST['EMAIL']);
-        $this->usersModel->setPassword('Mesa2020');
-        $this->usersModel->setState($_POST['USER_STATE']);
+        $this->DictionaryModel->setClave($_POST['CLAVE']);
+
+        $this->DictionaryModel->setDateCreated(date('Y-m-d'));
+        $this->DictionaryModel->setDateUpdated(date('Y-m-d'));
+
+        $this->DictionaryModel->setDescripcion($_POST['DESCRIPCION']);
+        $this->DictionaryModel->setPrioridad($_POST['PRIORIDAD']);
+        $this->DictionaryModel->setEstado($_POST['ESTADO']);
+        $this->DictionaryModel->setComentario($_POST['COMENTARIO']);
+        $this->DictionaryModel->setAdjunto($_POST['ADJUNTO']);
     
-        $id = $this->usersDAO->insertUser($this->usersModel->getId(),$this->usersModel->getUsername(),$this->usersModel->getEmail()
-        ,$this->usersModel->getPassword(), $this->usersModel->getState());
+        $id = $this->DictionaryDAO->insertDictionary($this->DictionaryModel->getClave(),$this->DictionaryModel->getDateCreated(),$this->DictionaryModel->getDateUpdated(),
+        $this->DictionaryModel->getDescripcion(), $this->DictionaryModel->getPrioridad(), $this->DictionaryModel->getEstado(), $this->DictionaryModel->getComentario(),
+        $this->DictionaryModel->getAdjunto());
         // var_dump ($id);
-        return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/create");
+        return ($id!=false) ? header("Location:$this->raiz/dictionary/show") : header("Location:$this->raiz/dictionary/create");
     }
 
-    public function editUser()
+    public function editDictionary()
     {   
-        $this->usersModel->setId($_POST['ID']);
-        $this->usersModel->setUsername($_POST['USERNAME']);
-        $this->usersModel->setEmail($_POST['EMAIL']);
-        $this->usersModel->setState($_POST['USER_STATE']);
+        $this->DictionaryModel->setClave($_POST['CLAVE']);
 
-        $id = $this->usersDAO->updateUser($this->usersModel->getId(),$this->usersModel->getUsername(),
-        $this->usersModel->getEmail(),$this->usersModel->getState());
+        $this->DictionaryModel->setDateUpdated(date('Y-m-d'));
 
-        return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/edit");
+        $this->DictionaryModel->setDescripcion($_POST['DESCRIPCION']);
+        $this->DictionaryModel->setPrioridad($_POST['PRIORIDAD']);
+        $this->DictionaryModel->setEstado($_POST['ESTADO']);
+        $this->DictionaryModel->setComentario($_POST['COMENTARIO']);
+        $this->DictionaryModel->setAdjunto($_POST['ADJUNTO']);
+
+        $id = $this->DictionaryDAO->updateDictionary($this->DictionaryModel->getClave(),$this->DictionaryModel->getDateUpdated(),
+        $this->DictionaryModel->getDescripcion(), $this->DictionaryModel->getPrioridad(), $this->DictionaryModel->getEstado(), $this->DictionaryModel->getComentario(),
+        $this->DictionaryModel->getAdjunto());
+
+        return ($id!=false) ? header("Location:$this->raiz/dictionary/show") : header("Location:$this->raiz/dictionary/edit");
     }
 
-    public function setupUser()
+    public function dropDictionary()
     {   
-        if (isset($_POST['btn1'])) {
-            $this->usersModel->setId($_POST['ID']);
-            $this->usersModel->setUsername($_POST['USERNAME']);
-            $this->usersModel->setEmail($_POST['EMAIL']);
-            $this->usersModel->setState('0');
+        $this->DictionaryModel->setClave($_POST['CLAVE']);
 
-            $id = $this->usersDAO->updateUser($this->usersModel->getId(),$this->usersModel->getUsername(),
-            $this->usersModel->getEmail(),$this->usersModel->getState());
+        $id = $this->DictionaryDAO->deleteDictionary($this->DictionaryModel->getClave());
 
-            return ($id!=false) ? header("Location:$this->raiz/logouts") : header("Location:$this->raiz/users/setup");
-        }
-
-        if (isset($_POST['btn2'])) {
-
-            // Pasamos los datos de sesión que vienen en array a la variable user y hacemos usos de sus valores
-            $user = $_SESSION['USER'];
-            $this->usersModel->setId($user['ID']);
-
-            $this->usersModel->setPassword($_POST['ACTUAL']);
-            $actual = $this->usersModel->getPassword();
-
-            if($actual === $user['PASSWORD']){
-
-                $this->usersModel->setPassword($_POST['NUEVA']);
-                $nueva = $this->usersModel->getPassword();
-                
-                $this->usersModel->setPassword($_POST['CONFIRMAR']);
-                $confirmar = $this->usersModel->getPassword();
-
-                if($nueva === $confirmar){
-
-                    $id = $this->usersDAO->updatePassword($this->usersModel->getId(),$this->usersModel->getPassword());
-                    return ($id!=false) ? header("Location:$this->raiz/Home/dashboard") : header("Location:$this->raiz/users/setup");
-
-                }else{
-                    echo 'las nuevas contraseñas no concuerdan';
-                }
-            }else{
-                echo 'Esa no es tu contraseña actual';
-            }
-        }
-    }
-
-    public function resetPassword()
-    {   
-        $this->usersModel->setId($_POST['ID']);
-        $this->usersModel->setPassword('Mesa2020');
-        $id = $this->usersDAO->passwordReset($this->usersModel->getId(),$this->usersModel->getPassword());
-
-        return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/edit");
-    }
-
-    public function editState()
-    {   
-        $this->usersModel->setId($_POST['ID']);
-        $this->usersModel->setState($_POST['USER_STATE']);
-
-        $id = $this->usersDAO->updateState($this->usersModel->getId(),$this->usersModel->getState());
-
-        return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/show");
-    }
-
-    public function dropUser()
-    {   
-        $this->usersModel->setId($_POST['ID']);
-
-        $id = $this->usersDAO->deleteUser($this->usersModel->getId());
-
-        return ($id!=false) ? header("Location:$this->raiz/users/show") : header("Location:$this->raiz/users/show");
+        return ($id!=false) ? header("Location:$this->raiz/dictionary/show") : header("Location:$this->raiz/dictionary/show");
     }
 }
 

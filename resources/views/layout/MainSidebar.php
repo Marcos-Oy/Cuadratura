@@ -101,8 +101,6 @@
                     </ul>
                 </li>
 
-                <?php if($user['USERNAME'] === "MARCOS"){ ?>
-
                 <li class="nav-item">
                     <a id="Dash" href="<?php echo $this->raiz; ?>/dictionary/show" class="nav-link">
                         <i class="nav-icon fa fa-book"></i>
@@ -112,8 +110,6 @@
                         </p>
                     </a>
                 </li>
-
-                <?php } ?>
 
                 <?php if($user['USERNAME'] === "MARCOS"){ ?>
                 <li class="nav-item">
