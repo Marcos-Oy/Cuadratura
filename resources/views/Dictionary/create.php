@@ -34,8 +34,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="card card-dark">
                                 <div class="card-header">
                                     <h2>
-                                        Crear usuario
-                                        <a href="<?php echo $this->raiz; ?>/users/show" class="justify-content-md-end">
+                                        Crear
+                                        <a href="<?php echo $this->raiz; ?>/dictionary/show" class="justify-content-md-end">
                                             <button type="button" class="btn btn-secondary">
                                                 Volver
                                             </button>
@@ -44,7 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <form method="POST" action="<?php echo $this->raiz; ?>/create/user">
+                                    <form method="POST" action="<?php echo $this->raiz; ?>/create/dictionary">
                                         <div class="row">
 
                                             <!-- COLUMNA 1 -->
@@ -52,46 +52,54 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <div class="col-sm-3">
                                                 <!-- text input -->
                                                 <div class="form-group">
-                                                    <label>Identificador</label>
-                                                    <input id="ID" type="number" name="ID" class="form-control"
-                                                        placeholder="Ingrese id de usuario aquí...">
+                                                    <label>CLAVE</label>
+                                                    <input id="CLAVE" type="text" name="CLAVE" class="form-control" placeholder="Ingrese clave de error aquí..."
+                                                    oninput="this.value = this.value.replace(/\s+/g, '');">
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label>Nombre de usuario</label>
-                                                    <input id="USERNAME" type="text" name="USERNAME" class="form-control"
-                                                        placeholder="Ingrese nombre de usuario aquí...">
-                                                </div>
-
-                                                <!-- <div class="form-group">
-                                                    <label>Contraseña</label>
-                                                    <input id="password" name="password" type="password" class="form-control"
-                                                        placeholder="Ingrese contraseña...">
-                                                </div> -->
-
-                                                <div class="form-group">
-                                                    <label>Correo</label>
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text"><i
-                                                                    class="fas fa-envelope"></i></span>
-                                                        </div>
-                                                        <input id="EMAIL" name="EMAIL" type="EMAIL" class="form-control"
-                                                            placeholder="Ingrese email aquí...">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label>Seleccionar Estado</label>
-                                                    <select id="USER_STATE" name="USER_STATE" class="form-control">
+                                                    <label>Seleccionar Prioridad</label>
+                                                    <select id="PRIORIDAD" name="PRIORIDAD" class="form-control">
                                                         <!-- Los values están inversos porque el setState de UsersModel los invierte -->
-                                                        <option selected value="0">Activado</option>
-                                                        <option value="1">Desactivado</option>
+                                                        <option selected value="Alta">Alta</option>
+                                                        <option value="Media">Media</option>
+                                                        <option value="Baja">Baja</option>
 
                                                     </select>
                                                 </div>
 
+                                                <div class="form-group">
+                                                    <label>Seleccionar Estado</label>
+                                                    <select id="ESTADO" name="ESTADO" class="form-control">
+                                                        <!-- Los values están inversos porque el setState de UsersModel los invierte -->
+                                                        <option selected value="Resuelto">Resuelto</option>
+                                                        <option value="Progreso">Progreso</option>
+                                                        <option value="Pendiente">Pendiente</option>
+
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Link del adjunto</label>
+                                                    <input id="ADJUNTO" type="text" name="ADJUNTO" class="form-control" placeholder="Ingrese link del adujunto...">
+                                                </div>
                                             </div>
+
+                                            <div class="col-sm-6">
+
+                                                <div class="form-group">
+                                                    <label>Descripción</label>
+                                                    <textarea class="form-control" rows="5" cols="40" id="DESCRIPCION" type="text" name="DESCRIPCION" class="form-control"
+                                                        placeholder="Ingrese la descripción del problema..."></textarea>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Comentario o Notas</label>
+                                                    <textarea class="form-control" rows="5" cols="40" id="COMENTARIO" type="text" name="COMENTARIO" class="form-control"
+                                                        placeholder="Ingrese notas adicionales o la solución..."></textarea>
+                                                </div>
+                                            </div>
+
                                         </div>
                                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                             <input type="submit" name="guardar" class="btn btn-success btn-lg"

@@ -31,8 +31,8 @@
                         <div class="col-12">
                             <div class="card card-dark">
                                 <div class="card-header">
-                                    <h2>Diccionario de errores
-                                        <a href="<?php echo $this->raiz; ?>/users/create"
+                                    <h2>Book
+                                        <a href="<?php echo $this->raiz; ?>/dictionary/create"
                                             class="justify-content-md-end">
                                             <button type="button" class="btn btn-success">
                                                 Nuevo
@@ -42,15 +42,26 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <div class="card-body table-responsive">
+                                    <div class="card-body">
+                                        <style>
+                                        .table-small-font td,
+                                        .table-small-font th {
+                                            font-size: 12px;
+                                            /* Puedes ajustar el tamaño de fuente según tus preferencias */
+                                        }
+                                        </style>
                                         <table id="UsersTable"
-                                            class="table table-striped table-bordered table-condensed table-hover">
+                                        class="table table-striped table-bordered table-condensed table-hover table-small-font">
                                             <thead>
                                                 <tr>
-                                                    <th>Identificación</th>
-                                                    <th>Descripción</th>
-                                                    <th>Solución</th>
-                                                    <th>Documentación</th>
+                                                    <th>clave</th>
+                                                    <th>date_created</th>
+                                                    <th>date_updated</th>
+                                                    <th>descripcion</th>
+                                                    <th>prioridad</th>
+                                                    <th>estado</th>
+                                                    <th>comentario</th>
+                                                    <th>adjunto</th>
                                                     <th>Acciones</th>
                                                 </tr>
                                             </thead>
@@ -58,17 +69,35 @@
                                                 <?php if($rows): ?>
                                                 <?php foreach($rows as $row): ?>
                                                 <tr>
-                                                    <td>Error siebel</td>
-                                                    <td>Se provocó por tanto</td>
-                                                    <td>Se solucionó de tal forma</td>
-                                                    <td>Descargar documentación del error y pasos de solucipon en pdf o word</td>
+                                                    <td><?= $row['CLAVE'] ?></td>
+                                                    <td><?= $row['DATE_CREATED'] ?></td>
+                                                    <td><?= $row['DATE_UPDATED'] ?></td>
+                                                    <td><?= $row['DESCRIPCION'] ?></td>
+                                                    <td class="<?= getPrioridadClass($row['PRIORIDAD']) ?>">
+                                                        <?= $row['PRIORIDAD'] ?></td>
+                                                    <td class="<?= getEstadoClass($row['ESTADO']) ?>">
+                                                        <?= $row['ESTADO'] ?></td>
+                                                    <td><?= $row['COMENTARIO'] ?></td>
+                                                    <td>
+                                                        <?php if($row['ADJUNTO'] !== "#"){ ?>
+                                                        <a href="<?= $row['ADJUNTO'] ?>" target="_blank"
+                                                            class="justify-content-md-end">
+                                                            <button type="button" class="btn btn-info btn-xs">
+                                                                <i class="fas fa-download" aria-hidden="true"></i>
+                                                            </button>
+                                                        </a>
+                                                        <?php } else {?>
+                                                        Sin Documento
+                                                        <?php } ?>
+                                                    </td>
+
                                                     <td>
                                                         <div class="row">
                                                             <div class="form-group">
                                                                 <form method='POST'
-                                                                    action='<?php echo $this->raiz; ?>/users/edit'>
-                                                                    <button class="btn btn-warning" type='submit'
-                                                                        name='ID' value=<?=$row['ID'];?>>
+                                                                    action='<?php echo $this->raiz; ?>/dictionary/edit'>
+                                                                    <button class="btn btn-warning btn-xs" type='submit'
+                                                                        name='CLAVE' value=<?=$row['CLAVE'];?>>
                                                                         <i class="fas fa-pen" aria-hidden="true"></i>
                                                                     </button>
                                                                 </form>
@@ -77,22 +106,21 @@
                                                             &nbsp;&nbsp;
                                                             <div class="form-group">
                                                                 <form method='POST'
-                                                                    action='<?php echo $this->raiz; ?>/drop/user'>
+                                                                    action='<?php echo $this->raiz; ?>/drop/dictionary'>
 
                                                                     <!-- Button trigger modal -->
-                                                                    <button type="button" class="btn btn-danger"
+                                                                    <button type="button" class="btn btn-danger btn-xs"
                                                                         data-toggle="modal"
-                                                                        data-target="#modal-sm-trash-<?=$row['USERNAME']?>">
+                                                                        data-target="#modal-sm-trash-<?=$row['CLAVE']?>">
                                                                         <i class="fas fa-trash" aria-hidden="true"></i>
                                                                     </button>
 
                                                                     <div class="modal fade"
-                                                                        id="modal-sm-trash-<?=$row['USERNAME'];?>">
+                                                                        id="modal-sm-trash-<?=$row['CLAVE'];?>">
                                                                         <div class="modal-dialog modal-sm">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
                                                                                     <h4 class="modal-title">Eliminar
-                                                                                        usuario
                                                                                     </h4>
                                                                                     <button type="button" class="close"
                                                                                         data-dismiss="modal"
@@ -103,8 +131,7 @@
                                                                                 </div>
                                                                                 <div class="modal-body">
                                                                                     <p>¿Desea eliminar permanentemente
-                                                                                        el usuario
-                                                                                        <?= $row['USERNAME']?>?
+                                                                                        <?= $row['CLAVE']?>?
                                                                                     </p>
                                                                                 </div>
                                                                                 <div
@@ -113,8 +140,8 @@
                                                                                         class="btn btn-default"
                                                                                         data-dismiss="modal">Cancelar</button>
                                                                                     <button class="btn btn-danger"
-                                                                                        type='submit' name='ID'
-                                                                                        value=<?=$row['ID']?>>
+                                                                                        type='submit' name='CLAVE'
+                                                                                        value=<?=$row['CLAVE']?>>
                                                                                         Aceptar
                                                                                     </button>
                                                                                 </div>
@@ -125,119 +152,6 @@
                                                                     </div>
                                                                 </form>
                                                             </div>
-
-                                                            <?php if($row['USER_STATE'] == 1): ?>
-                                                            &nbsp;&nbsp;
-                                                            <div class="form-group">
-                                                                <form method='POST'
-                                                                    action='<?php echo $this->raiz; ?>/edit/state'>
-
-                                                                    <!-- Button trigger modal -->
-                                                                    <button type="button" class="btn btn-primary"
-                                                                        data-toggle="modal"
-                                                                        data-target="#modal-sm-des-<?=$row['USERNAME']?>">
-                                                                        <i class="fa fa-power-off"
-                                                                            aria-hidden="true"></i>
-                                                                    </button>
-
-                                                                    <input type="hidden" class="form-control"
-                                                                        value="<?php echo $row['ID'];?>" name="ID">
-
-                                                                    <div class="modal fade"
-                                                                        id="modal-sm-des-<?=$row['USERNAME'];?>">
-                                                                        <div class="modal-dialog modal-sm">
-                                                                            <div class="modal-content">
-                                                                                <div class="modal-header">
-                                                                                    <h4 class="modal-title">Desactivar
-                                                                                        usuario
-                                                                                    </h4>
-                                                                                    <button type="button" class="close"
-                                                                                        data-dismiss="modal"
-                                                                                        aria-label="Close">
-                                                                                        <span
-                                                                                            aria-hidden="true">&times;</span>
-                                                                                    </button>
-                                                                                </div>
-                                                                                <div class="modal-body">
-                                                                                    <p>¿Desea desactivar el usuario de
-                                                                                        <?= $row['USERNAME']?>?
-                                                                                    </p>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="modal-footer justify-content-between">
-                                                                                    <button type="button"
-                                                                                        class="btn btn-default"
-                                                                                        data-dismiss="modal">Cancelar</button>
-                                                                                    <button class="btn btn-danger"
-                                                                                        type='submit' name='USER_STATE'
-                                                                                        value=<?=$row['USER_STATE']?>>
-                                                                                        Aceptar
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div>
-                                                                            <!-- /.modal-content -->
-                                                                        </div>
-                                                                        <!-- /.modal-dialog -->
-                                                                    </div>
-                                                                </form>
-                                                            </div>
-                                                            <?php endif; ?>
-
-                                                            <?php if($row['USER_STATE'] == 0): ?>
-                                                            &nbsp;&nbsp;
-                                                            <div class="form-group">
-                                                                <form method='POST'
-                                                                    action='<?php echo $this->raiz; ?>/edit/state'>
-                                                                    <!-- Button trigger modal -->
-                                                                    <button type="button" class="btn btn-secondary"
-                                                                        data-toggle="modal"
-                                                                        data-target="#modal-sm-act-<?=$row['USERNAME'];?>">
-                                                                        <i class="fa fa-power-off"
-                                                                            aria-hidden="true"></i>
-                                                                    </button>
-
-                                                                    <input type="hidden" class="form-control"
-                                                                        value="<?php echo $row['ID'];?>" name="ID">
-
-                                                                    <div class="modal fade"
-                                                                        id="modal-sm-act-<?=$row['USERNAME']?>">
-                                                                        <div class="modal-dialog modal-sm">
-                                                                            <div class="modal-content">
-                                                                                <div class="modal-header">
-                                                                                    <h4 class="modal-title">Activar
-                                                                                        usuario
-                                                                                    </h4>
-                                                                                    <button type="button" class="close"
-                                                                                        data-dismiss="modal"
-                                                                                        aria-label="Close">
-                                                                                        <span
-                                                                                            aria-hidden="true">&times;</span>
-                                                                                    </button>
-                                                                                </div>
-                                                                                <div class="modal-body">
-                                                                                    <p>¿Desea activar el usuario de
-                                                                                        <?= $row['USERNAME']?>?
-                                                                                    </p>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="modal-footer justify-content-between">
-                                                                                    <button type="button"
-                                                                                        class="btn btn-default"
-                                                                                        data-dismiss="modal">Cancelar</button>
-                                                                                    <button class="btn btn-success"
-                                                                                        type='submit' name='USER_STATE'
-                                                                                        value=<?=$row['USER_STATE']?>>
-                                                                                        Aceptar
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div>
-                                                                            <!-- /.modal-content -->
-                                                                        </div>
-                                                                        <!-- /.modal-dialog -->
-                                                                    </div>
-                                                                </form>
-                                                            </div>
-                                                            <?php endif; ?>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -251,9 +165,14 @@
                                             </tbody>
                                             <tfoot>
                                                 <tr>
-                                                    <th>id</th>
-                                                    <th>Name</th>
-                                                    <th>E-Mail</th>
+                                                    <th>clave</th>
+                                                    <th>date_created</th>
+                                                    <th>date_updated</th>
+                                                    <th>descripcion</th>
+                                                    <th>prioridad</th>
+                                                    <th>estado</th>
+                                                    <th>comentario</th>
+                                                    <th>adjunto</th>
                                                     <th>Acciones</th>
                                                 </tr>
                                             </tfoot>
@@ -310,10 +229,72 @@
     <script src="<?php echo $this->raiz; ?>/public/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="<?php echo $this->raiz; ?>/public/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
-
-
     <!-- JS de tables -->
     <script src="<?php echo $this->raiz; ?>/resources/assets/js/tables.js"></script>
+
+    <style>
+    .estado-pendiente {
+        background-color: red;
+        color: white;
+        /* Opcional: Cambia el color del texto para que sea legible en el fondo rojo */
+    }
+
+    .estado-progreso {
+        background-color: yellow;
+    }
+
+    .estado-resuelto {
+        background-color: green;
+        color: white;
+        /* Opcional: Cambia el color del texto para que sea legible en el fondo verde */
+    }
+
+    .prioridad-alta {
+        background-color: red;
+        color: white;
+        /* Opcional: Cambia el color del texto para que sea legible en el fondo rojo */
+    }
+
+    .prioridad-media {
+        background-color: yellow;
+    }
+
+    .prioridad-baja {
+        background-color: green;
+        color: white;
+        /* Opcional: Cambia el color del texto para que sea legible en el fondo verde */
+    }
+    </style>
+
+    <?php
+    function getEstadoClass($estado) {
+        switch (strtolower($estado)) {
+            case 'pendiente':
+                return 'estado-pendiente';
+            case 'progreso':
+                return 'estado-progreso';
+            case 'resuelto':
+                return 'estado-resuelto';
+            default:
+                return '';
+        }
+    }
+
+    function getPrioridadClass($prioridad) {
+        switch (strtolower($prioridad)) {
+            case 'alta':
+                return 'prioridad-alta';
+            case 'media':
+                return 'prioridad-media';
+            case 'baja':
+                return 'prioridad-baja';
+            default:
+                return '';
+        }
+    }
+
+    ?>
+
 
 </body>
 
