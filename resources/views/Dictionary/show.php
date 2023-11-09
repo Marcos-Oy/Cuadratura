@@ -55,8 +55,8 @@
                                             <thead>
                                                 <tr>
                                                     <th>clave</th>
-                                                    <th>date_created</th>
-                                                    <th>date_updated</th>
+                                                    <th>date created</th>
+                                                    <th>date updated</th>
                                                     <th>descripcion</th>
                                                     <th>prioridad</th>
                                                     <th>estado</th>
@@ -82,7 +82,7 @@
                                                         <?php if($row['ADJUNTO'] !== "#"){ ?>
                                                         <a href="<?= $row['ADJUNTO'] ?>" target="_blank"
                                                             class="justify-content-md-end">
-                                                            <button type="button" class="btn btn-info btn-xs">
+                                                            <button type="button" class="btn btn-info btn-sm">
                                                                 <i class="fas fa-download" aria-hidden="true"></i>
                                                             </button>
                                                         </a>
@@ -96,7 +96,7 @@
                                                             <div class="form-group">
                                                                 <form method='POST'
                                                                     action='<?php echo $this->raiz; ?>/dictionary/edit'>
-                                                                    <button class="btn btn-warning btn-xs" type='submit'
+                                                                    <button class="btn btn-warning btn-sm" type='submit'
                                                                         name='CLAVE' value=<?=$row['CLAVE'];?>>
                                                                         <i class="fas fa-pen" aria-hidden="true"></i>
                                                                     </button>
@@ -109,7 +109,7 @@
                                                                     action='<?php echo $this->raiz; ?>/drop/dictionary'>
 
                                                                     <!-- Button trigger modal -->
-                                                                    <button type="button" class="btn btn-danger btn-xs"
+                                                                    <button type="button" class="btn btn-danger btn-sm"
                                                                         data-toggle="modal"
                                                                         data-target="#modal-sm-trash-<?=$row['CLAVE']?>">
                                                                         <i class="fas fa-trash" aria-hidden="true"></i>
