@@ -64,6 +64,7 @@ class Tokens
             
             // Tiempo de inactividad permitido en segundos (1 hora en este caso)
             $inactivityTimeout = 3600;
+            // $inactivityTimeout = 60;
 
             // Verificar si existe una marca de tiempo de última actividad en la sesión
             if (isset($_SESSION['last_activity'])) {
@@ -96,7 +97,7 @@ class Tokens
         }
     
         if (isset($_SESSION['TOKEN']) && $_SERVER['REQUEST_URI'] === $this->raiz . "/") {
-            header('Location:' . $this->raiz . '/Home/dashboard');
+            header('Location:' . $this->raiz . '/Home');
         }
     
         // if (!isset($_SESSION['TOKEN']) && $_SERVER['REQUEST_URI'] != $this->raiz . "/") {
