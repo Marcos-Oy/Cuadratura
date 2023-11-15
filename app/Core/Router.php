@@ -43,7 +43,7 @@ class Router {
                 include __DIR__ . '/../../resources/views/sessions/Error404.php';
             }
             if (!isset($_SESSION['TOKEN'])) { 
-                header('Location:' . $this->raiz . '/');
+                header("Location: /Cuadratura/");
             }
         }
     }
