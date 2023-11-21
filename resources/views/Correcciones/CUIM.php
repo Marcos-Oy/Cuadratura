@@ -58,7 +58,7 @@
                                                 <tr>
                                                     <td><?= $row['NAME'] ?></td>
                                                     <td><?= $row['ESTADO'] ?></td>
-                                                    <td><?= $row['COUNT'] ?></td>
+                                                    <td><?= $row['Q'] ?></td>
                                                 </tr>
                                                 <?php endforeach; ?>
                                                 <?php else: ?>
