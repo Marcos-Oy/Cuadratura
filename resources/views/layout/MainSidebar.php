@@ -111,24 +111,29 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a id="Dash" href="<?php echo $this->raiz; ?>/Correcciones/Siebel" class="nav-link">
+                <li class="nav-item menu-closed">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-check-square"></i>
                         <p>
-                            Correciones Siebel
-                            <span class="right badge badge-danger">New</span>
+                            Correcciones
+                            <!-- <i class="right fas fa-angle-left"></i> -->
+                            <span class="right badge badge-danger">New<i class="right fas fa-angle-left"></i></span>
                         </p>
                     </a>
-                </li>
-
-                <li class="nav-item">
-                    <a id="Dash" href="<?php echo $this->raiz; ?>/Correcciones/UIM" class="nav-link">
-                        <i class="nav-icon fas fa-check-square"></i>
-                        <p>
-                            Correcciones UIM
-                            <span class="right badge badge-danger">New</span>
-                        </p>
-                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a id="CSiebel" href="<?php echo $this->raiz; ?>/Correcciones/Siebel" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Siebel</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="CUIM" href="<?php echo $this->raiz; ?>/Correcciones/UIM" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>UIM</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <?php if($user['USERNAME'] === "MARCOS"){ ?>

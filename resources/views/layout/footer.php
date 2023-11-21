@@ -147,6 +147,8 @@ function agregarPreloader() {
 
 const elementos = [
     "Comportamientos",
+    "CSiebel",
+    "CUIM",
     "Login",
     "CreateResumen",
     "Dash",

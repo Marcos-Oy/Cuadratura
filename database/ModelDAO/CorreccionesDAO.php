@@ -13,7 +13,7 @@ class CorreccionesDAO {
         $stmt = oci_parse($this->conn, "SELECT tabla, campo_modificar, estado_update, COUNT(1) AS Q
             FROM Siebel.TMP_Update_Rollback_Siebel@SblPrd.World
             GROUP BY tabla, campo_modificar, estado_update
-            ORDER BY 4 DESC");
+            ORDER BY estado_update DESC");
     
         oci_execute($stmt);
     
@@ -24,15 +24,14 @@ class CorreccionesDAO {
     
         return $result;
     }
-    
-    public function getAllCorreccionesUIM() {
-        $stmt = oci_parse($this->conn, "SELECT Name as Nombre, Estado, Count(1) as Q
-        FROM UIMUSER.UPD_SERVICECONFIGITEM_CHAR@UIMPRD.WORLD 
-        WHERE estado != 'NOPROC' 
-        GROUP BY Name, Estado 
-        --ORDER BY 3 DESC;
-        ");
 
+    public function getAllCorreccionesUIM() {
+        $stmt = oci_parse($this->conn, "SELECT Name, Estado, Count(1) as Q
+        FROM UIMUSER.UPD_SERVICECONFIGITEM_CHAR@UIMPRD.WORLD 
+        -- WHERE estado != 'NOPROC' 
+        GROUP BY Name, Estado 
+        ORDER BY Estado DESC");
+    
         oci_execute($stmt);
         
         $result = [];
@@ -41,5 +40,6 @@ class CorreccionesDAO {
         }
         return $result;
     }
+    
 
 }
