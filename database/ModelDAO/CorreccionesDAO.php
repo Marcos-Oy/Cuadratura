@@ -10,7 +10,7 @@ class CorreccionesDAO {
     }
 
     public function getAllCorreccionesSiebel() {
-        $stmt = oci_parse($this->conn, "SELECT tabla, campo_modificar, estado_update, COUNT(1) AS count_column
+        $stmt = oci_parse($this->conn, "SELECT tabla, campo_modificar, estado_update, COUNT(1) AS Q
             FROM Siebel.TMP_Update_Rollback_Siebel@SblPrd.World
             GROUP BY tabla, campo_modificar, estado_update
             ORDER BY 4 DESC");
@@ -26,7 +26,7 @@ class CorreccionesDAO {
     }
     
     public function getAllCorreccionesUIM() {
-        $stmt = oci_parse($this->conn, "SELECT Name as Nombre, Estado, Count(1) as Cantidad 
+        $stmt = oci_parse($this->conn, "SELECT Name as Nombre, Estado, Count(1) as Q
         FROM UIMUSER.UPD_SERVICECONFIGITEM_CHAR@UIMPRD.WORLD 
         WHERE estado != 'NOPROC' 
         GROUP BY Name, Estado 

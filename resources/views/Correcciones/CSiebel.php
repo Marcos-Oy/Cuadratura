@@ -58,9 +58,9 @@
                                                 <?php foreach($rows as $row): ?>
                                                 <tr>
                                                     <td><?= $row['TABLA'] ?></td>
-                                                    <td><?= $row['CAMPO'] ?></td>
-                                                    <td><?= $row['ESTADO'] ?></td>
-                                                    <td><?= $row['COUNT'] ?></td>
+                                                    <td><?= $row['CAMPO_MODIFICAR'] ?></td>
+                                                    <td><?= $row['ESTADO_UPDATE'] ?></td>
+                                                    <td><?= $row['Q'] ?></td>
                                                 </tr>
                                                 <?php endforeach; ?>
                                                 <?php else: ?>
