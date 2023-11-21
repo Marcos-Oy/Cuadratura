@@ -106,6 +106,26 @@
                         <i class="nav-icon fa fa-book"></i>
                         <p>
                             Diccionary
+                            <!-- <span class="right badge badge-danger">New</span> -->
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a id="Dash" href="<?php echo $this->raiz; ?>/Correcciones/Siebel" class="nav-link">
+                        <i class="nav-icon fas fa-check-square"></i>
+                        <p>
+                            Correciones Siebel
+                            <span class="right badge badge-danger">New</span>
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a id="Dash" href="<?php echo $this->raiz; ?>/Correcciones/UIM" class="nav-link">
+                        <i class="nav-icon fas fa-check-square"></i>
+                        <p>
+                            Correcciones UIM
                             <span class="right badge badge-danger">New</span>
                         </p>
                     </a>

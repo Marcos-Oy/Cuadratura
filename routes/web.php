@@ -5,9 +5,11 @@ use App\Controllers\UsersController;
 use App\Controllers\DictionaryController;
 use App\Controllers\LoadsController;
 use App\Controllers\AuthController;
+use App\Controllers\CorreccionesController;
 
 // El usuario no ha iniciado sesión, redirigir a la ruta
 if(!isset($_SESSION['TOKEN'])){
+
     // Rutas del login GET
     $router->get($raiz.'/', [AuthController::class, 'show']);
     // Rutas del login POST
@@ -16,6 +18,7 @@ if(!isset($_SESSION['TOKEN'])){
 
 // El usuario ha iniciado sesión, redirigir a la ruta
 if (isset($_SESSION['TOKEN'])) { 
+
     // Rutas del login POST
     $router->post($raiz.'/logout', [AuthController::class, 'logout']);
     $router->get($raiz.'/logouts', [AuthController::class, 'logout']);
@@ -55,9 +58,7 @@ if (isset($_SESSION['TOKEN'])) {
     $router->post($raiz.'/edit/dictionary', [DictionaryController::class, 'editDictionary']);
     $router->post($raiz.'/drop/dictionary', [DictionaryController::class, 'dropDictionary']);
 
-
     // Rutas count range
-
     $router->get($raiz.'/loads/Refresco', [LoadsController::class, 'ShowRefresco']);
     $router->get($raiz.'/loads/Plataforma', [LoadsController::class, 'ShowPlataforma']);
     $router->get($raiz.'/insert/plataform', [LoadsController::class, 'InsertPlataform']);
@@ -68,7 +69,9 @@ if (isset($_SESSION['TOKEN'])) {
     $router->post($raiz.'/update/RangePlataforma', [LoadsController::class, 'RangePlataforma']);
     $router->post($raiz.'/update/RangeRefresco', [LoadsController::class, 'RangeRefresco']);
 
-
+    // Rutas Correcciones Siebel UIM GET
+    $router->get($raiz.'/Correcciones/Siebel', [CorreccionesController::class, 'view_CSiebel']);
+    $router->get($raiz.'/Correcciones/UIM', [CorreccionesController::class, 'view_CUIM']);
 
 }
 
