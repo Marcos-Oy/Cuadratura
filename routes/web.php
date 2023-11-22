@@ -5,7 +5,7 @@ use App\Controllers\UsersController;
 use App\Controllers\DictionaryController;
 use App\Controllers\LoadsController;
 use App\Controllers\AuthController;
-use App\Controllers\CorreccionesController;
+use App\Controllers\ConsultadorController;
 
 // El usuario no ha iniciado sesión, redirigir a la ruta
 if(!isset($_SESSION['TOKEN'])){
@@ -70,8 +70,11 @@ if (isset($_SESSION['TOKEN'])) {
     $router->post($raiz.'/update/RangeRefresco', [LoadsController::class, 'RangeRefresco']);
 
     // Rutas Correcciones Siebel UIM GET
-    $router->get($raiz.'/Correcciones/Siebel', [CorreccionesController::class, 'view_CSiebel']);
-    $router->get($raiz.'/Correcciones/UIM', [CorreccionesController::class, 'view_CUIM']);
+    $router->get($raiz.'/Correcciones/Siebel', [ConsultadorController::class, 'view_CSiebel']);
+    $router->get($raiz.'/Correcciones/UIM', [ConsultadorController::class, 'view_CUIM']);
+
+    // Monitorización de los procesos GET
+    $router->get($raiz.'/Monitorizacion/Procesos', [ConsultadorController::class, 'view_MonitorizacionProcesos']);
 
 }
 

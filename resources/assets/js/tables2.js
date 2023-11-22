@@ -1,8 +1,8 @@
 //buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
 
 $(function () {
-  // Configuración para la tabla con id "UsersTable"
-  $("#UsersTable").DataTable({
+  // Configuración para la tabla con id "TableTwo"
+  $("#TableTwo").DataTable({
       responsive: true,
       searching: true,
       lengthChange: true,
@@ -25,5 +25,6 @@ $(function () {
   })
   .buttons()
   .container()
-  .appendTo("#UsersTable_wrapper .col-md-6:eq(0)");
+  .appendTo("#TableTwo_wrapper .col-md-6:eq(0)");
+
 });

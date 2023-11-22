@@ -11,7 +11,7 @@ require_once __DIR__ . '/app/Controllers/LogsController.php';
 require_once __DIR__ . '/app/Controllers/UsersController.php';
 require_once __DIR__ . '/app/Controllers/DictionaryController.php';
 require_once __DIR__ . '/app/Controllers/LoadsController.php';
-require_once __DIR__ . '/app/Controllers/CorreccionesController.php';
+require_once __DIR__ . '/app/Controllers/ConsultadorController.php';
 
 // Incluir el archivo de middleware
 require_once __DIR__ . '/app/Middlewares/Tokens.php';

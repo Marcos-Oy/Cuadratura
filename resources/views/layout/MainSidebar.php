@@ -136,6 +136,17 @@
                     </ul>
                 </li>
 
+                <li class="nav-item">
+                    <a id="Dash" href="<?php echo $this->raiz; ?>/Monitorizacion/Procesos" class="nav-link">
+                        <i class="nav-icon fa fa-desktop"></i>
+                        <p>
+                            
+                            <span class="right badge badge-danger">New</span>
+                            Monitoreo Procesos
+                        </p>
+                    </a>
+                </li>
+
                 <?php if($user['USERNAME'] === "MARCOS"){ ?>
                 <li class="nav-item">
                     <a id="ShowUsers" href="<?php echo $this->raiz; ?>/users/show" class="nav-link">
