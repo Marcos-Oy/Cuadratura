@@ -1,8 +1,8 @@
 //buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
 
 $(function () {
-  // Configuración para la tabla con id "TableTree"
-  $("#TableTree").DataTable({
+  // Configuración para la tabla con id "TableOne"
+  $("#TableOne").DataTable({
       responsive: false,
       searching: true,
       lengthChange: true,
@@ -25,6 +25,6 @@ $(function () {
   })
   .buttons()
   .container()
-  .appendTo("#TableTree_wrapper .col-md-6:eq(0)");
+  .appendTo("#TableOne_wrapper .col-md-6:eq(0)");
 
 });

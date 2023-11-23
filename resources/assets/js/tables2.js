@@ -3,7 +3,7 @@
 $(function () {
   // Configuración para la tabla con id "TableTwo"
   $("#TableTwo").DataTable({
-      responsive: true,
+      responsive: false,
       searching: true,
       lengthChange: true,
       autoWidth: true,

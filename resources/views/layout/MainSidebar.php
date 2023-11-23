@@ -137,7 +137,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a id="Dash" href="<?php echo $this->raiz; ?>/Monitorizacion/Procesos" class="nav-link">
+                    <a id="Monitoreo" href="<?php echo $this->raiz; ?>/Monitorizacion/Procesos" class="nav-link">
                         <i class="nav-icon fa fa-desktop"></i>
                         <p>
                             

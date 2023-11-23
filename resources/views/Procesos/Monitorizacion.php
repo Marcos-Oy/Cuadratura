@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Correcciones UIM</title>
+    <title>Monitoreo Procesos</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -27,13 +27,18 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
-                    <div class="row">
 
+                    <div class="row">
                         <!-- Colocar aquí otros bloques de contenido si es necesario -->
-                        <div class="col-3">
+                        <div class="col-12 col-sm-4">
                             <div class="card card-dark">
                                 <div class="card-header">
-                                    <h4>ResultdBox</h4>
+                                    <h4 class="card-title">ResultdBox</h4>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </div>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
@@ -65,15 +70,21 @@
                                 </div>
                                 <!-- /.card-body -->
                             </div>
+
                             <!-- /.card -->
                         </div>
                         <!-- /.col -->
 
                         <!-- Colocar aquí otros bloques de contenido si es necesario -->
-                        <div class="col-3">
+                        <div class="col-12 col-sm-4">
                             <div class="card card-dark">
                                 <div class="card-header">
-                                    <h4>ResultInet</h4>
+                                    <h4 class="card-title">ResultInet</h4>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </div>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
@@ -98,10 +109,15 @@
                         <!-- /.col -->
 
                         <!-- Colocar aquí otros bloques de contenido si es necesario -->
-                        <div class="col-3">
+                        <div class="col-12 col-sm-4">
                             <div class="card card-dark">
                                 <div class="card-header">
-                                    <h4>ResultDetaInet</h4>
+                                    <h4 class="card-title">ResultDetaInet</h4>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </div>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
@@ -131,14 +147,19 @@
                     <div class="row">
 
                         <!-- Colocar aquí otros bloques de contenido si es necesario -->
-                        <div class="col-9">
+                        <div class="col-12">
                             <div class="card card-dark">
                                 <div class="card-header">
-                                    <h4>LOGPROC</h4>
+                                    <h4 class="card-title">LOGPROC</h4>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </div>
                                 </div>
                                 <!-- /.card-header -->
-                                <div class="card-body">
-                                    <table id="UsersTable"
+                                <div class="card-body table-responsive">
+                                    <table id="TableOne"
                                         class="table table-striped table-bordered table-condensed table-hover table-small-font">
                                         <thead>
                                             <tr>
@@ -175,13 +196,18 @@
                         <!-- /.col -->
 
                         <!-- Colocar aquí otros bloques de contenido si es necesario -->
-                        <div class="col-9">
+                        <div class="col-12">
                             <div class="card card-dark">
                                 <div class="card-header">
-                                    <h4>LOGPROCINET</h4>
+                                    <h4 class="card-title">LOGPROCINET</h4>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </div>
                                 </div>
                                 <!-- /.card-header -->
-                                <div class="card-body">
+                                <div class="card-body table-responsive">
                                     <table id="TableTwo"
                                         class="table table-striped table-bordered table-condensed table-hover table-small-font">
                                         <thead>
@@ -219,13 +245,18 @@
                         <!-- /.col -->
 
                         <!-- Colocar aquí otros bloques de contenido si es necesario -->
-                        <div class="col-9">
+                        <div class="col-12">
                             <div class="card card-dark">
                                 <div class="card-header">
-                                    <h4>LOGPROCFONO</h4>
+                                    <h4 class="card-title">LOGPROCFONO</h4>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </div>
                                 </div>
                                 <!-- /.card-header -->
-                                <div class="card-body">
+                                <div class="card-body table-responsive">
                                     <table id="TableTree"
                                         class="table table-striped table-bordered table-condensed table-hover table-small-font">
                                         <thead>
@@ -307,7 +338,7 @@
     <script src="<?php echo $this->raiz; ?>/public/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
     <!-- JS de tables -->
-    <script src="<?php echo $this->raiz; ?>/resources/assets/js/tables.js"></script>
+    <script src="<?php echo $this->raiz; ?>/resources/assets/js/tables1.js"></script>
     <script src="<?php echo $this->raiz; ?>/resources/assets/js/tables2.js"></script>
     <script src="<?php echo $this->raiz; ?>/resources/assets/js/tables3.js"></script>
 
