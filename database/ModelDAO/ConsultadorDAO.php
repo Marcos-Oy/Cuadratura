@@ -152,12 +152,20 @@ class ConsultadorDAO {
     }
     
     public function getAllLOGPROCFONOcorn() {
-
         // Obtener el día y el mes
         $fecha = date("d/m");
-
-        $stmt = oci_parse($this->conn, "SELECT * FROM CUT_SIEBEL_LOGPROCFONO WHERE FECH_INI LIKE ('$fecha/%')
-        order by fech_ini desc");
+    
+        $stmt = oci_parse($this->conn, "SELECT
+            nomb_proceso,
+            TO_CHAR(fech_ini, 'dd-mm-yyyy hh24:mi:ss') AS fech_ini,
+            TO_CHAR(fech_fin, 'dd-mm-yyyy hh24:mi:ss') AS fech_fin,
+            observacion
+            FROM
+                Cuadra.Cut_Siebel_LogProcFonoCorn
+            WHERE
+                TRUNC(fech_ini) IN (TRUNC(SYSDATE), TRUNC(SYSDATE - 1), TRUNC(SYSDATE - 2))
+            ORDER BY
+                fech_ini DESC");
     
         oci_execute($stmt);
         
@@ -167,6 +175,7 @@ class ConsultadorDAO {
         }
         return $result;
     }
+    
 
 
 

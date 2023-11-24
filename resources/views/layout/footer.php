@@ -146,6 +146,7 @@ function agregarPreloader() {
 }
 
 const elementos = [
+    "RefrescarMonitoreo",
     "Comportamientos",
     "Monitoreo",
     "CSiebel",

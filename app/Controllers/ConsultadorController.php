@@ -60,7 +60,8 @@ class ConsultadorController {
         $ResultdBox = $this->ConsultadorDAO->getAllResultdBox();
         $LOGPROC = $this->ConsultadorDAO->getAllLOGPROC();
         $LOGPROCINET = $this->ConsultadorDAO->getAllLOGPROCINET();
-        $LOGPROCFONO = $this->ConsultadorDAO->getAllLOGPROCFONO();   
+        $LOGPROCFONO = $this->ConsultadorDAO->getAllLOGPROCFONO();
+        $LOGPROCFONOcorn = $this->ConsultadorDAO->getAllLOGPROCFONOcorn();   
     
         // Obtén la ruta completa de la vista
         $viewPath = __DIR__ . '/../../resources/views/Procesos/Monitorizacion.php';
