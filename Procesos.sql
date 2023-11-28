@@ -16,7 +16,6 @@ BEGIN
     RAISE;
 END;
 
-
 -- manual
 -- Begin
 --     Cup_Siebel_Analiza_dBox_Sieb01;

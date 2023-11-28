@@ -34,8 +34,8 @@
                                     <h2>Correcciones UIM</h2>
                                 </div>
                                 <!-- /.card-header -->
-                                <div class="card-body">
-                                    <div class="card-body">
+                                <!-- <div class="card-body"> -->
+                                    <div class="card-body table-responsive">
                                         <style>
                                         .table-small-font td,
                                         .table-small-font th {
@@ -43,7 +43,7 @@
                                             /* Puedes ajustar el tamaño de fuente según tus preferencias */
                                         }
                                         </style>
-                                        <table id="UsersTable"
+                                        <table id="TableOne"
                                         class="table table-striped table-bordered table-condensed table-hover table-small-font">
                                             <thead>
                                                 <tr>
@@ -76,7 +76,7 @@
                                                 </tr>
                                             </tfoot>
                                         </table>
-                                    </div>
+                                    <!-- </div> -->
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -129,7 +129,7 @@
     <script src="<?php echo $this->raiz; ?>/public/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
     <!-- JS de tables -->
-    <script src="<?php echo $this->raiz; ?>/resources/assets/js/tables.js"></script>
+    <script src="<?php echo $this->raiz; ?>/resources/assets/js/tables1.js"></script>
 
 </body>
 

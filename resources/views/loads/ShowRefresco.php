@@ -44,7 +44,7 @@
                                     </h2>
                                 </div>
                                 <!-- /.card-header -->
-                                <div class="card-body">
+                                <!-- <div class="card-body"> -->
                                     <div class="card-body table-responsive">
                                         <style>
                                         .table-small-font td,
@@ -1139,7 +1139,7 @@
 
                                         </table>
                                     </div>
-                                </div>
+                                <!-- </div> -->
                                 <!-- /.card-body -->
                             </div>
                             <!-- /.card -->
