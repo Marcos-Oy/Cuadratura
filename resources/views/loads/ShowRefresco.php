@@ -57,7 +57,7 @@
                                             class="table table-striped table-bordered table-condensed table-hover table-small-font">
                                             <thead>
                                                 <tr>
-                                                    <td>
+                                                    <th class="no-print">
                                                         <form method='POST'
                                                             action='<?php echo $this->raiz; ?>/update/refresco'>
                                                             <button id="TODO" class="btn btn-success btn-xs"
@@ -65,12 +65,12 @@
                                                                 <i class="fas fa-refresh" aria-hidden="true"> </i>
                                                             </button>
                                                         </form>
-                                                    </td>
+                                                    </th>
                                                     <th>TABLA ⬇ FECHA ➡</th>
                                                     <?php foreach($rows as $row): ?>
                                                     <th><?= $row['FECHA'] ?></th>
                                                     <?php endforeach; ?>
-                                                    <th>Grafic.</th>
+                                                    <th class="no-print">Grafic.</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -1195,41 +1195,11 @@
     <script src="<?php echo $this->raiz; ?>/public/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="<?php echo $this->raiz; ?>/public/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
-    <!-- JS de tables -->
-    <!-- <script src="<?php //echo $this->raiz; ?>/resources/assets/js/tables.js"></script> -->
-
     <?php include_once 'GraficRefresco.php'?>
     <?php include_once 'ModalsRefresco.php'?>
 
-    <script>
-    $(function() {
-        $("#RefrescoTable")
-            .DataTable({
-                responsive: false,
-                searching: true,
-                lengthChange: true,
-                autoWidth: true,
-                ordering: false,
-                info: true,
-                paging: true,
-                buttons: [
-                    "csv",
-                    "excel",
-                    {
-                        extend: "print",
-                        text: "imprimir",
-                    },
-                    {
-                        extend: "colvis",
-                        text: "Columnas",
-                    }
-                ]
-            })
-            .buttons()
-            .container()
-            .appendTo("#RefrescoTable_wrapper .col-md-6:eq(0)");
-    });
-    </script>
+    <!-- JS de tables -->
+    <script src="<?php echo $this->raiz; ?>/resources/assets/js/Tables/GraficRefrescoTable.js"></script>
 
 </body>
 

@@ -2,7 +2,7 @@
 
 $(function () {
   // Configuración para la tabla con id "TableTree"
-  $("#TableFour").DataTable({
+  $("#LogProcFonoCornTable").DataTable({
       responsive: false,
       searching: true,
       lengthChange: true,
@@ -18,13 +18,14 @@ $(function () {
           "csv",
           "excel",
           {
-              extend: "print",
-              text: "imprimir",
+            extend: "print",
+            text: "Imprimir",
+            title: "LogProcFonoCorn",
           },
       ],
   })
   .buttons()
   .container()
-  .appendTo("#TableFour_wrapper .col-md-6:eq(0)");
+  .appendTo("#LogProcFonoCornTable_wrapper .col-md-6:eq(0)");
 
 });

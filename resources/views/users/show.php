@@ -311,7 +311,7 @@
 
 
     <!-- JS de tables -->
-    <script src="<?php echo $this->raiz; ?>/resources/assets/js/tables.js"></script>
+    <script src="<?php echo $this->raiz; ?>/resources/assets/js/Tables/UsersTable.js"></script>
 
 </body>
 

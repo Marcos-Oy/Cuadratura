@@ -93,7 +93,11 @@ class ConsultadorDAO {
         $fecha = date("d/m");
         
         // Utilizar TO_CHAR para convertir la fecha a una cadena con el formato 'DD/MM'
-        $stmt = oci_parse($this->conn, "SELECT * FROM CUT_SIEBEL_LOGPROC WHERE TO_CHAR(FECH_INI, 'DD/MM') LIKE :fecha ORDER BY fech_ini DESC");
+        $stmt = oci_parse($this->conn, "SELECT nomb_proceso,
+        to_char(fech_ini,'dd-mm-yyyy hh:mi:ss') as FECH_INI,
+        to_char(fech_fin,'dd-mm-yyyy hh:mi:ss') as FECH_FIN,
+        observacion
+        FROM CUT_SIEBEL_LOGPROC WHERE TO_CHAR(FECH_INI, 'DD/MM') LIKE :fecha ORDER BY fech_ini DESC");
         
         // Enlazar el parámetro :fecha
         oci_bind_by_name($stmt, ':fecha', $fecha);
@@ -114,7 +118,11 @@ class ConsultadorDAO {
         $fecha = date("d/m");
         
         // Utilizar TO_CHAR para convertir la fecha a una cadena con el formato 'DD/MM'
-        $stmt = oci_parse($this->conn, "SELECT * FROM CUT_SIEBEL_LOGPROCINET WHERE TO_CHAR(FECH_INI, 'DD/MM') LIKE :fecha ORDER BY fech_ini DESC");
+        $stmt = oci_parse($this->conn, "SELECT nomb_proceso,
+        to_char(fech_ini,'dd-mm-yyyy hh:mi:ss') as FECH_INI,
+        to_char(fech_fin,'dd-mm-yyyy hh:mi:ss') as FECH_FIN,
+        observacion
+        FROM CUT_SIEBEL_LOGPROCINET WHERE TO_CHAR(FECH_INI, 'DD/MM') LIKE :fecha ORDER BY fech_ini DESC");
         
         // Enlazar el parámetro :fecha
         oci_bind_by_name($stmt, ':fecha', $fecha);
@@ -135,7 +143,11 @@ class ConsultadorDAO {
         $fecha = date("d/m");
         
         // Utilizar TO_CHAR para convertir la fecha a una cadena con el formato 'DD/MM'
-        $stmt = oci_parse($this->conn, "SELECT * FROM CUT_SIEBEL_LOGPROCFONO WHERE TO_CHAR(FECH_INI, 'DD/MM') LIKE :fecha ORDER BY fech_ini DESC");
+        $stmt = oci_parse($this->conn, "SELECT nomb_proceso,
+        to_char(fech_ini,'dd-mm-yyyy hh:mi:ss') as FECH_INI,
+        to_char(fech_fin,'dd-mm-yyyy hh:mi:ss') as FECH_FIN,
+        observacion
+        FROM CUT_SIEBEL_LOGPROCFONO WHERE TO_CHAR(FECH_INI, 'DD/MM') LIKE :fecha ORDER BY fech_ini DESC");
         
         // Enlazar el parámetro :fecha
         oci_bind_by_name($stmt, ':fecha', $fecha);

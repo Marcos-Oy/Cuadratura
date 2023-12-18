@@ -184,7 +184,7 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body table-responsive">
-                                    <table id="TableOne"
+                                    <table id="LogProcTable"
                                         class="table table-striped table-bordered table-condensed table-hover table-small-font">
                                         <thead>
                                             <tr>
@@ -233,7 +233,7 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body table-responsive">
-                                    <table id="TableTwo"
+                                    <table id="LogProcInetTable"
                                         class="table table-striped table-bordered table-condensed table-hover table-small-font">
                                         <thead>
                                             <tr>
@@ -282,7 +282,7 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body table-responsive">
-                                    <table id="TableTree"
+                                    <table id="LogProcFonoTable"
                                         class="table table-striped table-bordered table-condensed table-hover table-small-font">
                                         <thead>
                                             <tr>
@@ -331,7 +331,7 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body table-responsive">
-                                    <table id="TableFour"
+                                    <table id="LogProcFonoCornTable"
                                         class="table table-striped table-bordered table-condensed table-hover table-small-font">
                                         <thead>
                                             <tr>
@@ -412,10 +412,10 @@
     <script src="<?php echo $this->raiz; ?>/public/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
     <!-- JS de tables -->
-    <script src="<?php echo $this->raiz; ?>/resources/assets/js/tables1.js"></script>
-    <script src="<?php echo $this->raiz; ?>/resources/assets/js/tables2.js"></script>
-    <script src="<?php echo $this->raiz; ?>/resources/assets/js/tables3.js"></script>
-    <script src="<?php echo $this->raiz; ?>/resources/assets/js/tables4.js"></script>
+    <script src="<?php echo $this->raiz; ?>/resources/assets/js/Tables/LogProcTable.js"></script>
+    <script src="<?php echo $this->raiz; ?>/resources/assets/js/Tables/LogProcInetTable.js"></script>
+    <script src="<?php echo $this->raiz; ?>/resources/assets/js/Tables/LogProcFonoTable.js"></script>
+    <script src="<?php echo $this->raiz; ?>/resources/assets/js/Tables/LogProcFonoCornTable.js"></script>
 
 
 

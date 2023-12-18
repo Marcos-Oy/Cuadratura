@@ -265,6 +265,22 @@ class LoadsController {
         if (isset($_POST['CUT_SIEBEL_PRODUCTOP_BAJA'])) {
             $this->LoadsDAO->UpdateRefresco('CUT_SIEBEL_PRODUCTOP_BAJA');
         }
+
+        if (isset($_POST['CUT_UIM_CFS'])) {
+            $this->LoadsDAO->UpdateRefresco('CUT_UIM_CFS');
+        }
+
+        if (isset($_POST['CUT_UIM_RFS'])) {
+            $this->LoadsDAO->UpdateRefresco('CUT_UIM_RFS');
+        }
+
+        if (isset($_POST['CUT_UIM_SERVICIOS'])) {
+            $this->LoadsDAO->UpdateRefresco('CUT_UIM_SERVICIOS');
+        }
+        
+        if (isset($_POST['CUT_UIM_SERVICIOS_BAJA'])) {
+            $this->LoadsDAO->UpdateRefresco('CUT_UIM_SERVICIOS_BAJA');
+        }
         
         // if (isset($_POST['FDT_ACTIVTEMP'])) {
         //     $this->LoadsDAO->UpdateRefresco('FDT_ACTIVTEMP');
@@ -559,7 +575,23 @@ class LoadsController {
         if (isset($_POST['btn-CUT_SIEBEL_PRODUCTOP_BAJA'])) {
             $this->LoadsDAO->UpdateRange('CUT_SIEBEL_PRODUCTOP_BAJA', $_POST['CUT_SIEBEL_PRODUCTOP_BAJA']);
         }
+
+        if (isset($_POST['btn-CUT_UIM_CFS'])) {
+            $this->LoadsDAO->UpdateRange('CUT_UIM_CFS', $_POST['CUT_UIM_CFS']);
+        }
+
+        if (isset($_POST['btn-CUT_UIM_RFS'])) {
+            $this->LoadsDAO->UpdateRange('CUT_UIM_RFS', $_POST['CUT_UIM_RFS']);
+        }
         
+        if (isset($_POST['btn-CUT_UIM_SERVICIOS'])) {
+            $this->LoadsDAO->UpdateRange('CUT_UIM_SERVICIOS', $_POST['CUT_UIM_SERVICIOS']);
+        }
+
+        if (isset($_POST['btn-CUT_UIM_SERVICIOS_BAJA'])) {
+            $this->LoadsDAO->UpdateRange('CUT_UIM_SERVICIOS', $_POST['CUT_UIM_SERVICIOS_BAJA']);
+        }
+
         // if (isset($_POST['btn-FDT_ACTIVTEMP'])) {
         //     $this->LoadsDAO->UpdateRange('FDT_ACTIVTEMP', $_POST['FDT_ACTIVTEMP']);
         // }

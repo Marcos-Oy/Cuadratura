@@ -42,7 +42,7 @@
                                         /* Puedes ajustar el tamaño de fuente según tus preferencias */
                                     }
                                     </style>
-                                    <table id="TableOne"
+                                    <table id="CSiebelTable"
                                         class="table table-striped table-bordered table-condensed table-hover table-small-font">
                                         <thead>
                                             <tr>
@@ -130,7 +130,7 @@
     <script src="<?php echo $this->raiz; ?>/public/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
     <!-- JS de tables -->
-    <script src="<?php echo $this->raiz; ?>/resources/assets/js/tables1.js"></script>
+    <script src="<?php echo $this->raiz; ?>/resources/assets/js/Tables/CSiebelTable.js"></script>
 
 </body>
 

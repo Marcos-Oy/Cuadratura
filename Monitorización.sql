@@ -27,3 +27,6 @@ from Cuadra.Cut_Siebel_LogProcFonoCorn
 select 'alter system kill session'''||b.sid||','||b.serial#||''';' ,b.* 
 from  v$session b 
 where sid in (select sid from v$access where upper(object) like '%CUP_SIEBEL_EJECUTA_PROCESOS%') 
+
+
+SELECT * FROM Cuadra.Cut_Procesos_Log_Respaldo
