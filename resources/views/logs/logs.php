@@ -470,7 +470,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 </thead>
                                                 <tbody>
                                                     <?php 
-                                                        if($user['USERNAME'] === 'MARCOS' || $user['USERNAME'] === 'MARIA' 
+                                                        if($user['USERNAME'] === 'MARCOS' || $user['USERNAME'] === 'MARIAS' 
                                                         || $user['USERNAME'] === 'FRANCISCO' || $user['USERNAME'] === 'KARIM'){ 
                                                     ?>
                                                     <tr>

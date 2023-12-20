@@ -47,7 +47,7 @@ class LogsController
 
             $filesToPublicHSS = $this->InfoVLRLogs('HSS');
 
-            if($user['USERNAME'] === 'MARCOS' || $user['USERNAME'] === 'MARIA' 
+            if($user['USERNAME'] === 'MARCOS' || $user['USERNAME'] === 'MARIAS' 
             || $user['USERNAME'] === 'FRANCISCO' || $user['USERNAME'] === 'KARIM')
             {
                 $filesToPublicAdrenalin2 = $this->InfoAdrenalin2Logs('ADRENALIN2');
