@@ -589,7 +589,7 @@ class LoadsController {
         }
 
         if (isset($_POST['btn-CUT_UIM_SERVICIOS_BAJA'])) {
-            $this->LoadsDAO->UpdateRange('CUT_UIM_SERVICIOS', $_POST['CUT_UIM_SERVICIOS_BAJA']);
+            $this->LoadsDAO->UpdateRange('CUT_UIM_SERVICIOS_BAJA', $_POST['CUT_UIM_SERVICIOS_BAJA']);
         }
 
         // if (isset($_POST['btn-FDT_ACTIVTEMP'])) {

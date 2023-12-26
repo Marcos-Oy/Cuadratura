@@ -188,6 +188,20 @@ class ConsultadorDAO {
         return $result;
     }
     
+    public function getAllRespaldo() {
+        // Obtener el día y el mes
+        $fecha = date("d/m");
+    
+        $stmt = oci_parse($this->conn, "SELECT * FROM Cuadra.Cut_Procesos_Log_Respaldo");
+    
+        oci_execute($stmt);
+        
+        $result = [];
+        while ($row = oci_fetch_assoc($stmt)) {
+            $result[] = $row;
+        }
+        return $result;
+    }
 
 
 

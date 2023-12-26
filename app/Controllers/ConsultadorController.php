@@ -61,7 +61,8 @@ class ConsultadorController {
         $LOGPROC = $this->ConsultadorDAO->getAllLOGPROC();
         $LOGPROCINET = $this->ConsultadorDAO->getAllLOGPROCINET();
         $LOGPROCFONO = $this->ConsultadorDAO->getAllLOGPROCFONO();
-        $LOGPROCFONOcorn = $this->ConsultadorDAO->getAllLOGPROCFONOcorn();   
+        $LOGPROCFONOcorn = $this->ConsultadorDAO->getAllLOGPROCFONOcorn();
+        $RESPALDO = $this->ConsultadorDAO->getAllRespaldo();    
     
         // Obtén la ruta completa de la vista
         $viewPath = __DIR__ . '/../../resources/views/Procesos/Monitorizacion.php';
@@ -75,8 +76,6 @@ class ConsultadorController {
             echo "Error: la vista no existe";
         }
     }
-    
-
     
 }
 
