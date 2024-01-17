@@ -158,6 +158,7 @@
                     </a>
                 </li>
                 <?php } ?>
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use Config\Connection\SFTPManager;
 use Config\Connection\SFTPVlr;
+use Config\Connection\SFTPDac;
 use Config\Connection\SFTPIncognito;
 use Config\Connection\SFTPMapuche;
 use Config\Connection\FTPAdrenalin2;
@@ -19,6 +20,9 @@ class LogsController
 
         require_once(__DIR__ . '/../../Config/SFTPVlr.php');
         $this->sftpVlr = new SFTPVlr();
+
+        require_once(__DIR__ . '/../../Config/SFTPDac.php');
+        $this->sftpDac = new SFTPDac();
 
         require_once(__DIR__ . '/../../Config/SFTPIncognito.php');
         $this->sftpIncognito = new SFTPIncognito();
@@ -44,6 +48,7 @@ class LogsController
 
             $filesToInfo = $this->InfoLogs('MANAGER');
             $filesToPublicTIVO = $this->InfoLogs('TIVO');
+            $filesToPublicDAC = $this->InfoDACLogs('DAC');
 
             $filesToPublicHSS = $this->InfoVLRLogs('HSS');
 
@@ -176,7 +181,10 @@ class LogsController
             "/Cuadratura/FTTH_ONT_GW/Carga_FTTH_ONT_GW.log", // 13
 
             "/Cuadratura/Plataforma/TIVO/ARCHIVOS/Separa_Rut_Tivo.log", // 14
-            "/Cuadratura/Plataforma/TIVO/ARCHIVOS/Inserta_Reg_Tivo.log" // 15
+            "/Cuadratura/Plataforma/TIVO/ARCHIVOS/Inserta_Reg_Tivo.log", // 15
+
+            "/Cuadratura/Plataforma/DAC/sqlldr.log", // 16
+            "/Cuadratura/Plataforma/DAC/Borrado_Encabezados.log" // 17
 
             // Agrega aquí más rutas de archivos que deseas consultar...
         ];
@@ -513,6 +521,52 @@ class LogsController
                 $nombreArchivoMasReciente = basename($rutaArchivoMasReciente);
                 // Obtener información del archivo más reciente utilizando el método getFileInfoByPath
                 $fileInfo = $this->sftpVlr->getFileInfoByPath($rutaArchivoMasReciente);
+                if ($fileInfo !== false) {
+                    $fileSize = $fileInfo['size'];
+                    $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);
+                    $filesToPublicVlr = [
+                        'path' => $nombreArchivoMasReciente,
+                        'size' => $fileSize,
+                        'modification_time' => $fileModificationTime
+                    ];
+                    return $filesToPublicVlr;
+                } else {
+                    echo '<p>Error: No se pudo obtener la información del archivo desde el servidor SFTP: ' . $rutaArchivoMasReciente . '</p>';
+                }
+            } else {
+                echo '<p> No se encontraron archivos para la fecha actual con el fragmento de búsqueda: '. $searchPattern .'</p>';
+            }
+        }
+    }
+
+    public function InfoDACLogs($iDir)
+    {
+        if ($this->sftpDac->connect() && $this->sftpDac->login()) {
+            $fechaActual = date('Ymd');
+            
+            if($iDir == 'DAC'){
+                $searchPattern = "data.txt";
+                // Obtener la lista de archivos en el directorio deseado
+                $remoteDir = "/home/cuadraturas/";
+            }
+
+            $allFiles = $this->sftpDac->getFilesInDirectory($remoteDir);
+            $matchingFiles = [];
+        
+            // Buscar los archivos que contienen el fragmento de búsqueda
+            foreach ($allFiles as $file) {
+                if (strpos($file, $searchPattern) !== false) {
+                    $matchingFiles[] = $file;
+                }
+            }
+        
+            if (!empty($matchingFiles)) {
+                // Obtener la ruta del archivo más reciente (el primer archivo de la lista)
+                $rutaArchivoMasReciente = $remoteDir . $matchingFiles[0];
+                // Obtener el nombre del archivo más reciente sin la ruta completa
+                $nombreArchivoMasReciente = basename($rutaArchivoMasReciente);
+                // Obtener información del archivo más reciente utilizando el método getFileInfoByPath
+                $fileInfo = $this->sftpDac->getFileInfoByPath($rutaArchivoMasReciente);
                 if ($fileInfo !== false) {
                     $fileSize = $fileInfo['size'];
                     $fileModificationTime = date('Y-m-d H:i:s', $fileInfo['mtime']);

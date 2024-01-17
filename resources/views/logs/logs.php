@@ -37,7 +37,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a id="Comportamientos" name="Comportamientos" href="<?php echo $this->raiz; ?>/Comportamientos">/ Ver comportamientos de cargas /</a></li>
+                                <li class="breadcrumb-item"><a id="Comportamientos" name="Comportamientos"
+                                        href="<?php echo $this->raiz; ?>/Comportamientos">/ Ver comportamientos de
+                                        cargas /</a></li>
                             </ol>
                         </div>
                     </div><!-- /.row -->
@@ -479,7 +481,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                         <td>
                                                             <?php echo ceil($filesToPublicAdrenalin2['size'] / 1024); ?>
                                                             KB
-                                                            <?php if (ceil($filesToPublicAdrenalin2['size'] / 1024) >= 1500000) { echo " ✔"; } else { echo " ⚠"; } ?>
+                                                            <?php if (ceil($filesToPublicAdrenalin2['size'] / 1024) >= 1490000) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
                                                         <td>
                                                             <?php 
@@ -951,6 +953,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <a class="nav-link" id="TIVO-tab" data-toggle="pill" href="#TIVO" role="tab"
                                                 aria-controls="TIVO" aria-selected="false">TIVO</a>
                                         </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="DAC-tab" data-toggle="pill" href="#DAC" role="tab"
+                                                aria-controls="DAC" aria-selected="false">DAC</a>
+                                        </li>
+
                                     </ul>
                                 </div>
 
@@ -1058,6 +1066,70 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <iframe class="col-lg-12" height="80"
                                                 src="<?php echo $this->raiz; ?>/resources/assets/logs/Separa_Rut_Tivo.log"></iframe>
                                         </div>
+
+                                        <div class="tab-pane fade" id="DAC" role="tabpanel" aria-labelledby="DAC-tab">
+
+                                            <style>
+                                            .table-small-font td,
+                                            .table-small-font th {
+                                                font-size: 12px;
+                                                /* Puedes ajustar el tamaño de fuente según tus preferencias */
+                                            }
+                                            </style>
+
+                                            <!-- Tabla con tamaño de fuente reducido -->
+                                            <table
+                                                class="table table-responsive table-responsive table-bordered table-small-font">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ℹ</th>
+                                                        <th>Nombre</th>
+                                                        <th>Tamaño</th>
+                                                        <th>Modificación</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Publ</b></td>
+                                                        <td><?php echo $filesToPublicDAC['path']; ?></td>
+                                                        <td>
+                                                            <?php echo ceil($filesToPublicDAC['size'] / 1024); ?>
+                                                            KB
+                                                            <?php if (ceil($filesToPublicDAC['size'] / 1024) >= 449000) { echo " ✔"; } else { echo " ⚠"; } ?>
+                                                        </td>
+                                                        <td><?php echo $filesToPublicDAC['modification_time'];
+                                                            if (date('Y-m-d') === date('Y-m-d', strtotime($filesToPublicDAC['modification_time']))) {
+                                                                echo " ✔";
+                                                            } else {
+                                                                echo " ⚠";
+                                                            } ?>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Re</b></td>
+                                                        <td><?php echo $filesToInfo[16]['path']; ?></td>
+                                                        <td>
+                                                            <?php echo ceil($filesToInfo[16]['size'] / 1024); ?> KB
+                                                            <?php if (ceil($filesToInfo[16]['size'] / 1024) >= 3) { echo " ✔"; } else { echo " ⚠"; } ?>
+                                                        </td>
+                                                        <td><?php echo $filesToInfo[16]['modification_time']; 
+                                                            if (date('Y-m-d') === date('Y-m-d', strtotime($filesToInfo[16]['modification_time']))) {
+                                                                echo " ✔";
+                                                            } else {
+                                                                echo " ⚠";
+                                                            }?>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <b>CARGA</b>
+                                            <iframe class="col-lg-12" height="250"
+                                                src="<?php echo $this->raiz; ?>/resources/assets/logs/sqlldr.log"></iframe>
+                                            <b>Borrado de encabezado</b>
+                                            <iframe class="col-lg-12" height="115"
+                                                src="<?php echo $this->raiz; ?>/resources/assets/logs/Borrado_Encabezados.log"></iframe>
+                                        </div>
+
                                     </div>
                                 </div>
                                 <!-- /.card -->
