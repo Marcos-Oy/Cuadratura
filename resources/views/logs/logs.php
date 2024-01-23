@@ -1095,7 +1095,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                         <td>
                                                             <?php echo ceil($filesToPublicDAC['size'] / 1024); ?>
                                                             KB
-                                                            <?php if (ceil($filesToPublicDAC['size'] / 1024) >= 449000) { echo " ✔"; } else { echo " ⚠"; } ?>
+                                                            <?php if (ceil($filesToPublicDAC['size'] / 1024) >= 447000) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
                                                         <td><?php echo $filesToPublicDAC['modification_time'];
                                                             if (date('Y-m-d') === date('Y-m-d', strtotime($filesToPublicDAC['modification_time']))) {
