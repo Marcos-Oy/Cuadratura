@@ -51,8 +51,35 @@ Begin
     Cup_Siebel_Ejec_ProcFonoCorn;
 End;
 
+-- updates fin de semana
+
+BEGIN
+	cup_updates_fds;
+END;
+
 ----- AL FINAL DEL DÍA EL RESPALDO
+BEGIN
+	CUP_MARIA_2048();/
+END;
+
+Begin
+    TMP_CONTROL_MANTIS;
+End;
 
 Begin
     CUP_PROCESA_RESPALDO;
+End;
+
+
+----PLAN B (Carga mala en la resultdbox)
+
+--
+Begin
+   Cup_siebel_analiza_dbox_Mar01;
+End;
+
+
+--
+Begin
+    Cup_Siebel_Analiza_dBox_Sieb02;
 End;

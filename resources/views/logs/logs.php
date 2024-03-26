@@ -481,7 +481,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                         <td>
                                                             <?php echo ceil($filesToPublicAdrenalin2['size'] / 1024); ?>
                                                             KB
-                                                            <?php if (ceil($filesToPublicAdrenalin2['size'] / 1024) >= 1490000) { echo " ✔"; } else { echo " ⚠"; } ?>
+                                                            <?php if (ceil($filesToPublicAdrenalin2['size'] / 1024) >= 1480000) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
                                                         <td>
                                                             <?php 
@@ -725,7 +725,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                         <td>
                                                             <?php echo ceil($filesToPublicINET['size'] / 1024); ?>
                                                             KB
-                                                            <?php if (ceil($filesToPublicINET['size'] / 1024) >= 30000) { echo " ✔"; } else { echo " ⚠"; } ?>
+                                                            <?php if (ceil($filesToPublicINET['size'] / 1024) >= 28913) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
                                                         <td><?php echo $filesToPublicINET['modification_time'];
                                                         if (date('Y-m-d') === date('Y-m-d', strtotime($filesToPublicINET['modification_time']))) {
@@ -1095,7 +1095,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                         <td>
                                                             <?php echo ceil($filesToPublicDAC['size'] / 1024); ?>
                                                             KB
-                                                            <?php if (ceil($filesToPublicDAC['size'] / 1024) >= 447000) { echo " ✔"; } else { echo " ⚠"; } ?>
+                                                            <?php if (ceil($filesToPublicDAC['size'] / 1024) >= 446000) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
                                                         <td><?php echo $filesToPublicDAC['modification_time'];
                                                             if (date('Y-m-d') === date('Y-m-d', strtotime($filesToPublicDAC['modification_time']))) {
