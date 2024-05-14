@@ -89,18 +89,18 @@ class ConsultadorDAO {
     }
     
     public function getAllLOGPROC() {
-        // Obtener el día y el mes
-        $fecha = date("d/m");
         
         // Utilizar TO_CHAR para convertir la fecha a una cadena con el formato 'DD/MM'
         $stmt = oci_parse($this->conn, "SELECT nomb_proceso,
         to_char(fech_ini,'dd-mm-yyyy hh:mi:ss') as FECH_INI,
         to_char(fech_fin,'dd-mm-yyyy hh:mi:ss') as FECH_FIN,
         observacion
-        FROM CUT_SIEBEL_LOGPROC WHERE TO_CHAR(FECH_INI, 'DD/MM') LIKE :fecha ORDER BY fech_ini DESC");
-        
-        // Enlazar el parámetro :fecha
-        oci_bind_by_name($stmt, ':fecha', $fecha);
+        FROM 
+            CUT_SIEBEL_LOGPROC 
+        WHERE 
+            TRUNC(fech_ini) IN (TRUNC(SYSDATE), TRUNC(SYSDATE) - 1)
+        ORDER BY
+            fech_ini desc");
     
         // Ejecutar la consulta
         oci_execute($stmt);
@@ -115,17 +115,18 @@ class ConsultadorDAO {
 
     public function getAllLOGPROCINET() {
         // Obtener el día y el mes
-        $fecha = date("d/m");
         
         // Utilizar TO_CHAR para convertir la fecha a una cadena con el formato 'DD/MM'
         $stmt = oci_parse($this->conn, "SELECT nomb_proceso,
         to_char(fech_ini,'dd-mm-yyyy hh:mi:ss') as FECH_INI,
         to_char(fech_fin,'dd-mm-yyyy hh:mi:ss') as FECH_FIN,
         observacion
-        FROM CUT_SIEBEL_LOGPROCINET WHERE TO_CHAR(FECH_INI, 'DD/MM') LIKE :fecha ORDER BY fech_ini DESC");
-        
-        // Enlazar el parámetro :fecha
-        oci_bind_by_name($stmt, ':fecha', $fecha);
+        FROM 
+            CUADRA.CUT_SIEBEL_LOGPROCINET 
+        WHERE 
+            TRUNC(fech_ini) IN (TRUNC(SYSDATE), TRUNC(SYSDATE) - 1)
+        ORDER BY
+            fech_ini desc");
     
         // Ejecutar la consulta
         oci_execute($stmt);
@@ -140,17 +141,18 @@ class ConsultadorDAO {
     
     public function getAllLOGPROCFONO() {
         // Obtener el día y el mes
-        $fecha = date("d/m");
         
         // Utilizar TO_CHAR para convertir la fecha a una cadena con el formato 'DD/MM'
         $stmt = oci_parse($this->conn, "SELECT nomb_proceso,
         to_char(fech_ini,'dd-mm-yyyy hh:mi:ss') as FECH_INI,
         to_char(fech_fin,'dd-mm-yyyy hh:mi:ss') as FECH_FIN,
         observacion
-        FROM CUT_SIEBEL_LOGPROCFONO WHERE TO_CHAR(FECH_INI, 'DD/MM') LIKE :fecha ORDER BY fech_ini DESC");
-        
-        // Enlazar el parámetro :fecha
-        oci_bind_by_name($stmt, ':fecha', $fecha);
+        FROM 
+            CUADRA.CUT_SIEBEL_LOGPROCFONO 
+        WHERE 
+            TRUNC(fech_ini) IN (TRUNC(SYSDATE), TRUNC(SYSDATE) - 1)
+        ORDER BY
+            fech_ini desc");
     
         // Ejecutar la consulta
         oci_execute($stmt);
@@ -165,7 +167,7 @@ class ConsultadorDAO {
     
     public function getAllLOGPROCFONOcorn() {
         // Obtener el día y el mes
-        $fecha = date("d/m");
+        // $fecha = date("d/m");
     
         $stmt = oci_parse($this->conn, "SELECT
             nomb_proceso,
@@ -175,9 +177,9 @@ class ConsultadorDAO {
             FROM
                 Cuadra.Cut_Siebel_LogProcFonoCorn
             WHERE
-                TRUNC(fech_ini) IN (TRUNC(SYSDATE), TRUNC(SYSDATE - 1), TRUNC(SYSDATE - 2))
+                TRUNC(fech_ini) IN (TRUNC(SYSDATE), TRUNC(SYSDATE) - 1)
             ORDER BY
-                fech_ini DESC");
+                fech_ini desc");
     
         oci_execute($stmt);
         
@@ -189,8 +191,6 @@ class ConsultadorDAO {
     }
     
     public function getAllRespaldo() {
-        // Obtener el día y el mes
-        $fecha = date("d/m");
     
         $stmt = oci_parse($this->conn, "SELECT * FROM Cuadra.Cut_Procesos_Log_Respaldo");
     

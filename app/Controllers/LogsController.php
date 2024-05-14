@@ -255,7 +255,7 @@ class LogsController
             "/Cuadratura/Tablas/Arch_Log/limpia_tablas_desc_uim.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tablas_cut.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_businessinteraction.log",
-            "/Cuadratura/Tablas/Arch_Log/ejecuta_tango_procinet.log",
+            // "/Cuadratura/Tablas/Arch_Log/ejecuta_tango_procinet.log",
             "/Cuadratura/Tablas/Arch_Log/proceso_ftth.log",
             "/Cuadratura/Tablas/Arch_Log/refresco_tabla_s_order.log",
             "/Cuadratura/Tablas/Arch_Log/Procesos_2140_2151.log",

@@ -481,7 +481,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                         <td>
                                                             <?php echo ceil($filesToPublicAdrenalin2['size'] / 1024); ?>
                                                             KB
-                                                            <?php if (ceil($filesToPublicAdrenalin2['size'] / 1024) >= 1480000) { echo " ✔"; } else { echo " ⚠"; } ?>
+                                                            <?php if (ceil($filesToPublicAdrenalin2['size'] / 1024) >= 1380000) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
                                                         <td>
                                                             <?php 
@@ -1095,7 +1095,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                         <td>
                                                             <?php echo ceil($filesToPublicDAC['size'] / 1024); ?>
                                                             KB
-                                                            <?php if (ceil($filesToPublicDAC['size'] / 1024) >= 446000) { echo " ✔"; } else { echo " ⚠"; } ?>
+                                                            <?php if (ceil($filesToPublicDAC['size'] / 1024) >= 436000) { echo " ✔"; } else { echo " ⚠"; } ?>
                                                         </td>
                                                         <td><?php echo $filesToPublicDAC['modification_time'];
                                                             if (date('Y-m-d') === date('Y-m-d', strtotime($filesToPublicDAC['modification_time']))) {

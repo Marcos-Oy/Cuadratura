@@ -10,6 +10,7 @@ $(function () {
       ordering: true,
       info: true,
       paging: true,
+      order: [[1, "desc"]], // Ordenar por la segunda columna (FECH_INI) en orden ascendente
       buttons: [
           {
               extend: "copy",
