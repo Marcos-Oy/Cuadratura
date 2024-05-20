@@ -3,7 +3,7 @@ date_default_timezone_set('America/Santiago');
 
 // Define la raíz del proyecto según el nombre del proyecto
 $raiz = '/Cuadratura';
-
+//lenovo
 // Se deben agregar los directorios de los controladores para que las rutas funcionen
 require_once __DIR__ . '/app/Controllers/AuthController.php';
 require_once __DIR__ . '/app/Controllers/HomeController.php';
