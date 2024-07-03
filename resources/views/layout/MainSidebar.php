@@ -117,7 +117,8 @@
                         <p>
                             Correcciones
                             <!-- <i class="right fas fa-angle-left"></i> -->
-                            <span class="right badge badge-danger">New<i class="right fas fa-angle-left"></i></span>
+                            <!-- <span class="right badge badge-danger">New<i class="right fas fa-angle-left"></i></span> -->
+                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -141,7 +142,7 @@
                         <i class="nav-icon fa fa-desktop"></i>
                         <p>
                             
-                            <span class="right badge badge-danger">New</span>
+                            <!-- <span class="right badge badge-danger">New</span> -->
                             Monitoreo Procesos
                         </p>
                     </a>
