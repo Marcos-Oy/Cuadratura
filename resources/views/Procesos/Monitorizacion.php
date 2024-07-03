@@ -175,7 +175,7 @@
                         <div class="col-12">
                             <div class="card card-dark">
                                 <div class="card-header">
-                                    <h4 class="card-title">PROCESOS PROGRAMADOS</h4>
+                                    <h4 class="card-title">PROCESOS PROGRAMADOS (PR)</h4>
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                             <i class="fas fa-minus"></i>
@@ -188,20 +188,26 @@
                                         class="table table-striped table-bordered table-condensed table-hover table-small-font">
                                         <thead>
                                             <tr>
-                                                <th>NOMB_PROCESO</th>
-                                                <th>FECH_INI</th>
-                                                <th>FECH_FIN</th>
-                                                <th>OBSERVACION</th>
+                                                <th>ID_CORRELATIVO</th>
+                                                <th>ID_JOBS</th>
+                                                <th>FEC_INICIAL</th>
+                                                <th>FEC_FINAL</th>
+                                                <th>EST_PROC</th>
+                                                <th>DES_PROC</th>
+                                                <th>DESC_JOBS</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php if($LOGPROC): ?>
-                                            <?php foreach($LOGPROC as $row): ?>
+                                            <?php if($PR): ?>
+                                            <?php foreach($PR as $row): ?>
                                             <tr>
-                                                <td><?php echo $row['NOMB_PROCESO'] ?></td>
-                                                <td><?php echo $row['FECH_INI'] ?></td>
-                                                <td><?php echo $row['FECH_FIN'] ?></td>
-                                                <td><?php echo $row['OBSERVACION'] ?></td>
+                                                <td><?php echo $row['ID_CORRELATIVO'] ?></td>
+                                                <td><?php echo $row['ID_JOBS'] ?></td>
+                                                <td><?php echo $row['FEC_INICIAL'] ?></td>
+                                                <td><?php echo $row['FEC_FINAL'] ?></td>
+                                                <td><?php echo $row['EST_PROC'] ?></td>
+                                                <td><?php echo $row['DES_PROC'] ?></td>
+                                                <td><?php echo $row['DESC_JOBS'] ?></td>
                                             </tr>
 
                                             <?php endforeach; ?>

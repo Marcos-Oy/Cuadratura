@@ -87,6 +87,34 @@ class ConsultadorDAO {
     
         return $result;
     }
+
+    public function getAllPR() {
+        
+        // Utilizar TO_CHAR para convertir la fecha a una cadena con el formato 'DD/MM'
+        $stmt = oci_parse($this->conn, "SELECT
+        ID_CORRELATIVO,
+        ID_JOBS,
+        to_char(FEC_INICIAL, 'dd-mm-yyyy hh:mi:ss') AS FEC_INICIAL,
+        to_char(FEC_FINAL, 'dd-mm-yyyy hh:mi:ss') AS FEC_FINAL,
+        EST_PROC,
+        DES_PROC,
+        DESC_JOBS
+    FROM
+        TMP_CONTROLPROCESOS tc
+    WHERE
+        TRUNC(FEC_INICIAL) = TRUNC(SYSDATE)
+        AND ID_JOBS IN ('241', '242', '243', '244', '245', '246', '247', '248', '249', '2410', '2411')");
+    
+        // Ejecutar la consulta
+        oci_execute($stmt);
+    
+        $result = [];
+        while ($row = oci_fetch_assoc($stmt)) {
+            $result[] = $row;
+        }
+        
+        return $result;
+    }
     
     public function getAllLOGPROC() {
         
@@ -192,7 +220,13 @@ class ConsultadorDAO {
     
     public function getAllRespaldo() {
     
-        $stmt = oci_parse($this->conn, "SELECT * FROM Cuadra.Cut_Procesos_Log_Respaldo");
+        $stmt = oci_parse($this->conn, "SELECT
+        NOMB_PROCESO,
+        to_char(FECH_INI, 'dd-mm-yyyy hh:mi:ss') AS FECH_INI,
+        to_char(FECH_FIN, 'dd-mm-yyyy hh:mi:ss') AS FECH_FIN,
+        OBSERVACION
+    FROM
+        Cuadra.Cut_Procesos_Log_Respaldo");
     
         oci_execute($stmt);
         

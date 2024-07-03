@@ -58,6 +58,7 @@ class ConsultadorController {
         $ResultInet = $this->ConsultadorDAO->getAllResultInet(); 
         $ResultDetaInet = $this->ConsultadorDAO->getAllResultDetaInet();
         $ResultdBox = $this->ConsultadorDAO->getAllResultdBox();
+        $PR = $this->ConsultadorDAO->getAllPR();
         $LOGPROC = $this->ConsultadorDAO->getAllLOGPROC();
         $LOGPROCINET = $this->ConsultadorDAO->getAllLOGPROCINET();
         $LOGPROCFONO = $this->ConsultadorDAO->getAllLOGPROCFONO();
